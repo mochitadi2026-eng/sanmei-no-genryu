@@ -25,6 +25,13 @@
 - [Codex作業指示](AGENTS.md) — 記録・執筆・更新の運用
 - [原典調査スキル](.agents/skills/sanmei-source-research/SKILL.md) — 調査、出典監査、校訂、配信HTML生成の流れ
 
+## 日本側の成立史（書誌調査）
+
+- [高尾義政と初期刊行物の書誌調査](research/japan-establishment-bibliography.md) — NDL所蔵・1980〜1981年全11巻と公式沿革の照合
+- [長崎・呉達人・文化大革命に関する伝承検証](research/japan-origin-tradition-audit.md) — 出典未確認の言説と年代を分ける
+
+この2件は**研究ノート**であり、原典本文未読のまま成立史を断定する読み物ではありません。
+
 ## 典拠と制作方針
 
 - [第0〜7話の校訂・監査記録](research/review-2026-10-30.md) — 修正履歴と未検証の史料
