@@ -27,6 +27,8 @@
 
 ## 日本側の成立史（書誌調査）
 
+- [一次資料調査の優先順位](research/japan-primary-sources-priority.md) — 1974年の刊行物を最優先に、1980年の第1・2巻と比較
+
 - [高尾義政と初期刊行物の書誌調査](research/japan-establishment-bibliography.md) — NDL所蔵・1980〜1981年全11巻と公式沿革の照合
 - [長崎・呉達人・文化大革命に関する伝承検証](research/japan-origin-tradition-audit.md) — 出典未確認の言説と年代を分ける
 
