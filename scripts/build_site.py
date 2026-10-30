@@ -23,6 +23,7 @@ CHAPTERS = [
     ("02-five-elements", "第2話", "木は、ただの木ではなかった"),
     ("03-ten-stems", "第3話", "甲は、昔から大樹だったのか"),
     ("04-birth-records", "第4話", "生まれた日の記号が、運命を語り始めるまで"),
+    ("05-ten-major-stars", "第5話", "十大主星は、どこから来たのか"),
 ]
 
 md = mistune.create_markdown(escape=True, plugins=["table", "strikethrough"])
