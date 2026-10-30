@@ -12,6 +12,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 import re
 import sys
+from urllib.parse import unquote
 
 import mistune
 
@@ -167,7 +168,7 @@ def check() -> list[str]:
         )
         url_in_registry_match = re.search(r"\]\((https?://[^)]+)\)", source_line)
         url_in_registry = url_in_registry_match.group(1) if url_in_registry_match else ""
-        if url_in_site != url_in_registry:
+        if unquote(url_in_site) != unquote(url_in_registry):
             errors.append(f"docs/sources.html: link mismatch for {source_id}")
 
     # Check relative paths and in-page hash targets for every published page.
