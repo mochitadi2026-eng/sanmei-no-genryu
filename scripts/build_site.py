@@ -24,7 +24,7 @@ CHAPTERS = [
     ("03-ten-stems", "第3話", "甲は、昔から大樹だったのか"),
     ("04-birth-records", "第4話", "生まれた日の記号が、運命を語り始めるまで"),
     ("05-ten-major-stars", "第5話", "十大主星は、どこから来たのか"),
-    ("06-twelve-stages", "第6話", "十二大従星の前に、十二の季節があった"),
+    ("06-twelve-stages", "第6話", "十二大従星の前に、十二の循環があった"),
     ("07-four-pillars-history", "第7話", "命式は、いつ今の形になったのか"),
 ]
 
@@ -52,7 +52,7 @@ for slug, number, title in CHAPTERS:
     page = f'<div class="meta">{html.escape(number)} / 2026年10月30日</div>' + article_content(source.read_text("utf-8"))
     write(DOCS / "articles" / f"{slug}.html", layout(title, page, prefix="../", eyebrow="読み物 / 算命の源流"))
 
-home = '''<div class="meta">連載｜第1部・自然と時を読む</div><h1>星の名前が生まれる前、<br>人は何を見ていたのだろう。</h1><p>生年月日から命運を読む方法が現れる前、人々は天候や季節、ひび割れや暦に何を尋ねていたのか。古典の本文と研究資料を確かめながら、ゆっくりたどっていく連載です。</p><p>現代の算命学にそのまま続く、という物語を最初から決めつけることはしません。分かっていることと、まだ分からないことを分けて書きます。</p><h2>連載を読む</h2><ol class="series">'''
+home = '''<div class="meta">連載｜第1部・自然と時を読む</div><h1>星の名前が生まれる前、<br>人は何を見ていたのだろう。</h1><p>生年月日から命運を読む方法が現れる前、人々は天候や季節、ひび割れや暦に何を尋ねていたのか。古典の本文と研究資料を確かめながら、ゆっくりたどっていく連載です。</p><p>現代の算命学にそのまま続く、という物語を最初から決めつけることはしません。章の順番は理解のための構成で、文献の成立順でも直系の系譜でもありません。分かっていることと、まだ分からないことを分けて書きます。</p><h2>連載を読む</h2><ol class="series">'''
 for slug, number, title in CHAPTERS:
     home += f'<li><a href="articles/{slug}.html"><small>{html.escape(number)}</small><strong>{html.escape(title)}</strong></a></li>'
 home += '''</ol><h2>研究記録について</h2><p>各章には典拠を付けています。<a href="sources.html">出典と検証</a>では原典へのリンク、閲覧した範囲、未確認事項を一覧できます。</p>'''
