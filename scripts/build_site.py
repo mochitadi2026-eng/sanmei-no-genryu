@@ -25,6 +25,7 @@ CHAPTERS = [
     ("04-birth-records", "第4話", "生まれた日の記号が、運命を語り始めるまで"),
     ("05-ten-major-stars", "第5話", "十大主星は、どこから来たのか"),
     ("06-twelve-stages", "第6話", "十二大従星の前に、十二の季節があった"),
+    ("07-four-pillars-history", "第7話", "命式は、いつ今の形になったのか"),
 ]
 
 md = mistune.create_markdown(escape=True, plugins=["table", "strikethrough"])
@@ -32,7 +33,7 @@ md = mistune.create_markdown(escape=True, plugins=["table", "strikethrough"])
 def layout(title, content, prefix="", eyebrow="原典をたどる読み物"):
     title = html.escape(title)
     eyebrow = html.escape(eyebrow)
-    return f'''<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="算命の源流。中国古典に何が書かれているかを確かめる歴史と思想の読み物。"><title>{title}｜算命の源流</title><link rel="stylesheet" href="{prefix}style.css"></head><body><a class="skip" href="#main">本文に移動</a><header><div class="inner"><div class="eyebrow">{eyebrow}</div><div class="site-title">算命の源流</div><div class="subtitle">自然を読み、時を数え、人の命を考えた歴史。</div></div></header><nav><a href="{prefix}index.html">連載の目次</a><a href="{prefix}sources.html">出典と検証</a><a href="{prefix}about.html">この連載について</a></nav><main id="main"><article>{content}</article></main><footer class="foot">算命の源流 — 記されたことと、考えたことを分けて読む。<br>研究原稿 v0.3.0 / 2026-10-30</footer></body></html>'''
+    return f'''<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="算命の源流。中国古典に何が書かれているかを確かめる歴史と思想の読み物。"><title>{title}｜算命の源流</title><link rel="stylesheet" href="{prefix}style.css"></head><body><a class="skip" href="#main">本文に移動</a><header><div class="inner"><div class="eyebrow">{eyebrow}</div><div class="site-title">算命の源流</div><div class="subtitle">自然を読み、時を数え、人の命を考えた歴史。</div></div></header><nav><a href="{prefix}index.html">連載の目次</a><a href="{prefix}sources.html">出典と検証</a><a href="{prefix}about.html">この連載について</a></nav><main id="main"><article>{content}</article></main><footer class="foot">算命の源流 — 記されたことと、考えたことを分けて読む。<br>研究原稿 v0.4.0 / 2026-10-30</footer></body></html>'''
 
 def article_content(raw):
     raw = raw.replace("../sources/registry.md", "../sources.html")
