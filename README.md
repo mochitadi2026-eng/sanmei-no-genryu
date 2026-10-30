@@ -14,14 +14,16 @@
 | 第3話 | [甲は、昔から大樹だったのか](articles/03-ten-stems.md) | 十干の古い用法と後代の比喩 |
 | 第4話 | [生まれた日の記号が、運命を語り始めるまで](articles/04-birth-records.md) | 李虚中に関する唐代の記録 |
 | 第5話 | [十大主星は、どこから来たのか](articles/05-ten-major-stars.md) | 『三命通会』と日本の十大主星の比較 |
+| 第6話 | [十二大従星の前に、十二の季節があった](articles/06-twelve-stages.md) | 『五行精紀』と十二長生の比較 |
 
-閲覧ページは [docs/index.html](docs/index.html) にあり、GitHub Pages の公開を設定した場合はウェブでも読むことができます。現時点で Pages の公開は確認していません。
+閲覧ページは [GitHub Pages](https://mochitadi2026-eng.github.io/sanmei-no-genryu/index.html) で公開し、HTML原稿は [docs/index.html](docs/index.html) にあります。
 
 ## 典拠と制作方針
 
 - [出典一覧](sources/registry.md) — 原典への参照と確認範囲
 - [主張と根拠の対応表](research/claims.md) — 史料の記載・解釈・未確認を分ける
 - [十大主星と中国命理の比較研究ノート](research/ten-gods-comparison.md) — 日干基準の十干対応と史料上の留保
+- [十二大従星と十二長生の比較研究ノート](research/twelve-stages-comparison.md) — 12段階の古典記述と名称・算出方法の差
 - [未解決の問い](research/questions.md) — 追加調査の課題
 - [編集方針](EDITORIAL.md) — 歴史記述と創作の境界
 - [閲覧ページの再生成方法](scripts/README.md)
@@ -34,4 +36,4 @@
 - 占断の科学的的中性を証明する資料ではありません。
 - **このリポジトリはGitHub上でPublicです。** 公開前の原稿確認と同じ水準で出典・権利等を確認してください。
 
-更新: 2026-10-30 / v0.2.0
+更新: 2026-10-30 / v0.3.0
