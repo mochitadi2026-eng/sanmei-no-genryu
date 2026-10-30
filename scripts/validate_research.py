@@ -152,12 +152,14 @@ def check() -> list[str]:
 
     # Compare the rendered evidence table with the registry.
     html_sources = (DOCS / "sources.html").read_text(encoding="utf-8")
-    rows = list(re.finditer(r"<tr>\s*<td>\s*(S\d+)\s*</td>(.*?)</tr>", html_sources, re.S))
-    site_ids = [m.group(1) for m in rows]
+    rows = list(re.finditer(r'<tr(?:\s+id="(S\d+)")?>\s*<td>\s*(S\d+)\s*</td>(.*?)</tr>', html_sources, re.S))
+    site_ids = [m.group(2) for m in rows]
     if site_ids != registry_ids(registry, "S"):
         errors.append("docs/sources.html: IDs do not match registry")
     for row in rows:
-        source_id, cells = row.groups()
+        anchor_id, source_id, cells = row.groups()
+        if anchor_id != source_id:
+            errors.append(f"docs/sources.html: missing/mismatched anchor for {source_id}")
         match = re.search(r'href="([^"]+)"', cells)
         url_in_site = unescape(match.group(1)) if match else ""
         source_line = next(
