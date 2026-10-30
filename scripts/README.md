@@ -5,8 +5,11 @@
 ```bash
 pip install -r requirements.txt
 python scripts/build_site.py
+python scripts/validate_research.py
 ```
 
 記事を加える場合は、記事のMarkdownファイルを作成し、`scripts/build_site.py` の `CHAPTERS` にファイル名・話数・タイトルを追記してから再生成してください。 `docs/style.css` はデザインのマスターファイルです。
+
+検証スクリプトは、S番号・C番号の重複、記事タイトルの一致、Markdown表の行分断、配信HTMLの内部リンク、本文の出典参照を確認します。**史料の真偽や外部URLの有効性は自動判定しません。**
 
 HTMLは静的なファイルです。GitHub Pagesで表示する場合、公開時にPythonを動かす必要はありません。
