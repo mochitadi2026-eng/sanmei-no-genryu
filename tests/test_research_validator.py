@@ -20,6 +20,7 @@ class ResearchValidatorTests(unittest.TestCase):
         self.root = Path(self.tmp.name)
         for name in ("articles", "docs", "sources", "research", "scripts"):
             shutil.copytree(ROOT / name, self.root / name)
+        shutil.copy2(ROOT / "README.md", self.root / "README.md")
         self.saved = {
             key: getattr(validator, key)
             for key in ("ROOT", "ARTICLES", "DOCS", "SOURCES", "CLAIMS", "BUILDER")
