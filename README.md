@@ -27,6 +27,7 @@
 
 ## 典拠と制作方針
 
+- [第0〜7話の校訂・監査記録](research/review-2026-10-30.md) — 修正履歴と未検証の史料
 - [出典一覧](sources/registry.md) — 原典への参照と確認範囲
 - [主張と根拠の対応表](research/claims.md) — 史料の記載・解釈・未確認を分ける
 - [十大主星と中国命理の比較研究ノート](research/ten-gods-comparison.md) — 日干基準の十干対応と史料上の留保
