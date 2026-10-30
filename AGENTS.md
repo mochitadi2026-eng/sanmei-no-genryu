@@ -23,6 +23,8 @@
 - `pip install -r requirements.txt`
 - `python scripts/build_site.py`
 - `python scripts/validate_research.py`
+- `python -m unittest discover -s tests -p 'test_*.py' -v`
+- `git diff --exit-code -- docs/`（再生成しても差分が出ないこと）
 - 目次・前後リンク・出典リンク・記事タイトル・Markdown/HTMLの一致を確認する。スクリプトは史実や外部URLの正当性を自動判定しないため、人間が典拠と未確認事項も点検する。
 - 変更報告には「今回確定できたこと」「未確認」「修正箇所」「公開状態（確認できた範囲）」を分ける。
 
