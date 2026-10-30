@@ -39,3 +39,6 @@ jobs:
         run: |
           python scripts/build_site.py
           python scripts/validate_research.py
+      - name: Reject stale committed HTML
+        run: |
+          git diff --exit-code -- docs/
