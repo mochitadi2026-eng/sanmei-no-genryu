@@ -63,7 +63,7 @@
 - [ ] 文献に存在しない引用・ページ・年代・URLを作っていない。
 - [ ] 史料とその諸版本の未確認箇所を記録した。
 - [ ] `sources/registry.md` と `research/claims.md` を同時更新し、未解決事項を `research/questions.md` に反映した。
-- [ ] `articles/*.md` から `docs/` を再生成し、内部リンク・目次・タイトルを点検した。
+- [ ] `articles/*.md` から `docs/` を再生成し、`python scripts/validate_research.py` を実行して、内部リンク・出典ID・目次・タイトルを点検した。
 - [ ] 修正報告で、GitHub更新完了とGitHub Pages反映確認を区別した。
 
 公開の合格は「出典で確認できる範囲を正直に表示した」ことを意味し、全史料の一次資料校合が終了したことを意味しない。
