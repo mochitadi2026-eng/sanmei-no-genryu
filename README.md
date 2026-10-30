@@ -27,6 +27,7 @@
 
 ## 日本側の成立史（書誌調査）
 
+- [1974年刊の序文・目次・計算本文のアクセス調査](research/1974-text-access-investigation.md) — 公開未発見の範囲、1980年刊との比較可能範囲、NDL複写条件
 - [1974年刊本の部分本文4頁・商標紛争史料の照合](research/1974-book-pages-and-court-record.md) — 読めた本文と裁判所の認定・訴訟当事者の主張を区別
 - [一次資料調査の優先順位](research/japan-primary-sources-priority.md) — 1974年の刊行物を最優先に、1980年の第1・2巻と比較
 
