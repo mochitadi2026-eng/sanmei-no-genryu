@@ -37,6 +37,8 @@
 - [書籍以外の史料：1973年用例・1974年法人設立・旧学校系譜](research/independent-japanese-sources-1973-1987.md) — 裁判所公式PDF、各校の沿革、会報・講義録音を区別
 
 - [1974年刊の序文・目次・計算本文のアクセス調査](research/1974-text-access-investigation.md) — 公開未発見の範囲、1980年刊との比較可能範囲、NDL複写条件
+- [1974年刊の目次・奥付複写申込パケット](research/ndl-copy-request-packet-1974.md) — NDL請求記号、複写箇所指定、利用者本人の申込手順（未申込）
+- [1972年講義資料と1980年刊本39頁の引用調査](research/japan-early-lecture-and-calendar-sources-2026-10-31.md) — 確認できた写真・論文・古書情報と、成立史に関する未確認事項
 - [1974年刊本の部分本文4頁・商標紛争史料の照合](research/1974-book-pages-and-court-record.md) — 読めた本文と裁判所の認定・訴訟当事者の主張を区別
 - [一次資料調査の優先順位](research/japan-primary-sources-priority.md) — 1974年の刊行物を最優先に、1980年の第1・2巻と比較
 
@@ -71,4 +73,3 @@
 
 更新: 2026-10-30 / v0.4.0
 
-- [1972年講義資料と1980年刊本39頁の引用調査](research/japan-early-lecture-and-calendar-sources-2026-10-31.md) — 確認できた写真・論文・古書情報と、成立史に関する未確認事項
