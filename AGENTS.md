@@ -22,7 +22,8 @@
 
 - `pip install -r requirements.txt`
 - `python scripts/build_site.py`
-- 目次・前後リンク・出典リンク・記事タイトル・Markdown/HTMLの一致を確認する。
+- `python scripts/validate_research.py`
+- 目次・前後リンク・出典リンク・記事タイトル・Markdown/HTMLの一致を確認する。スクリプトは史実や外部URLの正当性を自動判定しないため、人間が典拠と未確認事項も点検する。
 - 変更報告には「今回確定できたこと」「未確認」「修正箇所」「公開状態（確認できた範囲）」を分ける。
 
 直接の公開、GitHubへの書き込み、外部サービスへの投稿は、実行可能な権限とユーザーの依頼範囲の中だけで行う。
