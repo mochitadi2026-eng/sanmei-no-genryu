@@ -60,7 +60,7 @@ write(DOCS / "index.html", layout("目次", home))
 
 sources = md((ROOT / "sources" / "registry.md").read_text("utf-8"))
 # Each source ID is a stable in-page anchor target for chapter citations.
-sources = re.sub(r'<tr><td>(S\d+)</td>', lambda m: f'<tr id="{m.group(1)}"><td>{m.group(1)}</td>', sources)
+sources = re.sub(r'<tr>\s*<td>(S\d+)</td>', lambda m: f'<tr id="{m.group(1)}">\n  <td>{m.group(1)}</td>', sources)
 sources += '<p>原稿の検証台帳はリポジトリ内 <code>research/claims.md</code> を参照してください。</p>'
 write(DOCS / "sources.html", layout("出典と検証", sources))
 
