@@ -19,5 +19,5 @@
 - [ ] `sources/registry.md` と `research/claims.md` を同期。
 - [ ] `research/questions.md` に未解決課題を追加。
 - [ ] `scripts/build_site.py` で配信HTMLを生成。
-- [ ] 全ページの内部リンク、S番号、目次のタイトル、前後記事を点検。
+- [ ] `python scripts/validate_research.py` が成功し、全ページの内部リンク、S番号、目次のタイトル、前後記事を点検。
 - [ ] GitHubコミットとGitHub Pages反映を別々に報告。
