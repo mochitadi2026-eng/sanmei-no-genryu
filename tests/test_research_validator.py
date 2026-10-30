@@ -53,6 +53,14 @@ class ResearchValidatorTests(unittest.TestCase):
         )
         self.assertTrue(any("body text differs" in x for x in validator.check()))
 
+    def test_changed_markdown_without_updated_html_is_rejected(self) -> None:
+        self.rewrite(
+            "articles/00-introduction.md",
+            "それぞれは、同じものではない。",
+            "それぞれは、異なるものでもなかった。",
+        )
+        self.assertTrue(any("body text differs" in x for x in validator.check()))
+
     def test_unknown_source_is_rejected(self) -> None:
         self.rewrite("articles/02-five-elements.md", "[S02]", "[S999]")
         self.assertTrue(any("unknown source S999" in x for x in validator.check()))
