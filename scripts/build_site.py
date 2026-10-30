@@ -40,7 +40,7 @@ def article_content(raw):
     raw = raw.replace("../README.md", "../index.html")
     raw = re.sub(r"\]\((\d\d-[\w-]+)\.md\)", r"](\1.html)", raw)
     output = md(raw)
-    output = re.sub(r"\[(S\d\d)\]", r'<a href="../sources.html#\1" class="source-link">[\1]</a>', output)
+    output = re.sub(r"\[(S\d\d)\]", r'<a class="source-link" href="../sources.html#\1">[\1]</a>', output)
     return output
 
 def write(path, text):
