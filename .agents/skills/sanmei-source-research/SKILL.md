@@ -17,7 +17,7 @@ description: 算命の源流リポジトリの史料調査・出典監査・記�
 6. 現代日本の算命学と照合するときは、**名称／意味／算出規則／時代／直接の伝承** を個別に検証する。現代民間サイトから歴史的な初出を導かない。
 7. 読み物を `articles/*.md` に執筆・修正し、対応する `research/*.md` に原典・仮説・比較表・未解決課題を残す。
 8. `sources/registry.md` にS番号、`research/claims.md` にC番号、必要なら `research/questions.md` に次の調査を追記する。
-9. `python scripts/build_site.py` でHTMLを再生成し、[公開前チェックリスト](references/release-checklist.md) を使って検証する。
+9. `python scripts/build_site.py` でHTMLを再生成し、`python scripts/validate_research.py` で記事・出典ID・タイトル・内部リンクの整合性を検査する。さらに[公開前チェックリスト](references/release-checklist.md)で内容面を検証する。
 10. 修正した事実と未確認事項、リンクをチェックした範囲、公開反映の有無を簡潔に報告する。
 
 ## 重要な判断
