@@ -19,6 +19,12 @@
 
 閲覧ページは [GitHub Pages](https://mochitadi2026-eng.github.io/sanmei-no-genryu/index.html) で公開し、HTML原稿は [docs/index.html](docs/index.html) にあります。
 
+## たぢさんの活動日誌（継続記録）
+
+- [活動記録の索引と書き足し方](activity-log/README.md) — 日付別ログと次回への引き継ぎルール
+- [2026年10月30日の活動記録](activity-log/2026-10-30.md) — 原典調査とGitHub自動検証の実行結果
+- [note活動日誌vol.4の原稿（未投稿）](note-drafts/activity-diary-vol-04-2026-10-30.md) — 読者向け本文。noteへの投稿は別途
+
 ## 研究・執筆ルール
 
 - [研究の判断基準](RULES.md) — 史料区分、断定の条件、公開前チェック
