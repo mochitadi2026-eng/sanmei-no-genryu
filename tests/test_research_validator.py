@@ -82,6 +82,24 @@ class ResearchValidatorTests(unittest.TestCase):
         )
         self.assertTrue(any("missing anchor" in x for x in validator.check()))
 
+    def test_missing_source_row_anchor_is_rejected(self) -> None:
+        self.rewrite(
+            "docs/sources.html",
+            'id="S01"',
+            'id="missing-S01"',
+        )
+        self.assertTrue(
+            any("missing/mismatched anchor for S01" in x for x in validator.check())
+        )
+
+    def test_missing_source_row_causes_broken_citation_link(self) -> None:
+        self.rewrite(
+            "docs/sources.html",
+            'id="S02"',
+            'id="unrelated-source"',
+        )
+        self.assertTrue(any("missing anchor" in x for x in validator.check()))
+
     def test_wrong_source_url_is_rejected(self) -> None:
         self.rewrite(
             "docs/sources.html",
