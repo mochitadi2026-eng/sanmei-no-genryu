@@ -61,6 +61,7 @@
 - [十大主星と中国命理の比較研究ノート](research/ten-gods-comparison.md) — 日干基準の十干対応と史料上の留保
 - [十大主星の原点：十神・星名・成立史の三層検証](research/classical-origin-ten-main-stars-2026-10-31.md) — 『淵海子平』・1578年『三命通會』・日本の名称の不明点
 - [十干の原点：殷代の日付記号から近世の自然物比喩まで](research/classical-origin-ten-heavenly-stems-2026-10-31.md) — 甲骨、漢書・月令・滴天髓の時代差と意味の変化
+- [五行の原点を再検証：五材・働き・相生相勝・季節・同名異義](research/five-phases-foundations-reexamined-2026-10-31.md) — 『洪範』『国語』『春秋繁露』『白虎通』と郭店楚簡を別層で照合
 - [十干と八卦はどこで接続したか｜納甲の史料比較](research/stems-trigrams-najia-sources-2026-10-31.md) — 京氏易伝・周易・月相と納甲、五行配当の差
 - [干支・時刻・暦の境界仕様とテスト行列](research/sexagenary-time-calendar-boundary-spec-2026-10-31.md) — 国立天文台の節入り・干支・旧暦、歴史的時間帯と『三命通会』の日界を分離
 - [西洋占星術と東洋の干支を同じ天文基盤から計算する研究](research/east-west-astrology-shared-astronomy-2026-10-31.md) — NASA/JPL、Swiss、IANA、プトレマイオス、出生時刻とハウスを分離
