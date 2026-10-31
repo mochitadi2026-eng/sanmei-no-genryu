@@ -29,9 +29,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Require reader-facing material when research changes
+        if: ${{ github.event_name == 'pull_request' || github.ref == 'refs/heads/main' }}
+        env:
+          BASE_COMMIT: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: python scripts/check_publication_scope.py "$BASE_COMMIT"
       - name: Install site renderer
         run: python -m pip install -r requirements.txt
       - name: Validate committed Markdown and HTML
