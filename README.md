@@ -23,6 +23,7 @@
 
 - [活動記録の索引と書き足し方](activity-log/README.md) — 日付別ログと次回への引き継ぎルール
 - [2026年10月30日の活動記録](activity-log/2026-10-30.md) — 原典調査とGitHub自動検証の実行結果
+- [2026年10月31日の活動記録](activity-log/2026-10-31.md) — 1972年講義資料と1980年刊本の引用調査
 - [note活動日誌vol.4の原稿（未投稿）](note-drafts/activity-diary-vol-04-2026-10-30.md) — 読者向け本文。noteへの投稿は別途
 
 ## 研究・執筆ルール
@@ -36,6 +37,10 @@
 - [書籍以外の史料：1973年用例・1974年法人設立・旧学校系譜](research/independent-japanese-sources-1973-1987.md) — 裁判所公式PDF、各校の沿革、会報・講義録音を区別
 
 - [1974年刊の序文・目次・計算本文のアクセス調査](research/1974-text-access-investigation.md) — 公開未発見の範囲、1980年刊との比較可能範囲、NDL複写条件
+- [1974年刊の目次・奥付複写申込パケット](research/ndl-copy-request-packet-1974.md) — NDL請求記号、複写箇所指定、利用者本人の申込手順（未申込）
+- [1972年講義資料と1980年刊本39頁の引用調査](research/japan-early-lecture-and-calendar-sources-2026-10-31.md) — 確認できた写真・論文・古書情報と、成立史に関する未確認事項
+- [1959〜1974年｜西川満と高尾義政の並行する資料](research/parallel-japanese-sanmei-nishikawa-takao-1959-1974.md) — 西川の1959年・1972年刊本、1962年機関誌の天中殺、別系統の星名と未解決課題
+- [西川系と高尾系の星の比較表](research/nishikawa-takao-star-system-comparison.md) — 10恒星・12命星の名称、算出法・人体星図配置・象意の証拠別照合
 - [1974年刊本の部分本文4頁・商標紛争史料の照合](research/1974-book-pages-and-court-record.md) — 読めた本文と裁判所の認定・訴訟当事者の主張を区別
 - [一次資料調査の優先順位](research/japan-primary-sources-priority.md) — 1974年の刊行物を最優先に、1980年の第1・2巻と比較
 
@@ -54,7 +59,14 @@
 - [出典一覧](sources/registry.md) — 原典への参照と確認範囲
 - [主張と根拠の対応表](research/claims.md) — 史料の記載・解釈・未確認を分ける
 - [十大主星と中国命理の比較研究ノート](research/ten-gods-comparison.md) — 日干基準の十干対応と史料上の留保
+- [十大主星の原点：十神・星名・成立史の三層検証](research/classical-origin-ten-main-stars-2026-10-31.md) — 『淵海子平』・1578年『三命通會』・日本の名称の不明点
+- [十干の原点：殷代の日付記号から近世の自然物比喩まで](research/classical-origin-ten-heavenly-stems-2026-10-31.md) — 甲骨、漢書・月令・滴天髓の時代差と意味の変化
+- [五行の原点を再検証：五材・働き・相生相勝・季節・同名異義](research/five-phases-foundations-reexamined-2026-10-31.md) — 『洪範』『国語』『春秋繁露』『白虎通』と郭店楚簡を別層で照合
+- [十干と八卦はどこで接続したか｜納甲の史料比較](research/stems-trigrams-najia-sources-2026-10-31.md) — 京氏易伝・周易・月相と納甲、五行配当の差
+- [干支・時刻・暦の境界仕様とテスト行列](research/sexagenary-time-calendar-boundary-spec-2026-10-31.md) — 国立天文台の節入り・干支・旧暦、歴史的時間帯と『三命通会』の日界を分離
+- [西洋占星術と東洋の干支を同じ天文基盤から計算する研究](research/east-west-astrology-shared-astronomy-2026-10-31.md) — NASA/JPL、Swiss、IANA、プトレマイオス、出生時刻とハウスを分離
 - [十二大従星と十二長生の比較研究ノート](research/twelve-stages-comparison.md) — 12段階の古典記述と名称・算出方法の差
+- [古典の十二長生・十二段階の語義と四貴四忌](research/classical-twelve-life-stages-deep-dive.md) — 宋・明の伝世本文、胎内比喩、墓庫、絶、算式の異説を検証
 - [四柱成立史と現代三柱命式の比較研究ノート](research/four-pillars-history.md) — 時柱・日主・年本を史料別に検証
 - [未解決の問い](research/questions.md) — 追加調査の課題
 - [編集方針](EDITORIAL.md) — 歴史記述と創作の境界
@@ -69,3 +81,4 @@
 - **このリポジトリはGitHub上でPublicです。** 公開前の原稿確認と同じ水準で出典・権利等を確認してください。
 
 更新: 2026-10-30 / v0.4.0
+
