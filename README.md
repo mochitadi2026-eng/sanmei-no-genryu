@@ -59,6 +59,7 @@
 - [出典一覧](sources/registry.md) — 原典への参照と確認範囲
 - [主張と根拠の対応表](research/claims.md) — 史料の記載・解釈・未確認を分ける
 - [十大主星と中国命理の比較研究ノート](research/ten-gods-comparison.md) — 日干基準の十干対応と史料上の留保
+- [十大主星の原点：十神・星名・成立史の三層検証](research/classical-origin-ten-main-stars-2026-10-31.md) — 『淵海子平』・1578年『三命通會』・日本の名称の不明点
 - [十二大従星と十二長生の比較研究ノート](research/twelve-stages-comparison.md) — 12段階の古典記述と名称・算出方法の差
 - [古典の十二長生・十二段階の語義と四貴四忌](research/classical-twelve-life-stages-deep-dive.md) — 宋・明の伝世本文、胎内比喩、墓庫、絶、算式の異説を検証
 - [四柱成立史と現代三柱命式の比較研究ノート](research/four-pillars-history.md) — 時柱・日主・年本を史料別に検証
