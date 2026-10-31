@@ -764,6 +764,94 @@
   <td><a href="https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/caldb.cgi">確認先</a></td>
   <td>個別日付の変換・実測テストを今回実行したわけではない</td>
 </tr>
+<tr id="S95">
+  <td>S95</td>
+  <td>国立天文台「2026年暦要項」二十四節気</td>
+  <td>国立天文台、2025-02-03発表。現行2026年の公式暦</td>
+  <td>太陽の視黄経と節気の中央標準時。立春315°2/4 05:02、春分0°3/20 23:46、啓蟄345°3/5 22:59を確認</td>
+  <td><a href="https://eco.mtk.nao.ac.jp/koyomi/yoko/2026/rekiyou262.html">確認先</a></td>
+  <td>公表値は分表示。秒まで厳密な境界時刻が示されたわけではない。S85と重複するが東西比較用の参照</td>
+</tr>
+<tr id="S96">
+  <td>S96</td>
+  <td>プトレマイオス『テトラビブロス』伝世英訳</td>
+  <td>2世紀に成立した著作のF. E. Robbins英訳（1940）、University of Chicagoの公開転写</td>
+  <td>惑星・サインの性質、12サイン・支配、出生時刻と昇点・ハウスを論じる古典の体系を確認</td>
+  <td><a href="https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ptolemy/Tetrabiblos/">確認先</a></td>
+  <td>ギリシャ語原本の校合ではなく伝世英訳。高精度な天体位置算法や現代の天王星以遠の解釈を意味しない</td>
+</tr>
+<tr id="S97">
+  <td>S97</td>
+  <td>NASA JPL「Horizons System Manual」</td>
+  <td>NASA JPLの公式天体暦マニュアル</td>
+  <td>地心と観測地、視位置と幾何学的位置、UT/TT/TDB、Observer tableの量31が黄道位置の検算候補と説明</td>
+  <td><a href="https://ssd.jpl.nasa.gov/horizons/manual.html">確認先</a></td>
+  <td>座標系と観測者を合わせなければ他の計算値と単純比較できない。APIの個別実計算は未実施</td>
+</tr>
+<tr id="S98">
+  <td>S98</td>
+  <td>NASA JPL「Horizons API」</td>
+  <td>NASA JPLの公式API仕様、version 1.3（2025-06）</td>
+  <td>対象天体、観測者、時刻、出力物理量の指定と公式HTTP APIを確認</td>
+  <td><a href="https://ssd-api.jpl.nasa.gov/doc/horizons.html">確認先</a></td>
+  <td>仕様を確認しただけで、出生図の計算結果を検証したわけではない</td>
+</tr>
+<tr id="S99">
+  <td>S99</td>
+  <td>Swiss Ephemeris公式一般マニュアル・ライセンス</td>
+  <td>Astrodienst AG公式文書（2026年10月確認）</td>
+  <td>太陽月惑星の計算と各種ハウス、トロピカルとサイデリアルの区別、AGPL／Professionalのデュアルライセンスを確認</td>
+  <td><a href="https://www.astro.com/swisseph/swisseph.htm">確認先</a></td>
+  <td>商用・クローズドサービスへの組込前にライセンス条件確認が必要。ソフト導入・実テストは未実施</td>
+</tr>
+<tr id="S100">
+  <td>S100</td>
+  <td>IANA Time Zone Database</td>
+  <td>IANA公式。2026-10-27公開の2026f（確認日2026-10-31）</td>
+  <td>歴史的UTCオフセット・夏時間・地域境界を更新する時刻データベースと2026fリリースを確認</td>
+  <td><a href="https://www.iana.org/time-zones">確認先</a></td>
+  <td>歴史的出生地の細部の精度保証ではない。計算結果にtzdbの版を保存する</td>
+</tr>
+<tr id="S101">
+  <td>S101</td>
+  <td>Astropy「Solar System Ephemerides」</td>
+  <td>Astropy公式ソフトウェア文書</td>
+  <td>組込近似暦とJPL精密暦を選ぶ仕組み、座標の変換とJPLカーネルの利用を確認</td>
+  <td><a href="https://docs.astropy.org/en/stable/coordinates/solarsystem.html">確認先</a></td>
+  <td>内蔵近似値とJPL値を同精度とみなさない。採用ライブラリは未決定</td>
+</tr>
+<tr id="S102">
+  <td>S102</td>
+  <td>IERS FAQ「Time argument for using IERS products」</td>
+  <td>International Earth Rotation and Reference Systems Service公式</td>
+  <td>UTC・TAI・TT・UT1、TT＝TAI＋32.184秒と地球自転計算の時刻系の差を確認</td>
+  <td><a href="https://www.iers.org/iers/en/service/faqs/time/whatithetimeargumentforusingiersproducts-157">確認先</a></td>
+  <td>天文時刻の公式説明。天体位置の占断的な的中性を意味しない</td>
+</tr>
+<tr id="S103">
+  <td>S103</td>
+  <td>Swiss Ephemeris「The problem of defining the zodiac」</td>
+  <td>Astrodienst公式マニュアル §2.8.1</td>
+  <td>トロピカルの牡羊0度＝春分点、サイデリアルは固定星基準、歳差とアヤナムシャの方式差を確認</td>
+  <td><a href="https://www.astro.com/swisseph/swisseph.htm">確認先</a></td>
+  <td>黄道座標の流派別定義。実星座の境界と等分30度のサインを混同しない</td>
+</tr>
+<tr id="S104">
+  <td>S104</td>
+  <td>Swiss Ephemeris「Sidereal Time, Ascendant, MC, Houses」</td>
+  <td>Astrodienst公式マニュアル §6</td>
+  <td>ASC・MC・複数ハウス方式、Placidus/Kochの高緯度問題と代替動作を確認</td>
+  <td><a href="https://www.astro.com/swisseph/swisseph.htm">確認先</a></td>
+  <td>計算ライブラリのバージョンや高緯度条件で代替動作が異なり得る。無告知代替は禁止</td>
+</tr>
+<tr id="S105">
+  <td>S105</td>
+  <td>The Planetary Society「What is the difference between astronomy and astrology?」</td>
+  <td>Kate Howells、2024-05-01、科学教育機関の解説</td>
+  <td>天体位置を計算する天文学と占星術の予測・説明の科学的根拠は別だと説明</td>
+  <td><a href="https://www.planetary.org/articles/what-is-the-difference-between-astronomy-and-astrology">確認先</a></td>
+  <td>古典の思想史研究を否定する趣旨ではなく、占断の実証性と区別する資料</td>
+</tr>
 </tbody>
 </table>
 <h2>原文を確認するときの注意</h2>
