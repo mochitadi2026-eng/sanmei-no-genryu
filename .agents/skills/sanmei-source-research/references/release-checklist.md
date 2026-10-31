@@ -14,10 +14,19 @@
 - [ ] 一記事に一つの問い、読後に確認できた発見が一つ残る。
 - [ ] 古典の人名・死・絶・病・吉凶の語を現代個人の断定に転用していない。
 
+## 研究から読み物への反映
+
+- [ ] 追加研究をどの記事のどの部分へ反映したか特定した。
+- [ ] 読者のために本文化し、研究メモの列挙だけで終えていない。
+- [ ] 目次から記事に行け、前後の読み物への動線がある。
+- [ ] 原典未確認・年代不詳などは削らず、記事内にも残した。
+
 ## ファイル・公開
 - [ ] `articles/*.md` をマスターとして更新。
 - [ ] `sources/registry.md` と `research/claims.md` を同期。
 - [ ] `research/questions.md` に未解決課題を追加。
 - [ ] `scripts/build_site.py` で配信HTMLを生成。
 - [ ] `python scripts/validate_research.py` が成功し、全ページの内部リンク、S番号、目次のタイトル、前後記事を点検。
+- [ ] `python scripts/check_publication_scope.py <base-sha>` とGitHub Actionsの公開内容確認を通した。
+- [ ] GitHub Pagesデプロイ成功と、記事の公開URLを確認した（ブラウザー表示未確認ならその旨を書く）。
 - [ ] GitHubコミットとGitHub Pages反映を別々に報告。
