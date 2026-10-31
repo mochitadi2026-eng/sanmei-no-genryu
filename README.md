@@ -63,6 +63,7 @@
 - [十干の原点：殷代の日付記号から近世の自然物比喩まで](research/classical-origin-ten-heavenly-stems-2026-10-31.md) — 甲骨、漢書・月令・滴天髓の時代差と意味の変化
 - [十干と八卦はどこで接続したか｜納甲の史料比較](research/stems-trigrams-najia-sources-2026-10-31.md) — 京氏易伝・周易・月相と納甲、五行配当の差
 - [干支・時刻・暦の境界仕様とテスト行列](research/sexagenary-time-calendar-boundary-spec-2026-10-31.md) — 国立天文台の節入り・干支・旧暦、歴史的時間帯と『三命通会』の日界を分離
+- [西洋占星術と東洋の干支を同じ天文基盤から計算する研究](research/east-west-astrology-shared-astronomy-2026-10-31.md) — NASA/JPL、Swiss、IANA、プトレマイオス、出生時刻とハウスを分離
 - [十二大従星と十二長生の比較研究ノート](research/twelve-stages-comparison.md) — 12段階の古典記述と名称・算出方法の差
 - [古典の十二長生・十二段階の語義と四貴四忌](research/classical-twelve-life-stages-deep-dive.md) — 宋・明の伝世本文、胎内比喩、墓庫、絶、算式の異説を検証
 - [四柱成立史と現代三柱命式の比較研究ノート](research/four-pillars-history.md) — 時柱・日主・年本を史料別に検証
