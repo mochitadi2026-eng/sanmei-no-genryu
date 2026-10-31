@@ -39,6 +39,7 @@
 - [1974年刊の序文・目次・計算本文のアクセス調査](research/1974-text-access-investigation.md) — 公開未発見の範囲、1980年刊との比較可能範囲、NDL複写条件
 - [1974年刊の目次・奥付複写申込パケット](research/ndl-copy-request-packet-1974.md) — NDL請求記号、複写箇所指定、利用者本人の申込手順（未申込）
 - [1972年講義資料と1980年刊本39頁の引用調査](research/japan-early-lecture-and-calendar-sources-2026-10-31.md) — 確認できた写真・論文・古書情報と、成立史に関する未確認事項
+- [1959〜1974年｜西川満と高尾義政の並行する資料](research/parallel-japanese-sanmei-nishikawa-takao-1959-1974.md) — 西川の1959年・1972年刊本、1962年機関誌の天中殺、別系統の星名と未解決課題
 - [1974年刊本の部分本文4頁・商標紛争史料の照合](research/1974-book-pages-and-court-record.md) — 読めた本文と裁判所の認定・訴訟当事者の主張を区別
 - [一次資料調査の優先順位](research/japan-primary-sources-priority.md) — 1974年の刊行物を最優先に、1980年の第1・2巻と比較
 
