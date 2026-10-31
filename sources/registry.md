@@ -98,6 +98,17 @@
 | S92 | 国立天文台FAQ「太陽の南中時刻は日によって変わるの？」 | 国立天文台の現行天文解説 | 真太陽時と平均太陽時、均時差、符号の定義が資料によって異なる注意 | [確認先](https://www.nao.ac.jp/faq/a0107.html) | 均時差の占術への適用は学派・方式の選択であり一律の必須規則ではない |
 | S93 | 国立天文台FAQ「太陽の南中時刻はどうすればわかる？」 | 国立天文台の現行天文解説 | 経度1度の違いは時刻約4分、東が早く西が遅いことを説明 | [確認先](https://www.nao.ac.jp/faq/a0108.html) | 経度差の補正だけでは地方視太陽時にならず均時差が別途必要 |
 | S94 | 国立天文台「日本の暦日データベース」 | 国立天文台・歴史暦日変換サービス | 歴史の日本暦日・暦月・干支などの参照入口と暦法注意書き | [確認先](https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/caldb.cgi) | 個別日付の変換・実測テストを今回実行したわけではない |
+| S95 | 国立天文台「2026年暦要項」二十四節気 | 国立天文台、2025-02-03発表。現行2026年の公式暦 | 太陽の視黄経と節気の中央標準時。立春315°2/4 05:02、春分0°3/20 23:46、啓蟄345°3/5 22:59を確認 | [確認先](https://eco.mtk.nao.ac.jp/koyomi/yoko/2026/rekiyou262.html) | 公表値は分表示。秒まで厳密な境界時刻が示されたわけではない。S85と重複するが東西比較用の参照 |
+| S96 | プトレマイオス『テトラビブロス』伝世英訳 | 2世紀に成立した著作のF. E. Robbins英訳（1940）、University of Chicagoの公開転写 | 惑星・サインの性質、12サイン・支配、出生時刻と昇点・ハウスを論じる古典の体系を確認 | [確認先](https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ptolemy/Tetrabiblos/) | ギリシャ語原本の校合ではなく伝世英訳。高精度な天体位置算法や現代の天王星以遠の解釈を意味しない |
+| S97 | NASA JPL「Horizons System Manual」 | NASA JPLの公式天体暦マニュアル | 地心と観測地、視位置と幾何学的位置、UT/TT/TDB、Observer tableの量31が黄道位置の検算候補と説明 | [確認先](https://ssd.jpl.nasa.gov/horizons/manual.html) | 座標系と観測者を合わせなければ他の計算値と単純比較できない。APIの個別実計算は未実施 |
+| S98 | NASA JPL「Horizons API」 | NASA JPLの公式API仕様、version 1.3（2025-06） | 対象天体、観測者、時刻、出力物理量の指定と公式HTTP APIを確認 | [確認先](https://ssd-api.jpl.nasa.gov/doc/horizons.html) | 仕様を確認しただけで、出生図の計算結果を検証したわけではない |
+| S99 | Swiss Ephemeris公式一般マニュアル・ライセンス | Astrodienst AG公式文書（2026年10月確認） | 太陽月惑星の計算と各種ハウス、トロピカルとサイデリアルの区別、AGPL／Professionalのデュアルライセンスを確認 | [確認先](https://www.astro.com/swisseph/swisseph.htm) | 商用・クローズドサービスへの組込前にライセンス条件確認が必要。ソフト導入・実テストは未実施 |
+| S100 | IANA Time Zone Database | IANA公式。2026-10-27公開の2026f（確認日2026-10-31） | 歴史的UTCオフセット・夏時間・地域境界を更新する時刻データベースと2026fリリースを確認 | [確認先](https://www.iana.org/time-zones) | 歴史的出生地の細部の精度保証ではない。計算結果にtzdbの版を保存する |
+| S101 | Astropy「Solar System Ephemerides」 | Astropy公式ソフトウェア文書 | 組込近似暦とJPL精密暦を選ぶ仕組み、座標の変換とJPLカーネルの利用を確認 | [確認先](https://docs.astropy.org/en/stable/coordinates/solarsystem.html) | 内蔵近似値とJPL値を同精度とみなさない。採用ライブラリは未決定 |
+| S102 | IERS FAQ「Time argument for using IERS products」 | International Earth Rotation and Reference Systems Service公式 | UTC・TAI・TT・UT1、TT＝TAI＋32.184秒と地球自転計算の時刻系の差を確認 | [確認先](https://www.iers.org/iers/en/service/faqs/time/whatithetimeargumentforusingiersproducts-157) | 天文時刻の公式説明。天体位置の占断的な的中性を意味しない |
+| S103 | Swiss Ephemeris「The problem of defining the zodiac」 | Astrodienst公式マニュアル §2.8.1 | トロピカルの牡羊0度＝春分点、サイデリアルは固定星基準、歳差とアヤナムシャの方式差を確認 | [確認先](https://www.astro.com/swisseph/swisseph.htm) | 黄道座標の流派別定義。実星座の境界と等分30度のサインを混同しない |
+| S104 | Swiss Ephemeris「Sidereal Time, Ascendant, MC, Houses」 | Astrodienst公式マニュアル §6 | ASC・MC・複数ハウス方式、Placidus/Kochの高緯度問題と代替動作を確認 | [確認先](https://www.astro.com/swisseph/swisseph.htm) | 計算ライブラリのバージョンや高緯度条件で代替動作が異なり得る。無告知代替は禁止 |
+| S105 | The Planetary Society「What is the difference between astronomy and astrology?」 | Kate Howells、2024-05-01、科学教育機関の解説 | 天体位置を計算する天文学と占星術の予測・説明の科学的根拠は別だと説明 | [確認先](https://www.planetary.org/articles/what-is-the-difference-between-astronomy-and-astrology) | 古典の思想史研究を否定する趣旨ではなく、占断の実証性と区別する資料 |
 ## 原文を確認するときの注意
 
 1. 書名・著者名・巻・篇が一致するかを確認する。
