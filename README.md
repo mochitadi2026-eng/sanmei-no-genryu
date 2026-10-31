@@ -17,6 +17,21 @@
 | 第6話 | [十二大従星の前に、十二の循環があった](articles/06-twelve-stages.md) | 『五行精紀』と十二長生の比較 |
 | 第7話 | [命式は、いつ今の形になったのか](articles/07-four-pillars-history.md) | 唐・宋・明の命理と現代算命学の三柱の比較 |
 
+## 第2部｜自然・命理・暦をもう一度読み直す
+
+| 話数 | タイトル | 読みどころ |
+|---|---|---|
+| 第8話 | [五行は、五つの性格ではなかった](articles/08-five-elements-revisited.md) | 『洪範』・相生相勝・郭店楚簡の五行 |
+| 第9話 | [甲は木の名前、貫索星は関係の名前？](articles/09-ten-stems-and-ten-gods.md) | 十干と十神・十大主星を分ける |
+| 第10話 | [天将星が強くて、天極星は弱いのか](articles/10-twelve-life-stages-revisited.md) | 十二段階と点数・人格を区別する |
+| 第11話 | [十干は、八卦とつながっていた](articles/11-trigrams-and-najia.md) | 八卦・納甲・五行の配当の違い |
+| 第12話 | [同じ誕生日でも、節入りで命式は変わる？](articles/12-calendar-and-birth-time.md) | 節気・子時・夏時刻と命式の境界 |
+| 第13話 | [春分の太陽は、東洋でも西洋でも同じ位置にある](articles/13-eastern-and-western-skies.md) | 共通の太陽黄経と異なる解釈体系 |
+| 第14話 | [算命学は、日本でいつ今の姿になったのか](articles/14-japanese-sanmei-history.md) | 西川・高尾の書誌と名称の未確認 |
+| 第15話 | [古典を集めて、どんな鑑定を作るのか](articles/15-building-an-original-reading.md) | 独自鑑定の計算と解釈の分離 |
+
+第2部は、2026年10月31日に収録した研究ノートを、一般向けの物語と問いに書き直した連載です。史料・研究・現代解釈・未確認事項をそれぞれ明示しています。
+
 閲覧ページは [GitHub Pages](https://mochitadi2026-eng.github.io/sanmei-no-genryu/index.html) で公開し、HTML原稿は [docs/index.html](docs/index.html) にあります。
 
 ## たぢさんの活動日誌（継続記録）
@@ -80,5 +95,5 @@
 - 占断の科学的的中性を証明する資料ではありません。
 - **このリポジトリはGitHub上でPublicです。** 公開前の原稿確認と同じ水準で出典・権利等を確認してください。
 
-更新: 2026-10-30 / v0.4.0
+更新: 2026-10-31 / v0.5.0（全16話、うち第2部8話）
 

@@ -91,4 +91,4 @@
 **未確認**：四柱の最初の成立年代、李虚中本人の時刻使用、現代日本の三柱命式の採用・成立史、直系伝承。  
 **典拠**：[S06・S18・S19・S20・S21・S22](../sources/registry.md)
 
-[前へ：第6話](06-twelve-stages.md) ｜ [目次へ](../README.md)
+[前へ：第6話](06-twelve-stages.md) ｜ [次へ：第8話](08-five-elements-revisited.md)

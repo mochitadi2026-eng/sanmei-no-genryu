@@ -26,6 +26,14 @@ CHAPTERS = [
     ("05-ten-major-stars", "第5話", "十大主星は、どこから来たのか"),
     ("06-twelve-stages", "第6話", "十二大従星の前に、十二の循環があった"),
     ("07-four-pillars-history", "第7話", "命式は、いつ今の形になったのか"),
+    ("08-five-elements-revisited", "第8話", "五行は、五つの性格ではなかった"),
+    ("09-ten-stems-and-ten-gods", "第9話", "甲は木の名前、貫索星は関係の名前？"),
+    ("10-twelve-life-stages-revisited", "第10話", "天将星が強くて、天極星は弱いのか"),
+    ("11-trigrams-and-najia", "第11話", "十干は、八卦とつながっていた"),
+    ("12-calendar-and-birth-time", "第12話", "同じ誕生日でも、節入りで命式は変わる？"),
+    ("13-eastern-and-western-skies", "第13話", "春分の太陽は、東洋でも西洋でも同じ位置にある"),
+    ("14-japanese-sanmei-history", "第14話", "算命学は、日本でいつ今の姿になったのか"),
+    ("15-building-an-original-reading", "第15話", "古典を集めて、どんな鑑定を作るのか"),
 ]
 
 md = mistune.create_markdown(escape=True, plugins=["table", "strikethrough"])
@@ -33,14 +41,14 @@ md = mistune.create_markdown(escape=True, plugins=["table", "strikethrough"])
 def layout(title, content, prefix="", eyebrow="原典をたどる読み物"):
     title = html.escape(title)
     eyebrow = html.escape(eyebrow)
-    return f'''<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="算命の源流。中国古典に何が書かれているかを確かめる歴史と思想の読み物。"><title>{title}｜算命の源流</title><link rel="stylesheet" href="{prefix}style.css"></head><body><a class="skip" href="#main">本文に移動</a><header><div class="inner"><div class="eyebrow">{eyebrow}</div><div class="site-title">算命の源流</div><div class="subtitle">自然を読み、時を数え、人の命を考えた歴史。</div></div></header><nav><a href="{prefix}index.html">連載の目次</a><a href="{prefix}sources.html">出典と検証</a><a href="{prefix}about.html">この連載について</a></nav><main id="main"><article>{content}</article></main><footer class="foot">算命の源流 — 記されたことと、考えたことを分けて読む。<br>研究原稿 v0.4.0 / 2026-10-30</footer></body></html>'''
+    return f'''<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="算命の源流。中国古典に何が書かれているかを確かめる歴史と思想の読み物。"><title>{title}｜算命の源流</title><link rel="stylesheet" href="{prefix}style.css"></head><body><a class="skip" href="#main">本文に移動</a><header><div class="inner"><div class="eyebrow">{eyebrow}</div><div class="site-title">算命の源流</div><div class="subtitle">自然を読み、時を数え、人の命を考えた歴史。</div></div></header><nav><a href="{prefix}index.html">連載の目次</a><a href="{prefix}sources.html">出典と検証</a><a href="{prefix}about.html">この連載について</a></nav><main id="main"><article>{content}</article></main><footer class="foot">算命の源流 — 記されたことと、考えたことを分けて読む。<br>研究原稿 v0.5.0 / 2026-10-31</footer></body></html>'''
 
 def article_content(raw):
     raw = raw.replace("../sources/registry.md", "../sources.html")
     raw = raw.replace("../README.md", "../index.html")
     raw = re.sub(r"\]\((\d\d-[\w-]+)\.md\)", r"](\1.html)", raw)
     output = md(raw)
-    output = re.sub(r"\[(S\d\d)\]", r'<a class="source-link" href="../sources.html#\1">[\1]</a>', output)
+    output = re.sub(r"\[(S\d+)\]", r'<a class="source-link" href="../sources.html#\1">[\1]</a>', output)
     return output
 
 def write(path, text):
@@ -49,11 +57,13 @@ def write(path, text):
 
 for slug, number, title in CHAPTERS:
     source = ARTICLES / f"{slug}.md"
-    page = f'<div class="meta">{html.escape(number)} / 2026年10月30日</div>' + article_content(source.read_text("utf-8"))
+    page = f'<div class="meta">{html.escape(number)} / { "2026年10月31日" if int(slug[:2]) >= 8 else "2026年10月30日" }</div>' + article_content(source.read_text("utf-8"))
     write(DOCS / "articles" / f"{slug}.html", layout(title, page, prefix="../", eyebrow="読み物 / 算命の源流"))
 
-home = '''<div class="meta">連載｜第1部・自然と時を読む</div><h1>星の名前が生まれる前、<br>人は何を見ていたのだろう。</h1><p>生年月日から命運を読む方法が現れる前、人々は天候や季節、ひび割れや暦に何を尋ねていたのか。古典の本文と研究資料を確かめながら、ゆっくりたどっていく連載です。</p><p>現代の算命学にそのまま続く、という物語を最初から決めつけることはしません。章の順番は理解のための構成で、文献の成立順でも直系の系譜でもありません。分かっていることと、まだ分からないことを分けて書きます。</p><h2>連載を読む</h2><ol class="series">'''
+home = '''<div class="meta">連載｜古典から現代の鑑定へ</div><h1>星の名前が生まれる前、<br>人は何を見ていたのだろう。</h1><p>生年月日から命運を読む方法が現れる前、人々は天候や季節、ひび割れや暦に何を尋ねていたのか。古典の本文と研究資料を確かめながら、ゆっくりたどっていく連載です。</p><p>現代の算命学にそのまま続く、という物語を最初から決めつけることはしません。章の順番は理解のための構成で、文献の成立順でも直系の系譜でもありません。分かっていることと、まだ分からないことを分けて書きます。</p><h2>第1部｜自然と命式の歴史</h2><ol class="series">'''
 for slug, number, title in CHAPTERS:
+    if slug.startswith("08-"):
+        home += '</ol><h2>第2部｜解釈・暦・占星術の接点</h2><ol class="series">'
     home += f'<li><a href="articles/{slug}.html"><small>{html.escape(number)}</small><strong>{html.escape(title)}</strong></a></li>'
 home += '''</ol><h2>研究記録について</h2><p>各章には典拠を付けています。<a href="sources.html">出典と検証</a>では原典へのリンク、閲覧した範囲、未確認事項を一覧できます。</p>'''
 write(DOCS / "index.html", layout("目次", home))
