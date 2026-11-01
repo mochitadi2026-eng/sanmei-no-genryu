@@ -23,7 +23,7 @@ jobs:
           node-version: '22'
       - name: Syntax check (does not execute engine)
         run: node --check qa/check-pillar-engine.mjs
-      - name: Validate 24 terms and 48 cases (fixture only)
+      - name: Validate 72 terms and 144 cases (fixture only)
         run: node qa/check-pillar-engine.mjs --verify-fixture
       - name: Confirm missing engine is NOT counted as success
         shell: bash
