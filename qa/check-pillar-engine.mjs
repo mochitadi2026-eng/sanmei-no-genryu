@@ -15,8 +15,8 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { dirname, resolve } from 'node:path';
 
 const dir = dirname(fileURLToPath(import.meta.url));
-const file = resolve(dir, 'fixtures/2026-sekki-naoj.json');
-const input = JSON.parse(await readFile(file, 'utf8'));
+const years = [2024, 2025, 2026];
+const inputs = await Promise.all(years.map(async (y) => JSON.parse(await readFile(resolve(dir, `fixtures/${y}-sekki-naoj.json`), 'utf8'))));
 const args = process.argv.slice(2);
 const wantsFixtureOnly = args.length === 1 && args[0] === '--verify-fixture';
 const adapterIndex = args.indexOf('--adapter');
@@ -49,11 +49,24 @@ function checkFixture(fixture) {
   return testCases;
 }
 
+function checkCrossYearContinuity(fixtures) {
+  for (let i = 1; i < fixtures.length; i++) {
+    const prev = fixtures[i-1].events.at(-1).samples[1].expected;
+    const next = fixtures[i].events[0].samples[0].expected;
+    if (prev.yearPillar !== next.yearPillar || prev.monthPillar !== next.monthPillar) {
+      throw Error(`December to January continuity mismatch: ${fixtures[i-1].source.title} -> ${fixtures[i].source.title}`);
+    }
+  }
+}
+
 let cases;
-try { cases = checkFixture(input); }
+try {
+  cases = inputs.reduce((n, f) => n + checkFixture(f), 0);
+  checkCrossYearContinuity(inputs);
+}
 catch (e) { console.error('Fixture invalid:', e.message); process.exit(2); }
 if (wantsFixtureOnly) {
-  console.log('Reference fixture structure OK: 24 terms, 48 samples. Engine NOT tested.');
+  console.log(`Reference fixture structure OK: ${inputs.length} years, ${inputs.length*24} terms, ${cases} samples. Engine NOT tested.`);
   process.exit(0);
 }
 if (adapterIndex < 0 || !args[adapterIndex+1] || args.length !== 2) {
@@ -71,8 +84,9 @@ try {
 }
 let passed = 0;
 let failed = 0;
-for (const term of input.events) {
-  for (const sample of term.samples) {
+for (const input of inputs) {
+  for (const term of input.events) {
+    for (const sample of term.samples) {
     try {
       const actual = await resolvePillars({
         localDateTime: sample.atJst,
@@ -83,13 +97,14 @@ for (const term of input.events) {
         passed++;
       } else {
         failed++;
-        console.error('FAIL',term.name,sample.atJst,'expected',JSON.stringify(sample.expected),'actual',JSON.stringify(actual));
+        console.error('FAIL',input.source.title,term.name,sample.atJst,'expected',JSON.stringify(sample.expected),'actual',JSON.stringify(actual));
       }
     } catch (e) {
       failed++;
-      console.error('ERROR',term.name,sample.atJst,e.message);
+      console.error('ERROR',input.source.title,term.name,sample.atJst,e.message);
     }
   }
+}
 }
 console.log('Engine audit:',{total:cases,passed,failed});
 process.exit(failed === 0 ? 0 : 1);
