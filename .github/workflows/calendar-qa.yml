@@ -1,0 +1,37 @@
+name: Calendar boundary QA fixture
+
+on:
+  pull_request:
+    paths:
+      - 'qa/**'
+      - '.github/workflows/calendar-qa.yml'
+  push:
+    paths:
+      - 'qa/**'
+      - '.github/workflows/calendar-qa.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  reference-fixture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax check (does not execute engine)
+        run: node --check qa/check-pillar-engine.mjs
+      - name: Validate 24 terms and 48 cases (fixture only)
+        run: node qa/check-pillar-engine.mjs --verify-fixture
+      - name: Confirm missing engine is NOT counted as success
+        shell: bash
+        run: |
+          set +e
+          node qa/check-pillar-engine.mjs
+          code=$?
+          if [ "$code" -ne 2 ]; then
+            echo "Expected exit 2 (engine not tested), got $code" >&2
+            exit 1
+          fi
