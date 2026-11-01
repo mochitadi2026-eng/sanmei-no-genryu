@@ -35,3 +35,20 @@ jobs:
             echo "Expected exit 2 (engine not tested), got $code" >&2
             exit 1
           fi
+
+      - name: Confirm wrong engine answer fails (negative control)
+        shell: bash
+        run: |
+          cat > qa/_intentionally-wrong-adapter.mjs <<'EOF'
+          export async function resolvePillars() {
+            return {status: 'ok', yearPillar: '甲子', monthPillar: '甲子'};
+          }
+          EOF
+          set +e
+          node qa/check-pillar-engine.mjs --adapter ./qa/_intentionally-wrong-adapter.mjs >/dev/null 2>&1
+          code=$?
+          rm qa/_intentionally-wrong-adapter.mjs
+          if [ "$code" -ne 1 ]; then
+            echo "Expected exit 1 for intentionally wrong results, got $code" >&2
+            exit 1
+          fi
