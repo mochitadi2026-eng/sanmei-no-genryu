@@ -58,6 +58,8 @@ try{
   check(await page.locator('#start').isDisabled(),'cannot start without consent');
   await page.locator('#agree').check();
   await page.locator('#start').click();
+  // The click handler awaits four JSON requests; don't assert before they complete.
+  await page.locator('#questions').waitFor({state:'visible',timeout:15000});
   check(await page.locator('#questions').isVisible(),'question screen appears');
   check(await page.locator('fieldset legend').count()===1,'single question fieldset');
 
@@ -85,6 +87,7 @@ try{
   check(await page.locator('#agree').isChecked()===false,'agreement reset');
   await page.locator('#agree').check();
   await page.locator('#start').click();
+  await page.locator('#questions').waitFor({state:'visible',timeout:15000});
   for(let i=0;i<5;i++)await choose(page,'x');
   const allX=await page.locator('#rendered').textContent();
   check(allX.includes('ひとつに決めなくても大丈夫'),'no type fallback shown');
@@ -95,6 +98,7 @@ try{
   await page.getByRole('button',{name:'最初からやり直す'}).click();
   await page.locator('#agree').check();
   await page.locator('#start').click();
+  await page.locator('#questions').waitFor({state:'visible',timeout:15000});
   check(await page.locator('#choices-list input:checked').count()===0,'answers discarded');
   await page.getByRole('button',{name:'中断して回答を破棄'}).click();
   check(await page.locator('#consent').isVisible(),'stop returns to consent');
