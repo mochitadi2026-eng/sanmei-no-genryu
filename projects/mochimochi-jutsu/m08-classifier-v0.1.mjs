@@ -117,17 +117,20 @@ export function classifyAnswers(input, { questionBank, typeCatalog } = {}) {
   }
   exactlyKeys(input.answers, Q_IDS, 'INVALID_INPUT', 'answers');
   const missing = Q_IDS.filter(id => !Object.hasOwn(input.answers, id));
-  if (missing.length) {
-    return { status: 'incomplete', reason: 'MISSING_ANSWER',
-      missing_questions: missing, ...v };
-  }
   const selected = {};
+  // Reject malformed supplied IDs even if another question is unanswered.
+  // Otherwise a mixed invalid/incomplete submission would hide input errors.
   for (const q of questionBank.questions) {
+    if (!Object.hasOwn(input.answers, q.id)) continue;
     const id = input.answers[q.id];
     if (typeof id !== 'string') failure('INVALID_INPUT', 'Non-string choice for ' + q.id);
     const choice = q.choices.find(c => c.id === id);
     if (!choice) failure('INVALID_INPUT', 'Unknown choice for ' + q.id);
     selected[q.id] = choice.value;
+  }
+  if (missing.length) {
+    return { status: 'incomplete', reason: 'MISSING_ANSWER',
+      missing_questions: missing, ...v };
   }
   const q4 = selected.Q4;
   const corroborated = q4 !== null && (q4 === selected.Q1 || q4 === selected.Q2);
