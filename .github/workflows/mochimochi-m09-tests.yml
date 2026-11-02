@@ -1,0 +1,40 @@
+name: Mochimochi M09 results and M08 regression
+
+on:
+  push:
+    paths:
+      - 'projects/mochimochi-jutsu/m03-indicators-v0.1.json'
+      - 'projects/mochimochi-jutsu/m04-types-phases-v0.1.json'
+      - 'projects/mochimochi-jutsu/m07-question-bank-v0.1.json'
+      - 'projects/mochimochi-jutsu/m08-classifier-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/m09-result-copy-v0.1.json'
+      - 'projects/mochimochi-jutsu/m09-result-presenter-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/tests/m08-classifier.test.mjs'
+      - 'projects/mochimochi-jutsu/tests/m09-result-presenter.test.mjs'
+      - '.github/workflows/mochimochi-m09-tests.yml'
+  pull_request:
+    paths:
+      - 'projects/mochimochi-jutsu/**'
+      - '.github/workflows/mochimochi-m09-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-m09:
+    name: Verify M09 result presenter and M08 regression (dev only)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax check
+        run: |
+          node --check projects/mochimochi-jutsu/m08-classifier-v0.1.mjs
+          node --check projects/mochimochi-jutsu/m09-result-presenter-v0.1.mjs
+          node --check projects/mochimochi-jutsu/tests/m08-classifier.test.mjs
+          node --check projects/mochimochi-jutsu/tests/m09-result-presenter.test.mjs
+      - name: Run real M08 and M09 Node tests
+        run: node --test projects/mochimochi-jutsu/tests/m08-classifier.test.mjs projects/mochimochi-jutsu/tests/m09-result-presenter.test.mjs
