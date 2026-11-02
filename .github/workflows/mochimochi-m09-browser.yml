@@ -1,0 +1,40 @@
+name: Mochimochi M09 local browser preview smoke test
+
+on:
+  push:
+    paths:
+      - 'projects/mochimochi-jutsu/m09-preview.html'
+      - 'projects/mochimochi-jutsu/tests/m09-preview.browser-test.mjs'
+      - 'projects/mochimochi-jutsu/m08-classifier-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/m09-result-presenter-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/m03-indicators-v0.1.json'
+      - 'projects/mochimochi-jutsu/m04-types-phases-v0.1.json'
+      - 'projects/mochimochi-jutsu/m07-question-bank-v0.1.json'
+      - 'projects/mochimochi-jutsu/m09-result-copy-v0.1.json'
+      - '.github/workflows/mochimochi-m09-browser.yml'
+  pull_request:
+    paths:
+      - 'projects/mochimochi-jutsu/**'
+      - '.github/workflows/mochimochi-m09-browser.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-browser-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check preview test syntax
+        run: node --check projects/mochimochi-jutsu/tests/m09-preview.browser-test.mjs
+      - name: Install browser test runner (CI only)
+        run: npm install --no-save --no-package-lock playwright@1.57.0
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Exercise five-question flow in real Chromium
+        run: node projects/mochimochi-jutsu/tests/m09-preview.browser-test.mjs
