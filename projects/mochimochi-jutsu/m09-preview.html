@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>もちもち占術｜5問診断・開発用プレビュー</title>
+<style>
+:root{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;color:#263328;background:#f7f6f0}
+*{box-sizing:border-box}
+body{margin:0}
+main{max-width:740px;padding:20px 18px 80px;margin:auto}
+h1{font-size:1.7rem;line-height:1.4;color:#30493d}
+h2{font-size:1.2rem}
+p{line-height:1.85}
+small,.muted{color:#606a63}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;color:#61776b;font-weight:700}
+.panel{background:#fff;border:1px solid #d7ddd4;border-radius:18px;padding:22px;margin:18px 0;box-shadow:0 5px 20px #2336270b}
+.warning{border-left:4px solid #a98250;padding:10px 14px;background:#f9f3e7;border-radius:8px}
+label{cursor:pointer}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+legend{font-size:1.15rem;font-weight:700;line-height:1.55;margin-bottom:18px;padding:0}
+.choice{display:flex;align-items:flex-start;gap:12px;padding:13px;margin:8px 0;border-radius:12px;border:1px solid #d7dfd6;background:#fcfdfb}
+.choice:has(input:checked){background:#e9f4e9;border-color:#6b9b78}
+.choice input{margin-top:5px;accent-color:#386a4a;width:18px;height:18px;flex:none}
+button{border:0;border-radius:10px;padding:12px 18px;font-size:1rem;font-weight:700;cursor:pointer;background:#39674d;color:white}
+button:disabled{opacity:.42;cursor:default}
+button.ghost{background:#edf1eb;color:#30473a}
+.buttons{display:flex;gap:10px;flex-wrap:wrap}
+#message{min-height:1.4rem}
+#results[hidden],#questions[hidden],#consent[hidden]{display:none}
+.story{border:1px solid #d2dfd2;background:#f5faf5;border-radius:12px;padding:14px}
+.story h3{font-size:1rem;margin:0 0 5px}
+.story ul{padding-left:24px}
+.section{border-top:1px solid #e1e7e0;margin-top:20px;padding-top:8px}
+.theme-list{display:flex;flex-wrap:wrap;gap:6px;padding:0;list-style:none}
+.theme-list li{background:#edf2ed;border-radius:16px;padding:5px 11px;font-size:.9rem}
+footer{font-size:.78rem;color:#637068;margin-top:30px}
+progress{width:100%;height:9px;accent-color:#548967}
+</style>
+</head>
+<body>
+<main>
+<p class="eyebrow">MOCHIMOCHI JUTSU · DEVELOPMENT PREVIEW</p>
+<h1>今日のもちもち</h1>
+<p>5つの質問から、今の自分が選んだことを眺めてみる小さな体験です。</p>
+<p class="warning"><strong>開発確認用・非公開運用の試作です。</strong> 画像「scene_v01」はまだ制作していません。Q1・Q2は画像の代わりに文章で場面を説明します。この代替表示では、視線による選択のテストはできません。結果は心理検査や将来の予言ではありません。</p>
+<section id="consent" class="panel" aria-label="参加前の説明">
+<h2>始める前に</h2>
+<p>正解はありません。合わない選択肢は「決めない」で構いません。回答はこの画面内で一時的に使い、サーバーへ送信・保存・共有しません。名前や生年月日は不要です。</p>
+<label class="choice"><input id="agree" type="checkbox"> <span>説明を読んで、開発用プレビューを試すことに同意します</span></label>
+<button id="start" disabled>5問に進む</button>
+</section>
+<section id="questions" class="panel" hidden aria-label="5つの質問">
+<p id="step-label" class="eyebrow"></p>
+<progress id="progress" max="5" value="1"></progress>
+<div id="scene" class="story" hidden><h3>場面の説明（画像未制作）</h3><p id="scene-text"></p></div>
+<form id="quiz" novalidate><fieldset id="choices"><legend id="question-title"></legend><div id="choices-list"></div></fieldset></form>
+<p id="message" role="status" aria-live="polite"></p>
+<div class="buttons">
+<button id="back" class="ghost" type="button">ひとつ戻る</button>
+<button id="next" type="button">次の質問</button>
+<button id="quit" type="button" class="ghost">中断して回答を破棄</button>
+</div>
+</section>
+<section id="results" class="panel" hidden aria-labelledby="result-heading">
+<p class="eyebrow">今日の結果</p>
+<h2 id="result-heading"></h2>
+<div id="rendered" aria-live="polite"></div>
+<div class="buttons"><button id="restart" type="button">最初からやり直す</button></div>
+</section>
+<footer>もちもち占術の独自創作。M08分類・M09表示の開発プレビュー。画像・利用者評価・公開判定は別工程です。</footer>
+</main>
+<script type="module">
+import {presentAnswers} from './m09-result-presenter-v0.1.mjs';
+import {ALGORITHM_VERSION} from './m08-classifier-v0.1.mjs';
+const $=id=>document.getElementById(id);
+const catalogs={};
+const responses={};
+let current=0,loaded=false;
+const el=(tag,text,className)=>{
+  const n=document.createElement(tag);
+  if(text!==undefined)n.textContent=text;
+  if(className)n.className=className;
+  return n;
+};
+function setMessage(message){$('message').textContent=message}
+function show(which){
+  for(const id of ['consent','questions','results'])$(id).hidden=(id!==which);
+}
+async function load(){
+  const filenames={
+    questionBank:'m07-question-bank-v0.1.json',
+    typeCatalog:'m04-types-phases-v0.1.json',
+    indicatorCatalog:'m03-indicators-v0.1.json',
+    copyCatalog:'m09-result-copy-v0.1.json'
+  };
+  const entries=await Promise.all(Object.entries(filenames).map(async([key,file])=>{
+    const response=await fetch('./'+file,{cache:'no-store'});
+    if(!response.ok)throw Error(file+' HTTP '+response.status);
+    return [key,await response.json()];
+  }));
+  Object.assign(catalogs,Object.fromEntries(entries));
+  loaded=true;
+}
+function renderStep(){
+  const q=catalogs.questionBank.questions[current];
+  $('step-label').textContent='Q'+(current+1)+' / 5';
+  $('progress').value=current+1;
+  $('question-title').textContent=q.prompt;
+  $('choices-list').replaceChildren();
+  $('scene').hidden=!(q.id==='Q1'||q.id==='Q2');
+  if(!$('scene').hidden)$('scene-text').textContent=catalogs.questionBank.scene.text_alternative;
+  for(const choice of q.choices){
+    const label=el('label',undefined,'choice');
+    const input=el('input');
+    input.type='radio';input.name='answer';input.value=choice.id;
+    input.checked=responses[q.id]===choice.id;
+    input.addEventListener('change',()=>{responses[q.id]=choice.id;setMessage('')});
+    label.append(input,el('span',choice.label));
+    $('choices-list').append(label);
+  }
+  $('back').disabled=current===0;
+  $('next').textContent=current===4?'結果を見る':'次の質問';
+  setMessage('');
+}
+function p(parent,text){
+  if(text)parent.append(el('p',text));
+}
+function section(parent,s){
+  const area=el('section',undefined,'section');
+  area.append(el('h3',s.title));
+  for(const para of s.paragraphs||[])p(area,para);
+  if(s.id==='mochi_guai'){
+    area.append(el('h4',s.type_heading));
+    if(s.type){p(area,s.type.label+'（仮称）');p(area,s.type.reflection);p(area,s.type.caution)}
+    if(s.selected_themes.length){
+      area.append(el('h4',s.selected_themes_heading));
+      const ul=el('ul',undefined,'theme-list');
+      for(const t of s.selected_themes)ul.append(el('li',t.focus+'（'+t.label+'）'));
+      area.append(ul);
+    }
+    area.append(el('h4',s.phase_heading));
+    if(s.phase){p(area,s.phase.label+'（仮称）');p(area,s.phase.reflection)}
+    else p(area,s.phase_fallback);
+  }
+  if(s.optional_question)area.append(el('p',s.optional_question));
+  parent.append(area);
+}
+function renderResult(){
+  const qb=catalogs.questionBank,tc=catalogs.typeCatalog,cc=catalogs.copyCatalog;
+  const input={
+    question_set_id:qb.question_set_id,question_version:qb.question_version,
+    tag_mapping_version:qb.tag_mapping_version,
+    type_catalog_version:tc.version,algorithm_version:ALGORITHM_VERSION,
+    answers:{...responses}
+  };
+  const result=presentAnswers(input,catalogs);
+  $('rendered').replaceChildren();
+  if(result.status==='ready'){
+    $('result-heading').textContent=result.title;
+    p($('rendered'),result.intro);
+    result.sections.forEach(s=>section($('rendered'),s));
+    p($('rendered'),result.footer);
+  }else{
+    $('result-heading').textContent=result.screen.title;
+    p($('rendered'),result.screen.body);
+  }
+  show('results');
+}
+function reset(){
+  Object.keys(responses).forEach(k=>delete responses[k]);
+  current=0;$('agree').checked=false;$('start').disabled=true;
+  $('rendered').replaceChildren();
+  show('consent');
+}
+$('agree').addEventListener('change',()=>{$('start').disabled=!$('agree').checked});
+$('start').addEventListener('click',async()=>{
+  if(!$('agree').checked)return;
+  try{
+    if(!loaded)await load();
+    current=0;renderStep();show('questions');
+  }catch(error){
+    $('consent').append(el('p','データを読み込めませんでした。HTTPサーバーから開いてください。'));
+  }
+});
+$('next').addEventListener('click',()=>{
+  const q=catalogs.questionBank.questions[current];
+  if(!Object.hasOwn(responses,q.id)){setMessage('選択肢を一つ選んでください。「決めない」も選べます。');return}
+  if(current<4){current++;renderStep();}
+  else{try{renderResult()}catch(e){setMessage('表示データに問題がありました。診断を中止してください。')}}
+});
+$('back').addEventListener('click',()=>{if(current>0){current--;renderStep()}});
+$('quit').addEventListener('click',reset);
+$('restart').addEventListener('click',reset);
+</script>
+</body>
+</html>
