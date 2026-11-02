@@ -1,0 +1,270 @@
+{
+  "schema_version": "0.1.0",
+  "project": "もちもち占術",
+  "question_set_id": "mochimochi-five-v0.1",
+  "question_version": "m07-questions-v0.1",
+  "tag_mapping_version": "m07-tags-v0.1",
+  "status": "editorial_draft_not_deployed",
+  "authoring_layer": "O_original_not_psychometric",
+  "intro": "これは、今の自分が選びたいことを5つの質問で振り返る遊びです。正解はありません。性格・能力・運勢を判定する検査ではありません。どれにも当てはまらなければ「決めない」を選べます。",
+  "ui_note": "選択肢を一つ選ぶ方式。未回答は次画面へ進めないが、各問に「決めない」を用意し、回答の中断・削除を妨げない。開始前の同意を要求する。",
+  "proposed_privacy": {
+    "current_status": "spec_only_no_data_collection",
+    "future_default": "on_device_ephemeral",
+    "birth_input_required": false,
+    "name_required": false,
+    "consent_before_questions": true,
+    "collect_answers_on_server_by_default": false,
+    "external_ai_api_by_default": false,
+    "analytics_events_with_response": false,
+    "close_discards_answers": true,
+    "sharing": "opt_in_only_and_exclude_birthdata"
+  },
+  "scene": {
+    "id": "scene_v01",
+    "status": "artwork_not_generated",
+    "ratio": "4:5",
+    "description": "静かな和風絵本の小道。六つの対象が均等に見える：分かれ道の道しるべ／一歩目の飛び石／木陰のベンチ／遠くまで続く小道／小さな風鈴／人が集まれる小さな丸テーブル。やさしい昼の光。誰かを怖がらせる要素や開運効果を示す演出なし。テキスト・数字・記号なし。",
+    "art_review": [
+      "six_cues_equally_legible",
+      "no_color_emphasis_for_one_cue",
+      "mobile_legibility",
+      "accessible_text_alternative",
+      "avoid_cues_blending",
+      "do_not_infer_unconscious_or_disorders"
+    ],
+    "text_alternative": "道が分かれ、飛び石やベンチ、小道、風鈴、小さな丸テーブルのある穏やかな景色"
+  },
+  "themes_order": [
+    "MOCHI",
+    "KETSU",
+    "NUKI",
+    "NEBA",
+    "YURA",
+    "EN"
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "title": "景色から浮かぶこと",
+      "prompt": "この景色を見て、今のあなたが最初に思うのは？",
+      "kind": "image_impression",
+      "stimulus": "scene_v01",
+      "map_to": "theme",
+      "choices": [
+        {
+          "id": "a",
+          "label": "別の道もありそう",
+          "value": "MOCHI"
+        },
+        {
+          "id": "b",
+          "label": "少し先へ進んでみよう",
+          "value": "KETSU"
+        },
+        {
+          "id": "c",
+          "label": "ここでひと息つきたい",
+          "value": "NUKI"
+        },
+        {
+          "id": "d",
+          "label": "この道をゆっくり歩いてみたい",
+          "value": "NEBA"
+        },
+        {
+          "id": "e",
+          "label": "風や光をもう少し感じたい",
+          "value": "YURA"
+        },
+        {
+          "id": "f",
+          "label": "誰かとこの景色を共有したい",
+          "value": "EN"
+        },
+        {
+          "id": "x",
+          "label": "どれでもない・決めない",
+          "value": null
+        }
+      ]
+    },
+    {
+      "id": "Q2",
+      "title": "目がとまった場所",
+      "prompt": "この絵の中で、最初に目がとまったのはどれ？",
+      "kind": "image_attention",
+      "stimulus": "scene_v01",
+      "map_to": "theme",
+      "choices": [
+        {
+          "id": "a",
+          "label": "分かれ道の道しるべ",
+          "value": "MOCHI"
+        },
+        {
+          "id": "b",
+          "label": "一歩目の飛び石",
+          "value": "KETSU"
+        },
+        {
+          "id": "c",
+          "label": "木陰のベンチ",
+          "value": "NUKI"
+        },
+        {
+          "id": "d",
+          "label": "遠くまで続く小道",
+          "value": "NEBA"
+        },
+        {
+          "id": "e",
+          "label": "小さな風鈴",
+          "value": "YURA"
+        },
+        {
+          "id": "f",
+          "label": "人が集まれる小さな丸テーブル",
+          "value": "EN"
+        },
+        {
+          "id": "x",
+          "label": "特に一つは選べない",
+          "value": null
+        }
+      ]
+    },
+    {
+      "id": "Q3",
+      "title": "今の気分",
+      "prompt": "ここから過ごす時間を考えたとき、今の気分に近いのは？",
+      "kind": "self_report_feeling",
+      "stimulus": null,
+      "map_to": "phase",
+      "choices": [
+        {
+          "id": "a",
+          "label": "まず何があるか眺めてみたい",
+          "value": "FP01"
+        },
+        {
+          "id": "b",
+          "label": "一度、考えや予定を整理したい",
+          "value": "FP02"
+        },
+        {
+          "id": "c",
+          "label": "少し試してみたい",
+          "value": "FP03"
+        },
+        {
+          "id": "d",
+          "label": "今やっていることを大切にしたい",
+          "value": "FP04"
+        },
+        {
+          "id": "e",
+          "label": "今は休む時間を大切にしたい",
+          "value": "FP05"
+        },
+        {
+          "id": "x",
+          "label": "今は選ばない",
+          "value": null
+        }
+      ]
+    },
+    {
+      "id": "Q4",
+      "title": "思うように進まないとき",
+      "prompt": "続けている小さな取り組みが、思うように進まない。今なら何を選ぶ？",
+      "kind": "independent_daily_vignette",
+      "stimulus": "different_from_scene_v01",
+      "map_to": "theme",
+      "choices": [
+        {
+          "id": "a",
+          "label": "別のやり方に変えてみる",
+          "value": "MOCHI"
+        },
+        {
+          "id": "b",
+          "label": "できる小さな一歩から始める",
+          "value": "KETSU"
+        },
+        {
+          "id": "c",
+          "label": "いったん休んで負担を調整する",
+          "value": "NUKI"
+        },
+        {
+          "id": "d",
+          "label": "今の計画を少しずつ続ける",
+          "value": "NEBA"
+        },
+        {
+          "id": "e",
+          "label": "何に違和感があるか確かめる",
+          "value": "YURA"
+        },
+        {
+          "id": "f",
+          "label": "誰かに相談してみる",
+          "value": "EN"
+        },
+        {
+          "id": "x",
+          "label": "今はどれも選ばない",
+          "value": null
+        }
+      ]
+    },
+    {
+      "id": "Q5",
+      "title": "今の進め方",
+      "prompt": "何か気になることができた。今はどちらの進め方がしっくりくる？",
+      "kind": "mode_self_report",
+      "stimulus": null,
+      "map_to": "mode",
+      "choices": [
+        {
+          "id": "a",
+          "label": "小さく外に試して、反応を見てみる",
+          "value": "open"
+        },
+        {
+          "id": "b",
+          "label": "手元の材料を整理して、進め方を整える",
+          "value": "settle"
+        },
+        {
+          "id": "x",
+          "label": "どちらとも言えない・決めない",
+          "value": null
+        }
+      ]
+    }
+  ],
+  "mapping_contract": {
+    "Q1": "one theme tag or null from visual-impression choice",
+    "Q2": "one theme tag or null from noticing choice; correlated with Q1",
+    "Q3": "one phase or null; never included in theme votes",
+    "Q4": "one theme tag or null from separate daily-life context",
+    "Q5": "open/settle or null; never interpreted as yin/yang",
+    "draft_type_gate": "Q4 theme must equal Q1 or Q2 theme; Q5 mode must be open/settle; all five answered; Q1+Q2 agreement without Q4 is insufficient. This supersedes the permissive count>=2 draft in M04 pending M08.",
+    "no_forced_type": true,
+    "missing_choice_is_not_low_score": true,
+    "null_choice_is_answered": true,
+    "selection_count_is_not_trait_score": true,
+    "expected_output_if_no_type": "show selected themes if any, current phase if chosen, no type claim",
+    "time_independent_determinism": "M08 implementation must use versioned choice ids; no randomness"
+  },
+  "reference_types": "m04-types-phases-v0.1.json",
+  "reference_indicators": "m03-indicators-v0.1.json",
+  "pending": [
+    "M08 real reducer + exhaustive and metamorphic tests",
+    "illustration produced/reviewed in M11",
+    "user comprehension and fairness testing in M12",
+    "copy approval"
+  ]
+}
