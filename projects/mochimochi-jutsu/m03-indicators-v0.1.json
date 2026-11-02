@@ -1,0 +1,106 @@
+{
+  "version": "0.1",
+  "status": "concept_defined_scoring_unvalidated",
+  "scope": "self_report_answer_themes_only",
+  "measurement": "five question exploratory play; not psychometric test",
+  "layer": "mochi_guai",
+  "indicators": [
+    {
+      "id": "MOCHI",
+      "label": "柔軟性",
+      "focus": "状況が変わった時に方法を切り替える",
+      "distinct_from": "KETSUは着手、MOCHIは切替",
+      "low_value_interpretation": "no_evidence_not_low_ability",
+      "psychometric_validation": false
+    },
+    {
+      "id": "KETSU",
+      "label": "行動力",
+      "focus": "迷った時に小さな試みを始める",
+      "distinct_from": "NEBAは継続、KETSUは着手",
+      "low_value_interpretation": "no_evidence_not_low_ability",
+      "psychometric_validation": false
+    },
+    {
+      "id": "NUKI",
+      "label": "力を抜く力",
+      "focus": "休む・任せる・手放すことも選ぶ",
+      "distinct_from": "ENは協力関係、NUKIは負荷調整",
+      "low_value_interpretation": "no_evidence_not_low_ability",
+      "psychometric_validation": false
+    },
+    {
+      "id": "NEBA",
+      "label": "粘り強さ",
+      "focus": "時間をかけて続ける",
+      "distinct_from": "KETSUは着手、NEBAは継続",
+      "low_value_interpretation": "no_evidence_not_low_ability",
+      "psychometric_validation": false
+    },
+    {
+      "id": "YURA",
+      "label": "感性・直感",
+      "focus": "情景や違和感などに注意を向ける",
+      "distinct_from": "MOCHIは切替、YURAは注意",
+      "low_value_interpretation": "no_evidence_not_low_ability",
+      "psychometric_validation": false
+    },
+    {
+      "id": "EN",
+      "label": "人とのつながり",
+      "focus": "相談・協力・共有を選択肢に入れる",
+      "distinct_from": "NUKIは負荷調整、ENは関係性",
+      "low_value_interpretation": "no_evidence_not_low_ability",
+      "psychometric_validation": false
+    }
+  ],
+  "five_question_structure": [
+    {
+      "id": "Q1",
+      "format": "illustration_impression",
+      "scoring": "unassigned"
+    },
+    {
+      "id": "Q2",
+      "format": "first_noticed_detail",
+      "scoring": "unassigned"
+    },
+    {
+      "id": "Q3",
+      "format": "felt_response",
+      "scoring": "unassigned"
+    },
+    {
+      "id": "Q4",
+      "format": "chosen_action",
+      "scoring": "unassigned"
+    },
+    {
+      "id": "Q5",
+      "format": "daily_life_choice",
+      "scoring": "unassigned"
+    }
+  ],
+  "response_contract": {
+    "answers_required_for_result": 5,
+    "partial_result": null,
+    "score_type": "qualitative_only_until_M07_M08",
+    "allowed_missing_behavior": "not_evaluated",
+    "ties": "retain_multiple",
+    "algorithm_version": null,
+    "weights": null
+  },
+  "separation": {
+    "birth_symbols": "independent_M02_M06",
+    "self_report": "M03_M07",
+    "future_guidance": "M09",
+    "five_elements_to_six_indicators": "no_automatic_mapping"
+  },
+  "pending": [
+    "M04 classification",
+    "M07 full questions and answer labels",
+    "M07 balanced exposure",
+    "M08 scoring tests",
+    "M12 user feedback"
+  ]
+}
