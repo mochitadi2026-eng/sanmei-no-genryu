@@ -1,0 +1,175 @@
+{
+  "version": "m09-copy-v0.1",
+  "status": "draft_original_editorial_copy_not_validated",
+  "source_layer": "O_original_creative_questionnaire_copy",
+  "related": {
+    "question_set_id": "mochimochi-five-v0.1",
+    "question_version": "m07-questions-v0.1",
+    "tag_mapping_version": "m07-tags-v0.1",
+    "type_catalog_version": "0.1",
+    "indicator_catalog_version": "0.1",
+    "algorithm_version": "mochimochi-classifier-v0.1"
+  },
+  "header": {
+    "title": "今日のもちもち",
+    "intro": "5つの質問で選んだことを、ちょっと振り返ってみよう。正解や優劣を決めるための結果ではありません。"
+  },
+  "layers": {
+    "shitsu": {
+      "title": "もち質｜生まれの象徴",
+      "status": "not_connected",
+      "body": "出生情報による伝統的な記号の読み解きは、現在の診断にはつないでいません。未検証の命式を表示しないため、この欄は保留しています。"
+    },
+    "guai": {
+      "title": "もち具合｜今の回答",
+      "type_title": "今回のもちタイプ候補",
+      "type_unknown_title": "ひとつに決めなくても大丈夫",
+      "phase_title": "今の気分",
+      "theme_title": "気になった選択",
+      "type_caution": "これは今の選択をもとにした物語の名前です。生まれつきの性格や能力を示すものではありません。"
+    },
+    "michi": {
+      "title": "もち道｜これからの選び方",
+      "intro": "ここから先はあなたが選ぶ番。気になる問いだけ、持ち帰ってください。"
+    }
+  },
+  "themes": [
+    {
+      "id": "MOCHI",
+      "focus": "やり方を変えること"
+    },
+    {
+      "id": "KETSU",
+      "focus": "小さく動き出すこと"
+    },
+    {
+      "id": "NUKI",
+      "focus": "負担を調整すること"
+    },
+    {
+      "id": "NEBA",
+      "focus": "少しずつ続けること"
+    },
+    {
+      "id": "YURA",
+      "focus": "気になった感覚を確かめること"
+    },
+    {
+      "id": "EN",
+      "focus": "誰かと共有したり相談すること"
+    }
+  ],
+  "types": [
+    {
+      "id": "MT01",
+      "reflection": "考え方をひとつに決めず、別の道にも目を向ける選択が重なりました。",
+      "optional_question": "いつもの方法を少しだけ変えるとしたら、どこから試したい？"
+    },
+    {
+      "id": "MT02",
+      "reflection": "今あるものを並べ直しながら、別のやり方を探す選択が重なりました。",
+      "optional_question": "手元にある選択肢を見渡すなら、まず何を残したい？"
+    },
+    {
+      "id": "MT03",
+      "reflection": "迷いながらでも、小さく動かして確かめる選択が重なりました。",
+      "optional_question": "負担にならない最初の一歩は、どれくらい小さくできそう？"
+    },
+    {
+      "id": "MT04",
+      "reflection": "動き出す前に条件を確かめ、進め方を整える選択が重なりました。",
+      "optional_question": "一歩を踏み出しやすくするために、何を先に準備したい？"
+    },
+    {
+      "id": "MT05",
+      "reflection": "余白を取りながら、新しい試し方も探す選択が重なりました。",
+      "optional_question": "少し力を抜いて試せる方法があるなら、どんな形だろう？"
+    },
+    {
+      "id": "MT06",
+      "reflection": "負担を見直し、自分のペースを整える選択が重なりました。",
+      "optional_question": "今は手放してもよい用事や役割が、ひとつあるとしたら？"
+    },
+    {
+      "id": "MT07",
+      "reflection": "小さな積み重ねを、次の試みにつなげる選択が重なりました。",
+      "optional_question": "今まで続けたことから、次にひとつ試したいことは？"
+    },
+    {
+      "id": "MT08",
+      "reflection": "歩幅をそろえながら、続けられる形を探す選択が重なりました。",
+      "optional_question": "続けやすいペースを選ぶなら、何を減らせそう？"
+    },
+    {
+      "id": "MT09",
+      "reflection": "気になった感覚を手がかりに、新しい見方を試す選択が重なりました。",
+      "optional_question": "最近ふと気になったことを、どうやって確かめてみたい？"
+    },
+    {
+      "id": "MT10",
+      "reflection": "小さな違和感や心地よさに耳を傾け、立ち止まって確かめる選択が重なりました。",
+      "optional_question": "今の気持ちを言葉にするとしたら、どんな表現が近い？"
+    },
+    {
+      "id": "MT11",
+      "reflection": "自分だけで抱えず、誰かと分かち合って試す選択が重なりました。",
+      "optional_question": "気軽に共有できそうなことがあるなら、何だろう？"
+    },
+    {
+      "id": "MT12",
+      "reflection": "つながりを大切にしながら、無理のない関わり方を整える選択が重なりました。",
+      "optional_question": "今の自分に心地よい距離感は、どんなものだろう？"
+    }
+  ],
+  "phases": [
+    {
+      "id": "FP01",
+      "reflection": "まず周りを眺め、気になるものを探したい気分を選びました。",
+      "optional_question": "今、少しでも気になることを一つ挙げるなら？"
+    },
+    {
+      "id": "FP02",
+      "reflection": "考えや予定を整理したい気分を選びました。",
+      "optional_question": "並べて眺めたいことは何だろう？"
+    },
+    {
+      "id": "FP03",
+      "reflection": "小さく試してみたい気分を選びました。",
+      "optional_question": "試すなら、どのくらいの小ささが心地よい？"
+    },
+    {
+      "id": "FP04",
+      "reflection": "いま取り組んでいることを大切にしたい気分を選びました。",
+      "optional_question": "続けたいことの中で、特に残しておきたいものは？"
+    },
+    {
+      "id": "FP05",
+      "reflection": "今は余白や休息を大切にしたい気分を選びました。",
+      "optional_question": "どんな時間があると、自分のペースを感じられそう？"
+    }
+  ],
+  "fallbacks": {
+    "no_theme": "今回の回答では、ひとつのテーマにしぼりませんでした。違う選択が並ぶことも、どれも選ばないことも自然なことです。",
+    "no_mode": "気になるテーマは見えましたが、今の進め方をひとつには決めませんでした。タイプの名前はつけずにおきます。",
+    "no_candidates": "今回はテーマになる選択を決めませんでした。気分が変わったときに、また考えてみてもかまいません。",
+    "no_phase": "今の気分については選ばずにおきました。ここは空欄のままで大丈夫です。",
+    "generic_question": "今日の自分に、ひとつだけ問いかけてみたいことは？",
+    "incomplete": {
+      "title": "まだ途中です",
+      "body": "まだ答えていない質問があります。続けたくなったときだけ、残りを選んでみてください。途中の回答からタイプや気分を決めることはしません。"
+    },
+    "invalid": {
+      "title": "回答を確認できませんでした",
+      "body": "回答の形式や版を確認できなかったため、結果は表示していません。はじめからやり直すか、時間をおいてもう一度試してください。"
+    }
+  },
+  "footer": "この結果は自己理解を楽しむための独自の表現で、心理検査・医療判断・未来の予言ではありません。合わないところは、そのまま受け取らなくて大丈夫です。",
+  "display_rules": {
+    "no_numeric_scores": true,
+    "do_not_show_personal_birth_data": true,
+    "no_forced_type": true,
+    "never_infer_diagnosis": true,
+    "only_provisional_type_labels": true,
+    "never_expose_user_answers_in_share": true
+  }
+}
