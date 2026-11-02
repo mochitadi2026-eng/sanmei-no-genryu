@@ -1,0 +1,586 @@
+{
+  "schema_version": "0.1.0",
+  "catalog_version": "m10-character-catalog-v0.1",
+  "status": "educational_catalog_only_not_user_assigned",
+  "model_of": "もちもち占術の物語案内役",
+  "created_on": "2026-11-03",
+  "source_m02_version": "0.1",
+  "adoption_rules": {
+    "birth_based_character_assignment": "blocked_until_M06_independent_validation_and_M12_approval",
+    "five_question_type_mapping": "none_by_design",
+    "twelve_mochi_types": "distinct_MT01_to_MT12_not_12_stars",
+    "source_provenance": "star_name and character_name are from M02 existing mappings; tools and costumes are project's original creative visual briefs",
+    "images": "asset locations unknown; do not pretend images exist",
+    "misleading_claims": "Do not claim these mascots were present in historical texts or psychologically validate users"
+  },
+  "ten_main_star": [
+    {
+      "id": "MS01",
+      "category": "ten_main_star",
+      "star_name": "貫索星",
+      "character_name": "岩亀",
+      "form": "animal_mascot",
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "ten_star_relations",
+        "index": 0,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "岩亀。貫索星に対応する動物モチーフのオリジナルキャラクター",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "MS02",
+      "category": "ten_main_star",
+      "star_name": "石門星",
+      "character_name": "森狐",
+      "form": "animal_mascot",
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "ten_star_relations",
+        "index": 1,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "森狐。石門星に対応する動物モチーフのオリジナルキャラクター",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "MS03",
+      "category": "ten_main_star",
+      "star_name": "鳳閣星",
+      "character_name": "陽猫",
+      "form": "animal_mascot",
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "ten_star_relations",
+        "index": 2,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "陽猫。鳳閣星に対応する動物モチーフのオリジナルキャラクター",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "MS04",
+      "category": "ten_main_star",
+      "star_name": "調舒星",
+      "character_name": "月兎",
+      "form": "animal_mascot",
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "ten_star_relations",
+        "index": 3,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "月兎。調舒星に対応する動物モチーフのオリジナルキャラクター",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "MS05",
+      "category": "ten_main_star",
+      "star_name": "禄存星",
+      "character_name": "福狸",
+      "form": "animal_mascot",
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "ten_star_relations",
+        "index": 4,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "福狸。禄存星に対応する動物モチーフのオリジナルキャラクター",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "MS06",
+      "category": "ten_main_star",
+      "star_name": "司禄星",
+      "character_name": "実り栗鼠",
+      "form": "animal_mascot",
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "ten_star_relations",
+        "index": 5,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "実り栗鼠。司禄星に対応する動物モチーフのオリジナルキャラクター",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "MS07",
+      "category": "ten_main_star",
+      "star_name": "車騎星",
+      "character_name": "風虎",
+      "form": "animal_mascot",
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "ten_star_relations",
+        "index": 6,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "風虎。車騎星に対応する動物モチーフのオリジナルキャラクター",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "MS08",
+      "category": "ten_main_star",
+      "star_name": "牽牛星",
+      "character_name": "銀鶴",
+      "form": "animal_mascot",
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "ten_star_relations",
+        "index": 7,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "銀鶴。牽牛星に対応する動物モチーフのオリジナルキャラクター",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "MS09",
+      "category": "ten_main_star",
+      "star_name": "龍高星",
+      "character_name": "旅龍",
+      "form": "animal_mascot",
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "ten_star_relations",
+        "index": 8,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "旅龍。龍高星に対応する動物モチーフのオリジナルキャラクター",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "MS10",
+      "category": "ten_main_star",
+      "star_name": "玉堂星",
+      "character_name": "知恵蛇",
+      "form": "animal_mascot",
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "ten_star_relations",
+        "index": 9,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "知恵蛇。玉堂星に対応する動物モチーフのオリジナルキャラクター",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    }
+  ],
+  "twelve_follower_star": [
+    {
+      "id": "FS01",
+      "category": "twelve_follower_star",
+      "stage_name": "胎",
+      "star_name": "天報星",
+      "character_name": "ぽぽ",
+      "form": "chibi_hooded_human_shikigami",
+      "art_direction": {
+        "item": "種袋と芽",
+        "palette": "桜色・生成り",
+        "pose": "種袋から若葉がのぞく",
+        "body_ratio": "2.5-3 heads",
+        "other": "頭巾・少量の髪・簡素な和装・道具を主役にする"
+      },
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "twelve_stages",
+        "index": 0,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "天報星モチーフの小さな頭巾の式神。桜色の和装で種袋と芽を持つ",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "FS02",
+      "category": "twelve_follower_star",
+      "stage_name": "養",
+      "star_name": "天印星",
+      "character_name": "ころ",
+      "form": "chibi_hooded_human_shikigami",
+      "art_direction": {
+        "item": "鈴",
+        "palette": "杏色・生成り",
+        "pose": "小さな鈴を大切に持つ",
+        "body_ratio": "2.5-3 heads",
+        "other": "頭巾・少量の髪・簡素な和装・道具を主役にする"
+      },
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "twelve_stages",
+        "index": 1,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "天印星モチーフの小さな頭巾の式神。杏色の和装で丸い鈴を持つ",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "FS03",
+      "category": "twelve_follower_star",
+      "stage_name": "長生",
+      "star_name": "天貴星",
+      "character_name": "きき",
+      "form": "chibi_hooded_human_shikigami",
+      "art_direction": {
+        "item": "虫めがね",
+        "palette": "若草色・生成り",
+        "pose": "虫めがねで物を観察する",
+        "body_ratio": "2.5-3 heads",
+        "other": "頭巾・少量の髪・簡素な和装・道具を主役にする"
+      },
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "twelve_stages",
+        "index": 2,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "天貴星モチーフの小さな頭巾の式神。若草色の和装で虫めがねを持つ",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "FS04",
+      "category": "twelve_follower_star",
+      "stage_name": "沐浴",
+      "star_name": "天恍星",
+      "character_name": "きらり",
+      "form": "chibi_hooded_human_shikigami",
+      "art_direction": {
+        "item": "手鏡",
+        "palette": "薄桃色・淡金・生成り",
+        "pose": "小さな手鏡を持つ",
+        "body_ratio": "2.5-3 heads",
+        "other": "頭巾・少量の髪・簡素な和装・道具を主役にする"
+      },
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "twelve_stages",
+        "index": 3,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "天恍星モチーフの小さな頭巾の式神。薄桃色の和装で手鏡を持つ",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "FS05",
+      "category": "twelve_follower_star",
+      "stage_name": "冠帯",
+      "star_name": "天南星",
+      "character_name": "いぶき",
+      "form": "chibi_hooded_human_shikigami",
+      "art_direction": {
+        "item": "わらじ",
+        "palette": "朱色・生成り",
+        "pose": "わらじを胸元で見せる",
+        "body_ratio": "2.5-3 heads",
+        "other": "頭巾・少量の髪・簡素な和装・道具を主役にする"
+      },
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "twelve_stages",
+        "index": 4,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "天南星モチーフの小さな頭巾の式神。朱色の和装でわらじを持つ",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "FS06",
+      "category": "twelve_follower_star",
+      "stage_name": "臨官",
+      "star_name": "天禄星",
+      "character_name": "こつぶ",
+      "form": "chibi_hooded_human_shikigami",
+      "art_direction": {
+        "item": "そろばん",
+        "palette": "若草色・生成り",
+        "pose": "そろばんを抱える",
+        "body_ratio": "2.5-3 heads",
+        "other": "頭巾・少量の髪・簡素な和装・道具を主役にする"
+      },
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "twelve_stages",
+        "index": 5,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "天禄星モチーフの小さな頭巾の式神。若草色の和装でそろばんを抱える",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "FS07",
+      "category": "twelve_follower_star",
+      "stage_name": "帝旺",
+      "star_name": "天将星",
+      "character_name": "たいが",
+      "form": "chibi_hooded_human_shikigami",
+      "art_direction": {
+        "item": "扇",
+        "palette": "藍色・紫紺・生成り",
+        "pose": "扇を開いて持つ",
+        "body_ratio": "2.5-3 heads",
+        "other": "頭巾・少量の髪・簡素な和装・道具を主役にする"
+      },
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "twelve_stages",
+        "index": 6,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "天将星モチーフの小さな頭巾の式神。藍色の和装で開いた扇を持つ",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "FS08",
+      "category": "twelve_follower_star",
+      "stage_name": "衰",
+      "star_name": "天堂星",
+      "character_name": "しずく",
+      "form": "chibi_hooded_human_shikigami",
+      "art_direction": {
+        "item": "湯のみ",
+        "palette": "淡水色・灰青・生成り",
+        "pose": "湯のみを両手で包む",
+        "body_ratio": "2.5-3 heads",
+        "other": "頭巾・少量の髪・簡素な和装・道具を主役にする"
+      },
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "twelve_stages",
+        "index": 7,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "天堂星モチーフの小さな頭巾の式神。淡水色の和装で湯のみを持つ",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "FS09",
+      "category": "twelve_follower_star",
+      "stage_name": "病",
+      "star_name": "天胡星",
+      "character_name": "ゆめ",
+      "form": "chibi_hooded_human_shikigami",
+      "art_direction": {
+        "item": "万華鏡",
+        "palette": "藤色・生成り",
+        "pose": "万華鏡を大切に持つ",
+        "body_ratio": "2.5-3 heads",
+        "other": "頭巾・少量の髪・簡素な和装・道具を主役にする"
+      },
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "twelve_stages",
+        "index": 8,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "天胡星モチーフの小さな頭巾の式神。藤色の和装で万華鏡を持つ",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "FS10",
+      "category": "twelve_follower_star",
+      "stage_name": "死",
+      "star_name": "天極星",
+      "character_name": "ふわり",
+      "form": "chibi_hooded_human_shikigami",
+      "art_direction": {
+        "item": "風鈴",
+        "palette": "空色・白",
+        "pose": "風鈴と短冊を持つ",
+        "body_ratio": "2.5-3 heads",
+        "other": "頭巾・少量の髪・簡素な和装・道具を主役にする"
+      },
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "twelve_stages",
+        "index": 9,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "天極星モチーフの小さな頭巾の式神。空色の和装で風鈴を持つ",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "FS11",
+      "category": "twelve_follower_star",
+      "stage_name": "墓",
+      "star_name": "天庫星",
+      "character_name": "くるり",
+      "form": "chibi_hooded_human_shikigami",
+      "art_direction": {
+        "item": "小箱",
+        "palette": "茶色・くすんだ金・生成り",
+        "pose": "小さな箱を抱える",
+        "body_ratio": "2.5-3 heads",
+        "other": "頭巾・少量の髪・簡素な和装・道具を主役にする"
+      },
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "twelve_stages",
+        "index": 10,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "天庫星モチーフの小さな頭巾の式神。茶色の和装で小箱を持つ",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    },
+    {
+      "id": "FS12",
+      "category": "twelve_follower_star",
+      "stage_name": "絶",
+      "star_name": "天馳星",
+      "character_name": "ひゅう",
+      "form": "chibi_hooded_human_shikigami",
+      "art_direction": {
+        "item": "風車",
+        "palette": "空色・青緑・生成り",
+        "pose": "風車を持つ",
+        "body_ratio": "2.5-3 heads",
+        "other": "頭巾・少量の髪・簡素な和装・道具を主役にする"
+      },
+      "source": {
+        "name": "m02-core-symbols-v0.1.json",
+        "section": "twelve_stages",
+        "index": 11,
+        "correspondence_basis": "modern_sanmei_symbol_reference"
+      },
+      "visual": {
+        "alt_text": "天馳星モチーフの小さな頭巾の式神。空色の和装で風車を持つ",
+        "asset_path": null,
+        "asset_status": "unverified_no_asset_claim"
+      },
+      "role": "learning_or_story_guide_only",
+      "assignable_from_m08": false,
+      "assignable_from_birth_engine": false
+    }
+  ],
+  "presentation": {
+    "default_mode": "manual_learning_gallery",
+    "show_personalized_cards": false,
+    "allow_selection": "user_explicitly_opens_card_without_assigned_identity",
+    "message": "このキャラクターは算命学の名称を手がかりに作った物語の案内役です。あなたの性格や運勢を診断した結果ではありません。",
+    "missing_asset": "文字名と代替説明を表示し、絵があるふりをしない",
+    "distinguish_from_result": "M09の12もちタイプ候補と異なる分類であり、結果ページでは自動的に推薦・表示しない"
+  }
+}
