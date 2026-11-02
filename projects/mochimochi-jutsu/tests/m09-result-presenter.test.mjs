@@ -92,7 +92,7 @@ test('all x gives gentle open reflection and no fake phase or birth claims',()=>
   assert.equal(s.type,null);
   assert.equal(s.phase,null);
   assert.deepEqual(s.selected_themes,[]);
-  assert.ok(s.paragraphs[0].includes('選びませんでした'));
+  assert.ok(s.paragraphs[0].includes('決めませんでした'));
   assert.ok(s.phase_fallback);
   assert.equal(r.sections[0].status,'not_connected');
   assert.equal(r.sections[2].optional_question,copyCatalog.fallbacks.generic_question);
