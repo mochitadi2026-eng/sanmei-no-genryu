@@ -1,0 +1,183 @@
+{
+  "version": "0.1",
+  "status": "structural_design_only; labels provisional; requires M07/M08 before results",
+  "authoring_layer": "original_fiction_not_classical_12_stars",
+  "basis": "six self_report themes x two editorial response modes",
+  "theme_order": [
+    "MOCHI",
+    "KETSU",
+    "NUKI",
+    "NEBA",
+    "YURA",
+    "EN"
+  ],
+  "modes": [
+    {
+      "id": "open",
+      "label": "ひらく",
+      "note": "新しい試みなど外へ向かう表現"
+    },
+    {
+      "id": "settle",
+      "label": "ととのえる",
+      "note": "今の状況・条件を整える表現"
+    }
+  ],
+  "types": [
+    {
+      "id": "MT01",
+      "theme": "MOCHI",
+      "mode": "open",
+      "label": "のびのびもち",
+      "approved": false
+    },
+    {
+      "id": "MT02",
+      "theme": "MOCHI",
+      "mode": "settle",
+      "label": "こねなおしもち",
+      "approved": false
+    },
+    {
+      "id": "MT03",
+      "theme": "KETSU",
+      "mode": "open",
+      "label": "はずみもち",
+      "approved": false
+    },
+    {
+      "id": "MT04",
+      "theme": "KETSU",
+      "mode": "settle",
+      "label": "ひとあしもち",
+      "approved": false
+    },
+    {
+      "id": "MT05",
+      "theme": "NUKI",
+      "mode": "open",
+      "label": "かろやかもち",
+      "approved": false
+    },
+    {
+      "id": "MT06",
+      "theme": "NUKI",
+      "mode": "settle",
+      "label": "ひとやすみもち",
+      "approved": false
+    },
+    {
+      "id": "MT07",
+      "theme": "NEBA",
+      "mode": "open",
+      "label": "つみかさねもち",
+      "approved": false
+    },
+    {
+      "id": "MT08",
+      "theme": "NEBA",
+      "mode": "settle",
+      "label": "じっくりもち",
+      "approved": false
+    },
+    {
+      "id": "MT09",
+      "theme": "YURA",
+      "mode": "open",
+      "label": "ひらめきもち",
+      "approved": false
+    },
+    {
+      "id": "MT10",
+      "theme": "YURA",
+      "mode": "settle",
+      "label": "みみすましもち",
+      "approved": false
+    },
+    {
+      "id": "MT11",
+      "theme": "EN",
+      "mode": "open",
+      "label": "わけあいもち",
+      "approved": false
+    },
+    {
+      "id": "MT12",
+      "theme": "EN",
+      "mode": "settle",
+      "label": "むすびもち",
+      "approved": false
+    }
+  ],
+  "phases": [
+    {
+      "id": "FP01",
+      "label": "仕込み期",
+      "description": "関心や気になるものを探す",
+      "approved": false,
+      "not_a_developmental_stage": true
+    },
+    {
+      "id": "FP02",
+      "label": "こねこね期",
+      "description": "考えや予定を整える",
+      "approved": false,
+      "not_a_developmental_stage": true
+    },
+    {
+      "id": "FP03",
+      "label": "ふくらみ期",
+      "description": "小さく試したい",
+      "approved": false,
+      "not_a_developmental_stage": true
+    },
+    {
+      "id": "FP04",
+      "label": "もちもち期",
+      "description": "いまあるものを育てる",
+      "approved": false,
+      "not_a_developmental_stage": true
+    },
+    {
+      "id": "FP05",
+      "label": "ひとやすみ期",
+      "description": "余白や休息を選びたい",
+      "approved": false,
+      "not_a_developmental_stage": true
+    }
+  ],
+  "questionnaire_roles": {
+    "Q1": "theme_tag_0_or_1",
+    "Q2": "theme_tag_0_or_1",
+    "Q3": "phase_0_or_1",
+    "Q4": "theme_tag_0_or_1",
+    "Q5": "mode_open_settle_or_null"
+  },
+  "candidate_rule": {
+    "evidence_questions": [
+      "Q1",
+      "Q2",
+      "Q4"
+    ],
+    "tag_count_not_personality_score": true,
+    "unique_top_required": true,
+    "minimum_top_count": 2,
+    "mode_required_for_type": true,
+    "phase_only_from_Q3": true,
+    "unknown_as_null": true,
+    "ties_as_candidates": true,
+    "all_five_answered_for_result": true,
+    "version": "draft_for_M08"
+  },
+  "excluded_mappings": [
+    "type_to_twelve_major_stars",
+    "type_to_twelve_branches",
+    "five_elements_to_six_themes",
+    "birth_data_to_question_score"
+  ],
+  "dependencies": [
+    "M07_answer_options_and_tag_assignments",
+    "M08_deterministic_tests",
+    "M12_user_validation"
+  ]
+}
