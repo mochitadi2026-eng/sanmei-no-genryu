@@ -1,0 +1,32 @@
+name: Mochimochi M10 character catalog verification
+
+on:
+  push:
+    paths:
+      - 'projects/mochimochi-jutsu/m02-core-symbols-v0.1.json'
+      - 'projects/mochimochi-jutsu/m10-character-catalog-v0.1.json'
+      - 'projects/mochimochi-jutsu/m10-character-gallery-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/tests/m10-character-gallery.test.mjs'
+      - '.github/workflows/mochimochi-m10-tests.yml'
+  pull_request:
+    paths:
+      - 'projects/mochimochi-jutsu/m02-core-symbols-v0.1.json'
+      - 'projects/mochimochi-jutsu/m10-character-catalog-v0.1.json'
+      - 'projects/mochimochi-jutsu/m10-character-gallery-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/tests/m10-character-gallery.test.mjs'
+      - '.github/workflows/mochimochi-m10-tests.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-m10:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          node --check projects/mochimochi-jutsu/m10-character-gallery-v0.1.mjs
+          node --check projects/mochimochi-jutsu/tests/m10-character-gallery.test.mjs
+      - run: node --test projects/mochimochi-jutsu/tests/m10-character-gallery.test.mjs
