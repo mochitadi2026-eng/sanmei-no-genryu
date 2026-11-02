@@ -47,4 +47,4 @@
 - 史料そのものの根拠を変更する場合は [RULES.md](../../RULES.md)、`sources/registry.md`、`research/claims.md`、`research/questions.md` に適切に反映する。
 - 別リポジトリの計算エンジンの修正・統合は、対象リポジトリの独自手順・ブランチを確認したうえで行う。
 
-**次の一件はTASKS.mdを優先。M08は実装・11件の自動テスト成功済み（[報告](07-classifier-implementation-report-2026-11-02.md)）。M09は[表示関数とCI23件成功](08-result-presentation-2026-11-02.md)を記録済み。現在はM10の既存キャラ連携。M06は一次監査済みだが本番判定は保留。**
+**次の一件はTASKS.mdを優先。M08は実装・11件の自動テスト成功済み（[報告](07-classifier-implementation-report-2026-11-02.md)）。M09は[表示関数とCI23件成功](08-result-presentation-2026-11-02.md)を記録済み。現在はM09.5の[文章レビュー・試用条件](M09-USER-REVIEW.md)とM10キャラ連携が次。開発プレビューのChromium25項目は合格したが実利用者の評価は未実施。M06は一次監査済みだが本番判定は保留。**
