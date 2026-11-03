@@ -34,8 +34,8 @@
 ## N01部分実装（暦の記号だけ）
 
 - [史料と実装の検証報告](14-n01-daiun-nenun-sources-and-implementation-2026-11-03.md)：『三命通会』『淵海子平』、朱学院、国立天文台を区別して確認。**大運起運は未承認**。
-- [国立天文台2024〜2027年立春時刻JSON](n01-naoj-risshun-2024-2027-v0.1.json)／[年干支判定関数](n01-annual-ganzhi-v0.1.mjs)／[テスト](tests/n01-annual-ganzhi.test.mjs)／[CI 8件成功](https://github.com/mochitadi2026-eng/sanmei-no-genryu/actions/runs/41570740423)
-- これは**暦上の年の干支だけ**を求める。個人の転機候補・未来運勢・大運年齢を計算したという意味ではない。2024年より前の節入りや2028年以降も対象外。
+- [国立天文台2024〜2027年立春時刻JSON](n01-naoj-risshun-2024-2027-v0.1.json)／[年干支判定関数](n01-annual-ganzhi-v0.1.mjs)／[古典起運の架空研究モデル](n01-classical-daiun-study-v0.1.mjs)／[CI 15件成功](https://github.com/mochitadi2026-eng/sanmei-no-genryu/actions/runs/41571388089)
+- 本番用に計算できるのは**暦上の年の干支だけ**。古典の大運は架空数値からの研究用算術であって、現代日本の採用法・個人の起運年齢を計算したという意味ではない。2024年より前の節入りや2028年以降も対象外。
 
 ## 新規：過去の伏線を読む鑑定文
 
