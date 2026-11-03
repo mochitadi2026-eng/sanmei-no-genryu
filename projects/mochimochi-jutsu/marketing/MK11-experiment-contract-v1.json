@@ -1,0 +1,686 @@
+{
+  "schema_version": "mk11-v1.0",
+  "created_on": "2026-11-03",
+  "project": "mochimochi-jutsu",
+  "doc": "MK11-initial-sales-experiment-plan-v1.md",
+  "scope": "PLAN_ONLY_NO_REAL_SALES_NO_REAL_RESEARCH",
+  "states": {
+    "planning": "DESIGN_COMPLETED",
+    "pre_sales_research": "NOT_APPROVED",
+    "sales_pilot": "G2_BLOCKED",
+    "G1_free": "NO_GO",
+    "G2_paid": "NO_GO",
+    "payments": "NOT_IMPLEMENTED",
+    "actual_orders": "NOT_MEASURED",
+    "paid_pilot_price": "UNDECIDED"
+  },
+  "sources": {
+    "MK04": "MK04-price-unit-economics-v1.md",
+    "MK05": "MK05-legal-trust-release-audit-2026-11-03.md",
+    "MK09": "MK09-sales-delivery-contract-v1.json",
+    "MK10": "MK10-research-review-contract-v1.json",
+    "MK08": "MK08-analytics-contract-v1.json",
+    "dev_tasks": "../TASKS.md"
+  },
+  "fact_inference_scheme": {
+    "F": "verified_existing_project_record",
+    "L": "official_law_or_guidance_general",
+    "D": "current_project_decision",
+    "I": "unverified_business_hypothesis",
+    "U": "unknown"
+  },
+  "experiment_phases": [
+    {
+      "id": "EXP0",
+      "type": "internal_only",
+      "purpose": "fix hypotheses, pricing and decision thresholds",
+      "current_status": "DESIGNED",
+      "real_orders_allowed": false,
+      "actual_participants_allowed": false
+    },
+    {
+      "id": "EXP1",
+      "type": "hypothetical_concept_research_only",
+      "purpose": "discover value, misunderstanding and reaction to provisional prices",
+      "current_status": "NO_GO_UNTIL_MK10_APPROVAL",
+      "real_orders_allowed": false,
+      "actual_participants_allowed": "only_after_research_ethics_consent_and_operator_approval",
+      "booking_allowed": false,
+      "price_comparisons": true
+    },
+    {
+      "id": "EXP2",
+      "type": "single_price_paid_pilot_future",
+      "purpose": "actual demand, reliable fulfillment, actual contribution",
+      "current_status": "NO_GO_UNTIL_G2_C_S_L_D_APPROVAL",
+      "real_orders_allowed": "only_after_all_gates_approved",
+      "price_comparisons": false
+    },
+    {
+      "id": "EXP3",
+      "type": "separate_future_price_experiment",
+      "purpose": "price differentiation beyond initial one-price pilot",
+      "current_status": "NOT_PLANNED_NOT_APPROVED",
+      "real_orders_allowed": false,
+      "price_comparisons": "require_reapproval_and_comparable_conditions"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H01",
+      "kind": "product_understanding",
+      "question": "Free vs paid difference understood without pressure",
+      "primary_evidence": "MK10 B01 B04 B06 O06 O07 O08",
+      "status": "UNTESTED"
+    },
+    {
+      "id": "H02",
+      "kind": "story_value",
+      "question": "Evidence-bounded timeline and voluntary reading are valued",
+      "primary_evidence": "fictional sample issues B07",
+      "status": "UNTESTED"
+    },
+    {
+      "id": "H03",
+      "kind": "price_perception",
+      "question": "Which provision/assurances make each provisional price feel reasonable",
+      "primary_evidence": "hypothetical price choice and reasons",
+      "status": "UNTESTED"
+    },
+    {
+      "id": "H04",
+      "kind": "fulfillment_reliability",
+      "question": "Can approved real orders be fulfilled safely on time",
+      "primary_evidence": "verified real delivery history after G2",
+      "status": "UNTESTED"
+    },
+    {
+      "id": "H05",
+      "kind": "unit_economics",
+      "question": "Are MK04 labor and variable costs feasible",
+      "primary_evidence": "actual minutes and transaction expenses after G2",
+      "status": "UNTESTED"
+    },
+    {
+      "id": "H06",
+      "kind": "real_payment_behavior",
+      "question": "Do buyers actually pay under clear terms",
+      "primary_evidence": "server-confirmed paid order events after G2",
+      "status": "UNTESTED"
+    }
+  ],
+  "price_hypotheses": {
+    "source": "MK04_cost_model_assumption_not_real_price",
+    "price_candidates_JPY": [
+      {
+        "price": 1980,
+        "assumed_variable_cost_before_processing_JPY": 1100,
+        "assumed_payment_fee_rate": 0.0396,
+        "assumed_payment_cost_JPY_rounded": 78,
+        "assumed_contribution_JPY_rounded": 802,
+        "not_willingness_to_pay": true
+      },
+      {
+        "price": 2980,
+        "assumed_variable_cost_before_processing_JPY": 1100,
+        "assumed_payment_fee_rate": 0.0396,
+        "assumed_payment_cost_JPY_rounded": 118,
+        "assumed_contribution_JPY_rounded": 1762,
+        "not_willingness_to_pay": true
+      },
+      {
+        "price": 3980,
+        "assumed_variable_cost_before_processing_JPY": 1100,
+        "assumed_payment_fee_rate": 0.0396,
+        "assumed_payment_cost_JPY_rounded": 158,
+        "assumed_contribution_JPY_rounded": 2722,
+        "not_willingness_to_pay": true
+      }
+    ],
+    "common_fixed_monthly_JPY_proposal": 15000,
+    "free_completions_per_month_assumed": 630,
+    "assumed_extra_free_cost_JPY_each": 1,
+    "simple_monthly_break_even_proposals": [
+      {
+        "price": 1980,
+        "orders": 20
+      },
+      {
+        "price": 2980,
+        "orders": 9
+      },
+      {
+        "price": 3980,
+        "orders": 6
+      }
+    ],
+    "expense_exclusions": [
+      "new_development",
+      "advertising",
+      "comprehensive_tax_adjustment",
+      "unexpected_incidents",
+      "legal_review",
+      "setup_costs"
+    ],
+    "pilot_example_only": {
+      "orders": 10,
+      "price_each_JPY": 2980,
+      "example_total_gross_JPY": 29800,
+      "example_contribution_before_fixed_JPY_rounded": 17620,
+      "example_other_variable_cost_JPY": 11000,
+      "example_payment_cost_JPY_rounded": 1180,
+      "not_actual_orders": true,
+      "not_14day_profit": true
+    }
+  },
+  "EXP1": {
+    "reuses_MK10_group": "B_PAID_CONCEPT",
+    "participant_target_proposal": [
+      4,
+      6
+    ],
+    "no_current_participants": true,
+    "fictional_sample_required": true,
+    "no_real_birth_data": true,
+    "display_notice": "開発中・見本は架空・販売未承認。購入・予約・支払い・連絡先登録はできません。",
+    "questions": [
+      "What do you think is delivered?",
+      "What differs from the free content?",
+      "Which part needs evidence?",
+      "What prevents you deciding?",
+      "What content/value would warrant 1980/2980/3980 JPY?"
+    ],
+    "response_options": [
+      "検討候補に入る",
+      "条件次第",
+      "検討しない",
+      "判断できない",
+      "回答しない"
+    ],
+    "price_prompt_order": "rotate_predefined_sequences",
+    "research_results_are_not_purchase_rate": true,
+    "consent_privacy_prerequisites": [
+      "MK10_active_approved_recruitment",
+      "real_operator_and_contact",
+      "secure_data_store",
+      "written_nonleading_moderation",
+      "fictional_sample_vetted"
+    ]
+  },
+  "EXP2": {
+    "sales_approved": false,
+    "price_proposal_JPY": 2980,
+    "price_status": "PROVISIONAL_NOT_APPROVED",
+    "duration_days_upper_limit_proposal": 14,
+    "calendar_start_date": null,
+    "calendar_end_date": null,
+    "max_confirmed_orders_proposal": 10,
+    "canary_orders_first": 3,
+    "additional_orders_after_canary_check": 7,
+    "actual_available_staff_hours": null,
+    "actual_total_budget_cap_JPY": null,
+    "estimated_edit_minutes_per_order_assumption": 30,
+    "pre_sale_requirements": [
+      "G2_C",
+      "G2_S",
+      "G2_L",
+      "G2_D",
+      "MK09_SD01_to_SD22_PASS",
+      "MK10_relevant_human_review",
+      "M12_signed_release",
+      "legally_approved_final_terms",
+      "support_capacity_and_budget"
+    ],
+    "pricing_policy": "one_approved_product_one_approved_price_no_randomized_checkout_price",
+    "allowed_source_of_truth": "paid_and_refunded_server_confirmations_in_protected_order_DB",
+    "delivery_required": "authorized_private_PDF_after_QA",
+    "consent_policy": "neither_FREE_completion_nor_MK07_marketing_optin_required_for_purchase"
+  },
+  "G2_start_conditions": [
+    {
+      "id": "G2-C",
+      "state": "BLOCKED",
+      "evidence_required": "M06 N01 N05 independent calendar eligibility and year-source validation"
+    },
+    {
+      "id": "G2-S",
+      "state": "BLOCKED",
+      "evidence_required": "N05 review of story and non-fabricated personal events"
+    },
+    {
+      "id": "G2-L",
+      "state": "BLOCKED",
+      "evidence_required": "actual seller, law, price, final confirmation, payment, refund, support"
+    },
+    {
+      "id": "G2-D",
+      "state": "BLOCKED",
+      "evidence_required": "sensitive data protection, PDF authorization, idempotent transaction and incident recovery"
+    },
+    {
+      "id": "MK09-E2E",
+      "state": "BLOCKED",
+      "evidence_required": "all mandatory SD01-SD22 actual sandbox and human acceptance evidence"
+    },
+    {
+      "id": "MK10-HUMAN",
+      "state": "BLOCKED",
+      "evidence_required": "consented qualitative study and resolved severe findings"
+    },
+    {
+      "id": "M12-RELEASE",
+      "state": "BLOCKED",
+      "evidence_required": "named responsible approval linked to exact build and customer-facing terms"
+    },
+    {
+      "id": "MK08-METRICS",
+      "state": "BLOCKED",
+      "evidence_required": "authoritative order / refund aggregates and disclosure review"
+    }
+  ],
+  "research_kpis": [
+    {
+      "id": "E01",
+      "name": "concept_understanding",
+      "definition": "MK10 B01/B04/B06 plus observed O06-O08 with actual n and NA/SKIP",
+      "state": "NOT_MEASURED"
+    },
+    {
+      "id": "E02",
+      "name": "decision_blockers",
+      "definition": "issues and missing information grouped with unidentifiable summaries",
+      "state": "NOT_MEASURED"
+    },
+    {
+      "id": "E03",
+      "name": "hypothetical_price_reaction",
+      "definition": "counts per price 1980/2980/3980 and nonleading reasons; not actual orders",
+      "state": "NOT_MEASURED"
+    },
+    {
+      "id": "E04",
+      "name": "coercion_or_misrepresentation",
+      "definition": "P0-P3 coded issues on promises, validity, pressure",
+      "state": "NOT_MEASURED"
+    },
+    {
+      "id": "E05",
+      "name": "appeal_of_story",
+      "definition": "MK10 B07 distribution and anonymized reasons",
+      "state": "NOT_MEASURED"
+    }
+  ],
+  "sales_kpis": [
+    {
+      "id": "S01",
+      "name": "product_view_events",
+      "definition": "MK08 product_view; count, not users",
+      "state": "DISABLED_UNTIL_G2"
+    },
+    {
+      "id": "S02",
+      "name": "checkout_start_events",
+      "definition": "MK08 checkout_start; count, not unique people",
+      "state": "DISABLED_UNTIL_G2"
+    },
+    {
+      "id": "S03",
+      "name": "confirmed_paid_orders",
+      "definition": "Payment verified server-side unique successful orders",
+      "state": "DISABLED_UNTIL_G2"
+    },
+    {
+      "id": "S04",
+      "name": "refund_count_and_amount",
+      "definition": "Payment verified refunds and amounts",
+      "state": "DISABLED_UNTIL_G2"
+    },
+    {
+      "id": "S05",
+      "name": "net_receipts",
+      "definition": "verified paid total - verified refunds, not accounting profit",
+      "state": "DISABLED_UNTIL_G2"
+    },
+    {
+      "id": "S06",
+      "name": "actual_fulfillment_labor",
+      "definition": "production, QA, revisions and support time including failures",
+      "state": "DISABLED_UNTIL_G2"
+    },
+    {
+      "id": "S07",
+      "name": "actual_contribution",
+      "definition": "actual net receipts less actual variable costs and processing, if measured",
+      "state": "DISABLED_UNTIL_G2"
+    },
+    {
+      "id": "S08",
+      "name": "on_time_delivery",
+      "definition": "successfully accessible private PDFs by promised deadline / valid fulfillment orders",
+      "state": "DISABLED_UNTIL_G2"
+    },
+    {
+      "id": "S09",
+      "name": "support_and_reissue",
+      "definition": "aggregate support cases without birth data and notes in analytics",
+      "state": "DISABLED_UNTIL_G2"
+    },
+    {
+      "id": "S10",
+      "name": "severe_incidents",
+      "definition": "P0/P1, wrong calendar, leak, duplicate bill, fraudulent payment",
+      "state": "DISABLED_UNTIL_G2"
+    },
+    {
+      "id": "S11",
+      "name": "reference_event_ratio",
+      "definition": "verified order count / product_view and / checkout_start events, NOT person CVR",
+      "state": "DISABLED_UNTIL_G2"
+    },
+    {
+      "id": "S12",
+      "name": "postpurchase_optional_review",
+      "definition": "voluntary perception of clarity, autonomy, readability, fulfillment",
+      "state": "DISABLED_UNTIL_G2"
+    }
+  ],
+  "stop_conditions": [
+    {
+      "id": "STOP-M11-01",
+      "trigger": "missing G2 or calendar ineligibility or unsupported birth charged",
+      "action": "stop sales, calendar review"
+    },
+    {
+      "id": "STOP-M11-02",
+      "trigger": "unsubstantiated promise, fake testimonial, fake deadline or comparative price",
+      "action": "pause ads and checkout, legal re-review"
+    },
+    {
+      "id": "STOP-M11-03",
+      "trigger": "research or birth data collected without consent; file access leak",
+      "action": "stop data, protect individuals, statutory reporting evaluation"
+    },
+    {
+      "id": "STOP-M11-04",
+      "trigger": "double charge, invalid webhook, refund or fulfillment failure",
+      "action": "pause checkout and affected processing, customer remedy"
+    },
+    {
+      "id": "STOP-M11-05",
+      "trigger": "serious distress, fictional actual life assertions, manipulation",
+      "action": "halt content, review, correct and remedy"
+    },
+    {
+      "id": "STOP-M11-06",
+      "trigger": "insufficient editing QA support capacity or delivery deadline risk",
+      "action": "pause new orders, fulfill existing commitments"
+    },
+    {
+      "id": "STOP-M11-07",
+      "trigger": "actual expenses cross approved budget or sustained nonpositive contribution",
+      "action": "pause new orders, update MK04"
+    },
+    {
+      "id": "STOP-M11-08",
+      "trigger": "unreliable ledger or event data",
+      "action": "pause expansion and inference, investigate without PII overcollection"
+    }
+  ],
+  "decision_outcomes": [
+    {
+      "id": "NO_GO",
+      "meaning": "G2 incomplete or EXP1 research without approval",
+      "next": "return to blocked prerequisite"
+    },
+    {
+      "id": "STOPPED_SAFETY",
+      "meaning": "critical legal safety financial or fulfillment incident",
+      "next": "remediate all affected customers and re-review"
+    },
+    {
+      "id": "INCONCLUSIVE",
+      "meaning": "small n, missing data, insufficient differentiation, sampling bias",
+      "next": "refine and collect only with proper separate approval"
+    },
+    {
+      "id": "DELIVERY_FEASIBLE",
+      "meaning": "approved safe on-time pilot delivery evidence exists",
+      "next": "document initial capability not demand validation"
+    },
+    {
+      "id": "UNIT_ECONOMICS_NEED_REVISION",
+      "meaning": "actual costs exceed budget or contribution no longer positive",
+      "next": "revise MK04 and reapprove price/product"
+    },
+    {
+      "id": "PROCEED_TO_NEXT_REVIEW",
+      "meaning": "safe fulfillment, measured actual costs and owner approves planning next round",
+      "next": "design MK12 not automatic scale"
+    }
+  ],
+  "acceptance_tests": [
+    {
+      "id": "SE01",
+      "title": "MK01-MK10の整合",
+      "expected": "Free/paid separation, P-A hypothesis and all product limitations retained",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SE02",
+      "title": "EXP1が非取引である",
+      "expected": "Fictional sample + no sales/no booking/no payment/no checkout + development notice",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SE03",
+      "title": "価格順序・非誘導",
+      "expected": "1980/2980/3980 provisional price prompts balanced and reasons elicited",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SE04",
+      "title": "参加同意・撤回",
+      "expected": "MK10 consent and restricted research records available before recruitment",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SE05",
+      "title": "暦G2-C",
+      "expected": "Personal calendar, year anchoring, boundary and unsupported inputs validated",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SE06",
+      "title": "物語G2-S",
+      "expected": "No fabricated personal events, no post-hoc modification of candidate years, human QA",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SE07",
+      "title": "法務G2-L",
+      "expected": "Legitimate seller, full price, returns, delivery term, correction on final confirmation",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SE08",
+      "title": "データG2-D",
+      "expected": "Verified payments, no cross-customer PDFs, encrypted sensitive data and incident recovery",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SE09",
+      "title": "E2E・イベント",
+      "expected": "MK09 SD01-22 and server-sourced purchase refund counts reconciled",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SE10",
+      "title": "単一価格・供給上限",
+      "expected": "Approved one-price pilot, maximum approved orders and first-three canary hold",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SE11",
+      "title": "実原価の更新",
+      "expected": "Actual labor, fees, refunds and fulfillment measured rather than MK04 assumptions",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SE12",
+      "title": "分母・欠測",
+      "expected": "MK08 ratios not represented as unique buyers; NA remains NA",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SE13",
+      "title": "停止・復旧",
+      "expected": "All eight stop cases exercise halt new order, protect current clients, and require approval",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SE14",
+      "title": "結果の再現",
+      "expected": "Experiment version, source-of-truth orders, costs and results with audit evidence",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SE15",
+      "title": "実売未承認",
+      "expected": "No booking, no sales, no payment, no public acquisition; G1/G2 NO_GO",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SE16",
+      "title": "引継ぎ",
+      "expected": "MK12 deferred expansion with release dependencies and owner documented",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    }
+  ],
+  "acceptance_test_count": 16,
+  "release_evidence_template": {
+    "experiment_id": null,
+    "product_build": null,
+    "operator": null,
+    "approved_price_JPY": null,
+    "approved_duration": null,
+    "marketing_spend_cap": null,
+    "production_capacity": null,
+    "g2_evidence": null,
+    "approval_date": null,
+    "actual_orders": null,
+    "actual_receipts": null,
+    "actual_costs": null,
+    "actual_refunds": null,
+    "critical_incidents": null,
+    "experiment_outcome": "NOT_STARTED",
+    "decision_evidence_url": null
+  },
+  "next_marketing_task": "MK12",
+  "pending_dev_work": [
+    "B04",
+    "M07_scene_v01",
+    "M11",
+    "M12",
+    "M06",
+    "N01",
+    "N05",
+    "MK09_E2E",
+    "MK10_actual_human_reviews"
+  ]
+}
