@@ -48,7 +48,19 @@
       "chat_draft_origin": "current_chat",
       "github_asset_path": null,
       "final_art_approved": false,
-      "asset_sha": null
+      "asset_sha": null,
+      "user_supplied_original_filename": "5646E782-40E4-4D55-AA81-975A30D83760.jpeg",
+      "source_sha256": "1d733e5d6b41a5ec9c732f249e8f0634ea9c188c9e7ea971fe7abc7136ba2fe5",
+      "source_size_bytes": 174420,
+      "source_dimensions_px": [
+        1254,
+        1254
+      ],
+      "source_intake_date": "2026-11-04",
+      "source_review_positive": "丸耳と細い桃色の尾でねずみが直感的にわかる",
+      "source_review_followup": "大きな耳・長い尾の画面占有率と他12支の横幅を確認",
+      "source_status": "received_in_chat_not_uploaded_to_github",
+      "review_status": "initial_review_complete"
     },
     {
       "id": "BC02",
@@ -58,7 +70,19 @@
       "chat_draft_origin": "current_chat",
       "github_asset_path": null,
       "final_art_approved": false,
-      "asset_sha": null
+      "asset_sha": null,
+      "user_supplied_original_filename": "8C95A2A0-7259-4FDF-A712-8E1111E010F8.jpeg",
+      "source_sha256": "900e699758415348901987566a9fb27d430f9788c02816babc6d5d2409b4809d",
+      "source_size_bytes": 170960,
+      "source_dimensions_px": [
+        1254,
+        1254
+      ],
+      "source_intake_date": "2026-11-04",
+      "source_review_positive": "短い角・牛耳・まだら模様で判別容易",
+      "source_review_followup": "耳と角の配置・輪郭線の太さを全体と比較",
+      "source_status": "received_in_chat_not_uploaded_to_github",
+      "review_status": "initial_review_complete"
     },
     {
       "id": "BC03",
@@ -68,7 +92,19 @@
       "chat_draft_origin": "current_chat",
       "github_asset_path": null,
       "final_art_approved": false,
-      "asset_sha": null
+      "asset_sha": null,
+      "user_supplied_original_filename": "FA85E3AE-14EC-44CA-93A6-209B70B1B64D.jpeg",
+      "source_sha256": "14a239a672c61ae2db39dc649c6c632bebaa3b327ea55fef5868292fefdad28d",
+      "source_size_bytes": 169932,
+      "source_dimensions_px": [
+        1254,
+        1254
+      ],
+      "source_intake_date": "2026-11-04",
+      "source_review_positive": "耳・額と頬の虎縞が明快。白もちの面積も十分",
+      "source_review_followup": "共通の細輪郭ルールより線が太い。線幅の統一を検討",
+      "source_status": "received_in_chat_not_uploaded_to_github",
+      "review_status": "initial_review_complete"
     },
     {
       "id": "BC04",
@@ -78,7 +114,19 @@
       "chat_draft_origin": "current_chat",
       "github_asset_path": null,
       "final_art_approved": false,
-      "asset_sha": null
+      "asset_sha": null,
+      "user_supplied_original_filename": "C055C62F-257B-4685-84DD-F3E8AB5E6393.jpeg",
+      "source_sha256": "cdadadc0993817027c7c6dca556249517e05705a05372564971678d8a2cf1fa7",
+      "source_size_bytes": 171230,
+      "source_dimensions_px": [
+        1254,
+        1254
+      ],
+      "source_intake_date": "2026-11-04",
+      "source_review_positive": "長耳・丸い尻尾が簡潔で、素体の白もち感を維持",
+      "source_review_followup": "輪郭線の太さ、耳の長さと他キャラの占有率を比較",
+      "source_status": "received_in_chat_not_uploaded_to_github",
+      "review_status": "initial_review_complete"
     },
     {
       "id": "BC05",
@@ -88,7 +136,19 @@
       "chat_draft_origin": "current_chat",
       "github_asset_path": null,
       "final_art_approved": false,
-      "asset_sha": null
+      "asset_sha": null,
+      "user_supplied_original_filename": "051E4F24-737D-475C-AB4E-078BF0DEA957.jpeg",
+      "source_sha256": "c1b73d6678a22a0758f1bded5f41bc45d690120c299c57466fc3ca8be92292f1",
+      "source_size_bytes": 205757,
+      "source_dimensions_px": [
+        1254,
+        1254
+      ],
+      "source_intake_date": "2026-11-04",
+      "source_review_positive": "角・ひげ・背の飾り毛・尾で龍と認識できる",
+      "source_review_followup": "10体中やや情報量が多い。尾やたてがみの複雑さを見直す候補",
+      "source_status": "received_in_chat_not_uploaded_to_github",
+      "review_status": "initial_review_complete"
     },
     {
       "id": "BC06",
@@ -98,7 +158,19 @@
       "chat_draft_origin": "current_chat",
       "github_asset_path": null,
       "final_art_approved": false,
-      "asset_sha": null
+      "asset_sha": null,
+      "user_supplied_original_filename": "CF9E2B90-972D-4C91-A053-EF201945F4EA.jpeg",
+      "source_sha256": "b40cebbd3523e48be3deb71ebadb14379d14f729eb776611f4cd0669cfab7b73",
+      "source_size_bytes": 156673,
+      "source_dimensions_px": [
+        1254,
+        1254
+      ],
+      "source_intake_date": "2026-11-04",
+      "source_review_positive": "もち型から伸びる細い尾、二股の舌で巳を表す。とぐろなし",
+      "source_review_followup": "舌は動物の識別として許容するか口なしルールの例外を明文化する",
+      "source_status": "received_in_chat_not_uploaded_to_github",
+      "review_status": "initial_review_complete"
     },
     {
       "id": "BC07",
@@ -108,7 +180,19 @@
       "chat_draft_origin": "current_chat",
       "github_asset_path": null,
       "final_art_approved": false,
-      "asset_sha": null
+      "asset_sha": null,
+      "user_supplied_original_filename": "BBECE36D-E2BE-4E85-877A-05B3A56B18D5.jpeg",
+      "source_sha256": "e45fe260120c16295e4a8d89716b71771d8f1e71d8d92fd700ede94b7fbdd7da",
+      "source_size_bytes": 193149,
+      "source_dimensions_px": [
+        1254,
+        1254
+      ],
+      "source_intake_date": "2026-11-04",
+      "source_review_positive": "尖り耳・たてがみ・短い尾で午らしさが出ている",
+      "source_review_followup": "前髪と尾の情報量・茶色の面積を素材レイヤーとの関係で検討",
+      "source_status": "received_in_chat_not_uploaded_to_github",
+      "review_status": "initial_review_complete"
     },
     {
       "id": "BC08",
@@ -118,7 +202,19 @@
       "chat_draft_origin": "current_chat",
       "github_asset_path": null,
       "final_art_approved": false,
-      "asset_sha": null
+      "asset_sha": null,
+      "user_supplied_original_filename": "8E6A95FD-50A3-4F35-8674-3F5893EFCF40.jpeg",
+      "source_sha256": "5df913ddea983ecce7c23dbad4f60b02f29116c3cf26dd65d36e6f46d7c2eae4",
+      "source_size_bytes": 180199,
+      "source_dimensions_px": [
+        1254,
+        1254
+      ],
+      "source_intake_date": "2026-11-04",
+      "source_review_positive": "丸い巻毛・垂れ耳が特徴的。白もちらしさも保持",
+      "source_review_followup": "巻毛の線数と輪郭強さを全体の描き込み水準に合わせる",
+      "source_status": "received_in_chat_not_uploaded_to_github",
+      "review_status": "initial_review_complete"
     },
     {
       "id": "BC09",
@@ -128,7 +224,19 @@
       "chat_draft_origin": "current_chat",
       "github_asset_path": null,
       "final_art_approved": false,
-      "asset_sha": null
+      "asset_sha": null,
+      "user_supplied_original_filename": "3FBB2E6F-3725-4861-895A-BB6C1DF91452.jpeg",
+      "source_sha256": "3d08b736ec1bc0319e7e9fea7e4c5402c745dcc67ebead49a4fe078bf3d4ea9c",
+      "source_size_bytes": 187751,
+      "source_dimensions_px": [
+        1254,
+        1254
+      ],
+      "source_intake_date": "2026-11-04",
+      "source_review_positive": "丸い耳・顔周りの茶色・巻き尾で猿の特徴がある",
+      "source_review_followup": "頭部の茶色い面積が大きい。五行素材5色を後から重ねる際の競合確認",
+      "source_status": "received_in_chat_not_uploaded_to_github",
+      "review_status": "initial_review_complete"
     },
     {
       "id": "BC10",
@@ -138,7 +246,19 @@
       "chat_draft_origin": "earlier_chat",
       "github_asset_path": null,
       "final_art_approved": false,
-      "asset_sha": null
+      "asset_sha": null,
+      "user_supplied_original_filename": "9BD4C699-57A7-47AF-AB0A-37420BCB3F07.jpeg",
+      "source_sha256": "b146f97ecfaaae406f1d4ba29a476ebff9dc3cd585e9a3c9e97c54df97a24d8b",
+      "source_size_bytes": 179685,
+      "source_dimensions_px": [
+        1254,
+        1254
+      ],
+      "source_intake_date": "2026-11-04",
+      "source_review_positive": "赤いとさかと小さなくちばしで鳥と識別できる",
+      "source_review_followup": "羽根・尾の表現がほかより少なめ。追加するかは素体ルールと照合し判断",
+      "source_status": "received_in_chat_not_uploaded_to_github",
+      "review_status": "initial_review_complete"
     },
     {
       "id": "BC11",
@@ -148,7 +268,9 @@
       "chat_draft_origin": "earlier_chat",
       "github_asset_path": null,
       "final_art_approved": false,
-      "asset_sha": null
+      "asset_sha": null,
+      "source_status": "original_not_received_in_current_batch",
+      "review_status": "pending_original"
     },
     {
       "id": "BC12",
@@ -158,7 +280,9 @@
       "chat_draft_origin": "earlier_chat",
       "github_asset_path": null,
       "final_art_approved": false,
-      "asset_sha": null
+      "asset_sha": null,
+      "source_status": "original_not_received_in_current_batch",
+      "review_status": "pending_original"
     }
   ],
   "rules": [
@@ -167,5 +291,12 @@
     "generated image is not an approved image",
     "do not infer personal star assignment without validated rule"
   ],
-  "status": "spec_recorded_only_images_not_uploaded"
+  "status": "ten_originals_received_and_metadata_recorded_binaries_not_on_github_formal_approval_pending",
+  "source_review_doc": "21-b04-01-asset-intake-2026-11-04.md",
+  "intake_received_count": 10,
+  "intake_expected_count": 12,
+  "intake_incomplete_branches": [
+    "戌",
+    "亥"
+  ]
 }
