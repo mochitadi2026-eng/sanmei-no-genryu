@@ -9,6 +9,8 @@ on:
       - 'projects/mochimochi-jutsu/m02-core-symbols-v0.1.json'
       - 'projects/mochimochi-jutsu/n01-classical-daiun-study-v0.1.mjs'
       - 'projects/mochimochi-jutsu/tests/n01-classical-daiun-study.test.mjs'
+      - 'projects/mochimochi-jutsu/n01-ritsun-policy-comparison-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/tests/n01-ritsun-policy-comparison.test.mjs'
       - '.github/workflows/mochimochi-n01-calendar-tests.yml'
   pull_request:
     paths:
@@ -18,6 +20,8 @@ on:
       - 'projects/mochimochi-jutsu/m02-core-symbols-v0.1.json'
       - 'projects/mochimochi-jutsu/n01-classical-daiun-study-v0.1.mjs'
       - 'projects/mochimochi-jutsu/tests/n01-classical-daiun-study.test.mjs'
+      - 'projects/mochimochi-jutsu/n01-ritsun-policy-comparison-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/tests/n01-ritsun-policy-comparison.test.mjs'
       - '.github/workflows/mochimochi-n01-calendar-tests.yml'
   workflow_dispatch:
 
@@ -38,5 +42,7 @@ jobs:
           node --check projects/mochimochi-jutsu/tests/n01-annual-ganzhi.test.mjs
           node --check projects/mochimochi-jutsu/n01-classical-daiun-study-v0.1.mjs
           node --check projects/mochimochi-jutsu/tests/n01-classical-daiun-study.test.mjs
+          node --check projects/mochimochi-jutsu/n01-ritsun-policy-comparison-v0.1.mjs
+          node --check projects/mochimochi-jutsu/tests/n01-ritsun-policy-comparison.test.mjs
       - name: Verify NAOJ published-minute boundaries and calendar-only safety
-        run: node --test projects/mochimochi-jutsu/tests/n01-annual-ganzhi.test.mjs projects/mochimochi-jutsu/tests/n01-classical-daiun-study.test.mjs
+        run: node --test projects/mochimochi-jutsu/tests/n01-annual-ganzhi.test.mjs projects/mochimochi-jutsu/tests/n01-classical-daiun-study.test.mjs projects/mochimochi-jutsu/tests/n01-ritsun-policy-comparison.test.mjs
