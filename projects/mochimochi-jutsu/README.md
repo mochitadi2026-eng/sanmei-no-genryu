@@ -77,3 +77,7 @@
 このリポジトリは公開されている。実際の相談・生年月日・回答など個人データをコミットしない。
 
 原典研究：[算命の源流](../../README.md)／[研究ルール](../../RULES.md)／[関連する第15話](../../articles/15-building-an-original-reading.md)
+
+## B02の後続検証（2026-11-03）
+
+[B02報告](17-b02-real-day-engine-and-boundary-audit-2026-11-03.md)・[監査Draft PR #33](https://github.com/mochitadi2026-eng/tadi-sanmei-desk/pull/33)に、既存M06での公開暦11日および独立JDN算式73,049日との照合を記録。[CIではB02 19件・全体622件成功](https://github.com/mochitadi2026-eng/tadi-sanmei-desk/actions/runs/41578987575)。学校の日界の正式採用はB03で検討。既存のB02未実施という記述は作成当時の履歴。
