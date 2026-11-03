@@ -128,6 +128,11 @@ fieldset legend{font-size:clamp(1.2rem,3.5vw,1.42rem);line-height:1.65;margin:0 
 .section p{line-height:1.95}
 .theme-list li{border:1px solid #dce6d6;padding:6px 12px}
 .result-endnote{background:#f2f6ed;border-radius:14px;padding:13px 16px;margin:18px 0}
+.story-scene-title{font-size:1.05rem;font-weight:750;color:#825e47;letter-spacing:.025em;
+line-height:1.7;margin:10px 0 8px;padding-left:12px;border-left:3px solid #c6a287}
+.section h4 + .story-scene-title{margin-top:8px}
+.section p.story-scene-title + p{margin-top:8px}
+#results .section p{overflow-wrap:anywhere}
 #results .buttons{margin-top:26px}
 #restart{width:100%}
 footer{border-top:1px solid #d9e0d5;padding-top:20px;line-height:1.8;margin-top:40px}
@@ -217,7 +222,7 @@ async function load(){
     questionBank:'m07-question-bank-v0.1.json',
     typeCatalog:'m04-types-phases-v0.1.json',
     indicatorCatalog:'m03-indicators-v0.1.json',
-    copyCatalog:'m09-result-copy-v0.1.json'
+    copyCatalog:'m09-result-copy-v0.2.json'
   };
   const entries=await Promise.all(Object.entries(filenames).map(async([key,file])=>{
     const response=await fetch('./'+file,{cache:'no-store'});
@@ -264,7 +269,7 @@ function section(parent,s){
   for(const para of s.paragraphs||[])p(area,para);
   if(s.id==='mochi_guai'){
     area.append(el('h4',s.type_heading));
-    if(s.type){p(area,s.type.label+'（仮称）');p(area,s.type.reflection);p(area,s.type.caution)}
+    if(s.type){p(area,s.type.label+'（仮称）');area.append(el('p',s.type.scene_title,'story-scene-title'));p(area,s.type.reflection);p(area,s.type.caution)}
     if(s.selected_themes.length){
       area.append(el('h4',s.selected_themes_heading));
       const ul=el('ul',undefined,'theme-list');
@@ -272,7 +277,7 @@ function section(parent,s){
       area.append(ul);
     }
     area.append(el('h4',s.phase_heading));
-    if(s.phase){p(area,s.phase.label+'（仮称）');p(area,s.phase.reflection)}
+    if(s.phase){p(area,s.phase.label+'（仮称）');area.append(el('p',s.phase.scene_title,'story-scene-title'));p(area,s.phase.reflection)}
     else p(area,s.phase_fallback);
   }
   if(s.optional_question)area.append(el('p',s.optional_question));
