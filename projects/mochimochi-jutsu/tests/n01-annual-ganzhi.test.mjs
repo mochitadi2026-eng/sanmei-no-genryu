@@ -103,4 +103,5 @@ test('no natal chart or personal predictions and no input mutation',()=>{
  assert.equal(Object.hasOwn(r,'predicted_event'),false);
  assert.equal(Object.hasOwn(r,'birth_date'),false);
  assert.equal(JSON.stringify(registry),before);
+ assert.throws(()=>resolveAnnualGanzhi({registry,timestamp_jst:'2026-05-10T12:00:00+09:00',birth_date:'1988-01-01'}),{code:'N01_INVALID_INPUT'});
 });
