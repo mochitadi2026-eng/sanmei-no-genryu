@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
+<title id="title">木漏れ日の小道</title>
+<desc id="desc">分かれ道の道しるべ、手前の一歩目の飛び石、木陰のベンチ、遠くまで続く小道、小さな風鈴、二人で囲める丸テーブルがある穏やかな和風の庭。</desc>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f7f3e9"/><stop offset=".63" stop-color="#edf0e4"/><stop offset="1" stop-color="#e3e9d8"/></linearGradient>
+  <linearGradient id="soil" x1="0" x2=".35" y1="0" y2="1"><stop stop-color="#d3c2a7"/><stop offset="1" stop-color="#ead9b9"/></linearGradient>
+  <linearGradient id="wood" x1="0" x2="1"><stop stop-color="#9c7356"/><stop offset=".5" stop-color="#b28a64"/><stop offset="1" stop-color="#84674f"/></linearGradient>
+  <radialGradient id="light"><stop stop-color="#fff8e5" stop-opacity=".7"/><stop offset="1" stop-color="#fff8e5" stop-opacity="0"/></radialGradient>
+  <pattern id="paper" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M3 8l5-1M14 21l5 1M21 3l2 3" stroke="#8f9b80" stroke-opacity=".09" stroke-width="1" fill="none"/></pattern>
+  <g id="leaf"><path d="M0 0 Q7 -10 16 -5Q12 7 0 0Z" fill="#85a48a" stroke="#748e74" stroke-width="1"/></g>
+  <g id="blossom"><circle cx="-8" cy="0" r="6" fill="#efc9c7"/><circle cx="8" cy="0" r="6" fill="#efd6cc"/><circle cx="0" cy="-8" r="6" fill="#f4dcd6"/><circle cx="0" cy="8" r="6" fill="#eecbc5"/><circle r="3" fill="#d7ae75"/></g>
+</defs>
+<!-- One coherent view: the six Q2 objects are distinct and similarly weighted. -->
+<rect width="800" height="1000" fill="url(#sky)"/>
+<ellipse cx="470" cy="220" rx="340" ry="230" fill="url(#light)"/>
+<path d="M0 370 Q130 290 275 352 T555 340 T800 338 V1000H0Z" fill="#d7e1ce"/>
+<path d="M0 470Q170 390 330 444T800 406V1000H0Z" fill="#c4d6bc"/>
+<path d="M0 600Q170 510 360 562T800 523V1000H0Z" fill="#b4caaa"/>
+<!-- Q2-d: distant lane; cue metadata is for design QA, not an interactive selection -->
+<g id="cue-d" data-cue="d">
+<path d="M476 265 Q530 313 485 370 Q451 411 510 468 Q554 507 500 559" fill="none" stroke="#8b987e" stroke-width="100" stroke-linecap="round" opacity=".24"/>
+<path d="M476 265 Q530 313 485 370 Q451 411 510 468 Q554 507 500 559" fill="none" stroke="#e5d5ba" stroke-width="72" stroke-linecap="round"/>
+<path d="M476 265 Q530 313 485 370 Q451 411 510 468 Q554 507 500 559" fill="none" stroke="#f0e4ce" stroke-width="48" stroke-linecap="round"/>
+</g>
+<!-- Path splits visibly near the central signpost -->
+<path d="M390 1000 Q375 822 360 693 Q325 590 300 523 Q255 482 150 450" fill="none" stroke="#d4c1a0" stroke-width="147" stroke-linecap="round"/>
+<path d="M390 1000 Q375 822 360 693 Q325 590 300 523 Q255 482 150 450" fill="none" stroke="#e8d8bc" stroke-width="125" stroke-linecap="round"/>
+<path d="M304 540 Q385 493 500 559" fill="none" stroke="#d8c5aa" stroke-width="101" stroke-linecap="round"/>
+<path d="M304 540 Q385 493 500 559" fill="none" stroke="#ede0c8" stroke-width="79" stroke-linecap="round"/>
+<!-- Wooded shade on left and far-side plants -->
+<path d="M75 630Q90 442 58 225" stroke="#7b8063" stroke-width="29" fill="none" stroke-linecap="round"/>
+<path d="M58 300Q110 210 190 192M60 275Q12 195 -18 163" stroke="#86866a" stroke-width="16" fill="none" stroke-linecap="round"/>
+<g fill="#89a88d" opacity=".93"><circle cx="62" cy="166" r="74"/><circle cx="125" cy="168" r="65"/><circle cx="10" cy="229" r="66"/><circle cx="155" cy="229" r="51"/><circle cx="27" cy="116" r="44"/></g>
+<g fill="#9eb79a" opacity=".9"><circle cx="190" cy="317" r="39"/><circle cx="100" cy="349" r="28"/><circle cx="579" cy="388" r="41"/><circle cx="621" cy="433" r="43"/><circle cx="733" cy="518" r="50"/></g>
+<path d="M615 -10Q636 105 602 175" stroke="#8b7860" stroke-width="19" fill="none" stroke-linecap="round"/>
+<path d="M619 82Q680 74 753 111M605 109Q548 72 529 41" stroke="#927c65" stroke-width="11" fill="none" stroke-linecap="round"/>
+<g fill="#98af92"><circle cx="632" cy="42" r="43"/><circle cx="712" cy="91" r="55"/><circle cx="764" cy="139" r="35"/><circle cx="581" cy="42" r="49"/></g>
+<g opacity=".9"><use href="#blossom" x="696" y="75"/><use href="#blossom" x="735" y="124"/><use href="#blossom" x="575" y="69"/><use href="#blossom" x="140" y="191"/></g>
+<!-- Q2-e: wind chime enlarged for mobile legibility; not a clickable hotspot -->
+<g id="cue-e" data-cue="e" transform="translate(676 205) scale(1.65) translate(-676 -205)">
+<path d="M676 126V189" stroke="#a38c75" stroke-width="3"/>
+<ellipse cx="676" cy="197" rx="24" ry="21" fill="#e5edf0" stroke="#8babae" stroke-width="4"/>
+<path d="M652 200Q676 213 700 200" fill="none" stroke="#86a4aa" stroke-width="3"/>
+<path d="M676 218V239" stroke="#8babae" stroke-width="3"/>
+<path d="M666 239Q676 242 689 239L684 279Q676 283 668 279Z" fill="#e8d0bd" stroke="#aa9382" stroke-width="2"/>
+</g>
+<!-- Q2-a: blank rustic guidepost at path fork, not a textual arrow -->
+<g id="cue-a" data-cue="a" transform="translate(290 435) scale(1.20) translate(-290 -435)">
+<ellipse cx="299" cy="520" rx="63" ry="18" fill="#8f927a" opacity=".18"/>
+<path d="M300 354L298 516" stroke="#6d6150" stroke-width="15" stroke-linecap="round"/>
+<path d="M267 375L349 380L341 419L265 414Z" fill="url(#wood)" stroke="#79634f" stroke-width="4"/>
+<path d="M236 427L333 422L331 462L239 468Z" fill="#b18c6b" stroke="#79634f" stroke-width="4"/>
+<circle cx="282" cy="397" r="3.5" fill="#665546"/><circle cx="313" cy="444" r="3.5" fill="#665546"/>
+</g>
+<!-- Q2-c: shaded bench with open negative space around it -->
+<g id="cue-c" data-cue="c">
+<ellipse cx="155" cy="675" rx="122" ry="26" fill="#7e8974" opacity=".18"/>
+<path d="M76 586L78 661M234 586L230 663" stroke="#85694e" stroke-width="12" stroke-linecap="round"/>
+<path d="M71 553Q149 543 240 559L237 599Q150 587 73 595Z" fill="#b58f69" stroke="#806c54" stroke-width="4"/>
+<path d="M62 608Q159 592 251 609L243 634Q160 622 71 636Z" fill="url(#wood)" stroke="#806b54" stroke-width="4"/>
+<path d="M95 633L83 682M212 631L225 684" stroke="#84674f" stroke-width="12" stroke-linecap="round"/>
+</g>
+<!-- Q2-b: first prominent stepping stone, separate from distant trail -->
+<g id="cue-b" data-cue="b">
+<ellipse cx="392" cy="795" rx="101" ry="45" fill="#adb39c" opacity=".35"/>
+<path d="M307 760Q356 726 429 733Q471 742 485 774Q474 805 402 813Q329 810 307 782Z" fill="#c4c4b4" stroke="#899788" stroke-width="5"/>
+<path d="M321 752Q394 727 454 752" fill="none" stroke="#f2efdd" stroke-opacity=".8" stroke-width="5"/>
+<!-- Keep one clear nearest stepping stone: Q2-b should not ambiguously point at a second foreground stone -->
+</g>
+<!-- Q2-f: round meeting table with two open chairs in lower right -->
+<g id="cue-f" data-cue="f">
+<ellipse cx="619" cy="828" rx="140" ry="42" fill="#8b9b83" opacity=".23"/>
+<path d="M525 784L509 842M555 786L570 841M682 790L672 845M707 783L727 845" stroke="#8c7358" stroke-width="9" stroke-linecap="round"/>
+<path d="M497 773Q524 737 556 773M680 772Q706 739 737 774" stroke="#947d63" stroke-width="12" fill="none" stroke-linecap="round"/>
+<path d="M503 796Q527 782 556 797M682 798Q706 786 735 800" stroke="#a28366" stroke-width="10" fill="none" stroke-linecap="round"/>
+<path d="M609 788L605 848M632 788L635 849" stroke="#896f54" stroke-width="10" stroke-linecap="round"/>
+<ellipse cx="620" cy="767" rx="84" ry="32" fill="#b79979" stroke="#866d55" stroke-width="5"/>
+<ellipse cx="620" cy="758" rx="80" ry="27" fill="#d2b192" stroke="#aa8b6d" stroke-width="3"/>
+<g fill="#f4eee1" stroke="#aa9480" stroke-width="2"><ellipse cx="593" cy="753" rx="14" ry="8"/><ellipse cx="645" cy="752" rx="14" ry="8"/></g>
+</g>
+<!-- Soft garden ground, gentle decoration never used as answer targets -->
+<g fill="#9bb69a"><ellipse cx="76" cy="828" rx="65" ry="33"/><ellipse cx="153" cy="896" rx="52" ry="28"/><ellipse cx="751" cy="656" rx="67" ry="29"/><ellipse cx="728" cy="918" rx="68" ry="26"/><ellipse cx="242" cy="967" rx="62" ry="25"/></g>
+<g stroke="#9daf90" stroke-width="3" fill="none" opacity=".75"><path d="M30 887q-8-32-23-37m25 38q10-32 27-38M711 600q-11-40-25-48m27 49q16-47 33-49M221 933q-9-35-23-45m24 45q13-41 34-42"/></g>
+<g opacity=".6"><use href="#blossom" x="107" y="865"/><use href="#blossom" x="747" y="900"/><use href="#blossom" x="263" y="933"/></g>
+<rect width="800" height="1000" fill="url(#paper)" pointer-events="none"/>
+</svg>

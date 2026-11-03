@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import questionBank from '../m07-question-bank-v0.1.json' with {type:'json'};
 import typeCatalog from '../m04-types-phases-v0.1.json' with {type:'json'};
 import indicatorCatalog from '../m03-indicators-v0.1.json' with {type:'json'};
-import copyCatalog from '../m09-result-copy-v0.1.json' with {type:'json'};
+import copyCatalog from '../m09-result-copy-v0.2.json' with {type:'json'};
 import {classifyAnswers,ALGORITHM_VERSION} from '../m08-classifier-v0.1.mjs';
 import {PRESENTER_VERSION,validateResultCatalogs,presentClassification,presentAnswers} from '../m09-result-presenter-v0.1.mjs';
 
@@ -25,6 +25,12 @@ test('M09 copy catalog matches original M03/M04 source IDs and labels',()=>{
   assert.equal(copyCatalog.types.length,12);
   assert.equal(copyCatalog.phases.length,5);
   assert.equal(copyCatalog.themes.length,6);
+  assert.equal(copyCatalog.version,'m09-copy-v0.2');
+  assert.equal(copyCatalog.editorial_version,'pk03-story-copy-v1.0');
+  assert.equal(new Set(copyCatalog.types.map(x=>x.scene_title)).size,12);
+  assert.equal(new Set(copyCatalog.phases.map(x=>x.scene_title)).size,5);
+  assert.ok(copyCatalog.types.every(x=>x.reflection.length>=100));
+  assert.ok(copyCatalog.phases.every(x=>x.reflection.length>=45));
   assert.equal(Object.hasOwn(copyCatalog.types[0],'label'),false);
 });
 
@@ -36,6 +42,9 @@ test('classified result shows original type label, independent phase, optional q
   assert.equal(r.sections[0].status,'not_connected');
   assert.equal(r.sections[1].type.id,'MT01');
   assert.equal(r.sections[1].type.label,'のびのびもち');
+  assert.equal(r.sections[1].type.scene_title,'曲がり角に、もう一本の道');
+  assert.equal(r.sections[1].phase.scene_title,'小さな実験の午後');
+  assert.equal(r.sections[2].optional_question,copyCatalog.types[0].optional_question);
   assert.equal(r.sections[1].phase.id,'FP03');
   assert.equal(r.sections[1].phase.label,'ふくらみ期');
   assert.equal(r.sections[1].selected_themes[0].label,'柔軟性');
@@ -52,7 +61,8 @@ test('12 provisional names are returned without rebuilding or duplicating M04 la
       const expected=typeCatalog.types[i*2+(mode==='b'?1:0)];
       assert.equal(r.sections[1].type.id,expected.id);
       assert.equal(r.sections[1].type.label,expected.label);
-      assert.ok(r.sections[1].type.reflection.length>10);
+      assert.ok(r.sections[1].type.reflection.length>100);
+      assert.equal(r.sections[1].type.scene_title,copyCatalog.types[i*2+(mode==='b'?1:0)].scene_title);
     }
   }
 });
@@ -64,6 +74,7 @@ test('all five phases and phase x are independent of type',()=>{
     assert.equal(r.sections[1].type.id,'MT01');
     assert.equal(r.sections[1].phase?.id??null,typeCatalog.phases[i]?.id??null);
     if(ids[i]==='x')assert.ok(r.sections[1].phase_fallback);
+    else assert.equal(r.sections[1].phase.scene_title,copyCatalog.phases[i].scene_title);
   }
 });
 
@@ -76,6 +87,7 @@ test('Q1/Q2 alone never turn into a type, but selected themes remain readable',(
   assert.ok(s.paragraphs[0].includes('ひとつのテーマにしぼりませんでした'));
   assert.equal(s.phase.id,'FP03');
   assert.ok(r.sections[2].optional_question.length>0);
+  assert.equal(r.sections[2].optional_question,copyCatalog.phases[2].optional_question);
 });
 
 test('unknown mode keeps corroborated themes without inventing a type',()=>{
@@ -134,6 +146,25 @@ test('tampered M08 outputs or catalogs cannot fabricate result or silently pass'
   const badIndicator=structuredClone(indicatorCatalog);
   badIndicator.indicators[0].id='EN';
   assert.throws(()=>presentClassification(actual,{...catalogs,indicatorCatalog:badIndicator}),{code:'COPY_CATALOG_INVALID'});
+});
+
+test('PK03 editorial contract: optional metaphor, no fabricated history or fear-based commands',()=>{
+  assert.equal(copyCatalog.types.length,12);
+  assert.equal(copyCatalog.phases.length,5);
+  const texts=[
+    ...copyCatalog.types.flatMap(x=>[x.scene_title,x.reflection,x.optional_question]),
+    ...copyCatalog.phases.flatMap(x=>[x.scene_title,x.reflection,x.optional_question]),
+    ...Object.values(copyCatalog.fallbacks).filter(x=>typeof x==='string')
+  ];
+  assert.ok(texts.every(s=>typeof s==='string'&&s.trim().length));
+  assert.ok(texts.every(s=>!/(あなたは昔から|あなたの過去に|必ず当たる|運気が上がる|絶対に|死期|病気が治る|金運が確実)/.test(s)));
+  assert.ok(copyCatalog.footer.includes('創作'));
+  const oldVersion=structuredClone(copyCatalog);oldVersion.version='m09-copy-v0.1';
+  assert.throws(()=>validateResultCatalogs(oldVersion,typeCatalog,indicatorCatalog),{code:'COPY_CATALOG_INVALID'});
+  for(const type of typeCatalog.types){
+    const t=copyCatalog.types.find(x=>x.id===type.id);
+    assert.ok(t&&t.scene_title&&!/第[0-9一二三]/.test(t.scene_title));
+  }
 });
 
 test('M08 and M09 do not mutate input/copy/catalog data and results are deterministic',()=>{

@@ -4,7 +4,7 @@
  * Does not calculate a natal chart or diagnose personal traits.
  */
 import { classifyAnswers, ALGORITHM_VERSION } from './m08-classifier-v0.1.mjs';
-export const PRESENTER_VERSION = 'mochimochi-result-presenter-v0.1';
+export const PRESENTER_VERSION = 'mochimochi-result-presenter-v0.2';
 const THEMES=['MOCHI','KETSU','NUKI','NEBA','YURA','EN'];
 const TYPE_IDS=Array.from({length:12},(_,i)=>'MT'+String(i+1).padStart(2,'0'));
 const PHASE_IDS=Array.from({length:5},(_,i)=>'FP'+String(i+1).padStart(2,'0'));
@@ -36,7 +36,7 @@ function versionKeys(copy,typeCatalog,indicatorCatalog){
 /** Validate all copy IDs against original M03/M04 catalogs; do not duplicate labels. */
 export function validateResultCatalogs(copy,typeCatalog,indicatorCatalog){
   if(!record(copy)||!record(typeCatalog)||!record(indicatorCatalog)
-    ||!record(copy.related)||copy.version!=='m09-copy-v0.1'
+    ||!record(copy.related)||copy.version!=='m09-copy-v0.2'
     ||copy.related.indicator_catalog_version!==indicatorCatalog.version
     ||copy.related.type_catalog_version!==typeCatalog.version
     ||copy.related.algorithm_version!==ALGORITHM_VERSION
@@ -54,7 +54,7 @@ export function validateResultCatalogs(copy,typeCatalog,indicatorCatalog){
     if(!Array.isArray(arr)||!Array.isArray(source)||arr.length!==ids.length
       ||source.length!==ids.length||!unique(arr.map(e=>e?.id))
       ||!unique(source.map(e=>e?.id))
-      ||arr.some((e,i)=>!record(e)||e.id!==ids[i]||!nonblank(e[bodyKey]))
+      ||arr.some((e,i)=>!record(e)||e.id!==ids[i]||!nonblank(e[bodyKey])||(!['theme'].includes(kind)&&!nonblank(e.scene_title)))
       ||source.some((e,i)=>!record(e)||e.id!==ids[i]||!nonblank(e.label))){
       fail('COPY_CATALOG_INVALID','Invalid '+kind+' data or changed identity/order');
     }
@@ -157,8 +157,8 @@ export function presentClassification(result,{copyCatalog,typeCatalog,indicatorC
       :selectedThemes.length?copy.fallbacks.no_theme:copy.fallbacks.no_candidates
     :null;
   // Give an accessible reflection even when no personality-like type is assigned.
-  const question=phaseText?.optional_question
-    ||typeText?.optional_question||copy.fallbacks.generic_question;
+  const question=typeText?.optional_question
+    ||phaseText?.optional_question||copy.fallbacks.generic_question;
   return {
     status:'ready',
     presenter_version:PRESENTER_VERSION,
@@ -169,14 +169,14 @@ export function presentClassification(result,{copyCatalog,typeCatalog,indicatorC
       {id:'mochi_shitsu',title:copy.layers.shitsu.title,status:'not_connected',
         paragraphs:[copy.layers.shitsu.body]},
       {id:'mochi_guai',title:copy.layers.guai.title,status:type?'type_candidate':'open_reflection',
-        type:type?{id:type.id,label:type.label,
+        type:type?{id:type.id,label:type.label,scene_title:typeText.scene_title,
           reflection:typeText.reflection,caution:copy.layers.guai.type_caution}:null,
         type_heading:type?copy.layers.guai.type_title:copy.layers.guai.type_unknown_title,
         paragraphs:fallback?[fallback]:[],
         selected_themes_heading:copy.layers.guai.theme_title,
         selected_themes:selectedThemes,
         phase_heading:copy.layers.guai.phase_title,
-        phase:phase?{id:phase.id,label:phase.label,reflection:phaseText.reflection}:null,
+        phase:phase?{id:phase.id,label:phase.label,scene_title:phaseText.scene_title,reflection:phaseText.reflection}:null,
         phase_fallback:phase?null:copy.fallbacks.no_phase},
       {id:'mochi_michi',title:copy.layers.michi.title,status:'optional',
         paragraphs:[copy.layers.michi.intro],

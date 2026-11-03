@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>もちもち占術｜5問診断・開発用プレビュー</title>
+<title>今日のもちもち｜無料5問診断・非公開プロトタイプ</title>
+<meta name="theme-color" content="#f5f2e9">
+<meta name="description" content="5つの小さな選択で、今の自分を振り返る。もちもち占術の非公開開発用プロトタイプ。">
 <style>
 :root{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;color:#263328;background:#f7f6f0}
 *{box-sizing:border-box}
@@ -37,24 +39,151 @@ button.ghost{background:#edf1eb;color:#30473a}
 .theme-list li{background:#edf2ed;border-radius:16px;padding:5px 11px;font-size:.9rem}
 footer{font-size:.78rem;color:#637068;margin-top:30px}
 progress{width:100%;height:9px;accent-color:#548967}
+.scene-picture{display:block;width:min(100%,420px);height:auto;aspect-ratio:4/5;object-fit:contain;margin:12px auto;border:1px solid #d7ddd4;border-radius:14px;background:#e9eee2}
+.scene-picture[hidden]{display:none}
+.scene-state{font-size:.88rem;line-height:1.65;color:#55675b}
+.scene-description{margin-top:12px;font-size:.88rem}
+.scene-description summary{cursor:pointer;color:#345d47;font-weight:700}
+.scene-description p{margin:8px 0 0}
+@media(max-width:460px){main{padding:14px 12px 64px}.panel{padding:16px}.choice{padding:14px 10px;min-height:48px}}
+
+/* M11/PK02 prototype surface. Layout-only: original M07/M08/M09 logic is preserved. */
+:root{
+  --ink:#273d32;--quiet:#5a6d60;--accent:#3a6950;--line:#d8ded5;
+  --paper:#faf8f1;--card:#fffefc;--warm:#f2e9d8;
+  font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
+  color:var(--ink);background:var(--paper)
+}
+body{min-height:100vh;background:
+  radial-gradient(ellipse at 100% 0%,#f4e8d9 0,transparent 45%),
+  radial-gradient(ellipse at 0% 72%,#e8efe5 0,transparent 50%),var(--paper)}
+main{max-width:760px;padding:20px 20px 72px}
+.brand{display:flex;align-items:center;gap:12px;margin:4px 0 26px}
+.brand-mark{width:43px;height:43px;border-radius:15px 18px 17px 15px;background:#e5eee0;
+  border:1px solid #cadbc9;display:grid;place-items:center;font-size:1.2rem;transform:rotate(-5deg)}
+.brand-word{font-size:.8rem;letter-spacing:.07em;font-weight:800;color:#456752}
+.brand-sub{font-size:.69rem;color:var(--quiet);letter-spacing:.08em}
+.prototype-label{margin-left:auto;border:1px solid #cab991;background:#fff8e7;
+  border-radius:99px;padding:5px 9px;font-size:.67rem;font-weight:700;color:#89693c}
+.eyebrow{font-size:.72rem;letter-spacing:.15em;color:#668171}
+.hero{padding:5px 4px 15px}
+.hero h1{font-size:clamp(2.05rem,7.8vw,3.25rem);line-height:1.38;letter-spacing:.025em;margin:10px 0 12px}
+.hero .lead{font-size:1rem;color:#526859;line-height:1.9;margin:0}
+.hero-em{color:#b58463}
+.hero-chips{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 7px}
+.hero-chips span{font-size:.77rem;color:#567160;background:#eaf1e6;border:1px solid #d7e3d2;
+  border-radius:999px;padding:6px 12px}
+.panel{padding:28px;border-radius:24px;background:var(--card);border:1px solid #dcded5;
+  box-shadow:0 16px 35px rgba(41,63,48,.055);margin:20px 0}
+.panel h2{font-size:1.35rem;line-height:1.5}
+.panel .supporting{color:#5b6b61;font-size:.94rem}
+.warning{border:1px solid #e6d7bd;background:#fcf7ed;border-left:4px solid #b59166;
+  padding:13px 16px;font-size:.85rem;line-height:1.85;margin:17px 0 10px}
+.consent-points{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}
+.consent-points div{border:1px solid #e0e5d9;background:#f8faf5;border-radius:14px;padding:13px 10px;text-align:center;font-size:.77rem;color:#526a59}
+.consent-points strong{display:block;font-size:1rem;color:#365a44;margin-bottom:5px}
+.choice{background:#fff;border:1.5px solid #e0e4db;border-radius:16px;min-height:54px;
+  align-items:center;padding:15px 15px;gap:14px;transition:background .12s,border .12s;
+  box-shadow:0 2px 6px rgba(40,60,40,.015)}
+.choice:has(input:checked){background:#edf5e9;border-color:#5f9671;box-shadow:inset 0 0 0 1px #5f9671}
+.choice:focus-within{outline:3px solid #b7cfbd;outline-offset:2px}
+.choice input{width:21px;height:21px;margin:0}
+.choice span{font-size:.96rem;line-height:1.55}
+.choice:has(input[value="x"]){margin-top:14px;background:#faf9f5}
+.choice:has(input[value="x"]:checked){background:#edf5e9}
+#consent .choice{align-items:flex-start;line-height:1.7;margin:18px 0}
+#consent .choice input{margin-top:4px}
+button{background:var(--accent);border-radius:13px;min-height:50px;padding:13px 19px;line-height:1.35;
+  box-shadow:0 5px 12px rgba(53,91,68,.13)}
+button:hover:not(:disabled){background:#315b45}
+button.ghost{box-shadow:none;background:#eff3eb;color:#385442}
+button.ghost:hover:not(:disabled){background:#e1ebe0}
+button:focus-visible,summary:focus-visible{outline:3px solid #719e7b;outline-offset:3px}
+#start{width:100%;margin:8px 0 3px}
+.step-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.step-name{font-size:.88rem;font-weight:700;color:#516f58}
+#step-label{color:#375c45}
+progress{display:block;margin:13px 0 25px;height:10px;border-radius:10px}
+progress::-webkit-progress-bar{background:#e3e9e0;border-radius:10px}
+progress::-webkit-progress-value{background:#5c9170;border-radius:10px}
+fieldset legend{font-size:clamp(1.2rem,3.5vw,1.42rem);line-height:1.65;margin:0 0 18px}
+.story{border:1px solid #dce4d8;background:#f8faf6;border-radius:18px;padding:17px;margin-bottom:24px}
+.story h3{margin:1px 0 12px;font-size:.88rem;font-weight:700;color:#547561}
+.scene-picture{width:min(100%,390px);border-radius:14px;background:#eef1e8;box-shadow:0 6px 20px #2439260e}
+.scene-state{font-size:.79rem}
+.scene-description{border-top:1px solid #e2e9de;padding-top:10px}
+#message{font-size:.88rem;color:#925b40;font-weight:700}
+.buttons{gap:10px;margin-top:14px}
+#questions .buttons{display:grid;grid-template-columns:auto minmax(150px,1fr);gap:10px}
+#questions #next{grid-column:2;grid-row:1}
+#questions #back{grid-column:1;grid-row:1}
+#questions #quit{grid-column:1/-1;background:transparent;color:#65736a;text-decoration:underline;
+  font-size:.88rem;min-height:44px;box-shadow:none}
+.result-kicker{font-size:.8rem;letter-spacing:.1em;color:#3d6548;font-weight:800;margin-bottom:4px}
+#result-heading{font-size:clamp(1.45rem,5vw,2.05rem);line-height:1.55}
+#rendered>p:first-child{font-size:1.02rem;color:#4b6556;line-height:2}
+.section{border:1px solid #e2e7dc;background:#fafcf8;border-radius:18px;margin:19px 0 0;padding:18px}
+.section:nth-child(even){background:#fcfaf5;border-color:#e7e1d7}
+.section h3{font-size:1.12rem;color:#365c46;margin:0 0 10px}
+.section h4{font-size:.96rem;margin:17px 0 5px}
+.section p{line-height:1.95}
+.theme-list li{border:1px solid #dce6d6;padding:6px 12px}
+.result-endnote{background:#f2f6ed;border-radius:14px;padding:13px 16px;margin:18px 0}
+.story-scene-title{font-size:1.05rem;font-weight:750;color:#825e47;letter-spacing:.025em;
+line-height:1.7;margin:10px 0 8px;padding-left:12px;border-left:3px solid #c6a287}
+.section h4 + .story-scene-title{margin-top:8px}
+.section p.story-scene-title + p{margin-top:8px}
+#results .section p{overflow-wrap:anywhere}
+#results .buttons{margin-top:26px}
+#restart{width:100%}
+footer{border-top:1px solid #d9e0d5;padding-top:20px;line-height:1.8;margin-top:40px}
+[hidden]{display:none!important}
+@media(max-width:460px){
+ main{padding:12px 14px 64px}
+ .brand{margin:9px 0 18px}
+ .hero h1{font-size:2rem}
+ .panel{padding:19px 16px;margin:18px 0;border-radius:20px}
+ .warning{font-size:.8rem}
+ .consent-points{gap:6px}
+ .consent-points div{font-size:.68rem;padding:11px 5px}
+ .consent-points strong{font-size:.87rem}
+ .choice{min-height:52px;padding:12px 11px}
+ .story{padding:12px}
+ .section{padding:15px}
+ .prototype-label{font-size:.62rem}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 <main>
-<p class="eyebrow">MOCHIMOCHI JUTSU · DEVELOPMENT PREVIEW</p>
-<h1>今日のもちもち</h1>
-<p>5つの質問から、今の自分が選んだことを眺めてみる小さな体験です。</p>
-<p class="warning"><strong>開発確認用・非公開運用の試作です。</strong> 画像「scene_v01」はまだ制作していません。Q1・Q2は画像の代わりに文章で場面を説明します。この代替表示では、視線による選択のテストはできません。結果は心理検査や将来の予言ではありません。</p>
+<header class="brand"><div class="brand-mark" aria-hidden="true">◌</div><div><div class="brand-word">もちもち占術</div><div class="brand-sub">MOCHIMOCHI JUTSU</div></div><span class="prototype-label">非公開プロトタイプ</span></header>
+<section class="hero" aria-label="診断の紹介">
+<p class="eyebrow">自分の今に、ちょっと寄り道。</p>
+<h1>今日の自分は、<br><span class="hero-em">どんなもち具合？</span></h1>
+<p class="lead">5つの小さな選択から、今の気分や進め方を眺める読み物です。正解も、優劣もありません。</p>
+<div class="hero-chips"><span>全5問</span><span>登録不要</span><span>結果はその場で</span></div>
+</section>
+<p class="warning"><strong>開発確認用・非公開運用の試作です。</strong> Q1・Q2には制作候補の共通画像を使います。正式採用と視線・選択の利用者評価はまだ行っていません。結果は心理検査や将来の予言ではありません。</p>
 <section id="consent" class="panel" aria-label="参加前の説明">
-<h2>始める前に</h2>
-<p>正解はありません。合わない選択肢は「決めない」で構いません。回答はこの画面内で一時的に使い、サーバーへ送信・保存・共有しません。名前や生年月日は不要です。</p>
+<h2>小さな散歩をはじめよう</h2>
+<p class="supporting">景色を眺めたり、今日の気分を選んだり。合う言葉がなければ「決めない」で構いません。</p>
+<div class="consent-points" aria-label="体験の特徴">
+ <div><strong>5問</strong>気軽な選択</div><div><strong>なし</strong>優劣・採点</div><div><strong>不要</strong>氏名・生年月日</div>
+</div>
+<p class="supporting">回答はこの画面内で一時的に処理します。サーバーへ送信・保存・共有する機能はありません。途中でやめることもできます。</p>
 <label class="choice"><input id="agree" type="checkbox"> <span>説明を読んで、開発用プレビューを試すことに同意します</span></label>
 <button id="start" disabled>5問に進む</button>
 </section>
 <section id="questions" class="panel" hidden aria-label="5つの質問">
-<p id="step-label" class="eyebrow"></p>
-<progress id="progress" max="5" value="1"></progress>
-<div id="scene" class="story" hidden><h3>場面の説明（画像未制作）</h3><p id="scene-text"></p></div>
+<div class="step-top"><p id="step-label" class="eyebrow"></p><p id="step-name" class="step-name"></p></div>
+<progress id="progress" max="5" value="1" aria-label="診断の進み具合"></progress>
+<div id="scene" class="story" hidden>
+<h3>2つの質問で同じ風景を見ます</h3>
+<img id="scene-image" class="scene-picture" alt="" width="800" height="1000" decoding="async">
+<p id="scene-state" class="scene-state">制作候補の画像です。見え方や選択への影響は未評価です。</p>
+<details class="scene-description"><summary>画像の説明を読む</summary><p id="scene-text"></p><p>文章は場面の説明であり、絵のどこに目がとまるかを再現するものではありません。</p></details>
+</div>
 <form id="quiz" novalidate><fieldset id="choices"><legend id="question-title"></legend><div id="choices-list"></div></fieldset></form>
 <p id="message" role="status" aria-live="polite"></p>
 <div class="buttons">
@@ -64,12 +193,13 @@ progress{width:100%;height:9px;accent-color:#548967}
 </div>
 </section>
 <section id="results" class="panel" hidden aria-labelledby="result-heading">
-<p class="eyebrow">今日の結果</p>
-<h2 id="result-heading"></h2>
+<p class="result-kicker">YOUR TODAY'S MOCHI</p>
+<h2 id="result-heading" tabindex="-1"></h2>
 <div id="rendered" aria-live="polite"></div>
-<div class="buttons"><button id="restart" type="button">最初からやり直す</button></div>
+<details class="scene-description result-endnote"><summary>この診断の読み方</summary><p>これは現在の選択をもとに作る物語的な自己理解の遊びです。出生による鑑定、心理検査、将来の予測ではありません。結果が合わなくても、そのまま受け取る必要はありません。</p></details>
+<div class="buttons"><button id="restart" type="button">もう一度、5問を選ぶ</button></div>
 </section>
-<footer>もちもち占術の独自創作。M08分類・M09表示の開発プレビュー。画像・利用者評価・公開判定は別工程です。</footer>
+<footer>もちもち占術の独自創作。無料診断の商品画面を検証するための非公開プロトタイプです。現時点で一般公開・有料販売はしていません。画像の正式採用・実利用者評価・公開審査は別工程です。</footer>
 </main>
 <script type="module">
 import {presentAnswers} from './m09-result-presenter-v0.1.mjs';
@@ -93,7 +223,7 @@ async function load(){
     questionBank:'m07-question-bank-v0.1.json',
     typeCatalog:'m04-types-phases-v0.1.json',
     indicatorCatalog:'m03-indicators-v0.1.json',
-    copyCatalog:'m09-result-copy-v0.1.json'
+    copyCatalog:'m09-result-copy-v0.2.json'
   };
   const entries=await Promise.all(Object.entries(filenames).map(async([key,file])=>{
     const response=await fetch('./'+file,{cache:'no-store'});
@@ -101,11 +231,18 @@ async function load(){
     return [key,await response.json()];
   }));
   Object.assign(catalogs,Object.fromEntries(entries));
+  const scene=catalogs.questionBank.scene;
+  if(scene?.id!=='scene_v01'||!/^[-\w.]+\.svg$/.test(scene.asset_path)){
+    throw Error('The shared scene asset contract is missing');
+  }
+  $('scene-image').src='./'+scene.asset_path;
+  $('scene-image').alt=scene.text_alternative;
   loaded=true;
 }
 function renderStep(){
   const q=catalogs.questionBank.questions[current];
   $('step-label').textContent='Q'+(current+1)+' / 5';
+  $('step-name').textContent=q.title;
   $('progress').value=current+1;
   $('question-title').textContent=q.prompt;
   $('choices-list').replaceChildren();
@@ -133,7 +270,7 @@ function section(parent,s){
   for(const para of s.paragraphs||[])p(area,para);
   if(s.id==='mochi_guai'){
     area.append(el('h4',s.type_heading));
-    if(s.type){p(area,s.type.label+'（仮称）');p(area,s.type.reflection);p(area,s.type.caution)}
+    if(s.type){p(area,s.type.label+'（仮称）');area.append(el('p',s.type.scene_title,'story-scene-title'));p(area,s.type.reflection);p(area,s.type.caution)}
     if(s.selected_themes.length){
       area.append(el('h4',s.selected_themes_heading));
       const ul=el('ul',undefined,'theme-list');
@@ -141,7 +278,7 @@ function section(parent,s){
       area.append(ul);
     }
     area.append(el('h4',s.phase_heading));
-    if(s.phase){p(area,s.phase.label+'（仮称）');p(area,s.phase.reflection)}
+    if(s.phase){p(area,s.phase.label+'（仮称）');area.append(el('p',s.phase.scene_title,'story-scene-title'));p(area,s.phase.reflection)}
     else p(area,s.phase_fallback);
   }
   if(s.optional_question)area.append(el('p',s.optional_question));
@@ -167,19 +304,32 @@ function renderResult(){
     p($('rendered'),result.screen.body);
   }
   show('results');
+  $('result-heading').focus({preventScroll:true});
+  window.scrollTo({top:0,behavior:'instant'});
 }
 function reset(){
   Object.keys(responses).forEach(k=>delete responses[k]);
   current=0;$('agree').checked=false;$('start').disabled=true;
+  $('choices-list').replaceChildren();
+  $('scene').hidden=true;
   $('rendered').replaceChildren();
   show('consent');
 }
+$('scene-image').addEventListener('error',()=>{
+  $('scene-image').hidden=true;
+  $('scene-state').textContent='画像の読み込みに失敗しました。文章はあくまで代替説明で、視線選択の評価はできません。';
+});
+$('scene-image').addEventListener('load',()=>{
+  $('scene-image').hidden=false;
+  $('scene-state').textContent='制作候補の画像です。見え方や選択への影響は未評価です。';
+});
 $('agree').addEventListener('change',()=>{$('start').disabled=!$('agree').checked});
 $('start').addEventListener('click',async()=>{
   if(!$('agree').checked)return;
   try{
     if(!loaded)await load();
     current=0;renderStep();show('questions');
+    window.scrollTo({top:0,behavior:'instant'});
   }catch(error){
     $('consent').append(el('p','データを読み込めませんでした。HTTPサーバーから開いてください。'));
   }
@@ -187,10 +337,10 @@ $('start').addEventListener('click',async()=>{
 $('next').addEventListener('click',()=>{
   const q=catalogs.questionBank.questions[current];
   if(!Object.hasOwn(responses,q.id)){setMessage('選択肢を一つ選んでください。「決めない」も選べます。');return}
-  if(current<4){current++;renderStep();}
+  if(current<4){current++;renderStep();window.scrollTo({top:0,behavior:'instant'});}
   else{try{renderResult()}catch(e){setMessage('表示データに問題がありました。診断を中止してください。')}}
 });
-$('back').addEventListener('click',()=>{if(current>0){current--;renderStep()}});
+$('back').addEventListener('click',()=>{if(current>0){current--;renderStep();window.scrollTo({top:0,behavior:'instant'})}});
 $('quit').addEventListener('click',reset);
 $('restart').addEventListener('click',reset);
 </script>
