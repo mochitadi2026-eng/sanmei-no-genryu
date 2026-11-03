@@ -16,7 +16,7 @@
 
 ## 商品化の実制作（2026-11-03）
 
-- **[商品化タスクボード PK01〜PK15](PRODUCTIZATION_TASKS.md)** — FREE-01／PAID-01の制作順。[PK01候補画像・Q1/Q2接続](PK01-scene-v01-implementation-review-2026-11-03.md)、[PK02無料5問のスマホ商品試作・Chromium CI](PK02-mobile-free-diagnosis-prototype-2026-11-03.md)まで実装済み（Draft PR #9、main未統合）。**PK03は[12タイプ・5フェーズの物語改稿v0.2](PK03-editorial-story-copy-2026-11-03.md)を実装済み。PK01の正式画像採用、PK03の実読者評価、PK04〜06の品質・公開判定は未完。G1/G2 NO-GO。**
+- **[商品化タスクボード PK01〜PK15](PRODUCTIZATION_TASKS.md)** — FREE-01／PAID-01の制作順。[PK01候補画像・Q1/Q2接続](PK01-scene-v01-implementation-review-2026-11-03.md)、[PK02無料5問のスマホ商品試作・Chromium CI](PK02-mobile-free-diagnosis-prototype-2026-11-03.md)まで実装済み（Draft PR #9、main未統合）。**PK03は[12タイプ・5フェーズの物語改稿v0.2](PK03-editorial-story-copy-2026-11-03.md)を実装済み。PK01の正式画像採用、PK03の実読者評価、PK04は[自動QA 75項目・axe6画面の初回検査成功](PK04-quality-assurance-2026-11-03.md)。実機・文章・画像の人による評価とPK05〜06の品質・公開判定は未完。G1/G2 NO-GO。**
 
 ## マーケティング・商品化監査（2026-11-03）
 
