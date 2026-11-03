@@ -5,11 +5,15 @@ on:
     paths:
       - 'projects/mochimochi-jutsu/n02-story-anchor-selector-v0.1.mjs'
       - 'projects/mochimochi-jutsu/tests/n02-story-anchor-selector.test.mjs'
+      - 'projects/mochimochi-jutsu/n04-synthetic-story-renderer-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/tests/n04-synthetic-story-renderer.test.mjs'
       - '.github/workflows/mochimochi-n02-story-tests.yml'
   pull_request:
     paths:
       - 'projects/mochimochi-jutsu/n02-story-anchor-selector-v0.1.mjs'
       - 'projects/mochimochi-jutsu/tests/n02-story-anchor-selector.test.mjs'
+      - 'projects/mochimochi-jutsu/n04-synthetic-story-renderer-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/tests/n04-synthetic-story-renderer.test.mjs'
       - '.github/workflows/mochimochi-n02-story-tests.yml'
   workflow_dispatch:
 
@@ -28,5 +32,7 @@ jobs:
         run: |
           node --check projects/mochimochi-jutsu/n02-story-anchor-selector-v0.1.mjs
           node --check projects/mochimochi-jutsu/tests/n02-story-anchor-selector.test.mjs
+          node --check projects/mochimochi-jutsu/n04-synthetic-story-renderer-v0.1.mjs
+          node --check projects/mochimochi-jutsu/tests/n04-synthetic-story-renderer.test.mjs
       - name: Test synthetic-only timeline ranking and release guard
-        run: node --test projects/mochimochi-jutsu/tests/n02-story-anchor-selector.test.mjs
+        run: node --test projects/mochimochi-jutsu/tests/n02-story-anchor-selector.test.mjs projects/mochimochi-jutsu/tests/n04-synthetic-story-renderer.test.mjs
