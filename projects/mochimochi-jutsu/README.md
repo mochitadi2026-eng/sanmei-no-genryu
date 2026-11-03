@@ -24,7 +24,8 @@
 - **[MK05｜法務・信頼性監査 v1.0](marketing/MK05-legal-trust-release-audit-2026-11-03.md)（設計完了・実装／公開／販売NO-GO）**／[受け入れテスト15件JSON](marketing/MK05-release-acceptance-v1.json) — 特商法、景表法、利用規約、プライバシー、同意、決済、PDF納品、返金、問い合わせ、STOP条件を公式出典と設計判断に分けて管理。
 - **[MK06｜無料診断LP・CTA・画面導線 v1.0](marketing/MK06-free-lp-cta-design-v1.md)（仕様設計完了／本番・実測・G1未承認）**／[画面・CTA契約JSON](marketing/MK06-lp-flow-contract-v1.json) — ヒーローコピー、F00〜F08、CTA10件、匿名イベント候補5件、LP受け入れ12件、未公開機能の表示禁止とMK05安全条件を記録。
 - **[MK07｜任意リード獲得・オプトイン・CRM v1.0](marketing/MK07-lead-optin-crm-data-lifecycle-v1.md)（設計完了／実装・配信・法務審査未実施）**／[同意・CRM・受け入れテストJSON](marketing/MK07-crm-consent-contract-v1.json) — 登録任意、本人メール確認、CRM8テーブル、自己選択テーマ、ウェルカム、停止・保存削除、LD01〜LD15を定義。無料診断の5問回答をCRMに送らない。
-- **マーケティング次の一件：MK08** イベント計測・ファネル分析の設計。広告・リード登録の実運用は未承認。
+- **[MK08｜イベント・UTM・KPI・ファネル／ダッシュボード v1.0](marketing/MK08-measurement-funnel-dashboard-v1.md)（仕様設計完了／本番計測・実績なし）**／[イベント契約JSON](marketing/MK08-analytics-contract-v1.json) — 15イベント、17KPI、D01〜D06の運営画面、ME01〜ME16、個人IDを使わない集計案と外部送信規律の未判定事項を記録。
+- **マーケティング次の一件：MK09** 将来の有料商品LP・決済・本人限定PDF納品のE2E仕様と試験計画。G1/G2は引き続きNO-GO。
 - 開発上の次の一件B04およびN01の検証は引き続き[開発タスクボード](TASKS.md)が正本。**監査記録は本番公開・課金・募集再開の承認ではない**。
 
 ## 開発ルール（次回以降も必読）
