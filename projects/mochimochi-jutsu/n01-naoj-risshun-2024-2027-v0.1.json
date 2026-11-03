@@ -1,0 +1,57 @@
+{
+  "version": "n01-risshun-naoj-v0.1",
+  "status": "verified_published_minute_boundaries_only",
+  "as_of": "2026-11-03",
+  "scope": {
+    "calendar_years": [
+      2024,
+      2025,
+      2026,
+      2027
+    ],
+    "timezone": "Asia/Tokyo",
+    "gregorian": true
+  },
+  "interpretation": "NAOJ marks solar longitude 315° at 立春; project convention uses 立春 as annual sexagenary boundary. Pub. minute precision is not second precision.",
+  "basis": {
+    "naoj": "published 立春 315° and local minute",
+    "cycle": "1984甲子 reference 60 cycle (project M02 / modern sexagenary convention)",
+    "method": "year index mod 60, 立春-boundary convention"
+  },
+  "boundary_minutes": [
+    {
+      "year": 2024,
+      "jst": "2024-02-04T17:27:00+09:00",
+      "source": "https://eco.mtk.nao.ac.jp/koyomi/yoko/2024/rekiyou242.html",
+      "published_precision": "minute"
+    },
+    {
+      "year": 2025,
+      "jst": "2025-02-03T23:10:00+09:00",
+      "source": "https://eco.mtk.nao.ac.jp/koyomi/yoko/2025/rekiyou252.html",
+      "published_precision": "minute"
+    },
+    {
+      "year": 2026,
+      "jst": "2026-02-04T05:02:00+09:00",
+      "source": "https://eco.mtk.nao.ac.jp/koyomi/yoko/2026/rekiyou262.html",
+      "published_precision": "minute"
+    },
+    {
+      "year": 2027,
+      "jst": "2027-02-04T10:46:00+09:00",
+      "source": "https://eco.mtk.nao.ac.jp/koyomi/yoko/2027/rekiyou272.html",
+      "published_precision": "minute"
+    }
+  ],
+  "constraints": {
+    "boundary_hold_seconds": 60,
+    "pre_registry_year": "unsupported",
+    "data_after_2027": "unsupported",
+    "day_pillar": "not_in_scope",
+    "da_yun": "not_approved",
+    "annual_themes": "not_approved",
+    "natal_personal_reading": "blocked",
+    "no_fabricated_events": true
+  }
+}
