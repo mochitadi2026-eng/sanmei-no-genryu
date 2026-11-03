@@ -1,0 +1,34 @@
+name: Mochimochi B01 day-cycle and character study
+
+on:
+  push:
+    paths:
+      - 'projects/mochimochi-jutsu/b01-day-cycle-and-character-study-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/tests/b01-day-cycle-and-character-study.test.mjs'
+      - 'projects/mochimochi-jutsu/m02-core-symbols-v0.1.json'
+      - '.github/workflows/mochimochi-b01-birth-character-study.yml'
+  pull_request:
+    paths:
+      - 'projects/mochimochi-jutsu/b01-day-cycle-and-character-study-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/tests/b01-day-cycle-and-character-study.test.mjs'
+      - 'projects/mochimochi-jutsu/m02-core-symbols-v0.1.json'
+      - '.github/workflows/mochimochi-b01-birth-character-study.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit-day-cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate module syntax
+        run: |
+          node --check projects/mochimochi-jutsu/b01-day-cycle-and-character-study-v0.1.mjs
+          node --check projects/mochimochi-jutsu/tests/b01-day-cycle-and-character-study.test.mjs
+      - name: Verify day-cycle reference fixtures and 12x5 provisional map
+        run: node --test projects/mochimochi-jutsu/tests/b01-day-cycle-and-character-study.test.mjs
