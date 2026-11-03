@@ -54,6 +54,10 @@ try{
   page.on('request',req=>{if(!req.url().startsWith(origin))crossOrigin.push(req.url())});
   await page.goto(origin+'/m09-preview.html',{waitUntil:'networkidle'});
   check(await page.locator('h1').count()===1,'one accessible page title');
+  check((await page.locator('h1').textContent()).includes('今日の自分'),'product-style diagnosis hero appears');
+  check((await page.locator('.prototype-label').textContent()).includes('非公開'),'no public-release claim');
+  check((await page.locator('.hero-chips').textContent()).includes('登録不要'),'registration-free value shown');
+  check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'390px viewport has no sideways overflow');
   check((await page.locator('.warning').textContent()).includes('制作候補'),'provisional illustration stated');
   check(await page.locator('#questions').isHidden(),'consent gate before questions');
   check(await page.locator('#start').isDisabled(),'cannot start without consent');
@@ -63,6 +67,9 @@ try{
   await page.locator('#questions').waitFor({state:'visible',timeout:15000});
   check(await page.locator('#questions').isVisible(),'question screen appears');
   check(await page.locator('fieldset legend').count()===1,'single question fieldset');
+  check((await page.locator('#step-name').textContent()).includes('景色から浮かぶこと'),'question title accompanies step indicator');
+  check(await page.getByRole('progressbar').count()===1,'native progress visible');
+  check(await page.locator('#choices-list label').count()===7,'Q1 shows six choices and explicit x');
   await page.waitForFunction(()=>document.querySelector('#scene-image')?.naturalWidth===800);
   check(await page.locator('#scene-image').isVisible(),'Q1 image candidate is visible');
   check((await page.locator('#scene-image').getAttribute('src'))==='./scene_v01-candidate.svg','Q1 uses original local scene asset');
@@ -86,14 +93,18 @@ try{
   await choose(page,'a'); // Q4 MOCHI
   await choose(page,'a'); // Q5 open
   check(await page.locator('#results').isVisible(),'result screen visible');
+  check(await page.locator('#result-heading').isFocused(),'result heading receives focus after finishing');
+  check(await page.locator('#results .section').count()===3,'M09 three result layers displayed as cards');
+  check((await page.locator('#results .scene-description').textContent()).includes('この診断の読み方'),'optional interpretation is accessible');
   check((await page.locator('#rendered').textContent()).includes('のびのびもち'),'type label from catalog');
   check((await page.locator('#rendered').textContent()).includes('ふくらみ期'),'phase from catalog');
   check((await page.locator('#rendered').textContent()).includes('もち道'),'three layers shown');
   check((await page.locator('#rendered').textContent()).includes('未検証の命式'),'natal calculation held');
 
   // Restart and all x: no forced classification or phase.
-  await page.getByRole('button',{name:'最初からやり直す'}).click();
+  await page.getByRole('button',{name:'もう一度、5問を選ぶ'}).click();
   check(await page.locator('#consent').isVisible(),'restart shows consent');
+  check(await page.locator('#choices-list input').count()===0,'restart clears prior answer controls');
   check(await page.locator('#agree').isChecked()===false,'agreement reset');
   await page.locator('#agree').check();
   await page.locator('#start').click();
@@ -105,7 +116,7 @@ try{
   check(allX.includes('今の気分については選ばず'),'null phase shown');
 
   // Revisit then quit: discard previous responses.
-  await page.getByRole('button',{name:'最初からやり直す'}).click();
+  await page.getByRole('button',{name:'もう一度、5問を選ぶ'}).click();
   await page.locator('#agree').check();
   await page.locator('#start').click();
   await page.locator('#questions').waitFor({state:'visible',timeout:15000});
@@ -113,6 +124,9 @@ try{
   await page.getByRole('button',{name:'中断して回答を破棄'}).click();
   check(await page.locator('#consent').isVisible(),'stop returns to consent');
   check(await page.locator('#choices-list input:checked').count()===0,'stop discards selected choice');
+  await page.setViewportSize({width:320,height:700});
+  check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'320px viewport has no sideways overflow');
+  check(await page.locator('#start').isDisabled(),'consent is required again after quit');
   check(pageErrors.length===0,'browser has no JS errors: '+pageErrors.join('|'));
   check(crossOrigin.length===0,'no remote request: '+crossOrigin.join('|'));
   check(calls.length>0&&calls.every(r=>r.method==='GET'),'HTTP server only saw static GET requests');
