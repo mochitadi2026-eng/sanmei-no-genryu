@@ -163,6 +163,31 @@ try{
   check(await page.evaluate(()=>localStorage.length===0 && sessionStorage.length===0),
     'no browser storage of answers');
   check(await page.locator('#start').isDisabled(),'consent is required again after quit');
+  // Keyboard-only scenario B: Q1 and Q2 match, but independent Q4 does not.
+  // A provisional personality-like type must NOT be forced from the shared picture.
+  const keyboard=await context.newPage();
+  await keyboard.goto(origin+'/m09-preview.html',{waitUntil:'networkidle'});
+  await keyboard.locator('#agree').focus();
+  await keyboard.keyboard.press('Space');
+  check(await keyboard.locator('#agree').isChecked(),'keyboard can opt in without pointer');
+  await keyboard.locator('#start').focus();
+  await keyboard.keyboard.press('Enter');
+  await keyboard.locator('#questions').waitFor({state:'visible'});
+  for(const id of ['a','a','c','b','a']){
+    await keyboard.locator('#choices-list input[value="'+id+'"]').focus();
+    await keyboard.keyboard.press('Space');
+    check(await keyboard.locator('#choices-list input[value="'+id+'"]').isChecked(),'keyboard selects '+id);
+    await keyboard.locator('#next').focus();
+    await keyboard.keyboard.press('Enter');
+  }
+  await keyboard.locator('#results').waitFor({state:'visible'});
+  const keyboardResult=await keyboard.locator('#rendered').textContent();
+  check(keyboardResult.includes('ひとつのテーマにしぼりませんでした'),
+    'matching Q1/Q2 alone never forces type on keyboard flow');
+  check(!keyboardResult.includes('のびのびもち（仮称）'),'no fictional type from shared image alone');
+  check(keyboardResult.includes('小さな実験の午後'),'independent selected phase still appears');
+  await keyboard.close();
+
   // Asset failure: there is a meaningful textual alternative, and the answer path is not blocked.
   const fallback=await browser.newPage({viewport:{width:320,height:700}});
   await fallback.route('**/scene_v01-candidate.svg',route=>route.abort());
