@@ -1,0 +1,790 @@
+{
+  "schema_version": "mk08-v1",
+  "created_at": "2026-11-03",
+  "project": "mochimochi-jutsu",
+  "state": "DESIGN_ONLY_NOT_IMPLEMENTED",
+  "security_level": "public_repo_specification_no_private_data",
+  "product_scope": [
+    "FREE-01",
+    "LEAD-01_optional_unimplemented",
+    "PAID-01_future_unapproved"
+  ],
+  "gates": {
+    "G1_free": "NO_GO",
+    "G2_paid": "NO_GO",
+    "analytics_system": "NOT_DEPLOYED",
+    "lead_system": "NOT_DEPLOYED",
+    "sales": "NOT_AVAILABLE"
+  },
+  "documents": {
+    "spec": "MK08-measurement-funnel-dashboard-v1.md",
+    "MK06": "MK06-lp-flow-contract-v1.json",
+    "MK07": "MK07-crm-consent-contract-v1.json",
+    "MK05": "MK05-legal-trust-release-audit-2026-11-03.md",
+    "dev_tasks": "../TASKS.md"
+  },
+  "implementation_candidate": {
+    "design": "first_party_counter_endpoint_daily_aggregate",
+    "production_host": "UNSELECTED",
+    "analytics_provider": "UNSELECTED",
+    "privacy_claim": "NO_PERFECT_ANONYMITY_CLAIM",
+    "persistence": "daily_aggregated_counts_only",
+    "client_session_storage": "event_dedup_flags_and_allowlisted_attribution_only_no_persistent_user_identifier",
+    "identifier_policy": "do_not_join_visitor_and_lead_and_customer",
+    "network_limit": "IP_and_User_Agent_may_be_visible_to_host_CDN_WAF_review_required",
+    "fraud_limit": "client_event_emission_is_spoofable_counters_not_independently_verified_people",
+    "metrics_limit": "event_count_ratios_not_unique_person_conversion",
+    "timezone": "Asia/Tokyo",
+    "week_start": "MON",
+    "missing": "NA_not_zero",
+    "requires_review": [
+      "MK05_legal_external_transmission_and_cookie_scope",
+      "MK07_vendor_data_handling",
+      "M11_web_instrumentation",
+      "M12_release_approval"
+    ],
+    "prohibited_payload_fields": [
+      "birth_date",
+      "birth_time",
+      "birth_place",
+      "Q1",
+      "Q2",
+      "Q3",
+      "Q4",
+      "Q5",
+      "answers",
+      "diagnosis_type",
+      "phase",
+      "diagnosis_copy",
+      "consultation",
+      "health",
+      "name",
+      "email",
+      "email_hash",
+      "lead_id",
+      "customer_id",
+      "order_id",
+      "transaction_id",
+      "user_id",
+      "raw_ip",
+      "raw_referrer_url",
+      "utm_term",
+      "free_text",
+      "session_id",
+      "full_url",
+      "cookie_id",
+      "fingerprint"
+    ]
+  },
+  "common_event_payload_fields": {
+    "required": [
+      "schema_version",
+      "event_name",
+      "screen_id"
+    ],
+    "optional": [
+      "source_bucket",
+      "medium_bucket",
+      "campaign_bucket",
+      "copy_variant",
+      "error_bucket",
+      "resource_bucket"
+    ],
+    "source_bucket": [
+      "threads",
+      "instagram",
+      "note",
+      "search",
+      "referral",
+      "direct",
+      "unknown"
+    ],
+    "medium_bucket": [
+      "social",
+      "organic",
+      "referral",
+      "direct",
+      "unknown"
+    ],
+    "campaign_bucket": "pre_registered_safe_campaign_codes_only",
+    "copy_variant": [
+      "default",
+      "self_story",
+      "quick_fun"
+    ],
+    "error_bucket": [
+      "invalid_input",
+      "version_mismatch",
+      "render_failure",
+      "network_failure"
+    ],
+    "resource_bucket": "pre_registered_public_resource_codes_only",
+    "time": "server_received_at_to_JST_day"
+  },
+  "events": [
+    {
+      "id": "landing_view",
+      "screen_id": "F00",
+      "trigger": "first_successful_F00_render",
+      "emitter": "web",
+      "state": "candidate_not_implemented",
+      "admission_rule": "allowed_enum_fields_only_no_user_identifiers"
+    },
+    {
+      "id": "diagnosis_start",
+      "screen_id": "F02",
+      "trigger": "Q1_visible_after_F01_acknowledgement",
+      "emitter": "web",
+      "state": "candidate_not_implemented",
+      "admission_rule": "allowed_enum_fields_only_no_user_identifiers"
+    },
+    {
+      "id": "diagnosis_complete",
+      "screen_id": "F07",
+      "trigger": "result_successfully_rendered_after_M08_accepts_five_answers_type_pending_counts",
+      "emitter": "web",
+      "state": "candidate_not_implemented",
+      "admission_rule": "allowed_enum_fields_only_no_user_identifiers"
+    },
+    {
+      "id": "diagnosis_error",
+      "screen_id": "F02-F07",
+      "trigger": "visible_error_message_rendered_use_error_bucket_only",
+      "emitter": "web",
+      "state": "candidate_not_implemented",
+      "admission_rule": "allowed_enum_fields_only_no_user_identifiers"
+    },
+    {
+      "id": "explanation_open",
+      "screen_id": "F00",
+      "trigger": "user_opens_explanation_section",
+      "emitter": "web",
+      "state": "optional_not_implemented",
+      "admission_rule": "allowed_enum_fields_only_no_user_identifiers"
+    },
+    {
+      "id": "content_open",
+      "screen_id": "F08",
+      "trigger": "user_opens_real_published_resource",
+      "emitter": "web",
+      "state": "optional_not_implemented",
+      "admission_rule": "allowed_enum_fields_only_no_user_identifiers"
+    },
+    {
+      "id": "lead_cta_click",
+      "screen_id": "F08",
+      "trigger": "user_selects_approved_optional_CTA_L01",
+      "emitter": "web",
+      "state": "disabled_until_lead_release",
+      "admission_rule": "allowed_enum_fields_only_no_user_identifiers"
+    },
+    {
+      "id": "lead_form_view",
+      "screen_id": "L00",
+      "trigger": "approved_optional_lead_signup_form_rendered",
+      "emitter": "web",
+      "state": "disabled_until_lead_release",
+      "admission_rule": "allowed_enum_fields_only_no_user_identifiers"
+    },
+    {
+      "id": "lead_form_submit",
+      "screen_id": "L00",
+      "trigger": "registration_server_accepts_valid_optin_request_not_email_verification",
+      "emitter": "crm_server_aggregate",
+      "state": "disabled_until_lead_release",
+      "admission_rule": "allowed_enum_fields_only_no_user_identifiers"
+    },
+    {
+      "id": "lead_verified",
+      "screen_id": "L02",
+      "trigger": "CRM_status_transitions_to_active_after_verification",
+      "emitter": "crm_server_aggregate",
+      "state": "disabled_until_lead_release",
+      "admission_rule": "allowed_enum_fields_only_no_user_identifiers"
+    },
+    {
+      "id": "unsubscribe_confirmed",
+      "screen_id": "L04",
+      "trigger": "CRM_status_transitions_to_unsubscribed",
+      "emitter": "crm_server_aggregate",
+      "state": "disabled_until_lead_release",
+      "admission_rule": "allowed_enum_fields_only_no_user_identifiers"
+    },
+    {
+      "id": "product_view",
+      "screen_id": "P00",
+      "trigger": "approved_real_product_detail_rendered",
+      "emitter": "web",
+      "state": "disabled_until_G2",
+      "admission_rule": "allowed_enum_fields_only_no_user_identifiers"
+    },
+    {
+      "id": "checkout_start",
+      "screen_id": "P05",
+      "trigger": "approved_final_order_confirmation_started",
+      "emitter": "commerce_server_aggregate",
+      "state": "disabled_until_G2",
+      "admission_rule": "allowed_enum_fields_only_no_user_identifiers"
+    },
+    {
+      "id": "purchase_complete",
+      "screen_id": "P05-P06",
+      "trigger": "payment_provider_success_server_verified_idempotent_order_transition",
+      "emitter": "commerce_server_aggregate",
+      "state": "disabled_until_G2",
+      "admission_rule": "allowed_enum_fields_only_no_user_identifiers"
+    },
+    {
+      "id": "refund_complete",
+      "screen_id": "P07",
+      "trigger": "payment_provider_refund_server_verified_idempotent_transition",
+      "emitter": "commerce_server_aggregate",
+      "state": "disabled_until_G2",
+      "admission_rule": "allowed_enum_fields_only_no_user_identifiers"
+    }
+  ],
+  "utms": {
+    "allowlist": {
+      "utm_source": [
+        "threads",
+        "instagram",
+        "note",
+        "search",
+        "referral",
+        "direct",
+        "unknown"
+      ],
+      "utm_medium": [
+        "social",
+        "organic",
+        "referral",
+        "direct",
+        "unknown"
+      ],
+      "utm_campaign": "fixed_pre_registered_ids_not_freetext",
+      "utm_content": [
+        "default",
+        "self_story",
+        "quick_fun"
+      ]
+    },
+    "blocked": [
+      "utm_term",
+      "emails",
+      "full_referrer_urls",
+      "birthdates",
+      "free_text",
+      "name",
+      "identity_tokens"
+    ],
+    "source_priority": [
+      "valid_utm_source",
+      "sanitized_referrer_domain_bucket",
+      "direct_if_no_referrer",
+      "unknown_if_unclassifiable"
+    ],
+    "attribution_window": "same_browser_tab_context_only",
+    "cross_session_attribution": false,
+    "example_url_not_real": "https://example.invalid/mochimochi?utm_source=threads&utm_medium=social&utm_campaign=test_mk08_a&utm_content=self_story"
+  },
+  "metrics": [
+    {
+      "id": "K01",
+      "name": "landing_event_count",
+      "formula": "count(landing_view)",
+      "unit": "event_count",
+      "state": "NOT_IMPLEMENTED",
+      "denominator_undefined_if_zero": true,
+      "source_of_truth": "aggregated_events_or_authoritative_CRM_commerce_counts"
+    },
+    {
+      "id": "K02",
+      "name": "start_event_count",
+      "formula": "count(diagnosis_start)",
+      "unit": "event_count",
+      "state": "NOT_IMPLEMENTED",
+      "denominator_undefined_if_zero": true,
+      "source_of_truth": "aggregated_events_or_authoritative_CRM_commerce_counts"
+    },
+    {
+      "id": "K03",
+      "name": "complete_event_count",
+      "formula": "count(diagnosis_complete) including type_pending and all_x",
+      "unit": "event_count",
+      "state": "NOT_IMPLEMENTED",
+      "denominator_undefined_if_zero": true,
+      "source_of_truth": "aggregated_events_or_authoritative_CRM_commerce_counts"
+    },
+    {
+      "id": "K04",
+      "name": "start_event_ratio",
+      "formula": "K02/K01 if measured & K01>0",
+      "unit": "event_ratio_not_people_CVR",
+      "state": "NOT_IMPLEMENTED",
+      "denominator_undefined_if_zero": true,
+      "source_of_truth": "aggregated_events_or_authoritative_CRM_commerce_counts"
+    },
+    {
+      "id": "K05",
+      "name": "complete_event_ratio",
+      "formula": "K03/K02 if measured & K02>0",
+      "unit": "event_ratio_not_people_CVR",
+      "state": "NOT_IMPLEMENTED",
+      "denominator_undefined_if_zero": true,
+      "source_of_truth": "aggregated_events_or_authoritative_CRM_commerce_counts"
+    },
+    {
+      "id": "K06",
+      "name": "error_event_ratio",
+      "formula": "diagnosis_error/K02 if measured & K02>0",
+      "unit": "event_ratio",
+      "state": "NOT_IMPLEMENTED",
+      "denominator_undefined_if_zero": true,
+      "source_of_truth": "aggregated_events_or_authoritative_CRM_commerce_counts"
+    },
+    {
+      "id": "K07",
+      "name": "lead_form_views",
+      "formula": "count(lead_form_view)",
+      "unit": "event_count",
+      "state": "DISABLED_UNTIL_CORRESPONDING_RELEASE",
+      "denominator_undefined_if_zero": true,
+      "source_of_truth": "aggregated_events_or_authoritative_CRM_commerce_counts"
+    },
+    {
+      "id": "K08",
+      "name": "lead_form_accepted",
+      "formula": "count(lead_form_submit)",
+      "unit": "event_count",
+      "state": "DISABLED_UNTIL_CORRESPONDING_RELEASE",
+      "denominator_undefined_if_zero": true,
+      "source_of_truth": "aggregated_events_or_authoritative_CRM_commerce_counts"
+    },
+    {
+      "id": "K09",
+      "name": "new_verified_leads",
+      "formula": "count(lead_verified) from CRM transition",
+      "unit": "lead_count",
+      "state": "DISABLED_UNTIL_CORRESPONDING_RELEASE",
+      "denominator_undefined_if_zero": true,
+      "source_of_truth": "aggregated_events_or_authoritative_CRM_commerce_counts"
+    },
+    {
+      "id": "K10",
+      "name": "active_lead_balance",
+      "formula": "CRM active verified consent & !suppressed at cutoff",
+      "unit": "lead_stock",
+      "state": "DISABLED_UNTIL_CORRESPONDING_RELEASE",
+      "denominator_undefined_if_zero": true,
+      "source_of_truth": "aggregated_events_or_authoritative_CRM_commerce_counts"
+    },
+    {
+      "id": "K11",
+      "name": "unsubscribe_count",
+      "formula": "count(unsubscribe_confirmed)",
+      "unit": "event_count",
+      "state": "DISABLED_UNTIL_CORRESPONDING_RELEASE",
+      "denominator_undefined_if_zero": true,
+      "source_of_truth": "aggregated_events_or_authoritative_CRM_commerce_counts"
+    },
+    {
+      "id": "K12",
+      "name": "product_views",
+      "formula": "count(product_view) G2 only",
+      "unit": "event_count",
+      "state": "DISABLED_UNTIL_CORRESPONDING_RELEASE",
+      "denominator_undefined_if_zero": true,
+      "source_of_truth": "aggregated_events_or_authoritative_CRM_commerce_counts"
+    },
+    {
+      "id": "K13",
+      "name": "checkout_starts",
+      "formula": "count(checkout_start) G2 only",
+      "unit": "event_count",
+      "state": "DISABLED_UNTIL_CORRESPONDING_RELEASE",
+      "denominator_undefined_if_zero": true,
+      "source_of_truth": "aggregated_events_or_authoritative_CRM_commerce_counts"
+    },
+    {
+      "id": "K14",
+      "name": "confirmed_paid_orders",
+      "formula": "count(purchase_complete) by authoritative server transition",
+      "unit": "orders",
+      "state": "DISABLED_UNTIL_CORRESPONDING_RELEASE",
+      "denominator_undefined_if_zero": true,
+      "source_of_truth": "aggregated_events_or_authoritative_CRM_commerce_counts"
+    },
+    {
+      "id": "K15",
+      "name": "gross_and_refund_adjusted_receipts",
+      "formula": "confirmed_checkout_total_minus_verified_refunds",
+      "unit": "JPY_gross_cash_style_not_tax_accounting",
+      "state": "DISABLED_UNTIL_CORRESPONDING_RELEASE",
+      "denominator_undefined_if_zero": true,
+      "source_of_truth": "aggregated_events_or_authoritative_CRM_commerce_counts"
+    },
+    {
+      "id": "K16",
+      "name": "actual_contribution",
+      "formula": "actual_receipts_minus_actual_payment_and_fulfillment_variable_costs",
+      "unit": "JPY_only_if_measured",
+      "state": "DISABLED_UNTIL_CORRESPONDING_RELEASE",
+      "denominator_undefined_if_zero": true,
+      "source_of_truth": "aggregated_events_or_authoritative_CRM_commerce_counts"
+    },
+    {
+      "id": "K17",
+      "name": "source_event_share",
+      "formula": "count(event in source_bucket)/count(event all sources)",
+      "unit": "event_ratio",
+      "state": "NOT_IMPLEMENTED",
+      "denominator_undefined_if_zero": true,
+      "source_of_truth": "aggregated_events_or_authoritative_CRM_commerce_counts"
+    }
+  ],
+  "dashboards": [
+    {
+      "id": "D01",
+      "name": "overview",
+      "components": [
+        "data_status",
+        "landing_events",
+        "start_events",
+        "complete_events",
+        "errors"
+      ],
+      "status": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "D02",
+      "name": "free_diagnosis_funnel",
+      "components": [
+        "landing_view",
+        "diagnosis_start",
+        "diagnosis_complete",
+        "event_ratios"
+      ],
+      "status": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "D03",
+      "name": "traffic_sources",
+      "components": [
+        "source_event_count_table",
+        "allowlisted_campaigns",
+        "unknown_share"
+      ],
+      "privacy": "combine_small_cells_under_10_proposal_not_legal_threshold",
+      "status": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "D04",
+      "name": "lead_status",
+      "components": [
+        "lead_form_view",
+        "lead_form_submit",
+        "lead_verified",
+        "active_lead_balance",
+        "unsubscribe_confirmed"
+      ],
+      "status": "DISABLED_UNTIL_LEAD"
+    },
+    {
+      "id": "D05",
+      "name": "commerce",
+      "components": [
+        "product_view",
+        "checkout_start",
+        "confirmed_orders",
+        "refunds",
+        "actual_cost_only"
+      ],
+      "status": "DISABLED_UNTIL_G2"
+    },
+    {
+      "id": "D06",
+      "name": "measurement_quality",
+      "components": [
+        "unknown_utms",
+        "duplicate_risk",
+        "missing_data",
+        "over_100_event_ratio_warning",
+        "third_party_network_audit"
+      ],
+      "status": "NOT_IMPLEMENTED"
+    }
+  ],
+  "storage": {
+    "daily_event_counts_keys": [
+      "day_jst",
+      "event_name",
+      "schema_version",
+      "screen_bucket",
+      "source_bucket",
+      "medium_bucket",
+      "campaign_bucket",
+      "copy_variant"
+    ],
+    "daily_event_counts_value": "event_count",
+    "daily_lead_counts_future": [
+      "form_accept_count",
+      "lead_verified_count",
+      "active_lead_balance",
+      "unsubscribe_count"
+    ],
+    "daily_commerce_counts_future": [
+      "confirmed_orders",
+      "refund_count",
+      "gross_receipts_yen",
+      "refund_total_yen",
+      "actual_variable_cost_yen_if_measured"
+    ],
+    "retention_proposal": "13_calendar_months_aggregate_only_not_statutory",
+    "security_access_log_proposal": "7_days_subject_to_actual_provider_and_legal_review_not_statutory",
+    "privacy_threshold_proposal": "combine_day_source_campaign_cells_if_under_10_not_a_legal_requirement",
+    "no_raw_event_level_history": true,
+    "release_requires_network_and_vendor_audit": true
+  },
+  "legal_and_vendor_sources": [
+    {
+      "agency": "PPC",
+      "topic": "personal_related_information",
+      "url": "https://www.ppc.go.jp/all_faq_index/faq2-q2-8/"
+    },
+    {
+      "agency": "PPC",
+      "topic": "APPI_QA_cookies",
+      "url": "https://www.ppc.go.jp/personalinfo/faq/APPI_QA/"
+    },
+    {
+      "agency": "PPC",
+      "topic": "APPI_general_guideline",
+      "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/"
+    },
+    {
+      "agency": "NCO",
+      "topic": "telecom_external_transmission_guidance",
+      "url": "https://security-portal.cyber.go.jp/guidance/law-handbook/v2-07.html"
+    },
+    {
+      "agency": "Google",
+      "topic": "GA4_no_PII",
+      "url": "https://support.google.com/analytics/answer/6366371?hl=ja"
+    },
+    {
+      "agency": "Google",
+      "topic": "GA4_policy",
+      "url": "https://developers.google.com/analytics/devguides/collection/protocol/ga4/policy?hl=ja"
+    },
+    {
+      "agency": "Google",
+      "topic": "consent_mode_not_consent_banner",
+      "url": "https://support.google.com/analytics/answer/10000067?hl=en"
+    }
+  ],
+  "acceptance_tests": [
+    {
+      "id": "ME01",
+      "name": "landing_and_reload_dedup",
+      "expected": "first successful F00 load counted per tab per design; gaps acknowledged",
+      "status": "NOT_RUN",
+      "run_at": null,
+      "actual": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "ME02",
+      "name": "Q1_actual_render_start",
+      "expected": "diagnosis_start only when F02 Q1 visible",
+      "status": "NOT_RUN",
+      "run_at": null,
+      "actual": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "ME03",
+      "name": "result_type_pending_and_all_x",
+      "expected": "diagnosis_complete counted on F07 even if type pending",
+      "status": "NOT_RUN",
+      "run_at": null,
+      "actual": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "ME04",
+      "name": "invalid_answer_and_render_errors",
+      "expected": "only fixed error_bucket values, no answer payload",
+      "status": "NOT_RUN",
+      "run_at": null,
+      "actual": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "ME05",
+      "name": "optional_CTA_and_content",
+      "expected": "only real optional actions, disabled CTAs do not emit",
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "ME06",
+      "name": "CRM_pending_vs_verified",
+      "expected": "submit != verified, verified only authoritative active transition",
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "ME07",
+      "name": "unsubscribe_stock",
+      "expected": "suppression transitions reflected without lead ID in analytics",
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "ME08",
+      "name": "no_paid_before_G2",
+      "expected": "paid events disabled and payment unavailable",
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "ME09",
+      "name": "future_payment_refund_idempotency",
+      "expected": "sandbox provider confirmations deduplicated, no order ID exported",
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "ME10",
+      "name": "UTM_validation_PII",
+      "expected": "allowlist and source categorization; no raw URL or PII storage",
+      "status": "NOT_RUN",
+      "run_at": null,
+      "actual": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "ME11",
+      "name": "network_host_CDN_audit",
+      "expected": "actual sender, payloads, processing and legal review completed",
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "ME12",
+      "name": "cross_day_missing_bad_events",
+      "expected": "NA not zero, >100% ratio flagged and not clamped",
+      "status": "NOT_RUN",
+      "run_at": null,
+      "actual": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "ME13",
+      "name": "dashboard_admin_access",
+      "expected": "restricted dashboard, sparse groups merged",
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "ME14",
+      "name": "plan_vs_actual_revenue",
+      "expected": "MK04 model labeled hypothetical; unpaid product not shown as actual zero",
+      "status": "NOT_RUN",
+      "run_at": null,
+      "actual": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "ME15",
+      "name": "no_personal_data_in_analytics",
+      "expected": "Q answers, birthday, email not sent to any analytics endpoint",
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "ME16",
+      "name": "release_gate_review",
+      "expected": "MK05,MK06,MK07,M11,M12 evidence and approvals before release",
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "environment": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    }
+  ],
+  "handoff": {
+    "next_marketing_task": "MK09",
+    "parallel": [
+      "M11",
+      "M12",
+      "MK05",
+      "MK07",
+      "MK04_cost_revision"
+    ],
+    "no_products_or_emails_or_measurement_deployed": true
+  }
+}
