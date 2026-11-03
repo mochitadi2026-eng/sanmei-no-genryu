@@ -58,7 +58,8 @@ try{
   const address=server.address();
   const origin='http://127.0.0.1:'+address.port;
   browser=await chromium.launch({headless:true});
-  const page=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1});
+  const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:1});
+  const page=await context.newPage();
   const pageErrors=[],crossOrigin=[];
   page.on('pageerror',e=>pageErrors.push(String(e)));
   page.on('request',req=>{if(!req.url().startsWith(origin))crossOrigin.push(req.url())});
