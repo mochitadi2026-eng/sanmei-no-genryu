@@ -3,6 +3,12 @@
 作業範囲：独自占術の理論・計算監査・診断・公開準備
 方針：新規リポジトリは作らない。原典研究『算命の源流』を引用し、独自理論の仕様はこのフォルダに隔離する。ここは公開GitHubリポジトリなので個人の鑑定データ・内部認証情報は置かない。
 
+## 2026-11-03 優先順位変更：生年月日で出る「生まれのもち」が先
+- ユーザーから「5問の質問より、生年月日で見られるものを先に作る」と指定。**B04→B05出生キャラWeb試作を先行**し、M07〜M09／PK01〜PK04の質問型診断は消さず一時後回しにする。
+- **B04実施**：12種類の馴染みのある餅・餅菓子と、味や食感から想像しやすいキャラ設定の[JSON原案](b04-birth-mochi-catalog-v0.1.json)を作成。まだ12体の専用イラストや人の納得度評価はない。
+- **B05開発試作実施**：[実際に生年月日を入力できるHTML](birth-mochi-preview.html)と[B03からの表示関数](b05-birth-mochi-presenter-v0.1.mjs)、[60組・不正入力のNodeテスト](tests/b05-birth-mochi-presenter.test.mjs)、[Chromium 320/390pxテスト](tests/b05-birth-mochi.browser-test.mjs)を作成。 [CI成功](https://github.com/mochitadi2026-eng/sanmei-no-genryu/actions/runs/41641814166)。
+- 作業は既存GitHubの`work/b04-b05-birthdate-mochi-preview`。**新規リポジトリを作らず、mainへ未統合・一般公開/募集/販売なし。** [実装記録](19-b04-b05-birthdate-first-prototype-2026-11-03.md)。次は本人のキャラ共感・画面実機レビュー、12体専用画像の企画、公開条件の審査。
+ 
 ## 商品化タスク（PK01〜PK15｜2026-11-03）
 
 - [商品化タスクボード v1.0](PRODUCTIZATION_TASKS.md)を追加。**仕様があるだけで終わらず、実際の無料Web体験と架空の有料鑑定見本を制作する工程**として、既存M/B/N・MKの実作業をつなぐ。新リポジトリ・既存仕様の再作成は不要。
@@ -44,8 +50,8 @@
 | B01 | P0 | 六十干支の暦日周期・12×5固定キャラ分類の試作 | **公開暦4日と全60分類の試作・CI8件成功／採用前** | [設計・調査](16-b01-birth-character-60-to-12-design-2026-11-03.md)／[検算・分類コード](b01-day-cycle-and-character-study-v0.1.mjs)／[テスト](tests/b01-day-cycle-and-character-study.test.mjs) |
 | B02 | P0 | M06日柱との独立差分・日界方針調査 | **暦日演算の実コード検証完了（73,049日・公開暦11日・CI19/19、全体622/622）。正式日界はB03へ保留** | [B02監査・根拠と残件](17-b02-real-day-engine-and-boundary-audit-2026-11-03.md)／[監査専用Draft PR #33](https://github.com/mochitadi2026-eng/tadi-sanmei-desk/pull/33) |
 | B03 | P0 | 独自の出生キャラ分類規則の採用 | **独自分類の計算規則を採用・CI16件成功／学校公式互換・本番公開は未承認** | [出典調査と採用仕様](18-b03-civil-day-adoption-and-evidence-2026-11-03.md)／[B03採用ルール実装](b03-adopted-birth-character-rule-v1.mjs)／[CI16件](https://github.com/mochitadi2026-eng/sanmei-no-genryu/actions/runs/41600762465) |
-| B04 | P1 | 生まれの12もちキャラの名前・設定・ビジュアル | **次の優先／未着手** | 独自の12体。既存のMT12タイプ・十大主星10体／従星式神12体とは分離 |
-| B05 | P1 | 60詳細分類の文章・本番用判定器 | **未着手** | 全60ケースと保留、改ざん防止、出生データの表示・保持方針を検証 |
+| B04 | P0（先行） | 生まれの12もちキャラの名前・設定・ビジュアル | **餅菓子12体の名称・特徴・あるある・弱点のJSON原案を作成。専用イラスト・レビューは未完** | [B04キャラJSON](b04-birth-mochi-catalog-v0.1.json)／[実装記録](19-b04-b05-birthdate-first-prototype-2026-11-03.md)。既存MT12・教育22体からは独立 |
+| B05 | P0（先行） | 60詳細分類の文章・本番用判定器 | **既存B03を利用する12×5＝60分岐の開発用表示関数＋生年月日入力Webを実装。Node／Chromium CI成功。60本の独立鑑定文章・本番承認は未実施** | [B05表示器](b05-birth-mochi-presenter-v0.1.mjs)／[入力画面](birth-mochi-preview.html)／[検証記録](19-b04-b05-birthdate-first-prototype-2026-11-03.md) |
 
 ## 完了したM02（採用範囲の設計）
 
