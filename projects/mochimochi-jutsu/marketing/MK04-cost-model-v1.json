@@ -1,0 +1,246 @@
+{
+  "schema": "mochimochi-MK04-cost-model-v1",
+  "as_of": "2026-11-03",
+  "status": "assumptions_and_scenarios_only_not_actual_or_for_sale",
+  "recorded_product_ids": [
+    "FREE-01",
+    "PAID-01"
+  ],
+  "currency": "JPY",
+  "basis": {
+    "consumer_charge": "displayed_checkout_amount_including_any_applicable_consumption_tax",
+    "income_metric": "simplified_cash_and_economic_contribution_before_sales_tax_remittance_and_income_tax",
+    "not_included": [
+      "revenue_consumption_tax_remittance",
+      "input_tax_credit",
+      "income_or_corporate_tax",
+      "initial_build_recovery_in_base",
+      "paid_ads_in_base",
+      "unforeseen_refunds_and_disputes",
+      "actual_payment_rounding"
+    ],
+    "actual_sales_and_costs_verified": false
+  },
+  "sources": [
+    {
+      "name": "stripe_card_standard",
+      "url": "https://stripe.com/jp/pricing",
+      "public_fact": "card_transaction_rate_0.036"
+    },
+    {
+      "name": "stripe_fee_JCT",
+      "url": "https://support.stripe.com/questions/taxes-on-stripe-fees-for-businesses-in-japan?locale=ja-JP",
+      "public_fact": "japan_tax_applies_to_card_processing_fees"
+    },
+    {
+      "name": "note_paid_content",
+      "url": "https://www.help-note.com/hc/ja/articles/360011358873-%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E3%82%92%E8%B2%A9%E5%A3%B2%E3%81%99%E3%82%8B%E9%9A%9B%E3%81%AB%E5%BC%95%E3%81%8B%E3%82%8C%E3%82%8B%E6%89%8B%E6%95%B0%E6%96%99",
+      "public_fact": "card_processing_0.05_platform_0.10_after_processing_payout_fee_270"
+    },
+    {
+      "name": "cloudflare_pages",
+      "url": "https://developers.cloudflare.com/pages/functions/pricing/",
+      "public_fact": "static_assets_free_functions_usage_based"
+    },
+    {
+      "name": "github_pages_limits",
+      "url": "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits",
+      "public_fact": "ecommerce_business_primary_hosting_not_allowed"
+    },
+    {
+      "name": "openai_api_price",
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "public_fact": "api_billed_by_model_tokens_or_tool_usage"
+    }
+  ],
+  "assumptions": {
+    "monthly_fixed": {
+      "hosting_contingency_yen": 1500,
+      "domain_budget_allocation_yen": 500,
+      "monitoring_and_backup_yen": 1000,
+      "maintenance_hours": 6,
+      "imputed_hourly_labor_yen": 2000,
+      "computed_fixed_yen": 15000,
+      "verified_actual_spend": false
+    },
+    "free": {
+      "incremental_cost_per_complete_yen": 1,
+      "llm_required_for_result": false,
+      "published": false,
+      "baseline_monthly_completions": 630
+    },
+    "paid": {
+      "editorial_qa_minutes": 30,
+      "imputed_hourly_labor_yen": 2000,
+      "editorial_qa_labor_yen": 1000,
+      "llm_budget_yen": 30,
+      "pdf_delivery_budget_yen": 30,
+      "expected_support_budget_yen": 40,
+      "nonpayment_variable_yen": 1100,
+      "published_or_for_sale": false,
+      "payment_case": "stripe_card_hypothetical",
+      "stripe_standard_fraction": 0.036,
+      "stripe_fee_jct_assumed_fraction": 0.1,
+      "estimated_total_fee_fraction": 0.04,
+      "selected_baseline_price_yen": 2980,
+      "candidate_prices_yen": [
+        1980,
+        2980,
+        3980
+      ]
+    },
+    "initial_investment": {
+      "engineering_hours": 40,
+      "ux_and_quality_hours": 12,
+      "imputed_hourly_labor_yen": 2000,
+      "computed_initial_budget_yen": 104000,
+      "not_included": [
+        "illustration_assets",
+        "external_legal_review",
+        "remaining_calendar_engine_development",
+        "data_storage_security",
+        "reproduction_migration"
+      ]
+    }
+  },
+  "formulas": {
+    "fixed_total": "hosting_contingency + domain_budget_allocation + monitoring_backup + maintenance_hours*hourly_rate",
+    "payment_fee": "price*0.036*(1+0.1)",
+    "paid_unit_contribution": "price-paid_nonpayment_variable-payment_fee",
+    "monthly_simple_result": "paid_orders*paid_unit_contribution - fixed_total - free_completions*free_unit - extra_monthly_cost",
+    "break_even_paid_quantity": "ceil((fixed_total + free_completions*free_unit + extra_monthly_fixed) / (unit_contribution - paid_acquisition_cost))",
+    "note_credit_card_fee": "price*0.05 + (price - price*0.05)*0.10"
+  },
+  "price_cases": [
+    {
+      "checkout_price_yen": 1980,
+      "fee_yen_approx": 78.41,
+      "other_variable_yen": 1100,
+      "total_variable_yen_approx": 1178.41,
+      "unit_contribution_yen_approx": 801.59,
+      "unit_contribution_margin_percent": 40.48,
+      "break_even_units_at_630_free": 20
+    },
+    {
+      "checkout_price_yen": 2980,
+      "fee_yen_approx": 118.01,
+      "other_variable_yen": 1100,
+      "total_variable_yen_approx": 1218.01,
+      "unit_contribution_yen_approx": 1761.99,
+      "unit_contribution_margin_percent": 59.13,
+      "break_even_units_at_630_free": 9
+    },
+    {
+      "checkout_price_yen": 3980,
+      "fee_yen_approx": 157.61,
+      "other_variable_yen": 1100,
+      "total_variable_yen_approx": 1257.61,
+      "unit_contribution_yen_approx": 2722.39,
+      "unit_contribution_margin_percent": 68.4,
+      "break_even_units_at_630_free": 6
+    }
+  ],
+  "monthly_scenarios": [
+    {
+      "id": "cautious",
+      "label_ja": "慎重",
+      "landing_visits": 1000,
+      "starts": 300,
+      "free_completions": 210,
+      "product_views": 42,
+      "paid_orders": 2,
+      "checkout_price_yen": 2980,
+      "gross_receipts_yen": 5960,
+      "unit_contribution_yen_approx": 1761.99,
+      "free_processing_expense_yen": 210,
+      "fixed_expense_yen": 15000,
+      "monthly_simple_result_yen_approx": -11686.02
+    },
+    {
+      "id": "base",
+      "label_ja": "基準",
+      "landing_visits": 3000,
+      "starts": 900,
+      "free_completions": 630,
+      "product_views": 126,
+      "paid_orders": 6,
+      "checkout_price_yen": 2980,
+      "gross_receipts_yen": 17880,
+      "unit_contribution_yen_approx": 1761.99,
+      "free_processing_expense_yen": 630,
+      "fixed_expense_yen": 15000,
+      "monthly_simple_result_yen_approx": -5058.05
+    },
+    {
+      "id": "upside",
+      "label_ja": "上振れ",
+      "landing_visits": 6000,
+      "starts": 1800,
+      "free_completions": 1260,
+      "product_views": 252,
+      "paid_orders": 25,
+      "checkout_price_yen": 2980,
+      "gross_receipts_yen": 74500,
+      "unit_contribution_yen_approx": 1761.99,
+      "free_processing_expense_yen": 1260,
+      "fixed_expense_yen": 15000,
+      "monthly_simple_result_yen_approx": 27789.8
+    }
+  ],
+  "sensitivity": [
+    {
+      "case": "paid_human_minutes_15",
+      "paid_human_minutes": 15,
+      "unit_contribution_yen_approx": 2261.99,
+      "break_even_units": 7
+    },
+    {
+      "case": "paid_human_minutes_30",
+      "paid_human_minutes": 30,
+      "unit_contribution_yen_approx": 1761.99,
+      "break_even_units": 9
+    },
+    {
+      "case": "paid_human_minutes_60",
+      "paid_human_minutes": 60,
+      "unit_contribution_yen_approx": 761.99,
+      "break_even_units": 21
+    },
+    {
+      "case": "CAC_500_per_purchase",
+      "extra_acquisition_cost_per_purchase_yen": 500,
+      "unit_contribution_yen_approx": 1261.99,
+      "break_even_units": 13
+    },
+    {
+      "case": "CAC_1000_per_purchase",
+      "extra_acquisition_cost_per_purchase_yen": 1000,
+      "unit_contribution_yen_approx": 761.99,
+      "break_even_units": 21
+    },
+    {
+      "case": "additional_marketing_labor_8h_month",
+      "additional_fixed_yen": 16000,
+      "break_even_units": 18
+    },
+    {
+      "case": "recover_104000_initial_investment_over_12_months",
+      "additional_monthly_recovery_yen_approx": 8666.67,
+      "break_even_units": 14
+    }
+  ],
+  "note_comparison": {
+    "category": "paid_article_or_educational_content_only",
+    "note_credit_card_effective_fee_fraction": 0.145,
+    "payout_fee_yen_per_transfer": 270,
+    "unit_contribution_at_2980_yen_approx": 1447.9,
+    "monthly_break_even_at_630_free_and_one_payout": 11,
+    "custom_individual_private_pdf_delivery_suitability_verified": false
+  },
+  "gate": {
+    "G1_free_public": "BLOCKED",
+    "G2_paid_sell": "BLOCKED",
+    "MK04_financial_spec": "COMPLETE_NOT_VALIDATED",
+    "next_task": "MK05"
+  }
+}
