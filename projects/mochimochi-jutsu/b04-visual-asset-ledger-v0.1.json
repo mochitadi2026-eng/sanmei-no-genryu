@@ -1,0 +1,171 @@
+{
+  "schema_version": "b04-visual-asset-ledger-v0.1",
+  "recorded_on": "2026-11-04",
+  "scope": "birth_zodiac_mochi_BC01_BC12",
+  "source_spec": "19-b04-mochi-visual-system-2026-11-04.md",
+  "base_form": {
+    "selection": "right-hand image from user two-option comparison",
+    "style": "white matte soft 2D mochi, wide-set dot eyes, no mouth, faint blush, minimal background",
+    "repo_asset_path": null,
+    "status": "user_selected_reference_not_uploaded"
+  },
+  "visual_layers": [
+    {
+      "key": "five_elements",
+      "kind": "mochi_material",
+      "count": 5,
+      "mapping": "day_stem_element",
+      "specific_variants": "undecided"
+    },
+    {
+      "key": "twelve_branches",
+      "kind": "mochi_animal_body",
+      "count": 12,
+      "mapping": "day_branch",
+      "specific_variants": "chat_drafts_unapproved"
+    },
+    {
+      "key": "ten_main_stars",
+      "kind": "main_filling",
+      "count": 10,
+      "mapping": "star_selection_rule_undecided",
+      "specific_variants": "undecided"
+    },
+    {
+      "key": "twelve_follow_stars",
+      "kind": "dish_or_utensil",
+      "count": 12,
+      "mapping": "star_selection_rule_undecided",
+      "specific_variants": "undecided"
+    }
+  ],
+  "characters": [
+    {
+      "id": "BC01",
+      "branch": "子",
+      "animal": "mouse",
+      "features": "round ears; fine tail",
+      "chat_draft_origin": "current_chat",
+      "github_asset_path": null,
+      "final_art_approved": false,
+      "asset_sha": null
+    },
+    {
+      "id": "BC02",
+      "branch": "丑",
+      "animal": "ox",
+      "features": "horns; ears; patches",
+      "chat_draft_origin": "current_chat",
+      "github_asset_path": null,
+      "final_art_approved": false,
+      "asset_sha": null
+    },
+    {
+      "id": "BC03",
+      "branch": "寅",
+      "animal": "tiger",
+      "features": "round ears; stripes",
+      "chat_draft_origin": "current_chat",
+      "github_asset_path": null,
+      "final_art_approved": false,
+      "asset_sha": null
+    },
+    {
+      "id": "BC04",
+      "branch": "卯",
+      "animal": "rabbit",
+      "features": "long ears; round tail",
+      "chat_draft_origin": "current_chat",
+      "github_asset_path": null,
+      "final_art_approved": false,
+      "asset_sha": null
+    },
+    {
+      "id": "BC05",
+      "branch": "辰",
+      "animal": "dragon",
+      "features": "horns; whiskers; tail",
+      "chat_draft_origin": "current_chat",
+      "github_asset_path": null,
+      "final_art_approved": false,
+      "asset_sha": null
+    },
+    {
+      "id": "BC06",
+      "branch": "巳",
+      "animal": "snake",
+      "features": "slender tail; forked tongue; no mandatory coiling",
+      "chat_draft_origin": "current_chat",
+      "github_asset_path": null,
+      "final_art_approved": false,
+      "asset_sha": null
+    },
+    {
+      "id": "BC07",
+      "branch": "午",
+      "animal": "horse",
+      "features": "upright ears; mane; tail",
+      "chat_draft_origin": "current_chat",
+      "github_asset_path": null,
+      "final_art_approved": false,
+      "asset_sha": null
+    },
+    {
+      "id": "BC08",
+      "branch": "未",
+      "animal": "sheep",
+      "features": "curled wool; small ears; horns optional",
+      "chat_draft_origin": "current_chat",
+      "github_asset_path": null,
+      "final_art_approved": false,
+      "asset_sha": null
+    },
+    {
+      "id": "BC09",
+      "branch": "申",
+      "animal": "monkey",
+      "features": "large ears; curled tail",
+      "chat_draft_origin": "current_chat",
+      "github_asset_path": null,
+      "final_art_approved": false,
+      "asset_sha": null
+    },
+    {
+      "id": "BC10",
+      "branch": "酉",
+      "animal": "rooster",
+      "features": "comb; small beak",
+      "chat_draft_origin": "earlier_chat",
+      "github_asset_path": null,
+      "final_art_approved": false,
+      "asset_sha": null
+    },
+    {
+      "id": "BC11",
+      "branch": "戌",
+      "animal": "dog",
+      "features": "floppy ears; short tail",
+      "chat_draft_origin": "earlier_chat",
+      "github_asset_path": null,
+      "final_art_approved": false,
+      "asset_sha": null
+    },
+    {
+      "id": "BC12",
+      "branch": "亥",
+      "animal": "boar",
+      "features": "round snout; small tusks",
+      "chat_draft_origin": "earlier_chat",
+      "github_asset_path": null,
+      "final_art_approved": false,
+      "asset_sha": null
+    }
+  ],
+  "rules": [
+    "no unrequested ornaments in zodiac-only base",
+    "other visual layers are separate",
+    "generated image is not an approved image",
+    "do not infer personal star assignment without validated rule"
+  ],
+  "status": "spec_recorded_only_images_not_uploaded"
+}
