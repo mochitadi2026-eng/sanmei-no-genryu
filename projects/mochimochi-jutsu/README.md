@@ -31,6 +31,12 @@
 
 - **[M10｜既存22キャラのデータ](m10-character-catalog-v0.1.json)**／[学習用の表示関数](m10-character-gallery-v0.1.mjs)／[7テスト成功の実装報告](09-character-integration-2026-11-03.md)
 
+## 起運方式の比較（N01）
+
+- [現代2方式の計算差と採用判断](15-ritsun-method-comparison-2026-11-03.md)／[実装した比較器](n01-ritsun-policy-comparison-v0.1.mjs)／[追加テスト9件](tests/n01-ritsun-policy-comparison.test.mjs)
+- 開発元の公表例で、**7日→四捨五入2歳運／8日→切り上げ3歳運**という差分を検算。[CI24件成功](https://github.com/mochitadi2026-eng/sanmei-no-genryu/actions/runs/41572690974)。現代流派の公式承認や実出生からの起運年齢ではない。
+- 次は、順行の独立例・節入り時分・出生時刻不明の規則、採用方式を固定。**現時点で過去の転機年を個人へ割り当てない。**
+
 ## N01部分実装（暦の記号だけ）
 
 - [史料と実装の検証報告](14-n01-daiun-nenun-sources-and-implementation-2026-11-03.md)：『三命通会』『淵海子平』、朱学院、国立天文台を区別して確認。**大運起運は未承認**。
