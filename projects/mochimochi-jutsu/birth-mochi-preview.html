@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>生まれのもち診断｜開発版</title>
+<style>
+*{box-sizing:border-box}body{background:#faf5ea;color:#2c4334;font-family:system-ui,sans-serif;margin:0}
+main{max-width:690px;margin:auto;padding:22px 17px 65px}h1{font-size:clamp(2rem,8vw,3rem);line-height:1.4}
+h2{font-size:1.4rem}p{line-height:1.9}.muted{color:#627568;font-size:.87rem}.eyebrow{font-size:.8rem;letter-spacing:.14em;color:#50735a;font-weight:bold}
+.card{background:#fffefa;border:1px solid #e6e0d0;border-radius:22px;padding:24px;margin:24px 0;box-shadow:0 12px 35px #4f5e430c}
+label{display:block;font-weight:bold;margin:0 0 10px}input{width:100%;font:inherit;padding:13px;border:1px solid #9cac97;border-radius:12px;min-height:50px}
+button{background:#3c7152;color:white;font:inherit;border:0;border-radius:12px;padding:14px 18px;font-weight:bold;min-height:50px;cursor:pointer;width:100%;margin-top:18px}
+button:disabled{opacity:.5}button:focus-visible,input:focus-visible{outline:3px solid #7eaf86;outline-offset:2px}
+.hero{text-align:center;background:#f2f1e6;border-radius:17px;padding:22px 14px}
+.mochi{width:155px;height:128px;margin:auto;display:grid;place-items:center;background:linear-gradient(135deg,#fff,#ebe6d5);border:2px solid #e3dccc;border-radius:48%;box-shadow:0 9px 0 #b4aa8a30}
+.mochi span{font-size:63px}.name{font-size:2.2rem;margin:14px 0 4px}.section{padding:17px 0;border-bottom:1px solid #e7e5d8}
+.section:last-child{border:0}.question{background:#eaf3e9;border-radius:15px;padding:17px;margin:18px 0}summary{cursor:pointer;font-weight:bold}
+#error{color:#993e38;font-size:.9rem}footer{font-size:.75rem;color:#69766b;margin-top:30px}
+[hidden]{display:none!important}@media(max-width:400px){main{padding:15px 12px}.card{padding:18px}}
+</style>
+<main>
+<p class="eyebrow">MOCHIMOCHI JUTSU · 非公開試作</p>
+<h1>生まれた日の、<br>もちキャラ。</h1>
+<p>生年月日から12種類の餅キャラと5つの属性を表示する、もちもち占術の独自コンテンツです。</p>
+<p class="muted">日本で記録された西暦1900〜2027年が対象。出生日の日干支に基づく創作で、性格を科学的に判定するものではありません。入力した日付は送信・保存しません。</p>
+<section id="entry" class="card">
+<h2>誕生日を入れてみて</h2>
+<form id="form"><label for="date">生年月日（西暦）</label>
+<input type="date" id="date" min="1900-01-01" max="2027-12-31" required autocomplete="off">
+<button id="go" disabled>もちキャラを診断する</button></form><p id="error" role="alert"></p>
+</section>
+<section id="result" class="card" hidden>
+<p class="eyebrow">生まれのもちキャラ</p>
+<div class="hero"><div class="mochi"><span id="icon" aria-hidden="true"></span></div>
+<h2 class="name" tabindex="-1" id="name"></h2><p id="tagline"></p><p id="element"></p></div>
+<div class="section"><p class="eyebrow">01｜餅の見た目</p><h2 id="visual"></h2><p id="feature"></p></div>
+<div class="section"><p class="eyebrow">02｜もちキャラのあるある</p><p id="story"></p></div>
+<div class="section"><p class="eyebrow">03｜ちょっと苦手なところ</p><p id="weak"></p></div>
+<div class="section"><p class="eyebrow">04｜五行の味つけ</p><p id="elementstory"></p></div>
+<div class="question"><strong>今日の問い</strong><p id="question"></p></div>
+<details><summary>どうやってキャラが決まるの？</summary><p id="why"></p>
+<p class="muted">暦の十二支が12キャラ、十干の五行が5属性に対応します。餅と人の性格の関係は創作の比喩です。</p></details>
+<button id="again" type="button">別の誕生日でも見る</button>
+</section>
+<footer>もちもち占術・B04/B05開発版。5問の状態診断とは別です。一般公開・販売の承認前です。</footer>
+</main>
+<script type="module">
+import {readBirthMochi} from './b05-birth-mochi-presenter-v0.1.mjs';
+const $=id=>document.getElementById(id);
+const write=(id,value)=>{$(id).textContent=value};
+let data;
+try{const [m02,catalog]=await Promise.all(['m02-core-symbols-v0.1.json','b04-birth-mochi-catalog-v0.1.json'].map(async f=>{
+ const r=await fetch('./'+f);if(!r.ok)throw Error('load');return r.json()}));data={m02,catalog};$('go').disabled=false;
+}catch{write('error','診断データを読み込めませんでした。ページを更新してください。')}
+$('form').addEventListener('submit',event=>{
+ event.preventDefault();write('error','');
+ try{const date=$('date').value;
+ const r=readBirthMochi({calendar:'Gregorian',country:'JP',civil_date:date},data);
+ if(r.status!=='development_preview')throw Error('unsupported');
+ write('icon',r.character.symbol);write('name',r.character.name);
+ write('tagline',r.character.tagline);write('element',r.element.name+'の属性');
+ write('visual',r.character.visual);write('feature',r.character.real_feature);
+ write('story',r.character.character_scene);write('weak',r.character.comic_weakness);
+ write('elementstory',r.element.narrative+' '+r.element.small_action);
+ write('question',r.character.reflection_question);
+ write('why','この日の日干支は '+r.day_ganzhi+'。日支から'+r.character.name+'、日干の五行から'+r.element.name+'属性に対応しました。');
+ $('date').value='';$('entry').hidden=true;$('result').hidden=false;$('name').focus();
+ }catch{write('error','日付を確認してください。日本で記録された1900〜2027年の西暦日付が対象です。')}
+});
+$('again').addEventListener('click',()=>{$('result').hidden=true;$('entry').hidden=false;$('date').value='';$('date').focus()});
+</script>
+</html>
