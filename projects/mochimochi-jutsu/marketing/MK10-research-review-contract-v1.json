@@ -1,0 +1,913 @@
+{
+  "schema_version": "mk10-v1.0",
+  "document": "MK10-user-research-review-plan-v1.md",
+  "project": "mochimochi-jutsu",
+  "created_at": "2026-11-03",
+  "state": "RESEARCH_PLAN_DESIGNED_NO_RECRUITMENT_NO_PARTICIPANTS_NO_RESULTS",
+  "source_classification": {
+    "F": "existing_verified_project_material",
+    "L": "official_guidance_general_only",
+    "D": "project_design_choice",
+    "I": "unvalidated_hypothesis",
+    "U": "unknown"
+  },
+  "gates": {
+    "G1_free": "NO_GO",
+    "G2_paid": "NO_GO",
+    "participant_recruitment": "NOT_APPROVED",
+    "study_running": false,
+    "paid_sales_allowed": false
+  },
+  "references": [
+    "MK01-customer-value-proposition-v1.md",
+    "MK02-competitor-positioning-2026-11-03.md",
+    "MK03-product-spec-v1.md",
+    "MK04-price-unit-economics-v1.md",
+    "MK05-legal-trust-release-audit-2026-11-03.md",
+    "MK06-free-lp-cta-design-v1.md",
+    "MK07-lead-optin-crm-data-lifecycle-v1.md",
+    "MK08-measurement-funnel-dashboard-v1.md",
+    "MK09-paid-sales-checkout-delivery-spec-v1.md",
+    "../M09-USER-REVIEW.md",
+    "../M09-REVIEW-PACKET.md",
+    "../TASKS.md"
+  ],
+  "official_sources": [
+    {
+      "kind": "JP_law_guidance",
+      "agency": "Personal Information Protection Commission",
+      "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/",
+      "relevance": "research_contact_and_notes_personal_information_purpose_limitation_security"
+    },
+    {
+      "kind": "UK_government_practice_not_JP_law",
+      "agency": "Government Digital Service",
+      "url": "https://www.gov.uk/service-manual/user-research/getting-users-consent-for-research",
+      "relevance": "information_sheet_voluntariness_withdrawal_and_separate_recording"
+    },
+    {
+      "kind": "UK_government_practice_not_JP_law",
+      "agency": "Government Digital Service",
+      "url": "https://www.gov.uk/service-manual/user-research/managing-user-research-data-participant-privacy",
+      "relevance": "secure_research_data_and_non_public_raw_quotes"
+    },
+    {
+      "kind": "UK_government_practice_not_JP_law",
+      "agency": "Government Digital Service",
+      "url": "https://www.gov.uk/service-manual/user-research/plan-round-of-user-research",
+      "relevance": "practice_session_and_private_prototype_readiness"
+    },
+    {
+      "kind": "accessibility_guidance",
+      "agency": "W3C WAI",
+      "url": "https://www.w3.org/WAI/test-evaluate/involving-users/",
+      "relevance": "evaluation_involving_people_with_disabilities_complements_tools"
+    }
+  ],
+  "study_arms": [
+    {
+      "id": "A_FREE",
+      "purpose": "free_question_flow_and_copy_usability",
+      "target_n_range_proposal": [
+        5,
+        8
+      ],
+      "eligible_min_age": 18,
+      "recruitment_status": "NOT_STARTED",
+      "current_testable_artifact": "../m09-preview.html",
+      "uses_existing_packet": "../M09-REVIEW-PACKET.md",
+      "scenarios": [
+        "A_type_present",
+        "B_type_pending",
+        "C_all_x",
+        "D_mode_pending",
+        "E_natural_free_choice"
+      ],
+      "scenario_F_image": "NOT_AVAILABLE_NEEDS_FUTURE_RETEST",
+      "minutes_proposal": [
+        20,
+        30
+      ],
+      "exclude": [
+        "minors",
+        "people_who_cannot_consent",
+        "active_developers_in_study_population"
+      ],
+      "participant_variables_optional": [
+        "relationship_bucket",
+        "device_category",
+        "declared_interest_bucket"
+      ],
+      "prohibit_personally_identifiable_profile_storage": true
+    },
+    {
+      "id": "B_PAID_CONCEPT",
+      "purpose": "fictional_sample_comprehension_and_value_differentiation_NOT_accuracy_or_paid_purchase",
+      "target_n_range_proposal": [
+        4,
+        6
+      ],
+      "eligible_min_age": 18,
+      "recruitment_status": "NOT_STARTED",
+      "artifact_status": "FICTIONAL_SAMPLE_NOT_CREATED",
+      "minutes_proposal": [
+        15,
+        25
+      ],
+      "birth_data_collected": false,
+      "personal_history_collected": false,
+      "payment_collected": false,
+      "price_hypothetical_only_JPY": [
+        1980,
+        2980,
+        3980
+      ],
+      "price_order_randomization_proposal": true,
+      "prohibited_claims": [
+        "proved_personal_reading_accuracy",
+        "paid_product_is_live",
+        "purchase_intent_proves_demand",
+        "sample_contains_real_verified_turning_point"
+      ]
+    }
+  ],
+  "recruitment": {
+    "public_social_call_not_approved": true,
+    "explicit_new_optin_required": true,
+    "historical_free_reading_list_not_reused": true,
+    "marketer_CRM_import": false,
+    "compensation_if_any": "participation_time_not_positive_rating",
+    "participant_relationship_incentive_bias_aware": true,
+    "no_diagnostic_or_clinical_screening": true,
+    "accessibility_accommodation_opt_in": true
+  },
+  "consent": {
+    "required_prior_to_session": [
+      "study_identity_operator",
+      "purpose",
+      "activities",
+      "data_collected",
+      "observers",
+      "recording_policy",
+      "purpose_limit",
+      "retention_and_deletion",
+      "withdrawal_instructions",
+      "real_contact",
+      "external_processors_if_any"
+    ],
+    "separate_choices": [
+      {
+        "id": "C01",
+        "purpose": "participate_and_moderator_notes",
+        "default_checked": false,
+        "required_to_test": true
+      },
+      {
+        "id": "C02",
+        "purpose": "audio_or_video_recording",
+        "default_checked": false,
+        "required_to_test": false,
+        "default_policy": "NO_RECORDING"
+      },
+      {
+        "id": "C03",
+        "purpose": "public_quote_or_comment_reuse",
+        "default_checked": false,
+        "required_to_test": false,
+        "default_policy": "DO_NOT_QUOTE"
+      },
+      {
+        "id": "C04",
+        "purpose": "future_research_contact",
+        "default_checked": false,
+        "required_to_test": false,
+        "not_marketing_consent": true
+      },
+      {
+        "id": "C05",
+        "purpose": "marketing_email",
+        "included_in_this_research": false,
+        "default_checked": false
+      }
+    ],
+    "withdrawal": "stop_immediately_and_process_applicable_personal_data_request_in_secure_store; law_related_retention_to_be_reviewed",
+    "sensitive_birth_history_medical_collection": false,
+    "privacy_and_legal_approval_required_before_real_recruitment": true
+  },
+  "rating": {
+    "id": "R5_POSITIVE",
+    "kind": "nonvalidated_exploratory_subjective_likert",
+    "options": [
+      {
+        "value": 1,
+        "label": "全くそう思わない"
+      },
+      {
+        "value": 2,
+        "label": "あまりそう思わない"
+      },
+      {
+        "value": 3,
+        "label": "どちらともいえない"
+      },
+      {
+        "value": 4,
+        "label": "ややそう思う"
+      },
+      {
+        "value": 5,
+        "label": "とてもそう思う"
+      },
+      {
+        "value": "NA",
+        "label": "該当しない"
+      },
+      {
+        "value": "SKIP",
+        "label": "答えたくない"
+      }
+    ],
+    "NA_SKIPPED_not_imputed": true,
+    "positive_values": [
+      4,
+      5
+    ],
+    "use_case": "qualitative_review_not_diagnostic_or_market_statistical_inference"
+  },
+  "questionnaire": {
+    "free": [
+      {
+        "id": "A01",
+        "group": "A_FREE",
+        "prompt_ja": "最初の説明を読んで、どんな体験をするか分かった",
+        "dimension": "expectation",
+        "conditional": false,
+        "scale": "R5_POSITIVE",
+        "allow_na": true,
+        "allow_skip": true,
+        "collect_personal_story": false
+      },
+      {
+        "id": "A02",
+        "group": "A_FREE",
+        "prompt_ja": "5問と画面の進め方は迷いにくかった",
+        "dimension": "usability",
+        "conditional": false,
+        "scale": "R5_POSITIVE",
+        "allow_na": true,
+        "allow_skip": true,
+        "collect_personal_story": false
+      },
+      {
+        "id": "A03",
+        "group": "A_FREE",
+        "prompt_ja": "結果の文章は読みやすかった",
+        "dimension": "readability",
+        "conditional": false,
+        "scale": "R5_POSITIVE",
+        "allow_na": true,
+        "allow_skip": true,
+        "collect_personal_story": false
+      },
+      {
+        "id": "A04",
+        "group": "A_FREE",
+        "prompt_ja": "結果が何を手掛かりに書かれたか理解できた",
+        "dimension": "explainability",
+        "conditional": false,
+        "scale": "R5_POSITIVE",
+        "allow_na": true,
+        "allow_skip": true,
+        "collect_personal_story": false
+      },
+      {
+        "id": "A05",
+        "group": "A_FREE",
+        "prompt_ja": "自分の性格や人生を勝手に決めつけられたとは感じなかった",
+        "dimension": "noncoercion",
+        "conditional": false,
+        "scale": "R5_POSITIVE",
+        "allow_na": true,
+        "allow_skip": true,
+        "collect_personal_story": false
+      },
+      {
+        "id": "A06",
+        "group": "A_FREE",
+        "prompt_ja": "物語を読むこと自体を楽しめた",
+        "dimension": "enjoyment",
+        "conditional": false,
+        "scale": "R5_POSITIVE",
+        "allow_na": true,
+        "allow_skip": true,
+        "collect_personal_story": false
+      },
+      {
+        "id": "A07",
+        "group": "A_FREE",
+        "prompt_ja": "最後の問いは、答えても答えなくてもよいものに感じた",
+        "dimension": "autonomy",
+        "conditional": false,
+        "scale": "R5_POSITIVE",
+        "allow_na": true,
+        "allow_skip": true,
+        "collect_personal_story": false
+      },
+      {
+        "id": "A08",
+        "group": "A_FREE",
+        "prompt_ja": "タイプなし・決めないの結果を読んで、置き去りにされた感じがなかった",
+        "dimension": "pending_acceptance",
+        "conditional": true,
+        "scale": "R5_POSITIVE",
+        "allow_na": true,
+        "allow_skip": true,
+        "collect_personal_story": false
+      },
+      {
+        "id": "A09",
+        "group": "A_FREE",
+        "prompt_ja": "診断に登録・購入が必要だと誤解しなかった",
+        "dimension": "free_value",
+        "conditional": false,
+        "scale": "R5_POSITIVE",
+        "allow_na": true,
+        "allow_skip": true,
+        "collect_personal_story": false
+      }
+    ],
+    "paid_concept": [
+      {
+        "id": "B01",
+        "group": "B_PAID_CONCEPT",
+        "prompt_ja": "商品説明で、何が届く想定か分かった",
+        "dimension": "product_clarity",
+        "conditional": false,
+        "scale": "R5_POSITIVE",
+        "allow_na": true,
+        "allow_skip": true,
+        "collect_personal_story": false
+      },
+      {
+        "id": "B02",
+        "group": "B_PAID_CONCEPT",
+        "prompt_ja": "架空の見本文章は読みやすかった",
+        "dimension": "readability",
+        "conditional": false,
+        "scale": "R5_POSITIVE",
+        "allow_na": true,
+        "allow_skip": true,
+        "collect_personal_story": false
+      },
+      {
+        "id": "B03",
+        "group": "B_PAID_CONCEPT",
+        "prompt_ja": "話の流れ（過去→今→これから）が追いやすかった",
+        "dimension": "narrative_flow",
+        "conditional": false,
+        "scale": "R5_POSITIVE",
+        "allow_na": true,
+        "allow_skip": true,
+        "collect_personal_story": false
+      },
+      {
+        "id": "B04",
+        "group": "B_PAID_CONCEPT",
+        "prompt_ja": "暦の象徴・本人の回答・創作の違いが分かった",
+        "dimension": "evidence_separation",
+        "conditional": false,
+        "scale": "R5_POSITIVE",
+        "allow_na": true,
+        "allow_skip": true,
+        "collect_personal_story": false
+      },
+      {
+        "id": "B05",
+        "group": "B_PAID_CONCEPT",
+        "prompt_ja": "文章が人物の実人生を断定しているようには感じなかった",
+        "dimension": "noncoercion",
+        "conditional": false,
+        "scale": "R5_POSITIVE",
+        "allow_na": true,
+        "allow_skip": true,
+        "collect_personal_story": false
+      },
+      {
+        "id": "B06",
+        "group": "B_PAID_CONCEPT",
+        "prompt_ja": "無料5問と有料候補の違いが理解できた",
+        "dimension": "paid_differentiation",
+        "conditional": false,
+        "scale": "R5_POSITIVE",
+        "allow_na": true,
+        "allow_skip": true,
+        "collect_personal_story": false
+      },
+      {
+        "id": "B07",
+        "group": "B_PAID_CONCEPT",
+        "prompt_ja": "一つの読み物として興味を持てた",
+        "dimension": "enjoyment",
+        "conditional": false,
+        "scale": "R5_POSITIVE",
+        "allow_na": true,
+        "allow_skip": true,
+        "collect_personal_story": false
+      },
+      {
+        "id": "B08",
+        "group": "B_PAID_CONCEPT",
+        "prompt_ja": "この説明と見本だけでは、購入判断に不足する情報があれば指摘できた",
+        "dimension": "transaction_transparency",
+        "conditional": false,
+        "scale": "R5_POSITIVE",
+        "allow_na": true,
+        "allow_skip": true,
+        "collect_personal_story": false
+      }
+    ],
+    "counts": {
+      "free": 9,
+      "paid_concept": 8
+    },
+    "optional_open_prompts": [
+      "良かった表現",
+      "引っかかった言葉",
+      "迷った場所",
+      "読むのをやめたくなった理由",
+      "改善案"
+    ],
+    "no_actual_life_story_required": true
+  },
+  "observed_tasks": [
+    {
+      "id": "O01",
+      "group": "A_FREE",
+      "criterion": "開始前の注意を確認し、自発的に5問の開始地点へ到達",
+      "result": null,
+      "valid_results": [
+        "SUCCESS",
+        "ASSISTED",
+        "FAIL",
+        "NOT_RUN",
+        "NA"
+      ]
+    },
+    {
+      "id": "O02",
+      "group": "A_FREE",
+      "criterion": "戻る・やめる・決めないの操作を発見",
+      "result": null,
+      "valid_results": [
+        "SUCCESS",
+        "ASSISTED",
+        "FAIL",
+        "NOT_RUN",
+        "NA"
+      ]
+    },
+    {
+      "id": "O03",
+      "group": "A_FREE",
+      "criterion": "タイプ保留でも結果を読み終える",
+      "result": null,
+      "valid_results": [
+        "SUCCESS",
+        "ASSISTED",
+        "FAIL",
+        "NOT_RUN",
+        "NA"
+      ]
+    },
+    {
+      "id": "O04",
+      "group": "A_FREE",
+      "criterion": "性格検査や未来の保証ではないと説明できる",
+      "result": null,
+      "valid_results": [
+        "SUCCESS",
+        "ASSISTED",
+        "FAIL",
+        "NOT_RUN",
+        "NA"
+      ]
+    },
+    {
+      "id": "O05",
+      "group": "A_FREE",
+      "criterion": "メール登録・購入は不要だと理解",
+      "result": null,
+      "valid_results": [
+        "SUCCESS",
+        "ASSISTED",
+        "FAIL",
+        "NOT_RUN",
+        "NA"
+      ]
+    },
+    {
+      "id": "O06",
+      "group": "B_PAID_CONCEPT",
+      "criterion": "見本は架空で、本人鑑定ではないと分かる",
+      "result": null,
+      "valid_results": [
+        "SUCCESS",
+        "ASSISTED",
+        "FAIL",
+        "NOT_RUN",
+        "NA"
+      ]
+    },
+    {
+      "id": "O07",
+      "group": "B_PAID_CONCEPT",
+      "criterion": "無料と有料候補の違いを説明できる",
+      "result": null,
+      "valid_results": [
+        "SUCCESS",
+        "ASSISTED",
+        "FAIL",
+        "NOT_RUN",
+        "NA"
+      ]
+    },
+    {
+      "id": "O08",
+      "group": "B_PAID_CONCEPT",
+      "criterion": "価格・納期・返金は未確定、購入はできないと理解",
+      "result": null,
+      "valid_results": [
+        "SUCCESS",
+        "ASSISTED",
+        "FAIL",
+        "NOT_RUN",
+        "NA"
+      ]
+    }
+  ],
+  "method": {
+    "free_steps": [
+      "information_sheet_and_consent",
+      "landing_first_impression",
+      "5_questions_moderated_neutral",
+      "read_result_and_explain",
+      "show_existing_B_C_pending_cases",
+      "reflect_on_optional_prompt",
+      "questionnaire",
+      "close_and_rights"
+    ],
+    "paid_steps": [
+      "consent_and_fictionality_notice",
+      "P00_description_and_fictional_sample",
+      "teach_back_offer_and_difference",
+      "detect_unfounded_claims_or_coercion",
+      "optional_hypothetical_price_discussion",
+      "B_questions",
+      "close_and_rights"
+    ],
+    "leading_questions_prohibited": true,
+    "recorder_default_off": true,
+    "free_answer_logging": false,
+    "test_task_results": [
+      "SUCCESS",
+      "ASSISTED",
+      "FAIL",
+      "NOT_RUN",
+      "NA"
+    ]
+  },
+  "severity": [
+    {
+      "id": "P0",
+      "label": "stop_now",
+      "conditions": [
+        "PII_leak_or_unconsented_recording",
+        "serious_distress_or_fear",
+        "fabricated_real_life_fact_assertion",
+        "unapproved_charging_or_private_data_exposure"
+      ],
+      "action": "stop_affected_testing_and_publication_reassess"
+    },
+    {
+      "id": "P1",
+      "label": "release_blocker",
+      "conditions": [
+        "critical_task_inaccessible",
+        "type_pending_experienced_as_personal_denigration",
+        "scientific_or_prediction_guarantee_misunderstood",
+        "registration_mistaken_as_mandatory"
+      ],
+      "action": "fix_retest_equivalent_and_independent_participants"
+    },
+    {
+      "id": "P2",
+      "label": "fix_before_ship_or_justify_deferral",
+      "conditions": [
+        "unclear_wording",
+        "minor_navigation_confusion",
+        "difficult_reading_sequence"
+      ],
+      "action": "patch_version_and_retest_impacted_cases"
+    },
+    {
+      "id": "P3",
+      "label": "improvement_backlog",
+      "conditions": [
+        "preferences_color_length_style_without_safety_risk"
+      ],
+      "action": "record_qualitative_without_population_extrapolation"
+    }
+  ],
+  "acceptance_policy": {
+    "research_round": "not_statistics",
+    "no_P0_or_P1_for_potential_release": true,
+    "report_NA_SKIP_and_denominators": true,
+    "analyze_ordinal_distributions_not_only_mean": true,
+    "suggested_positive_ratio_not_release_authorization": true,
+    "all_A_E_scenarios_reviewed_before_claiming_free_language_review": true,
+    "F_image_test_must_be_separate_after_scene_v01": true,
+    "paid_fictional_concept_results_do_not_approve_G2": true,
+    "G1_and_G2_require_separate_dev_legal_security_quality_releases": true
+  },
+  "retest": {
+    "trigger": [
+      "P0",
+      "P1",
+      "changed_question_or_answer_mapping",
+      "changed_M08_algorithm",
+      "changed_M09_copy",
+      "new_scene_v01_image",
+      "new_paid_calendar_text"
+    ],
+    "track": [
+      "issue_id",
+      "release_version",
+      "question_version",
+      "algorithm_version",
+      "copy_version",
+      "scene_version",
+      "build_commit",
+      "scenario_id",
+      "severity",
+      "fix_commit",
+      "retest_result",
+      "reviewer"
+    ],
+    "P0_P1": "original_and_adjacent_cases_plus_new_voluntary_participant_if_human_comprehension_issue",
+    "scene_F": "fresh_visual_and_accessibility_round_do_not_reuse_text_placeholder_findings",
+    "no_backfit_calendar_years_to_feedback": true
+  },
+  "data_lifecycle": {
+    "protected_data_only_not_public_git": true,
+    "identifier_handling": "linked_review_notes_are_pseudonymous_not_anonymous",
+    "contacts": "delete_within_30_days_of_round_end_proposal_subject_to_admin_and_legal_review",
+    "raw_notes": "delete_within_90_days_after_analysis_proposal_subject_to_admin_and_legal_review",
+    "consent_evidence": "separate_restricted_storage_period_UNDECIDED",
+    "recording_default": "NONE",
+    "public_findings": "aggregated_unidentifiable_summary_only",
+    "request_process": "verify_requester_and_apply_stop_deletion_lawful_exceptions",
+    "not_lawful_fixed_retention_terms": true
+  },
+  "acceptance_tests": [
+    {
+      "id": "UR01",
+      "expected": "Reuse M09 A-F scenarios, F-scene unavailable",
+      "dependencies": [
+        "M09-REVIEW-PACKET"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "UR02",
+      "expected": "Explain group A/B scope and concept-only paid sample",
+      "dependencies": [
+        "MK03",
+        "MK09"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "UR03",
+      "expected": "Voluntary 18+ recruitment, participation bias and compensation clarity",
+      "dependencies": [
+        "operator",
+        "research_owner"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "UR04",
+      "expected": "Real operator contact, prior notice, consent version, data handling",
+      "dependencies": [
+        "MK05",
+        "privacy"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "UR05",
+      "expected": "Private preview, environment rehearsal and image limitation disclosure",
+      "dependencies": [
+        "M09.5",
+        "M11"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "UR06",
+      "expected": "Neutral moderation, supported completion recording",
+      "dependencies": [
+        "research_owner"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "UR07",
+      "expected": "Run scenario A-E actual human review",
+      "dependencies": [
+        "M09-REVIEW-PACKET"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "UR08",
+      "expected": "Paid concept sample using fictional text only, no actual birthday",
+      "dependencies": [
+        "N05",
+        "MK09"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "UR09",
+      "expected": "A 9 questions, B 8, NA/SKIP and counts handled correctly",
+      "dependencies": [
+        "survey"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "UR10",
+      "expected": "Readability, understanding, noncoercion, enjoyment, autonomy, observed separately",
+      "dependencies": [
+        "survey"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "UR11",
+      "expected": "Log P0-P3 issues, fix and rerun triggers",
+      "dependencies": [
+        "dev_review"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "UR12",
+      "expected": "No PII, raw answer, recordings or quotations in GitHub",
+      "dependencies": [
+        "security"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "UR13",
+      "expected": "Withdrawal, deletion, separate recording and future contact choice work",
+      "dependencies": [
+        "privacy"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "UR14",
+      "expected": "Image, mobile and accessibility untested shown as such until rerun",
+      "dependencies": [
+        "M11",
+        "M12"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "UR15",
+      "expected": "No fabricated user success and no G1/G2 signoff from design",
+      "dependencies": [
+        "M12"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "UR16",
+      "expected": "Research findings -> issue -> PR -> re-test traceable",
+      "dependencies": [
+        "dev_review"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    }
+  ],
+  "acceptance_test_count": 16,
+  "evidence_record_template": {
+    "round_id": null,
+    "version": null,
+    "recruited_count": null,
+    "consented_count": null,
+    "tested_count": null,
+    "withdrawn_count": null,
+    "scale_distribution": null,
+    "issues": [],
+    "fix_commits": [],
+    "release_decision": "G1_NO_GO_G2_NO_GO"
+  },
+  "next_marketing_task": "MK11",
+  "unresolved": [
+    "real_operator_and_contact",
+    "study_consent_policy",
+    "actual_participants",
+    "scene_v01",
+    "mobile_accessibility",
+    "paid_calendar_engine",
+    "fictional_sample",
+    "secure_research_data_store",
+    "user_comprehension_results",
+    "G1_G2_release_approval"
+  ]
+}
