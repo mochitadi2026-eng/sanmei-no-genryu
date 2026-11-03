@@ -65,7 +65,7 @@
 <ellipse cx="392" cy="795" rx="101" ry="45" fill="#adb39c" opacity=".35"/>
 <path d="M307 760Q356 726 429 733Q471 742 485 774Q474 805 402 813Q329 810 307 782Z" fill="#c4c4b4" stroke="#899788" stroke-width="5"/>
 <path d="M321 752Q394 727 454 752" fill="none" stroke="#f2efdd" stroke-opacity=".8" stroke-width="5"/>
-<path d="M373 844Q410 836 440 849Q461 867 436 882Q395 889 366 871Z" fill="#d3ccb7" stroke="#a1a28d" stroke-width="4"/>
+<!-- Keep one clear nearest stepping stone: Q2-b should not ambiguously point at a second foreground stone -->
 </g>
 <!-- Q2-f: round meeting table with two open chairs in lower right -->
 <g id="cue-f" data-cue="f">
