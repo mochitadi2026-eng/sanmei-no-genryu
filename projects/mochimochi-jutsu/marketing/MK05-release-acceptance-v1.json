@@ -1,0 +1,434 @@
+{
+  "schema": "mochimochi-MK05-acceptance-v1",
+  "date_created": "2026-11-03",
+  "status": "specification_only_all_tests_unexecuted",
+  "legal_advice": false,
+  "source_markdown": "MK05-legal-trust-release-audit-2026-11-03.md",
+  "free_gate": "NO_GO",
+  "paid_gate": "NO_GO",
+  "valid_statuses": [
+    "NOT_RUN",
+    "BLOCKED",
+    "PASS",
+    "FAIL"
+  ],
+  "release_policy": "G1_free_requires_all_free_tests_pass_and_M11_M12_approval; G2_paid_requires_all_paid_tests_pass_and_M06_N01_N05_MK09_M12_approval; never infer PASS from authored test spec",
+  "test_count": 15,
+  "tests": [
+    {
+      "id": "LC-F01",
+      "product": "FREE-01",
+      "area": "website_disclosure",
+      "expected": "運営・問い合わせ・規約・非保証・データ説明の画面表示と到達性を確認",
+      "screen_refs": [
+        "F00",
+        "F01",
+        "F07",
+        "F08"
+      ],
+      "requirements": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R15"
+      ],
+      "stop_triggers": [
+        "ST08"
+      ],
+      "preconditions": "testable_release_candidate_and_approved_spec",
+      "status": "NOT_RUN",
+      "release_version": null,
+      "test_date": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LC-F02",
+      "product": "FREE-01",
+      "area": "privacy_network",
+      "expected": "5問の回答が想定外のネットワーク先・ログ・SDKに出ないことをブラウザとサーバ側で確認",
+      "screen_refs": [
+        "F02-F07"
+      ],
+      "requirements": [
+        "R04",
+        "R05",
+        "R07",
+        "R18"
+      ],
+      "stop_triggers": [
+        "ST05"
+      ],
+      "preconditions": "testable_release_candidate_and_approved_spec",
+      "status": "NOT_RUN",
+      "release_version": null,
+      "test_date": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LC-F03",
+      "product": "FREE-01",
+      "area": "data_lifecycle",
+      "expected": "決めない／戻る／中断／ページ再読込で回答の保留・破棄が説明通りに動く",
+      "screen_refs": [
+        "F01-F07"
+      ],
+      "requirements": [
+        "R05",
+        "R06"
+      ],
+      "stop_triggers": [
+        "ST01"
+      ],
+      "preconditions": "testable_release_candidate_and_approved_spec",
+      "status": "NOT_RUN",
+      "release_version": null,
+      "test_date": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LC-F04",
+      "product": "FREE-01",
+      "area": "marketing_content",
+      "expected": "虚偽の性格測定・未実装の出生キャラ・過去的中・健康／未来保証・架空口コミがない",
+      "screen_refs": [
+        "SNS",
+        "F00",
+        "F07"
+      ],
+      "requirements": [
+        "R02",
+        "R09",
+        "R16"
+      ],
+      "stop_triggers": [
+        "ST03"
+      ],
+      "preconditions": "testable_release_candidate_and_approved_spec",
+      "status": "NOT_RUN",
+      "release_version": null,
+      "test_date": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LC-F05",
+      "product": "FREE-01",
+      "area": "quality_ownership",
+      "expected": "画像権利、アクセシビリティ、窓口、M11/M12 G1の必須テスト全件が承認済",
+      "screen_refs": [
+        "F00-F08"
+      ],
+      "requirements": [
+        "R15",
+        "R19",
+        "R20"
+      ],
+      "stop_triggers": [
+        "ST01"
+      ],
+      "preconditions": "testable_release_candidate_and_approved_spec",
+      "status": "BLOCKED",
+      "release_version": null,
+      "test_date": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LC-P01",
+      "product": "PAID-01",
+      "area": "seller_and_disclosure",
+      "expected": "法定事業者・価格総額・支払・提供・撤回等・契約範囲・連絡先を実データで表示",
+      "screen_refs": [
+        "P00",
+        "P01",
+        "P05"
+      ],
+      "requirements": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R14"
+      ],
+      "stop_triggers": [
+        "ST04"
+      ],
+      "preconditions": "testable_release_candidate_and_approved_spec",
+      "status": "BLOCKED",
+      "release_version": null,
+      "test_date": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LC-P02",
+      "product": "PAID-01",
+      "area": "final_checkout_screen",
+      "expected": "注文直前に条件の一覧表示と戻って訂正を行い、版付き画面証拠を残せる",
+      "screen_refs": [
+        "P05"
+      ],
+      "requirements": [
+        "R10",
+        "R11",
+        "R12"
+      ],
+      "stop_triggers": [
+        "ST04"
+      ],
+      "preconditions": "testable_release_candidate_and_approved_spec",
+      "status": "BLOCKED",
+      "release_version": null,
+      "test_date": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LC-P03",
+      "product": "PAID-01",
+      "area": "personal_data_and_processors",
+      "expected": "出生入力前の目的説明、必要情報の最小化、委託・海外AI・クラウド・保存・削除・本人請求が実装と整合",
+      "screen_refs": [
+        "P01",
+        "P02",
+        "P04"
+      ],
+      "requirements": [
+        "R04",
+        "R06",
+        "R07",
+        "R18"
+      ],
+      "stop_triggers": [
+        "ST05"
+      ],
+      "preconditions": "testable_release_candidate_and_approved_spec",
+      "status": "BLOCKED",
+      "release_version": null,
+      "test_date": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LC-P04",
+      "product": "PAID-01",
+      "area": "marketing_opt_in",
+      "expected": "宣伝案内は初期未チェックの別承諾で、配信停止・記録の保存・用途分離が実装済",
+      "screen_refs": [
+        "P00",
+        "P07"
+      ],
+      "requirements": [
+        "R04",
+        "R08"
+      ],
+      "stop_triggers": [
+        "ST07"
+      ],
+      "preconditions": "testable_release_candidate_and_approved_spec",
+      "status": "BLOCKED",
+      "release_version": null,
+      "test_date": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LC-P05",
+      "product": "PAID-01",
+      "area": "calendar_eligibility_before_payment",
+      "expected": "実装未承認のM06/N01や境界・計算不能入力には購入前にNO-GOを返し、決済させない",
+      "screen_refs": [
+        "P01-P05"
+      ],
+      "requirements": [
+        "R16",
+        "R20"
+      ],
+      "stop_triggers": [
+        "ST02"
+      ],
+      "preconditions": "testable_release_candidate_and_approved_spec",
+      "status": "BLOCKED",
+      "release_version": null,
+      "test_date": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LC-P06",
+      "product": "PAID-01",
+      "area": "order_to_pdf_e2e",
+      "expected": "サンドボックスで決済→本人専用PDF→再取得→キャンセル／返金と二重課金防止、他人DL拒否を検証",
+      "screen_refs": [
+        "P05",
+        "P06",
+        "P07"
+      ],
+      "requirements": [
+        "R12",
+        "R13",
+        "R14",
+        "R17"
+      ],
+      "stop_triggers": [
+        "ST06"
+      ],
+      "preconditions": "testable_release_candidate_and_approved_spec",
+      "status": "BLOCKED",
+      "release_version": null,
+      "test_date": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LC-P07",
+      "product": "PAID-01",
+      "area": "terms_cancellation_review",
+      "expected": "個別制作役務の取引類型、法定表示、消費者契約法上の免責・解除・返金の有効性を人が審査し、窓口も実在する",
+      "screen_refs": [
+        "P00",
+        "P05",
+        "P07"
+      ],
+      "requirements": [
+        "R03",
+        "R10",
+        "R14",
+        "R15"
+      ],
+      "stop_triggers": [
+        "ST04"
+      ],
+      "preconditions": "testable_release_candidate_and_approved_spec",
+      "status": "BLOCKED",
+      "release_version": null,
+      "test_date": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LC-P08",
+      "product": "PAID-01",
+      "area": "truth_in_advertising",
+      "expected": "広告・LP・見本・有料本文が有効な算式／実装／ライセンスと一致し、PR関与を隠していない",
+      "screen_refs": [
+        "SNS",
+        "P00",
+        "P06"
+      ],
+      "requirements": [
+        "R09",
+        "R16",
+        "R19"
+      ],
+      "stop_triggers": [
+        "ST03"
+      ],
+      "preconditions": "testable_release_candidate_and_approved_spec",
+      "status": "BLOCKED",
+      "release_version": null,
+      "test_date": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LC-P09",
+      "product": "PAID-01",
+      "area": "incident_drill",
+      "expected": "漏えい／誤納品／不正アクセス／決済障害時の停止・調査・法定報告判定・返金と復旧記録を演習",
+      "screen_refs": [
+        "P02-P07"
+      ],
+      "requirements": [
+        "R06",
+        "R07",
+        "R12",
+        "R13",
+        "R17",
+        "R20"
+      ],
+      "stop_triggers": [
+        "ST05",
+        "ST06"
+      ],
+      "preconditions": "testable_release_candidate_and_approved_spec",
+      "status": "BLOCKED",
+      "release_version": null,
+      "test_date": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LC-P10",
+      "product": "PAID-01",
+      "area": "G2_release",
+      "expected": "G2-C暦／G2-S文章／G2-L法務決済／G2-Dデータ保護の証拠と担当承認が揃うまで受注禁止",
+      "screen_refs": [
+        "P00-P07"
+      ],
+      "requirements": [
+        "R16",
+        "R20"
+      ],
+      "stop_triggers": [
+        "ST02",
+        "ST04"
+      ],
+      "preconditions": "testable_release_candidate_and_approved_spec",
+      "status": "BLOCKED",
+      "release_version": null,
+      "test_date": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    }
+  ]
+}
