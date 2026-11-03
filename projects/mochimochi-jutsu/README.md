@@ -7,7 +7,7 @@
 ## まず読む
 
 1. **[基本理論書 v0.1（M05統合版）](04-basic-theory-v0.1.md)** — 理念、伝統から採用するもの、6指標、12タイプ・5フェーズ、鑑定出力、倫理、未検証事項の総合仕様
-2. **[タスクボード](TASKS.md)** — 完了・保留・次回やること。次はN01（暦の過去年シグナルの採用・検算）／M09.5の試用評価
+2. **[タスクボード](TASKS.md)** — 完了・保留・次回やること。次はN01（大運の採用方式・起運年齢の検算）／M09.5の試用評価
 3. **[M01の基本理念初稿](00-foundation-v0.1.md)** — 統合前の変更経緯
 
 - **[M06｜既存命式エンジン一次監査](05-engine-audit-2026-11-02.md)** — 実装の所在、Actionsで確認できた既存テスト、暦の検算と本番利用までの残件
@@ -31,13 +31,19 @@
 
 - **[M10｜既存22キャラのデータ](m10-character-catalog-v0.1.json)**／[学習用の表示関数](m10-character-gallery-v0.1.mjs)／[7テスト成功の実装報告](09-character-integration-2026-11-03.md)
 
+## N01部分実装（暦の記号だけ）
+
+- [史料と実装の検証報告](14-n01-daiun-nenun-sources-and-implementation-2026-11-03.md)：『三命通会』『淵海子平』、朱学院、国立天文台を区別して確認。**大運起運は未承認**。
+- [国立天文台2024〜2027年立春時刻JSON](n01-naoj-risshun-2024-2027-v0.1.json)／[年干支判定関数](n01-annual-ganzhi-v0.1.mjs)／[テスト](tests/n01-annual-ganzhi.test.mjs)／[CI 8件成功](https://github.com/mochitadi2026-eng/sanmei-no-genryu/actions/runs/41570740423)
+- これは**暦上の年の干支だけ**を求める。個人の転機候補・未来運勢・大運年齢を計算したという意味ではない。2024年より前の節入りや2028年以降も対象外。
+
 ## 新規：過去の伏線を読む鑑定文
 
 - **[N01〜N06｜年運・大運からの物語生成設計](13-annual-story-engine-design-v0.1.md)** — 暦計算→年ごとのシグナル→年の選定→独自の執筆辞書→本文→事実チェック
 - **[N02｜架空年表だけを選定する関数](n02-story-anchor-selector-v0.1.mjs)**／[テスト](tests/n02-story-anchor-selector.test.mjs)
 - **[N04｜架空年表から文章を組み立てる関数](n04-synthetic-story-renderer-v0.1.mjs)**／[テスト](tests/n04-synthetic-story-renderer.test.mjs)／[CI13件成功](https://github.com/mochitadi2026-eng/sanmei-no-genryu/actions/runs/41559241222)
 
-**最重要の未解決：N01の暦シグナル規則・大運境界の独立確認。** 試作は架空の年だけを扱い、出生情報や実個人の過去を鑑定できない。M11本番UI・M12公開ゲートも未完。
+**最重要の未解決：N01の大運の採用規則・起運境界・命式と年干支の関係の独立確認。** 試作は架空の年だけを扱い、出生情報や実個人の過去を鑑定できない。M11本番UI・M12公開ゲートも未完。
 
 ## 仕様の詳細
 
