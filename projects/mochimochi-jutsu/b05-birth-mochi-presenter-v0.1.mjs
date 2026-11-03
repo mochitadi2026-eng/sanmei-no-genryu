@@ -9,6 +9,10 @@ export function readBirthMochi(input,{m02,catalog}={}){
  const character=catalog.characters.find(x=>x.id===fixed.character_id&&x.branch===fixed.character_branch);
  const element=catalog.elements.find(x=>x.id===fixed.element_id&&x.name===fixed.element);
  if(!character||!element)throw new TypeError('Birth calendar and character catalog mismatch');
+ const manualKeys=['mochi_flavor','best_setting','handling_caution','handling_manual'];
+ if(catalog.editorial_revision!=='b04-mochi-manual-v0.2'
+   ||catalog.characters.some(x=>manualKeys.some(k=>typeof x[k]!=='string'||!x[k].trim())))
+   throw new TypeError('Mochi manual is incomplete');
  return {status:'development_preview',version:B05_VERSION,rule_version:B03_RULE_VERSION,
   day_ganzhi:fixed.day_ganzhi,character_id:character.id,element_id:element.id,
   character,element,display_title:element.name+'の'+character.name,
