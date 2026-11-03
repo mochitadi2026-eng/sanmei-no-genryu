@@ -80,9 +80,10 @@ test('out of M06 range is unsupported; bad Gregorian calendar dates throw',()=>{
   assert.equal(r.production_usable,false);
   assert.equal(Object.hasOwn(r,'character_slot'),false);
  }
- for(const d of ['1900-02-29','2026-02-29','2024-02-30','2024-13-01','2024/01/01']){
+ for(const d of ['1900-02-29','2026-02-29','2024-02-30','2024-13-01']){
   assert.throws(()=>preview(d),{code:'B01_INVALID_INPUT'});
  }
+ assert.throws(()=>preview('2024/01/01'),{code:'B03_INVALID_INPUT'});
 });
 test('1948-1951 date labels do not imply precise birth-clock correction for M06',()=>{
  const x=preview('1950-07-20');
