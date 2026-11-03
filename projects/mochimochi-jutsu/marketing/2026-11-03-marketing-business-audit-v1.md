@@ -131,7 +131,7 @@
 | MK05 | P0 | 販売前の法務・信頼チェック | [MK05公式根拠の法務監査](MK05-legal-trust-release-audit-2026-11-03.md)／[受け入れ15件](MK05-release-acceptance-v1.json)：特商法、景表法、規約、個人情報、同意、決済、PDF、返金、停止条件。法務・実装の本番適合は未審査 | **監査仕様完了／公開・販売NO-GO** |
 | MK06 | P1 | 無料診断LP・CTA設計 | [MK06 LP・CTA設計](MK06-free-lp-cta-design-v1.md)／[画面・CTA契約JSON](MK06-lp-flow-contract-v1.json)。F00〜F08、CTA10件、イベント5候補、LP試験12件。実装・効果・G1未承認 | **仕様設計完了（本番未実装）** |
 | MK07 | P1 | リード・同意・CRM設計 | **[MK07設計書](MK07-lead-optin-crm-data-lifecycle-v1.md)／[状態・同意・CRMテストJSON](MK07-crm-consent-contract-v1.json)**：登録任意・広告承諾・ダブルオプトイン、CRM8テーブル、セグメント、ウェルカム、保存削除、15件の受け入れ。実装・配信未開始 | **初期仕様設計完了（実装・法務審査待ち）** |
-| MK08 | P1 | 初期イベント計測 | LP／開始／完了／登録／商品閲覧／購入の測定設計 | 未着手 |
+| MK08 | P1 | 初期イベント計測 | [MK08計測・ダッシュボード仕様](MK08-measurement-funnel-dashboard-v1.md)／[契約JSON](MK08-analytics-contract-v1.json)：イベント15件、KPI17件、D01〜D06、UTM、外部送信・プライバシー、ME01〜ME16。実人数追跡や実売上は未計測 | **初期仕様完了（計測基盤未実装／G1・G2 NO-GO）** |
 | MK09 | P1 | 販売LP・決済・納品試験 | 商品見本、FAQ、購入、納品、返金対応が試験可能 | 未着手 |
 | MK10 | P2 | 実利用者の体験レビュー | 誘導を避けた納得・楽しさ・読みやすさ・違和感の評価 | 未着手 |
 | MK11 | P2 | 初期販売実験 | 実売上・離脱点・価格の反応を実測し、改善判断を記録 | 未着手 |
@@ -139,8 +139,8 @@
 
 ## 10. 次回再開手順
 
-1. [MK01価値提案書](MK01-customer-value-proposition-v1.md)の主力顧客・無料／有料境界を読み、[MK02競合・ポジショニング](MK02-competitor-positioning-2026-11-03.md)は初期設計完了。[MK03商品仕様](MK03-product-spec-v1.md)は設計完了。[MK04価格・収益モデル](MK04-price-unit-economics-v1.md)は仮定に基づく初期試算完了。[MK05法務・信頼監査](MK05-legal-trust-release-audit-2026-11-03.md)は要件定義完了、15の受け入れ試験は未実施。[MK06 LP・CTA仕様](MK06-free-lp-cta-design-v1.md)は作成完了（公開していない）。[MK07任意登録・CRM・同意設計](MK07-lead-optin-crm-data-lifecycle-v1.md)を初期仕様として記録。**次の一件：MK08 イベント計測・ファネル分析設計**。G1/G2はNO-GO。顧客価値・実原価・WTPは未検証。
+1. [MK01価値提案書](MK01-customer-value-proposition-v1.md)の主力顧客・無料／有料境界を読み、[MK02競合・ポジショニング](MK02-competitor-positioning-2026-11-03.md)は初期設計完了。[MK03商品仕様](MK03-product-spec-v1.md)は設計完了。[MK04価格・収益モデル](MK04-price-unit-economics-v1.md)は仮定に基づく初期試算完了。[MK05法務・信頼監査](MK05-legal-trust-release-audit-2026-11-03.md)は要件定義完了、15の受け入れ試験は未実施。[MK06 LP・CTA仕様](MK06-free-lp-cta-design-v1.md)は作成完了（公開していない）。[MK07任意登録・CRM・同意設計](MK07-lead-optin-crm-data-lifecycle-v1.md)を初期仕様として記録。[MK08イベント・ファネル計測仕様](MK08-measurement-funnel-dashboard-v1.md)は初期設計完了、運用・実測なし。**次の一件：MK09 有料販売LP・決済・納品のE2E仕様／試験計画**。G1/G2はNO-GO。顧客価値・実原価・WTPは未検証。
 2. 必要に応じて[共通ペルソナ・導線資料](../../../editorial/marketing-persona-benefits-v1.md)と[`../TASKS.md`](../TASKS.md)の最新状態を照合する。既に決まっている暦・分類・鑑定本文の方針を作り直さない。
-3. **MK08 イベント計測・ファネル分析設計**へ。MK06のF00〜F08・CTA01〜CTA10、MK07の任意登録CTA-L01・CRM8テーブル・広告同意／配信停止ルール、MK05のR01〜R20を参照。M11/M12実装・公開判定は未完。MK04の価格・費用仮説を正式販売条件と混同しない。競合6件は公開表示の比較であり実購入体験未検証、未調査を調査済みにしない。
+3. **MK09 有料販売LP・決済・納品のE2E仕様／試験計画**へ。MK03有料P00〜P07、MK04仮収支、MK05法務STOP条件、MK08のG2後のみ有効になる取引イベントを参照。MK08計測・M11/M12実装・公開判定は未完。MK04の価格・費用仮説を正式販売条件と混同しない。競合6件は公開表示の比較であり実購入体験未検証、未調査を調査済みにしない。
 4. 開発B04／N01／M11／M12は従来の技術タスクとして並行管理する。マーケティング資料の更新だけで本番リリースしない。
 5. 作業ログには「完了物、未確認事項、次の1件、根拠の参照先」を記録。都度ゼロから説明し直さない。
