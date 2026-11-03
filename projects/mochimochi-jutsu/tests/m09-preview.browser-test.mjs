@@ -93,7 +93,7 @@ try{
   await choose(page,'a'); // Q4 MOCHI
   await choose(page,'a'); // Q5 open
   check(await page.locator('#results').isVisible(),'result screen visible');
-  check(await page.locator('#result-heading').isFocused(),'result heading receives focus after finishing');
+  check(await page.evaluate(()=>document.activeElement?.id==='result-heading'),'result heading receives focus after finishing');
   check(await page.locator('#results .section').count()===3,'M09 three result layers displayed as cards');
   check((await page.locator('#results .scene-description').textContent()).includes('この診断の読み方'),'optional interpretation is accessible');
   check((await page.locator('#rendered').textContent()).includes('のびのびもち'),'type label from catalog');
