@@ -30,7 +30,8 @@ const server=createServer(async(req,res)=>{
     const body=await readFile(file);
     const mime=file.endsWith('.json')?'application/json; charset=utf-8':
       file.endsWith('.mjs')?'text/javascript; charset=utf-8':
-      file.endsWith('.html')?'text/html; charset=utf-8':'text/plain';
+      file.endsWith('.html')?'text/html; charset=utf-8':
+      file.endsWith('.svg')?'image/svg+xml':'text/plain';
     res.writeHead(200,{'content-type':mime,'cache-control':'no-store'});
     res.end(body);
   }catch{res.writeHead(404);res.end('Not found')}
@@ -53,7 +54,7 @@ try{
   page.on('request',req=>{if(!req.url().startsWith(origin))crossOrigin.push(req.url())});
   await page.goto(origin+'/m09-preview.html',{waitUntil:'networkidle'});
   check(await page.locator('h1').count()===1,'one accessible page title');
-  check(await page.getByText('画像未制作').count()>0,'missing image stated');
+  check((await page.locator('.warning').textContent()).includes('制作候補'),'provisional illustration stated');
   check(await page.locator('#questions').isHidden(),'consent gate before questions');
   check(await page.locator('#start').isDisabled(),'cannot start without consent');
   await page.locator('#agree').check();
@@ -62,16 +63,25 @@ try{
   await page.locator('#questions').waitFor({state:'visible',timeout:15000});
   check(await page.locator('#questions').isVisible(),'question screen appears');
   check(await page.locator('fieldset legend').count()===1,'single question fieldset');
+  await page.waitForFunction(()=>document.querySelector('#scene-image')?.naturalWidth===800);
+  check(await page.locator('#scene-image').isVisible(),'Q1 image candidate is visible');
+  check((await page.locator('#scene-image').getAttribute('src'))==='./scene_v01-candidate.svg','Q1 uses original local scene asset');
+  check((await page.locator('#scene-image').getAttribute('alt')).includes('道しるべ'),'image has relevant text alternative');
+  check((await page.locator('#scene-text').textContent()).includes('丸テーブル'),'details include accessible Q2 landmark');
 
   // No answer => cannot advance; valid x must allow advance.
   await page.getByRole('button',{name:'次の質問'}).click();
   check((await page.locator('#message').textContent()).includes('選択肢を一つ'),'no silent unanswered question');
   await choose(page,'a'); // Q1: MOCHI
   check((await page.locator('#step-label').textContent()).includes('Q2'),'advance Q2');
+  check(await page.locator('#scene-image').isVisible(),'Q2 shows the same shared scene');
+  check((await page.locator('#scene-image').getAttribute('src'))==='./scene_v01-candidate.svg','Q2 scene asset is identical');
+  check((await page.locator('#choices-list').textContent()).includes('木陰のベンチ'),'Q2 text choices come from existing bank');
   await page.getByRole('button',{name:'ひとつ戻る'}).click();
   check(await page.locator('#choices-list input[value="a"]').isChecked(),'back navigation preserves choice');
   await page.getByRole('button',{name:'次の質問'}).click();
   await choose(page,'x'); // Q2 explicit no choice
+  check(await page.locator('#scene').isHidden(),'scene only appears in Q1/Q2');
   await choose(page,'c'); // Q3 FP03
   await choose(page,'a'); // Q4 MOCHI
   await choose(page,'a'); // Q5 open
