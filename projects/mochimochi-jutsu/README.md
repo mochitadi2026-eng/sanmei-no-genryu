@@ -27,7 +27,8 @@
 - **[MK08｜イベント・UTM・KPI・ファネル／ダッシュボード v1.0](marketing/MK08-measurement-funnel-dashboard-v1.md)（仕様設計完了／本番計測・実績なし）**／[イベント契約JSON](marketing/MK08-analytics-contract-v1.json) — 15イベント、17KPI、D01〜D06の運営画面、ME01〜ME16、個人IDを使わない集計案と外部送信規律の未判定事項を記録。
 - **[MK09｜有料販売LP・決済・本人限定PDF・E2E試験 v1.0](marketing/MK09-paid-sales-checkout-delivery-spec-v1.md)（仕様設計完了／本番・E2E・法務審査未実施）**／[状態機械・画面・受け入れ22件JSON](marketing/MK09-sales-delivery-contract-v1.json) — P00〜P07、販売見本、注文最終確認、決済Webhook署名・冪等、PDF所有者認可・再取得、キャンセル・返金・問い合わせ、G2販売停止条件を規定。
 - **[MK10｜無料診断・有料物語見本の体験レビュー設計 v1.0](marketing/MK10-user-research-review-plan-v1.md)（研究計画作成済み／募集・実測なし）**／[同意・評価票・観察・改善・受け入れテストJSON](marketing/MK10-research-review-contract-v1.json) — M09既存パケットを再利用。A群5〜8人／B群4〜6人は計画人数、A9問・B8問、P0〜P3改善ゲート、UR01〜UR16。実人生情報や個人鑑定の実検証はしない。
-- **マーケティング次の一件：MK11** 初期販売実験の仕様・着手可否判定。ただし有料販売G2はNO-GO、実販売や実利用者の募集を本資料だけで開始しない。
+- **[MK11｜初期販売実験・仮価格・G2着手審査 v1.0](marketing/MK11-initial-sales-experiment-plan-v1.md)（設計完了／販売前調査・実売上なし）**／[実験・価格・KPI・停止・受け入れテストJSON](marketing/MK11-experiment-contract-v1.json) — 非取引EXP1とG2後のEXP2を分離。1,980／2,980／3,980円は仮価格、実売パイロット2,980円・上限10件・14日間は未承認の候補。KPI17、停止8、SE01〜SE16を仕様化。
+- **マーケティング次の一件：MK12** 継続利用・任意共有・紹介施策の設計。MK11の価格・販売実験や利用者募集、G1/G2一般公開は未承認。
 - 開発上の次の一件B04およびN01の検証は引き続き[開発タスクボード](TASKS.md)が正本。**監査記録は本番公開・課金・募集再開の承認ではない**。
 
 ## 開発ルール（次回以降も必読）
