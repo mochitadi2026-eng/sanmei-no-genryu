@@ -1,0 +1,407 @@
+{
+  "schema": "mochimochi-marketing-MK06-lp-flow-v1",
+  "date_created": "2026-11-03",
+  "status": "design_only_not_deployed_no_public_site",
+  "sources": {
+    "spec": "MK06-free-lp-cta-design-v1.md",
+    "marketing": "MK01-customer-value-proposition-v1.md",
+    "product": "MK03-product-spec-v1.md",
+    "compliance": "MK05-legal-trust-release-audit-2026-11-03.md",
+    "question_bank": "../m07-question-bank-v0.1.json",
+    "dev_tasks": "../TASKS.md"
+  },
+  "product": "FREE-01",
+  "persona": "P-A",
+  "release_gates": {
+    "G1": "NO_GO",
+    "G2": "NO_GO"
+  },
+  "global_rules": {
+    "has_real_public_url": false,
+    "allows_public_release": false,
+    "requires_email": false,
+    "requires_birth_info": false,
+    "requires_purchase": false,
+    "no_user_response_to_analytics": true,
+    "no_claim_of_psychometric_or_predictive_validity": true,
+    "types_not_guaranteed": true,
+    "do_not_collect_personal_data_in_public_git": true
+  },
+  "lp": {
+    "screen": "F00",
+    "title": "もちもち占術｜5問で今の自分を振り返る無料診断",
+    "h1": "今の自分を、ちょっと読み直してみる。",
+    "lead": "5つの質問に答えると、今の気持ちに寄り添う小さな物語と、自分に返す一つの問いが見つかります。",
+    "primary_cta_id": "CTA01",
+    "secondary_cta_id": "CTA02",
+    "conditions": [
+      "登録不要・生年月日不要・決めない選択もOK",
+      "性格や能力を測る検査ではなく、自己理解のための創作コンテンツ"
+    ],
+    "sections": [
+      {
+        "section": "hero",
+        "order": 1,
+        "required": true
+      },
+      {
+        "section": "benefits",
+        "order": 2,
+        "required": true,
+        "benefits": [
+          "今のテーマを眺める",
+          "小さな物語を読む",
+          "自分に一問を返す"
+        ]
+      },
+      {
+        "section": "how_it_works",
+        "order": 3,
+        "required": true
+      },
+      {
+        "section": "limitations_and_privacy",
+        "order": 4,
+        "required": true,
+        "privacy_claim_requires_network_audit": true
+      },
+      {
+        "section": "faq",
+        "order": 5,
+        "required": true
+      },
+      {
+        "section": "operator_legal_footer",
+        "order": 6,
+        "required": true,
+        "publish_only_with_verified_live_links": true
+      }
+    ],
+    "faq_questions": [
+      "お金はかかる？",
+      "生年月日は必要？",
+      "迷ったら？",
+      "心理テスト？",
+      "回答は保存される？",
+      "有料鑑定はある？"
+    ],
+    "unanswered_faq": "回答は保存される？",
+    "copy_state": "draft_publication_requires_G1"
+  },
+  "screens": [
+    {
+      "id": "F00",
+      "role": "landing",
+      "primary_cta": "CTA01",
+      "requires": "operator_links_reviewed"
+    },
+    {
+      "id": "F01",
+      "role": "prestart_information",
+      "primary_cta": "CTA03",
+      "requires": "actual_data_handling_explained_and_acknowledged"
+    },
+    {
+      "id": "F02",
+      "role": "question",
+      "question_id": "Q1",
+      "requires": "scene_v01_approved",
+      "allow_choice_x": true
+    },
+    {
+      "id": "F03",
+      "role": "question",
+      "question_id": "Q2",
+      "requires": "same_scene_v01_approved",
+      "allow_choice_x": true
+    },
+    {
+      "id": "F04",
+      "role": "question",
+      "question_id": "Q3",
+      "requires": "question_bank_m07",
+      "allow_choice_x": true
+    },
+    {
+      "id": "F05",
+      "role": "question",
+      "question_id": "Q4",
+      "requires": "question_bank_m07",
+      "allow_choice_x": true
+    },
+    {
+      "id": "F06",
+      "role": "question",
+      "question_id": "Q5",
+      "requires": "question_bank_m07",
+      "allow_choice_x": true
+    },
+    {
+      "id": "F07",
+      "role": "result",
+      "requires": "M08_M09_version_match",
+      "allow_type_pending": true,
+      "disable_birth_character": true
+    },
+    {
+      "id": "F08",
+      "role": "optional_next_step",
+      "requires": "real_public_content_link_or_hide",
+      "no_paid_cta": true
+    }
+  ],
+  "cta": [
+    {
+      "id": "CTA01",
+      "label": "5問の無料診断をはじめる",
+      "screen": "F00",
+      "action": "go_F01",
+      "active_in_public": false
+    },
+    {
+      "id": "CTA02",
+      "label": "どんな診断？",
+      "screen": "F00",
+      "action": "scroll_to_explanation",
+      "active_in_public": false
+    },
+    {
+      "id": "CTA03",
+      "label": "説明を確認してはじめる",
+      "screen": "F01",
+      "action": "go_F02_and_emit_diagnosis_start",
+      "active_in_public": false
+    },
+    {
+      "id": "CTA04",
+      "label": "次へ",
+      "screen": "F02-F06",
+      "action": "next_if_valid_choice",
+      "active_in_public": false
+    },
+    {
+      "id": "CTA05",
+      "label": "決めない",
+      "screen": "F02-F06",
+      "action": "record_answer_id_x_not_missing",
+      "active_in_public": false
+    },
+    {
+      "id": "CTA06",
+      "label": "戻る",
+      "screen": "F01-F07",
+      "action": "navigate_back_keeping_local_answers_until_end",
+      "active_in_public": false
+    },
+    {
+      "id": "CTA07",
+      "label": "結果を見る",
+      "screen": "F06",
+      "action": "validate_M08_then_show_F07",
+      "active_in_public": false
+    },
+    {
+      "id": "CTA08",
+      "label": "もう一度選ぶ",
+      "screen": "F07-F08",
+      "action": "discard_answers_and_restart_F01",
+      "active_in_public": false
+    },
+    {
+      "id": "CTA09",
+      "label": "占術について知る",
+      "screen": "F08",
+      "action": "open_real_published_explanatory_resource_only",
+      "display_rule": "hide_until_target_exists",
+      "active_in_public": false
+    },
+    {
+      "id": "CTA10",
+      "label": "利用規約／プライバシー／問い合わせ",
+      "screen": "F00-F01-F08",
+      "action": "open_verified_operator_documents",
+      "display_rule": "G1_requires_live_links",
+      "active_in_public": false
+    }
+  ],
+  "event_candidates": [
+    {
+      "id": "landing_view",
+      "trigger": "first_successful_F00_render",
+      "allowed_fields": [
+        "copy_version",
+        "traffic_medium_enum",
+        "traffic_source_enum"
+      ],
+      "prohibited_fields": [
+        "Q_answers",
+        "type",
+        "birth",
+        "name",
+        "email",
+        "free_text"
+      ],
+      "status": "not_implemented"
+    },
+    {
+      "id": "diagnosis_start",
+      "trigger": "F02_Q1_visible_after_F01_acknowledgement",
+      "allowed_fields": [
+        "copy_version"
+      ],
+      "prohibited_fields": [
+        "Q_answers",
+        "type",
+        "birth",
+        "name",
+        "email",
+        "free_text"
+      ],
+      "status": "not_implemented"
+    },
+    {
+      "id": "diagnosis_complete",
+      "trigger": "F07_result_rendered_after_valid_5_answer_submission_even_if_type_pending",
+      "allowed_fields": [
+        "copy_version"
+      ],
+      "prohibited_fields": [
+        "Q_answers",
+        "phase",
+        "type",
+        "birth",
+        "name",
+        "email",
+        "free_text"
+      ],
+      "status": "not_implemented"
+    },
+    {
+      "id": "explanation_open",
+      "trigger": "user_opens_F00_explanation",
+      "allowed_fields": [
+        "copy_version"
+      ],
+      "prohibited_fields": [
+        "Q_answers",
+        "name",
+        "email"
+      ],
+      "status": "optional_not_implemented"
+    },
+    {
+      "id": "content_open",
+      "trigger": "F08_links_to_existing_public_explanatory_article",
+      "allowed_fields": [
+        "resource_id"
+      ],
+      "prohibited_fields": [
+        "Q_answers",
+        "type",
+        "birth",
+        "name",
+        "email"
+      ],
+      "status": "optional_not_implemented"
+    }
+  ],
+  "metric_definitions": [
+    {
+      "id": "start_rate",
+      "numerator": "started_sessions",
+      "denominator": "landing_sessions",
+      "requires": "privacy_reviewed_session_definition"
+    },
+    {
+      "id": "completion_rate",
+      "numerator": "completed_sessions_including_type_pending",
+      "denominator": "started_sessions",
+      "requires": "privacy_reviewed_session_definition"
+    },
+    {
+      "id": "explanation_rate",
+      "numerator": "explanation_open_sessions",
+      "denominator": "landing_sessions",
+      "requires": "privacy_reviewed_session_definition"
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "LP01",
+      "description": "H1, value, 5 questions, CTA, non-psychometric notice present",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "LP02",
+      "description": "CTA01 to F01 and CTA03 to F02 with accurate start event",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "LP03",
+      "description": "Questions and IDs copied unchanged from M07",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "LP04",
+      "description": "x valid, missing answer blocked, back and abort correct",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "LP05",
+      "description": "type_pending result never forced into a character",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "LP06",
+      "description": "no promise of paid calendar, year, born character or unimplemented features",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "LP07",
+      "description": "verified terms, privacy and contact links; real network behavior matches disclosure",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "LP08",
+      "description": "approved scene_v01; accessibility and device testing",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "LP09",
+      "description": "consent/analytics security and no user response in events",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "LP10",
+      "description": "optional content path; no required registration or purchase",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "LP11",
+      "description": "real social URL and landing content consistent",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "LP12",
+      "description": "documented G1 approval after all required tests",
+      "status": "BLOCKED"
+    }
+  ],
+  "next_task": "MK07",
+  "release_decision": "NO_GO",
+  "changed": {
+    "created": [
+      "marketing/MK06-free-lp-cta-design-v1.md",
+      "marketing/MK06-lp-flow-contract-v1.json"
+    ],
+    "not_changed": [
+      "M07_question_bank",
+      "M08_classifier",
+      "M09_copy",
+      "M11_app",
+      "birth_calendar",
+      "public_urls",
+      "paid_sales"
+    ]
+  }
+}
