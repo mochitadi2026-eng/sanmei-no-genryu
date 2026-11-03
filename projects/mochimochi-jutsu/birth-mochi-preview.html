@@ -18,8 +18,8 @@ button:disabled{opacity:.5}button:focus-visible,input:focus-visible{outline:3px 
 </style>
 <main>
 <p class="eyebrow">MOCHIMOCHI JUTSU · 非公開試作</p>
-<h1>生まれた日の、<br>もちキャラ。</h1>
-<p>生年月日から12種類の餅キャラと5つの属性を表示する、もちもち占術の独自コンテンツです。</p>
+<h1>生まれた日の、<br>もちキャラ取説。</h1>
+<p>生年月日から、12種類の餅キャラと5つの属性をひとつ選ぶ暦あそび。お餅の持ち味、心地よい環境、取り扱いのコツまで読めます。</p>
 <p class="muted">日本で記録された西暦1900〜2027年が対象。出生日の日干支に基づく創作で、性格を科学的に判定するものではありません。入力した日付は送信・保存しません。</p>
 <section id="entry" class="card">
 <h2>誕生日を入れてみて</h2>
@@ -31,16 +31,17 @@ button:disabled{opacity:.5}button:focus-visible,input:focus-visible{outline:3px 
 <p class="eyebrow">生まれのもちキャラ</p>
 <div class="hero"><div class="mochi"><span id="icon" aria-hidden="true"></span></div>
 <h2 class="name" tabindex="-1" id="name"></h2><p id="tagline"></p><p id="element"></p></div>
-<div class="section"><p class="eyebrow">01｜餅の見た目</p><h2 id="visual"></h2><p id="feature"></p></div>
-<div class="section"><p class="eyebrow">02｜もちキャラのあるある</p><p id="story"></p></div>
-<div class="section"><p class="eyebrow">03｜ちょっと苦手なところ</p><p id="weak"></p></div>
-<div class="section"><p class="eyebrow">04｜五行の味つけ</p><p id="elementstory"></p></div>
+<div class="section"><p class="eyebrow">01｜この餅の持ち味</p><h2 id="visual"></h2><p id="flavor"></p></div>
+<div class="section"><p class="eyebrow">02｜おいしさが引き立つ環境</p><p id="setting"></p></div>
+<div class="section"><p class="eyebrow">03｜取り扱い注意</p><p id="caution"></p></div>
+<div class="section"><p class="eyebrow">04｜この餅の取説</p><p id="manual"></p></div>
+<div class="section"><p class="eyebrow">05｜五行の味つけ</p><p id="elementstory"></p></div>
 <div class="question"><strong>今日の問い</strong><p id="question"></p></div>
 <details><summary>どうやってキャラが決まるの？</summary><p id="why"></p>
 <p class="muted">暦の十二支が12キャラ、十干の五行が5属性に対応します。餅と人の性格の関係は創作の比喩です。</p></details>
 <button id="again" type="button">別の誕生日でも見る</button>
 </section>
-<footer>もちもち占術・B04/B05開発版。5問の状態診断とは別です。一般公開・販売の承認前です。</footer>
+<footer>もちもち占術・B04/B05開発版。各餅の持ち味・取扱説明は創作上の比喩です。5問の状態診断とは別です。一般公開・販売の承認前です。</footer>
 </main>
 <script type="module">
 import {readBirthMochi} from './b05-birth-mochi-presenter-v0.1.mjs';
@@ -57,8 +58,9 @@ $('form').addEventListener('submit',event=>{
  if(r.status!=='development_preview')throw Error('unsupported');
  write('icon',r.character.symbol);write('name',r.character.name);
  write('tagline',r.character.tagline);write('element',r.element.name+'の属性');
- write('visual',r.character.visual);write('feature',r.character.real_feature);
- write('story',r.character.character_scene);write('weak',r.character.comic_weakness);
+ write('visual',r.character.visual);write('flavor',r.character.mochi_flavor);
+ write('setting',r.character.best_setting);write('caution',r.character.handling_caution);
+ write('manual',r.character.handling_manual);
  write('elementstory',r.element.narrative+' '+r.element.small_action);
  write('question',r.character.reflection_question);
  write('why','この日の日干支は '+r.day_ganzhi+'。日支から'+r.character.name+'、日干の五行から'+r.element.name+'属性に対応しました。');
