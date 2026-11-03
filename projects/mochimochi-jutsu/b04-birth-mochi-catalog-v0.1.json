@@ -1,0 +1,199 @@
+{
+  "version": "b04-birth-mochi-catalog-v0.1",
+  "status": "creative_working_draft_not_approved",
+  "rule_version": "mochimochi-birth-character-v1.0",
+  "note": "もちの名前や特徴・性格の比喩はオリジナル創作。日支からの割当と性格の間に科学的根拠はない。わらび餅など一般に餅と呼ばれる和菓子を含む。",
+  "characters": [
+    {
+      "id": "BC01",
+      "branch": "子",
+      "name": "いちご大福",
+      "symbol": "🍓",
+      "visual": "白いお餅の中に、赤いいちご",
+      "real_feature": "やわらかそうに見えて、中に思いがけない酸味がある",
+      "character_scene": "みんなが同じ味を想像しているときに、違う味を一粒差し出す",
+      "comic_weakness": "驚かせようとして、肝心な中身まで隠してしまう",
+      "reflection_question": "思っていることを一つ、少しだけ外に見せるなら？",
+      "tagline": "やわらかい顔して、中身はびっくり"
+    },
+    {
+      "id": "BC02",
+      "branch": "丑",
+      "name": "鏡餅",
+      "symbol": "🎍",
+      "visual": "二段に重なった、どっしり丸いお餅",
+      "real_feature": "ひとつを積み、その上にもうひとつ重ねる",
+      "character_scene": "誰かが迷ったとき、動かずに置いてある目印になる",
+      "comic_weakness": "形を守ることに夢中で、季節が変わっても動けなくなる",
+      "reflection_question": "大切に残すものと、そろそろほどくものは？",
+      "tagline": "重ねた分だけ、居場所ができる"
+    },
+    {
+      "id": "BC03",
+      "branch": "寅",
+      "name": "焼き餅",
+      "symbol": "🔥",
+      "visual": "こんがり焼けて、ぷくっと膨らむお餅",
+      "real_feature": "温められると姿が変わり、香りが立つ",
+      "character_scene": "きっかけが来ると、周りが驚くほどぐんと膨らむ",
+      "comic_weakness": "火のそばに居すぎて、うっかり焦げ目が増える",
+      "reflection_question": "今、熱を入れることと火を弱めること、どちらが先？",
+      "tagline": "火がつけば、ぷくっと主役"
+    },
+    {
+      "id": "BC04",
+      "branch": "卯",
+      "name": "桜餅",
+      "symbol": "🌸",
+      "visual": "淡い桜色と葉の香り",
+      "real_feature": "外側の葉と中の甘さを一緒に楽しむ",
+      "character_scene": "季節の気配を見つけ、いつもの場所を少し特別にする",
+      "comic_weakness": "周りの空気に気を配りすぎて、自分の甘さを忘れる",
+      "reflection_question": "今日は誰のためでもなく、何を楽しみたい？",
+      "tagline": "ほんのり香って、季節を知らせる"
+    },
+    {
+      "id": "BC05",
+      "branch": "辰",
+      "name": "草餅",
+      "symbol": "🌿",
+      "visual": "よもぎの緑と、しっかりした香り",
+      "real_feature": "混ぜ込んだ草の色も香りも隠さない",
+      "character_scene": "ありふれた材料を、自分だけの持ち味にして届ける",
+      "comic_weakness": "慣れ親しんだ味に安心して、新しい皿を避ける",
+      "reflection_question": "いつもの良さを生かしつつ、一つ試せることは？",
+      "tagline": "緑が濃いほど、味がある"
+    },
+    {
+      "id": "BC06",
+      "branch": "巳",
+      "name": "わらび餅",
+      "symbol": "💧",
+      "visual": "ぷるんと揺れる透明感のある和菓子",
+      "real_feature": "触れると揺れ、盛る器になじむ",
+      "character_scene": "場の形が変わっても、柔らかく居場所を見つける",
+      "comic_weakness": "揺れ続けて、どこに置きたいのか分からなくなる",
+      "reflection_question": "今日は変えることと決めておくこと、どちらが心地よい？",
+      "tagline": "ぷるっと揺れて、形をつくる"
+    },
+    {
+      "id": "BC07",
+      "branch": "午",
+      "name": "磯辺餅",
+      "symbol": "🌊",
+      "visual": "焼いたお餅に海苔を巻いた香ばしさ",
+      "real_feature": "香ばしい餅と海苔の風味がはっきり重なる",
+      "character_scene": "言いにくいことも、味の輪郭をぼかさず伝える",
+      "comic_weakness": "塩気を利かせすぎて、言葉が強くなる",
+      "reflection_question": "伝える強さを一段ゆるめたら、何が変わりそう？",
+      "tagline": "まっすぐ香ばしい、海苔の一枚"
+    },
+    {
+      "id": "BC08",
+      "branch": "未",
+      "name": "きなこ餅",
+      "symbol": "🌾",
+      "visual": "黄色いきなこをたっぷりまとったお餅",
+      "real_feature": "素朴な甘さで、周りをふわっと包む",
+      "character_scene": "急ぎ足のテーブルに、一息つける味を置く",
+      "comic_weakness": "誰かを包もうとして、自分の味が見えなくなる",
+      "reflection_question": "自分のためにひとさじ残すとしたら？",
+      "tagline": "ふわっと包んで、ほっとさせる"
+    },
+    {
+      "id": "BC09",
+      "branch": "申",
+      "name": "豆大福",
+      "symbol": "🫘",
+      "visual": "白い大福に豆がぽつぽつ",
+      "real_feature": "柔らかい生地の中にも、噛むとわかる豆の存在感",
+      "character_scene": "周りに合わせながらも、譲りたくない小さな粒を残す",
+      "comic_weakness": "豆を抱え込みすぎて、ひと口が重くなる",
+      "reflection_question": "守るこだわりを一粒だけ選ぶなら？",
+      "tagline": "やわらかいのに、豆がきいてる"
+    },
+    {
+      "id": "BC10",
+      "branch": "酉",
+      "name": "柏餅",
+      "symbol": "🍃",
+      "visual": "大きな葉に包まれた白いお餅",
+      "real_feature": "葉の外側と餅の内側に、境目がある",
+      "character_scene": "大事なものを包み、渡すまできれいに守る",
+      "comic_weakness": "包みをしっかり閉じすぎて、誰にも中身が見えない",
+      "reflection_question": "大切に守るものを、どこまで開いてもよさそう？",
+      "tagline": "包むのが上手な、葉っぱの守り手"
+    },
+    {
+      "id": "BC11",
+      "branch": "戌",
+      "name": "おはぎ",
+      "symbol": "🍚",
+      "visual": "粒が残るご飯を、あんこで包む",
+      "real_feature": "粒をつぶし切らずに、一つずつまとめる",
+      "character_scene": "ばらばらの出来事を、ひと皿の形にまとめていく",
+      "comic_weakness": "丁寧にまとめようとして、手をかけすぎる",
+      "reflection_question": "今日は何を、八分目で仕上げてみる？",
+      "tagline": "ひと粒ずつでも、ちゃんとまとまる"
+    },
+    {
+      "id": "BC12",
+      "branch": "亥",
+      "name": "ずんだ餅",
+      "symbol": "🟢",
+      "visual": "鮮やかな枝豆あんをのせたお餅",
+      "real_feature": "粒の残る緑のあんが、甘さの印象を変える",
+      "character_scene": "いつもの餅に、意外な色と食感を足して遊ぶ",
+      "comic_weakness": "新しい味を足しすぎて、元の餅が見えなくなる",
+      "reflection_question": "一つだけ足してみたい、遊び心は何？",
+      "tagline": "いつもの上に、緑のひらめき"
+    }
+  ],
+  "elements": [
+    {
+      "id": "EL_WOOD",
+      "name": "木",
+      "visual": "若葉の皿",
+      "color": "#5f8b69",
+      "motif": "伸びる",
+      "narrative": "新しい芽を一つ出す。",
+      "small_action": "いつもの一皿に、新しい組み合わせを一つ足す。"
+    },
+    {
+      "id": "EL_FIRE",
+      "name": "火",
+      "visual": "焼き目と湯気",
+      "color": "#c36c48",
+      "motif": "温める",
+      "narrative": "小さな熱で、香りを立てる。",
+      "small_action": "気になったことに、短い時間だけ熱を入れる。"
+    },
+    {
+      "id": "EL_EARTH",
+      "name": "土",
+      "visual": "木のお盆",
+      "color": "#ac8752",
+      "motif": "受け止める",
+      "narrative": "置ける場所を整えてから、ひと口ずつ。",
+      "small_action": "今あることを一つ、手の届くところに並べる。"
+    },
+    {
+      "id": "EL_METAL",
+      "name": "金",
+      "visual": "銀色の菓子切り",
+      "color": "#718695",
+      "motif": "輪郭をつける",
+      "narrative": "形をはっきりさせて、味わう。",
+      "small_action": "やることと、やらないことを一つずつ決める。"
+    },
+    {
+      "id": "EL_WATER",
+      "name": "水",
+      "visual": "小さな湯のみ",
+      "color": "#567ca0",
+      "motif": "めぐらせる",
+      "narrative": "一度置いて、流れを眺める。",
+      "small_action": "気になったことを、ひと晩おいて見直す。"
+    }
+  ]
+}
