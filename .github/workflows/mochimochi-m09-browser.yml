@@ -11,6 +11,7 @@ on:
       - 'projects/mochimochi-jutsu/m04-types-phases-v0.1.json'
       - 'projects/mochimochi-jutsu/m07-question-bank-v0.1.json'
       - 'projects/mochimochi-jutsu/m09-result-copy-v0.1.json'
+      - 'projects/mochimochi-jutsu/m09-result-copy-v0.2.json'
       - '.github/workflows/mochimochi-m09-browser.yml'
   pull_request:
     paths:
