@@ -1,7 +1,7 @@
 # もちもち占術｜Codex・AI開発者への継続指示
 
 適用範囲：この `projects/mochimochi-jutsu/` フォルダと、ここに定義される占術の設計・検証作業。  
-最終更新：2026-11-02  
+最終更新：2026-11-03  
 詳しい原則：**[DEVELOPMENT_RULES.md](DEVELOPMENT_RULES.md)**  
 研究・記事公開に関する上位指示：[リポジトリ全体のAGENTS.md](../../AGENTS.md)／[研究ルール](../../RULES.md)
 
@@ -47,4 +47,4 @@
 - 史料そのものの根拠を変更する場合は [RULES.md](../../RULES.md)、`sources/registry.md`、`research/claims.md`、`research/questions.md` に適切に反映する。
 - 別リポジトリの計算エンジンの修正・統合は、対象リポジトリの独自手順・ブランチを確認したうえで行う。
 
-**次の一件はTASKS.mdを優先。M08は実装・11件の自動テスト成功済み（[報告](07-classifier-implementation-report-2026-11-02.md)）。M09は[表示関数とCI23件成功](08-result-presentation-2026-11-02.md)を記録済み。M09.5は[実利用者レビュー準備](M09-REVIEW-PACKET.md)を完了（回答者の実測データは未収集）。M10は[22キャラの学習用の参照・表示とCI7件](09-character-integration-2026-11-03.md)を完了。現在はM09.5の手動／人間レビューとM11の画面試作。Chromium25項目は合格したが実利用者の評価は未実施。M06は一次監査済みだが本番判定は保留。**
+**次の一件はTASKS.mdを優先。M08は実装・11件の自動テスト成功済み（[報告](07-classifier-implementation-report-2026-11-02.md)）。M09は[表示関数とCI23件成功](08-result-presentation-2026-11-02.md)を記録済み。M09.5は[実利用者レビュー準備](M09-REVIEW-PACKET.md)を完了（回答者の実測データは未収集）。M10は[22キャラの学習用の参照・表示とCI7件](09-character-integration-2026-11-03.md)を完了。現在の最優先は[N01の暦シグナルの採用・検算](13-annual-story-engine-design-v0.1.md)。[N02の年選定器](n02-story-anchor-selector-v0.1.mjs)と[N04の文章組立器](n04-synthetic-story-renderer-v0.1.mjs)は**架空fixtureだけでCI13件成功**。本物の暦・個人の過去年にはつながっていない。M09.5の手動／人間レビューとM11の画面試作は継続課題。Chromium25項目は合格したが実利用者の評価は未実施。M06は一次監査済みだが本番判定は保留。**
