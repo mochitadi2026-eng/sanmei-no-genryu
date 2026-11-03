@@ -97,6 +97,9 @@ try{
   check(await page.locator('#results .section').count()===3,'M09 three result layers displayed as cards');
   check((await page.locator('#results .scene-description').textContent()).includes('この診断の読み方'),'optional interpretation is accessible');
   check((await page.locator('#rendered').textContent()).includes('のびのびもち'),'type label from catalog');
+  check((await page.locator('#rendered').textContent()).includes('曲がり角に、もう一本の道'),'PK03 type scene title from v0.2 catalog');
+  check((await page.locator('#rendered').textContent()).includes('小さな実験の午後'),'PK03 phase scene title from v0.2 catalog');
+  check((await page.locator('#rendered').textContent()).includes('いつものやり方に、小さな寄り道を一つ加えるなら？'),'type-specific closing question takes precedence');
   check((await page.locator('#rendered').textContent()).includes('ふくらみ期'),'phase from catalog');
   check((await page.locator('#rendered').textContent()).includes('もち道'),'three layers shown');
   check((await page.locator('#rendered').textContent()).includes('未検証の命式'),'natal calculation held');
