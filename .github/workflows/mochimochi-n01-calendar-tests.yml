@@ -1,0 +1,34 @@
+name: Mochimochi N01 NAOJ annual symbol boundary tests
+
+on:
+  push:
+    paths:
+      - 'projects/mochimochi-jutsu/n01-naoj-risshun-2024-2027-v0.1.json'
+      - 'projects/mochimochi-jutsu/n01-annual-ganzhi-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/tests/n01-annual-ganzhi.test.mjs'
+      - '.github/workflows/mochimochi-n01-calendar-tests.yml'
+  pull_request:
+    paths:
+      - 'projects/mochimochi-jutsu/n01-naoj-risshun-2024-2027-v0.1.json'
+      - 'projects/mochimochi-jutsu/n01-annual-ganzhi-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/tests/n01-annual-ganzhi.test.mjs'
+      - '.github/workflows/mochimochi-n01-calendar-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-calendar-symbol:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check syntax and data
+        run: |
+          node --check projects/mochimochi-jutsu/n01-annual-ganzhi-v0.1.mjs
+          node --check projects/mochimochi-jutsu/tests/n01-annual-ganzhi.test.mjs
+      - name: Verify NAOJ published-minute boundaries and calendar-only safety
+        run: node --test projects/mochimochi-jutsu/tests/n01-annual-ganzhi.test.mjs
