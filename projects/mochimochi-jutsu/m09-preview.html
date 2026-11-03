@@ -235,7 +235,7 @@ async function load(){
 }
 function renderStep(){
   const q=catalogs.questionBank.questions[current];
-  $('step-label').textContent='QUESTION '+(current+1)+' / 5';
+  $('step-label').textContent='Q'+(current+1)+' / 5';
   $('step-name').textContent=q.title;
   $('progress').value=current+1;
   $('question-title').textContent=q.prompt;
