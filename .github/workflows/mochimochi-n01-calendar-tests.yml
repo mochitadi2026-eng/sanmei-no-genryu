@@ -6,12 +6,18 @@ on:
       - 'projects/mochimochi-jutsu/n01-naoj-risshun-2024-2027-v0.1.json'
       - 'projects/mochimochi-jutsu/n01-annual-ganzhi-v0.1.mjs'
       - 'projects/mochimochi-jutsu/tests/n01-annual-ganzhi.test.mjs'
+      - 'projects/mochimochi-jutsu/m02-core-symbols-v0.1.json'
+      - 'projects/mochimochi-jutsu/n01-classical-daiun-study-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/tests/n01-classical-daiun-study.test.mjs'
       - '.github/workflows/mochimochi-n01-calendar-tests.yml'
   pull_request:
     paths:
       - 'projects/mochimochi-jutsu/n01-naoj-risshun-2024-2027-v0.1.json'
       - 'projects/mochimochi-jutsu/n01-annual-ganzhi-v0.1.mjs'
       - 'projects/mochimochi-jutsu/tests/n01-annual-ganzhi.test.mjs'
+      - 'projects/mochimochi-jutsu/m02-core-symbols-v0.1.json'
+      - 'projects/mochimochi-jutsu/n01-classical-daiun-study-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/tests/n01-classical-daiun-study.test.mjs'
       - '.github/workflows/mochimochi-n01-calendar-tests.yml'
   workflow_dispatch:
 
@@ -30,5 +36,7 @@ jobs:
         run: |
           node --check projects/mochimochi-jutsu/n01-annual-ganzhi-v0.1.mjs
           node --check projects/mochimochi-jutsu/tests/n01-annual-ganzhi.test.mjs
+          node --check projects/mochimochi-jutsu/n01-classical-daiun-study-v0.1.mjs
+          node --check projects/mochimochi-jutsu/tests/n01-classical-daiun-study.test.mjs
       - name: Verify NAOJ published-minute boundaries and calendar-only safety
-        run: node --test projects/mochimochi-jutsu/tests/n01-annual-ganzhi.test.mjs
+        run: node --test projects/mochimochi-jutsu/tests/n01-annual-ganzhi.test.mjs projects/mochimochi-jutsu/tests/n01-classical-daiun-study.test.mjs
