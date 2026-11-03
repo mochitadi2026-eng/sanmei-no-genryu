@@ -1,0 +1,50 @@
+name: Mochimochi B04/B05 birthdate mochi prototype verification
+on:
+  push:
+    paths:
+      - 'projects/mochimochi-jutsu/b0*.mjs'
+      - 'projects/mochimochi-jutsu/b04-birth-mochi-catalog-v0.1.json'
+      - 'projects/mochimochi-jutsu/b05-birth-mochi-presenter-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/birth-mochi-preview.html'
+      - 'projects/mochimochi-jutsu/m02-core-symbols-v0.1.json'
+      - 'projects/mochimochi-jutsu/tests/b05-*'
+      - '.github/workflows/mochimochi-b05-birth-mochi.yml'
+  pull_request:
+    paths:
+      - 'projects/mochimochi-jutsu/b0*.mjs'
+      - 'projects/mochimochi-jutsu/b04-birth-mochi-catalog-v0.1.json'
+      - 'projects/mochimochi-jutsu/b05-birth-mochi-presenter-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/birth-mochi-preview.html'
+      - 'projects/mochimochi-jutsu/tests/b05-*'
+      - '.github/workflows/mochimochi-b05-birth-mochi.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  birth-mochi-node:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check Node and test syntax
+        run: |
+          node --check projects/mochimochi-jutsu/b05-birth-mochi-presenter-v0.1.mjs
+          node --check projects/mochimochi-jutsu/tests/b05-birth-mochi-presenter.test.mjs
+      - name: B03 and B05 calendar/60 type regression
+        run: node --test projects/mochimochi-jutsu/tests/b03-adopted-birth-character-rule.test.mjs projects/mochimochi-jutsu/tests/b05-birth-mochi-presenter.test.mjs
+  birth-mochi-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser test runner
+        run: npm install --no-save --no-package-lock playwright@1.57.0
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run date-only mobile browser test
+        run: node projects/mochimochi-jutsu/tests/b05-birth-mochi.browser-test.mjs
