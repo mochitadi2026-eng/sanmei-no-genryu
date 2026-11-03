@@ -16,10 +16,12 @@
 <path d="M0 370 Q130 290 275 352 T555 340 T800 338 V1000H0Z" fill="#d7e1ce"/>
 <path d="M0 470Q170 390 330 444T800 406V1000H0Z" fill="#c4d6bc"/>
 <path d="M0 600Q170 510 360 562T800 523V1000H0Z" fill="#b4caaa"/>
-<!-- Gently winding distant lane: Q2-d -->
+<!-- Q2-d: distant lane; cue metadata is for design QA, not an interactive selection -->
+<g id="cue-d" data-cue="d">
 <path d="M476 265 Q530 313 485 370 Q451 411 510 468 Q554 507 500 559" fill="none" stroke="#8b987e" stroke-width="100" stroke-linecap="round" opacity=".24"/>
 <path d="M476 265 Q530 313 485 370 Q451 411 510 468 Q554 507 500 559" fill="none" stroke="#e5d5ba" stroke-width="72" stroke-linecap="round"/>
 <path d="M476 265 Q530 313 485 370 Q451 411 510 468 Q554 507 500 559" fill="none" stroke="#f0e4ce" stroke-width="48" stroke-linecap="round"/>
+</g>
 <!-- Path splits visibly near the central signpost -->
 <path d="M390 1000 Q375 822 360 693 Q325 590 300 523 Q255 482 150 450" fill="none" stroke="#d4c1a0" stroke-width="147" stroke-linecap="round"/>
 <path d="M390 1000 Q375 822 360 693 Q325 590 300 523 Q255 482 150 450" fill="none" stroke="#e8d8bc" stroke-width="125" stroke-linecap="round"/>
@@ -34,30 +36,39 @@
 <path d="M619 82Q680 74 753 111M605 109Q548 72 529 41" stroke="#927c65" stroke-width="11" fill="none" stroke-linecap="round"/>
 <g fill="#98af92"><circle cx="632" cy="42" r="43"/><circle cx="712" cy="91" r="55"/><circle cx="764" cy="139" r="35"/><circle cx="581" cy="42" r="49"/></g>
 <g opacity=".9"><use href="#blossom" x="696" y="75"/><use href="#blossom" x="735" y="124"/><use href="#blossom" x="575" y="69"/><use href="#blossom" x="140" y="191"/></g>
-<!-- Q2-e: small wind chime in the upper-right open area -->
+<!-- Q2-e: wind chime enlarged for mobile legibility; not a clickable hotspot -->
+<g id="cue-e" data-cue="e" transform="translate(676 205) scale(1.65) translate(-676 -205)">
 <path d="M676 126V189" stroke="#a38c75" stroke-width="3"/>
 <ellipse cx="676" cy="197" rx="24" ry="21" fill="#e5edf0" stroke="#8babae" stroke-width="4"/>
 <path d="M652 200Q676 213 700 200" fill="none" stroke="#86a4aa" stroke-width="3"/>
 <path d="M676 218V239" stroke="#8babae" stroke-width="3"/>
 <path d="M666 239Q676 242 689 239L684 279Q676 283 668 279Z" fill="#e8d0bd" stroke="#aa9382" stroke-width="2"/>
+</g>
 <!-- Q2-a: blank rustic guidepost at path fork, not a textual arrow -->
+<g id="cue-a" data-cue="a" transform="translate(290 435) scale(1.20) translate(-290 -435)">
 <ellipse cx="299" cy="520" rx="63" ry="18" fill="#8f927a" opacity=".18"/>
 <path d="M300 354L298 516" stroke="#6d6150" stroke-width="15" stroke-linecap="round"/>
 <path d="M267 375L349 380L341 419L265 414Z" fill="url(#wood)" stroke="#79634f" stroke-width="4"/>
 <path d="M236 427L333 422L331 462L239 468Z" fill="#b18c6b" stroke="#79634f" stroke-width="4"/>
 <circle cx="282" cy="397" r="3.5" fill="#665546"/><circle cx="313" cy="444" r="3.5" fill="#665546"/>
+</g>
 <!-- Q2-c: shaded bench with open negative space around it -->
+<g id="cue-c" data-cue="c">
 <ellipse cx="155" cy="675" rx="122" ry="26" fill="#7e8974" opacity=".18"/>
 <path d="M76 586L78 661M234 586L230 663" stroke="#85694e" stroke-width="12" stroke-linecap="round"/>
 <path d="M71 553Q149 543 240 559L237 599Q150 587 73 595Z" fill="#b58f69" stroke="#806c54" stroke-width="4"/>
 <path d="M62 608Q159 592 251 609L243 634Q160 622 71 636Z" fill="url(#wood)" stroke="#806b54" stroke-width="4"/>
 <path d="M95 633L83 682M212 631L225 684" stroke="#84674f" stroke-width="12" stroke-linecap="round"/>
+</g>
 <!-- Q2-b: first prominent stepping stone, separate from distant trail -->
+<g id="cue-b" data-cue="b">
 <ellipse cx="392" cy="795" rx="101" ry="45" fill="#adb39c" opacity=".35"/>
 <path d="M307 760Q356 726 429 733Q471 742 485 774Q474 805 402 813Q329 810 307 782Z" fill="#c4c4b4" stroke="#899788" stroke-width="5"/>
 <path d="M321 752Q394 727 454 752" fill="none" stroke="#f2efdd" stroke-opacity=".8" stroke-width="5"/>
 <path d="M373 844Q410 836 440 849Q461 867 436 882Q395 889 366 871Z" fill="#d3ccb7" stroke="#a1a28d" stroke-width="4"/>
+</g>
 <!-- Q2-f: round meeting table with two open chairs in lower right -->
+<g id="cue-f" data-cue="f">
 <ellipse cx="619" cy="828" rx="140" ry="42" fill="#8b9b83" opacity=".23"/>
 <path d="M525 784L509 842M555 786L570 841M682 790L672 845M707 783L727 845" stroke="#8c7358" stroke-width="9" stroke-linecap="round"/>
 <path d="M497 773Q524 737 556 773M680 772Q706 739 737 774" stroke="#947d63" stroke-width="12" fill="none" stroke-linecap="round"/>
@@ -66,6 +77,7 @@
 <ellipse cx="620" cy="767" rx="84" ry="32" fill="#b79979" stroke="#866d55" stroke-width="5"/>
 <ellipse cx="620" cy="758" rx="80" ry="27" fill="#d2b192" stroke="#aa8b6d" stroke-width="3"/>
 <g fill="#f4eee1" stroke="#aa9480" stroke-width="2"><ellipse cx="593" cy="753" rx="14" ry="8"/><ellipse cx="645" cy="752" rx="14" ry="8"/></g>
+</g>
 <!-- Soft garden ground, gentle decoration never used as answer targets -->
 <g fill="#9bb69a"><ellipse cx="76" cy="828" rx="65" ry="33"/><ellipse cx="153" cy="896" rx="52" ry="28"/><ellipse cx="751" cy="656" rx="67" ry="29"/><ellipse cx="728" cy="918" rx="68" ry="26"/><ellipse cx="242" cy="967" rx="62" ry="25"/></g>
 <g stroke="#9daf90" stroke-width="3" fill="none" opacity=".75"><path d="M30 887q-8-32-23-37m25 38q10-32 27-38M711 600q-11-40-25-48m27 49q16-47 33-49M221 933q-9-35-23-45m24 45q13-41 34-42"/></g>
