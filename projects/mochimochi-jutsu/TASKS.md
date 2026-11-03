@@ -5,8 +5,8 @@
 
 ## 2026-11-03 優先順位変更：生年月日で出る「生まれのもち」が先
 - ユーザーから「5問の質問より、生年月日で見られるものを先に作る」と指定。**B04→B05出生キャラWeb試作を先行**し、M07〜M09／PK01〜PK04の質問型診断は消さず一時後回しにする。
-- **B04実施**：12種類の馴染みのある餅・餅菓子と、味や食感から想像しやすいキャラ設定の[JSON原案](b04-birth-mochi-catalog-v0.1.json)を作成。まだ12体の専用イラストや人の納得度評価はない。
-- **B05開発試作実施**：[実際に生年月日を入力できるHTML](birth-mochi-preview.html)と[B03からの表示関数](b05-birth-mochi-presenter-v0.1.mjs)、[60組・不正入力のNodeテスト](tests/b05-birth-mochi-presenter.test.mjs)、[Chromium 320/390pxテスト](tests/b05-birth-mochi.browser-test.mjs)を作成。 [CI成功](https://github.com/mochitadi2026-eng/sanmei-no-genryu/actions/runs/41641814166)。
+- **B04実施**：12種類の馴染みのある餅・餅菓子と、味や食感から想像しやすいキャラ設定の[JSON原案](b04-birth-mochi-catalog-v0.1.json)を作成。**ユーザー提案「この餅の持ち味」「取説」を受け、12体それぞれに持ち味／おいしさが引き立つ環境／取り扱い注意／この餅の取説を追加。** [編集履歴](19-b04-b05-birthdate-first-prototype-2026-11-03.md)。専用イラストと人の納得度評価は未実施。
+- **B05開発試作実施**：[生年月日入力HTML](birth-mochi-preview.html)を「持ち味→環境→注意→取説→五行の味つけ」の結果構成へ更新。[B03からの表示関数](b05-birth-mochi-presenter-v0.1.mjs)、[60組・不正入力・全12取説のNodeテスト](tests/b05-birth-mochi-presenter.test.mjs)、[Chromium 320/390pxテスト](tests/b05-birth-mochi.browser-test.mjs)を実施。[改稿後CI成功](https://github.com/mochitadi2026-eng/sanmei-no-genryu/actions/runs/41643720258)。
 - 作業は既存GitHubの`work/b04-b05-birthdate-mochi-preview`。**新規リポジトリを作らず、mainへ未統合・一般公開/募集/販売なし。** [実装記録](19-b04-b05-birthdate-first-prototype-2026-11-03.md)。次は本人のキャラ共感・画面実機レビュー、12体専用画像の企画、公開条件の審査。
  
 ## 商品化タスク（PK01〜PK15｜2026-11-03）
