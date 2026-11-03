@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - 'projects/mochimochi-jutsu/b03-civil-date-character-candidate-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/b03-adopted-birth-character-rule-v1.mjs'
+      - 'projects/mochimochi-jutsu/tests/b03-adopted-birth-character-rule.test.mjs'
       - 'projects/mochimochi-jutsu/tests/b03-civil-date-character-candidate.test.mjs'
       - 'projects/mochimochi-jutsu/b01-day-cycle-and-character-study-v0.1.mjs'
       - 'projects/mochimochi-jutsu/m02-core-symbols-v0.1.json'
@@ -11,6 +13,8 @@ on:
   pull_request:
     paths:
       - 'projects/mochimochi-jutsu/b03-civil-date-character-candidate-v0.1.mjs'
+      - 'projects/mochimochi-jutsu/b03-adopted-birth-character-rule-v1.mjs'
+      - 'projects/mochimochi-jutsu/tests/b03-adopted-birth-character-rule.test.mjs'
       - 'projects/mochimochi-jutsu/tests/b03-civil-date-character-candidate.test.mjs'
       - 'projects/mochimochi-jutsu/b01-day-cycle-and-character-study-v0.1.mjs'
       - 'projects/mochimochi-jutsu/m02-core-symbols-v0.1.json'
@@ -32,5 +36,7 @@ jobs:
         run: |
           node --check projects/mochimochi-jutsu/b03-civil-date-character-candidate-v0.1.mjs
           node --check projects/mochimochi-jutsu/tests/b03-civil-date-character-candidate.test.mjs
+          node --check projects/mochimochi-jutsu/b03-adopted-birth-character-rule-v1.mjs
+          node --check projects/mochimochi-jutsu/tests/b03-adopted-birth-character-rule.test.mjs
       - name: Verify 12-by-5 date-only rule is deterministic and not a natal claim
-        run: node --test projects/mochimochi-jutsu/tests/b03-civil-date-character-candidate.test.mjs
+        run: node --test projects/mochimochi-jutsu/tests/b03-civil-date-character-candidate.test.mjs projects/mochimochi-jutsu/tests/b03-adopted-birth-character-rule.test.mjs
