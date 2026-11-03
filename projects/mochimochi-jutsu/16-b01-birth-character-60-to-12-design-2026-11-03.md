@@ -78,3 +78,7 @@
 | P2 | N04/M11 | 固定キャラ×時間軸の鑑定文、現在の5問、任意のSNS共有 | 本文とカードの役割分離、実用評価・公開ゲート |
 
 **B02/B03の結論が出る前にキャラの見た目だけで正式に60タイプを確定しない。**
+
+## B02追記（2026-11-03）
+
+B01作成時の「既存M06との実コード差分テスト未実施」は当時の記録であり、その後[B02監査](17-b02-real-day-engine-and-boundary-audit-2026-11-03.md)で実施済み。[Draft PR #33](https://github.com/mochitadi2026-eng/tadi-sanmei-desk/pull/33)では公開暦11日・独立JDNと73,049日の比較が一致し、[最新CI19件／全体622件成功](https://github.com/mochitadi2026-eng/tadi-sanmei-desk/actions/runs/41578987575)。算命学の日界と固定キャラの正式な分類方式の採用はB03に保留。
