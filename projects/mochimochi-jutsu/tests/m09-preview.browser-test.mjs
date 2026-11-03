@@ -188,6 +188,25 @@ try{
   check(keyboardResult.includes('小さな実験の午後'),'independent selected phase still appears');
   await keyboard.close();
 
+  // Smaller-screen screenshot snapshots for actual visual inspection later.
+  const small=await context.newPage();
+  await small.setViewportSize({width:320,height:700});
+  await small.goto(origin+'/m09-preview.html',{waitUntil:'networkidle'});
+  await small.locator('#agree').check();
+  await small.locator('#start').click();
+  await small.locator('#questions').waitFor({state:'visible'});
+  await small.waitForFunction(()=>document.querySelector('#scene-image')?.naturalWidth===800);
+  check(await small.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),
+    'Q1 at 320px has no sideways overflow');
+  audits.push(await accessibility(small,'q1-320'));
+  await small.screenshot({path:path.join(evidenceDir,'q1-320.png'),fullPage:true});
+  await choose(small,'a');
+  check(await small.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),
+    'Q2 at 320px has no sideways overflow');
+  audits.push(await accessibility(small,'q2-320'));
+  await small.screenshot({path:path.join(evidenceDir,'q2-320.png'),fullPage:true});
+  await small.close();
+
   // Asset failure: there is a meaningful textual alternative, and the answer path is not blocked.
   const fallback=await browser.newPage({viewport:{width:320,height:700}});
   await fallback.route('**/scene_v01-candidate.svg',route=>route.abort());
