@@ -12,7 +12,11 @@ test('B04 has 12 distinct familiar mochi and five creative elements',()=>{
  assert.deepEqual(catalog.elements.map(x=>x.name),[...'木火土金水']);
  for(const c of catalog.characters){
   assert.ok(c.real_feature&&c.character_scene&&c.comic_weakness&&c.reflection_question);
+  for(const key of ['mochi_flavor','best_setting','handling_caution','handling_manual']){
+    assert.ok(typeof c[key]==='string'&&c[key].length>=28,c.id+' missing '+key);
+  }
  }
+ assert.equal(catalog.editorial_revision,'b04-mochi-manual-v0.2');
 });
 test('M06-audited B03 real civil-day symbols map to proposed mochi',()=>{
  const a=at('1987-04-25');
@@ -21,6 +25,9 @@ test('M06-audited B03 real civil-day symbols map to proposed mochi',()=>{
  assert.equal(a.character.name,'草餅');
  assert.equal(a.element_id,'EL_WOOD');
  assert.equal(a.display_title,'木の草餅');
+ assert.ok(a.character.mochi_flavor.includes('よもぎ'));
+ assert.ok(a.character.handling_manual.includes('新しい材料'));
+ assert.ok(a.character.handling_caution.includes('慣れた味'));
  const b=at('2026-10-17');
  assert.equal(b.day_ganzhi,'甲子');
  assert.equal(b.character.name,'いちご大福');
@@ -38,6 +45,7 @@ test('all 60 days produce exactly 12 mochi times five elements',()=>{
   assert.equal(r.external_requests,false);
   assert.equal(r.personality_test,false);
   assert.ok(r.story.includes(r.element.narrative));
+  assert.ok(r.character.mochi_flavor&&r.character.best_setting&&r.character.handling_caution&&r.character.handling_manual);
   const k=r.character_id+'/'+r.element_id;
   assert.equal(combos.has(k),false);
   combos.add(k);
@@ -69,6 +77,10 @@ test('unsupported years return a non-character status',()=>{
   assert.equal(Object.hasOwn(r,'character'),false);
   assert.equal(r.production_usable,false);
  }
+});
+test('incomplete handling instructions never render as an approved character',()=>{
+ const c=structuredClone(catalog);delete c.characters[5].handling_manual;
+ assert.throws(()=>readBirthMochi({calendar:'Gregorian',country:'JP',civil_date:'2026-10-17'},{m02,catalog:c}),/manual is incomplete/);
 });
 test('version mismatch does not silently create a type',()=>{
  const bad=structuredClone(catalog);bad.version='obsolete';
