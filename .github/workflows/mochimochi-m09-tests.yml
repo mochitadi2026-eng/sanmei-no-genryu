@@ -8,6 +8,7 @@ on:
       - 'projects/mochimochi-jutsu/m07-question-bank-v0.1.json'
       - 'projects/mochimochi-jutsu/m08-classifier-v0.1.mjs'
       - 'projects/mochimochi-jutsu/m09-result-copy-v0.1.json'
+      - 'projects/mochimochi-jutsu/m09-result-copy-v0.2.json'
       - 'projects/mochimochi-jutsu/m09-result-presenter-v0.1.mjs'
       - 'projects/mochimochi-jutsu/tests/m08-classifier.test.mjs'
       - 'projects/mochimochi-jutsu/tests/m09-result-presenter.test.mjs'
