@@ -1,0 +1,619 @@
+{
+  "schema_version": "mk07-1.0",
+  "created_at": "2026-11-03",
+  "project": "mochimochi-jutsu",
+  "file_purpose": "DESIGN_ONLY_NOT_PRODUCTION",
+  "status": "MK07_SPEC_COMPLETE_NOT_IMPLEMENTED",
+  "release": {
+    "G1_free": "NO_GO",
+    "G2_paid": "NO_GO",
+    "lead_capture": "NOT_ENABLED",
+    "marketing_email_send": "NOT_ENABLED"
+  },
+  "scope": {
+    "source_product": "FREE-01",
+    "lead_product": "LEAD-01",
+    "purchase_records_separate": true,
+    "public_github_no_pii": true,
+    "anonymous_diagnosis_independent_of_signup": true,
+    "birth_data_required": false,
+    "diagnosis_answers_transferred_to_crm": false,
+    "service_work_in_background": false
+  },
+  "official_sources": [
+    {
+      "kind": "statutory_guidance",
+      "agency": "Consumer Affairs Agency",
+      "url": "https://www.no-trouble.caa.go.jp/what/mailorder/",
+      "principle": "prior consent for commercial mail of mail-order sellers, consent record retention generally 3 yrs from last commercial email (subject to applicability and exceptions)"
+    },
+    {
+      "kind": "interpretation",
+      "agency": "Consumer Affairs Agency",
+      "url": "https://www.no-trouble.caa.go.jp/pdf/20230623la03_04.pdf",
+      "principle": "regulatory record rules for consent and refusal"
+    },
+    {
+      "kind": "guideline",
+      "agency": "Personal Information Protection Commission",
+      "url": "https://www.ppc.go.jp/all_faq_index/faq1-q4-17/",
+      "principle": "purpose notice generally required for directly collected email on web form"
+    },
+    {
+      "kind": "guideline",
+      "agency": "Personal Information Protection Commission",
+      "url": "https://www.ppc.go.jp/all_faq_index/faq1-q5-2/",
+      "principle": "no fixed generic retention term; remove when no longer needed, subject to other requirements"
+    },
+    {
+      "kind": "guideline",
+      "agency": "Personal Information Protection Commission",
+      "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/",
+      "principle": "data protection, purpose, safety, data subject rights"
+    },
+    {
+      "kind": "guideline",
+      "agency": "Personal Information Protection Commission",
+      "url": "https://www.ppc.go.jp/all_faq_index/faq1-q7-53/",
+      "principle": "cloud processor status depends on contract and actual data access"
+    }
+  ],
+  "cta": {
+    "id": "CTA-L01",
+    "screen": "F08",
+    "label": "もちもち占術の読み物・更新案内を受け取る",
+    "condition_to_show": "verified_operator && live_privacy_terms_contact && approved_provider && optin_legal_review && M11_M12_G1_release_decision",
+    "default_visibility": "hidden",
+    "mandatory": false,
+    "receives_diagnosis_payload": false,
+    "destination_screen": "L00"
+  },
+  "forms": [
+    {
+      "id": "L00",
+      "name": "optional_signup",
+      "fields": [
+        "email",
+        "optional_self_selected_topics",
+        "unchecked_marketing_opt_in"
+      ],
+      "privacy_link_required": true,
+      "contact_link_required": true,
+      "default_consent": false,
+      "needs_purpose_notice_before_data_entry": true
+    },
+    {
+      "id": "L01",
+      "name": "confirmation_pending",
+      "privacy": "generic_response_no_email_enumeration",
+      "commercial_send_allowed": false
+    },
+    {
+      "id": "L02",
+      "name": "verification",
+      "single_use": true,
+      "token_expiry_hours_proposed": 48,
+      "replay_denied": true
+    },
+    {
+      "id": "L03",
+      "name": "active_subscriber",
+      "requires_email_verified": true,
+      "requires_marketing_consent": true
+    },
+    {
+      "id": "L04",
+      "name": "unsubscribe_preferences",
+      "no_login_required_for_one_click_unsubscribe": true,
+      "token_integrity_required": true,
+      "immediate_suppression": true
+    }
+  ],
+  "status_enum": [
+    "pending",
+    "active",
+    "unsubscribed",
+    "suppressed",
+    "bounced",
+    "complaint",
+    "deleted"
+  ],
+  "transitions": [
+    {
+      "from": "new",
+      "to": "pending",
+      "event": "registration_request_with_unchecked_by_default_marketing_optin_selected",
+      "allows_commercial_mail": false
+    },
+    {
+      "from": "pending",
+      "to": "active",
+      "event": "valid_single_use_email_verification_and_consent_confirmed",
+      "allows_commercial_mail": true
+    },
+    {
+      "from": "pending",
+      "to": "deleted",
+      "event": "seven_day_nonverification_purge",
+      "allows_commercial_mail": false
+    },
+    {
+      "from": "active",
+      "to": "unsubscribed",
+      "event": "unsubscribe_requested",
+      "allows_commercial_mail": false
+    },
+    {
+      "from": "active",
+      "to": "bounced",
+      "event": "hard_bounce",
+      "allows_commercial_mail": false
+    },
+    {
+      "from": "active",
+      "to": "complaint",
+      "event": "spam_complaint",
+      "allows_commercial_mail": false
+    },
+    {
+      "from": "unsubscribed",
+      "to": "pending",
+      "event": "new_explicit_consent_plus_new_verification",
+      "allows_commercial_mail": false
+    },
+    {
+      "from": "active",
+      "to": "deleted",
+      "event": "verified_deletion_request_with_legal_record_separation",
+      "allows_commercial_mail": false
+    },
+    {
+      "from": "unsubscribed",
+      "to": "deleted",
+      "event": "verified_deletion_request_with_legal_record_separation",
+      "allows_commercial_mail": false
+    }
+  ],
+  "invariants": [
+    "Only active + verified_email + latest_marketing_opt_in + !suppressed + provider_approved receives marketing email",
+    "Evaluate send_allowed both at queue time and immediately before provider send",
+    "No marketing email to pending, bounced, complaint, unsubscribed, deleted",
+    "Marketing confirmation email has verification instructions only and no marketing",
+    "Unsubscribe does not require an account or purchase",
+    "Unsubscribe never requires resubscribe and is effective before deletion processing",
+    "Old consent records or prior diagnostic registrations cannot authorize new marketing",
+    "Suppression survives backup restoration",
+    "Q1-Q5 choices and answers do not enter CRM, outbound messages or analytics",
+    "Do not restore an unsubscribed lead to active without fresh explicit consent and email verification",
+    "No actual PIIs or tokens in public GitHub"
+  ],
+  "table_contracts": [
+    {
+      "name": "lead_contacts",
+      "keys": [
+        "lead_id",
+        "email_encrypted",
+        "email_lookup_hmac",
+        "status",
+        "created_at",
+        "verified_at",
+        "last_sent_at",
+        "deleted_at"
+      ],
+      "protection": "private_encrypted_admin_access_only"
+    },
+    {
+      "name": "consent_events",
+      "keys": [
+        "event_id",
+        "lead_id",
+        "purpose",
+        "action",
+        "notice_version",
+        "collected_at",
+        "verified_at",
+        "evidence_ref",
+        "actor_kind"
+      ],
+      "protection": "append_only_restricted_evidence"
+    },
+    {
+      "name": "contact_preferences",
+      "keys": [
+        "lead_id",
+        "topics",
+        "updated_at",
+        "marketing_enabled"
+      ],
+      "protection": "self_declared_topics_only"
+    },
+    {
+      "name": "email_verification_tokens",
+      "keys": [
+        "token_digest",
+        "lead_id",
+        "issued_at",
+        "expires_at",
+        "consumed_at"
+      ],
+      "protection": "one_time_token_digest_only"
+    },
+    {
+      "name": "outbound_messages",
+      "keys": [
+        "message_id",
+        "lead_id",
+        "template_version",
+        "purpose",
+        "status",
+        "queued_at",
+        "sent_at",
+        "provider_ref"
+      ],
+      "protection": "no_question_answers_or_message_body_dump"
+    },
+    {
+      "name": "suppression",
+      "keys": [
+        "email_lookup_hmac",
+        "suppressed_at",
+        "reason",
+        "evidence_ref"
+      ],
+      "protection": "secret_keyed_identifier_not_raw_sha256"
+    },
+    {
+      "name": "data_requests",
+      "keys": [
+        "request_id",
+        "lead_id",
+        "type",
+        "received_at",
+        "status",
+        "resolved_at",
+        "retained_basis"
+      ],
+      "protection": "restricted_support_queue"
+    },
+    {
+      "name": "audit_events",
+      "keys": [
+        "audit_id",
+        "actor_role",
+        "operation",
+        "target_pseudonym",
+        "at",
+        "outcome"
+      ],
+      "protection": "no_plain_email_or_token_in_logs"
+    }
+  ],
+  "segmentation": {
+    "source_rule": "explicit_interest_or_consent_status_only",
+    "topics": [
+      {
+        "id": "TOP_SELF_REFLECTION",
+        "label": "自己理解の読み物"
+      },
+      {
+        "id": "TOP_CALENDAR",
+        "label": "暦・五行の豆知識"
+      },
+      {
+        "id": "TOP_CHARACTER",
+        "label": "キャラクターと物語"
+      }
+    ],
+    "groups": [
+      "SEG_ACTIVE_ALL",
+      "SEG_NO_TOPIC",
+      "SEG_UNSUBSCRIBED"
+    ],
+    "prohibited_inputs": [
+      "diagnosis_type",
+      "questions_1_to_5",
+      "birth_date",
+      "relationship_problems",
+      "medical_conditions",
+      "free_text",
+      "inferred_psychological_traits"
+    ]
+  },
+  "message_sequence": [
+    {
+      "id": "V00",
+      "type": "verification_only",
+      "trigger": "new_pending",
+      "marketing": false,
+      "requires_active": false,
+      "proposed_timing": "immediate_when_provider_approved",
+      "status": "NOT_SENT"
+    },
+    {
+      "id": "W01",
+      "type": "welcome",
+      "trigger": "active_verified_consent",
+      "marketing": true,
+      "requires_active": true,
+      "proposed_timing": "after_confirmation",
+      "status": "NOT_SENT"
+    },
+    {
+      "id": "W02",
+      "type": "educational",
+      "trigger": "3_days_after_W01",
+      "marketing": true,
+      "requires_active": true,
+      "proposed_timing": "hypothesis",
+      "status": "NOT_SENT"
+    },
+    {
+      "id": "W03",
+      "type": "reflection",
+      "trigger": "10_days_after_W01",
+      "marketing": true,
+      "requires_active": true,
+      "proposed_timing": "hypothesis",
+      "status": "NOT_SENT"
+    }
+  ],
+  "retention_proposals": [
+    {
+      "data": "unverified_pending",
+      "retention": "7d after request",
+      "legal_mandate": false,
+      "requires_provider_check": true
+    },
+    {
+      "data": "verification_token",
+      "retention": "48h validity single-use",
+      "legal_mandate": false,
+      "requires_provider_check": true
+    },
+    {
+      "data": "active_email_and_topics",
+      "retention": "while subscribed and needed; necessity review every 12 months",
+      "legal_mandate": false,
+      "requires_provider_check": true
+    },
+    {
+      "data": "commercial_email_consent_evidence",
+      "retention": "generally 3 years since last applicable commercial email; confirm statutory applicability",
+      "legal_mandate": true,
+      "requires_legal_check": true
+    },
+    {
+      "data": "suppression_reference",
+      "retention": "minimum necessary for honoring stop; exact term pending",
+      "legal_mandate": false,
+      "requires_legal_check": true
+    },
+    {
+      "data": "backups",
+      "retention": "30d rotation proposal, replay tombstone on restore",
+      "legal_mandate": false,
+      "requires_provider_check": true
+    },
+    {
+      "data": "data_subject_delete_request",
+      "retention": "response target within 30 days unless faster legal duty; not statutory universal deadline",
+      "legal_mandate": false,
+      "requires_legal_check": true
+    }
+  ],
+  "security_requirements": [
+    "admin_mfa",
+    "least_privilege",
+    "encrypt_email_at_rest",
+    "HMAC_lookup_with_secret",
+    "token_digest_no_plaintext",
+    "rate_limit",
+    "generic_registration_response",
+    "audit_logging_no_PIIs",
+    "backup_restore_suppression_replay",
+    "vendor_data_processing_contracts",
+    "foreign_transfer_review",
+    "incident_STOP05_STOP07",
+    "no_open_tracking_by_default"
+  ],
+  "acceptance_tests": [
+    {
+      "id": "LD01",
+      "name": "FREE-01 without registration",
+      "expected": "F00-F08 works without email, consent, sign-in or purchase",
+      "status": "NOT_RUN",
+      "actual": null,
+      "run_at": null,
+      "release_version": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LD02",
+      "name": "Optional F08 CTA",
+      "expected": "CTA-L01 hidden until vendor/privacy/operator/G1 approvals; optional L00 when enabled",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "release_version": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LD03",
+      "name": "Notice and consent",
+      "expected": "Seller identity, content, purpose, frequency, opt-out, privacy link precede data collection; unchecked consent",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "release_version": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LD04",
+      "name": "No promotion before confirmed opt-in",
+      "expected": "Missing check, pending, expired, suppressed contacts never sent advertising",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "release_version": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LD05",
+      "name": "Double opt-in confirmation",
+      "expected": "One-time 48-hour expiring confirmation token; rejects altered, reused, expired tokens",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "release_version": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LD06",
+      "name": "PII minimization",
+      "expected": "No Q1-Q5, type, birth, sensitive narrative in CRM, messages, tracking or public logs",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "release_version": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LD07",
+      "name": "Re-registration / enumeration",
+      "expected": "Duplicate requests do not expose email existence; prior unsubscribe requires explicit new consent",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "release_version": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LD08",
+      "name": "Welcome automation guard",
+      "expected": "Confirmation-only mail no promotion, marketing welcome only for active & unsuppressed",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "release_version": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LD09",
+      "name": "Immediate unsubscribe",
+      "expected": "Queue and provider respect suppression including final pre-send check",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "release_version": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LD10",
+      "name": "Deletion and statutory consent evidence",
+      "expected": "Pending cleanup and deletion requests work, necessary evidence retained in restricted store",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "release_version": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LD11",
+      "name": "Backup restore safety",
+      "expected": "Suppression/deletion events replayed before sends after recovery",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "release_version": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LD12",
+      "name": "Access, encryption, vendors",
+      "expected": "MFA, minimum access, encrypted email, HMAC secret, country/provider agreement reviewed",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "release_version": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LD13",
+      "name": "Incident stop drill",
+      "expected": "Send paused on unauthorized send or data breach; return requires explicit incident review",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "release_version": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LD14",
+      "name": "Metrics compliance",
+      "expected": "Funnel aggregation cannot carry responses or email identifiers; review external transmission laws",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "release_version": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    },
+    {
+      "id": "LD15",
+      "name": "Production approval",
+      "expected": "Operator, legal, policy, actual mail provider, all acceptance tests and G1 coordination reviewed",
+      "status": "BLOCKED",
+      "actual": null,
+      "run_at": null,
+      "release_version": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "decision": null
+    }
+  ],
+  "dependencies": [
+    "MK05_actual_legal_review",
+    "MK06_LP_and_F08_implementation",
+    "MK08_event_reporting_design",
+    "M11_web_frontend",
+    "M12_release_gate",
+    "verified_operator_and_contact",
+    "approved_real_mail_vendor"
+  ],
+  "next_task": "MK08",
+  "scope_excluded": [
+    "live_crm_creation",
+    "live_email_sending",
+    "production_web_hook",
+    "new_GitHub_repository",
+    "collecting_real_user_data",
+    "modifying_paid_engine"
+  ]
+}
