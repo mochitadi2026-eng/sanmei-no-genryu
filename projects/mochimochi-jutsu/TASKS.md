@@ -9,7 +9,7 @@
 - **商品制作の直近：PK01（共通scene_v01画像）→PK02（F00〜F08のWeb現物）＋PK03（文章編集）**。PK01は[作業ログ](PK01-scene-v01-implementation-review-2026-11-03.md)の通り、SVG候補作成・Q1/Q2開発プレビュー接続・ブラウザテスト追記まで作業ブランチで実施。**Chromium CI成功（[run 41631668986](https://github.com/mochitadi2026-eng/sanmei-no-genryu/actions/runs/41631668986)）／人の視覚評価・正式採用は未実施**。別ラインでPK07（架空の有料物語原稿見本）とPK13（既存B04・出生12キャラ）を進められる。
 - **無料v0.1は5問だけ**。B04/B05の出生12キャラ・60分類、N06共有カードは現行MK03でFREE-01 v0.1の必須条件ではない。PZではなく**PK**を商品化タスクの固有IDとする。
 - **完了の意味**：PK01〜03は商品現物の制作、PK04〜06はQA・非公開レビュー・G1公開可否。PK07〜08は非販売の架空有料原稿・PDF見本、PK09〜12は暦・実装・E2E・G2販売承認。PK13〜15はキャラ・共有ライン。
-- **現時点で商品現物・新たなテストの完了は記録していない**。G1/G2はNO-GO、レビュー募集・公開・注文・決済・販売の開始なし。マーケティング上の次のMK12は維持するが、商品制作の先行条件ではない。
+- **PK02は[商品向けモバイル試作](PK02-mobile-free-diagnosis-prototype-2026-11-03.md)の実画面に更新**。5問・結果・保留・中断・同じ画像の表示・320/390pxのChromium自動テストが[成功](https://github.com/mochitadi2026-eng/sanmei-no-genryu/actions/runs/41634232423)。F08外部CTA、PK01の人間による視覚評価、PK03文章品質、PK04〜06/G1は未完。G1/G2はNO-GO、レビュー募集・公開・注文・決済・販売の開始なし。マーケティング上の次のMK12は維持するが、商品制作の先行条件ではない。
 
 ## マーケティング・販売体制（MK01〜MK12｜2026-11-03追記）
 
@@ -33,7 +33,7 @@
 | M09 | P1 | 鑑定テンプレート | **完了（開発版・CIテスト成功）** | [12タイプ・5フェーズ文章JSON](m09-result-copy-v0.1.json)／[表示関数](m09-result-presenter-v0.1.mjs)／[テスト](tests/m09-result-presenter.test.mjs)／[M09実装報告](08-result-presentation-2026-11-02.md)。UI・利用者検証は未完 |
 | M09.5 | P1 | 文章の実利用確認・先行ブラウザ検証 | **ブラウザ25項目合格／実利用者の文章評価・正式画像は未実施** | [開発プレビュー](m09-preview.html)／[実機ブラウザ試験](tests/m09-preview.browser-test.mjs)／[評価計画](M09-USER-REVIEW.md) |
 | M10 | P2 | キャラクター対応 | **完了（教育用カタログ・表示関数・CI 7件成功）／画像紐付けは未完** | [M10データ](m10-character-catalog-v0.1.json)／[表示関数](m10-character-gallery-v0.1.mjs)／[検証報告](09-character-integration-2026-11-03.md) |
-| M11 | P2 | Webプロトタイプ／鑑定本文と共有カードを別設計 | **構成方針決定／未実装** | [もちキャラは共有材料・物語鑑定が主役](10-share-character-role-2026-11-03.md)。暦→過去→現在→未来の読み物とSNSカードを分ける |
+| M11 | P2 | Webプロトタイプ／鑑定本文と共有カードを別設計 | **無料5問のスマホ開発UIをPK02で実装／本番未承認** | [PK02実装・CI](PK02-mobile-free-diagnosis-prototype-2026-11-03.md)／[もちキャラと鑑定本文の役割分離](10-share-character-role-2026-11-03.md)。無料現在章は既存M09、出生由来の物語・SNSカードは別工程 |
 | M12 | P3 | 倫理・品質・公開判定 | 未着手 | 個人情報、広告・販売条件、利用者テスト |
 | N01 | P0 | 年運・大運の暦シグナル規則の検算 | **部分完了（年干支＋古典研究＋現代2方式の公開例比較／CI24件）、本番起運と転機は保留** | [史料調査](14-n01-daiun-nenun-sources-and-implementation-2026-11-03.md)／[現代の方式差と検証](15-ritsun-method-comparison-2026-11-03.md)／[比較器](n01-ritsun-policy-comparison-v0.1.mjs) |
 | N02 | P1 | 過去年アンカー選定 | **架空fixture専用の試作とCI成功** | [選定器](n02-story-anchor-selector-v0.1.mjs)／[Nodeテスト](tests/n02-story-anchor-selector.test.mjs)。暦・実人物は未接続 |
