@@ -49,7 +49,11 @@ function output(status,other={}){
    turning_point_computed:false,personality_computed:false,...other};
 }
 /** Dates for 2024-2027 only, with ±60s held around published minute. */
-export function resolveAnnualGanzhi({timestamp_jst,registry}={}){
+export function resolveAnnualGanzhi(input={}){
+ if(!obj(input)||Object.keys(input).some(k=>!['timestamp_jst','registry'].includes(k))
+   ||!Object.hasOwn(input,'timestamp_jst')||!Object.hasOwn(input,'registry'))
+   fail('Only timestamp_jst and registry are accepted; birth records are not supported');
+ const {timestamp_jst,registry}=input;
  validateN01RisshunRegistry(registry);
  const timestamp=exactTime(timestamp_jst,JST_INSTANT);
  const calendarYear=Number(timestamp_jst.slice(0,4));
