@@ -22,9 +22,9 @@
   },
   "scene": {
     "id": "scene_v01",
-    "status": "artwork_not_generated",
+    "status": "candidate_integrated_review_pending",
     "ratio": "4:5",
-    "description": "静かな和風絵本の小道。六つの対象が均等に見える：分かれ道の道しるべ／一歩目の飛び石／木陰のベンチ／遠くまで続く小道／小さな風鈴／人が集まれる小さな丸テーブル。やさしい昼の光。誰かを怖がらせる要素や開運効果を示す演出なし。テキスト・数字・記号なし。",
+    "description": "静かな和風の小道。六つの対象：分かれ道の道しるべ／一歩目の飛び石／木陰のベンチ／遠くまで続く小道／小さな風鈴／人が集まれる小さな丸テーブル。正式な採用・視認性／選択誘導レビューは未実施。",
     "art_review": [
       "six_cues_equally_legible",
       "no_color_emphasis_for_one_cue",
@@ -33,7 +33,11 @@
       "avoid_cues_blending",
       "do_not_infer_unconscious_or_disorders"
     ],
-    "text_alternative": "道が分かれ、飛び石やベンチ、小道、風鈴、小さな丸テーブルのある穏やかな景色"
+    "text_alternative": "分かれた小道のそばに文字のない木の道しるべがあり、手前には一歩目の飛び石があります。左手の木陰にはベンチ、奥には遠くまで続く小道、右上には小さな風鈴、右下には二人で囲める丸テーブルがあります。",
+    "asset_path": "scene_v01-candidate.svg",
+    "artwork_format": "image/svg+xml",
+    "asset_provenance": "original hand-authored vector illustration, no external stock imagery",
+    "review_status": "NOT_REVIEWED"
   },
   "themes_order": [
     "MOCHI",
