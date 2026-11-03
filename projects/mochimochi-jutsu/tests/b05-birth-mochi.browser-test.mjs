@@ -26,7 +26,7 @@ try{
   page.on('pageerror',e=>errors.push(e.message));
   page.on('request',request=>{if(!request.url().startsWith(origin))remote.push(request.url())});
   await page.goto(origin+prefix+'birth-mochi-preview.html',{waitUntil:'networkidle'});
-  check((await page.locator('h1').textContent()).includes('もちキャラ'),'birthday-first heading');
+  check((await page.locator('h1').textContent()).includes('もちキャラ取説'),'birthday-first instruction-manual heading');
   check(await page.locator('#go').isEnabled(),'date-only app catalogs load');
   check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'no overflow '+width);
   await page.locator('#date').fill('1987-04-25');
@@ -35,8 +35,14 @@ try{
   check((await page.locator('#name').textContent())==='草餅','1987-04-25 甲辰 -> BC05 grass mochi');
   check((await page.locator('#element').textContent()).includes('木'),'stem wood');
   check((await page.locator('#why').textContent()).includes('甲辰'),'day ganzhi explained');
-  check((await page.locator('#story').textContent()).length>10,'character scene included');
+  check((await page.locator('#flavor').textContent()).includes('よもぎ'),'mochi flavor reflects the real sweet');
+  check((await page.locator('#setting').textContent()).includes('自分なりの工夫'),'setting matches mochi identity');
+  check((await page.locator('#caution').textContent()).includes('慣れた味'),'risk reflects mochi metaphor');
+  check((await page.locator('#manual').textContent()).includes('新しい材料'),'instructions are practical and distinctive');
+  check((await page.locator('.section').count())===5,'five visible sections: flavor setting caution handling element');
+  check((await page.locator('#result').textContent()).includes('この餅の取説'),'section heading shows actual manual');
   check(await page.locator('#date').inputValue()==='','birthdate removed from input after use');
+  check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'manual has no sideways overflow '+width);
   check(!await page.evaluate(()=>localStorage.length||sessionStorage.length),'no client storage');
   check(errors.length===0,'no JS exception');
   check(remote.length===0,'no network to other origin');
