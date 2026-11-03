@@ -1,0 +1,843 @@
+{
+  "schema_version": "mk09-v1",
+  "created_at": "2026-11-03",
+  "product": "PAID-01",
+  "document": "MK09-paid-sales-checkout-delivery-spec-v1.md",
+  "implementation_status": "DESIGN_ONLY",
+  "sales_enabled": false,
+  "payment_enabled": false,
+  "real_customer_data_used": false,
+  "gate": {
+    "G1_free": "NO_GO",
+    "G2_paid": "NO_GO",
+    "G2_C": "BLOCKED",
+    "G2_S": "BLOCKED",
+    "G2_L": "BLOCKED",
+    "G2_D": "BLOCKED",
+    "policy": "all_G2_C_S_L_D_pass_with_evidence_and_responsible_approval_before_any_sale"
+  },
+  "facts": {
+    "calendar_personalized_ready": false,
+    "annual_story_real_people_ready": false,
+    "checkout_implemented": false,
+    "operator_verified": false,
+    "legal_documents_finalized": false,
+    "processor_selected": false,
+    "private_pdf_delivery_implemented": false,
+    "commercial_price_confirmed": false,
+    "delivery_term_confirmed": false
+  },
+  "price": {
+    "status": "UNDECIDED",
+    "MK04_test_assumptions_JPY": [
+      1980,
+      2980,
+      3980
+    ],
+    "production_price_JPY": null,
+    "charged_tax_and_extras": null,
+    "refund_policy": null
+  },
+  "official_sources": [
+    {
+      "category": "legal",
+      "org": "Consumer Affairs Agency",
+      "topic": "Mail order sale and final confirmation",
+      "url": "https://www.no-trouble.caa.go.jp/what/mailorder/"
+    },
+    {
+      "category": "privacy",
+      "org": "Personal Information Protection Commission",
+      "topic": "General privacy guidance",
+      "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/"
+    },
+    {
+      "category": "privacy",
+      "org": "Personal Information Protection Commission",
+      "topic": "Foreign third-party transfers",
+      "url": "https://www.ppc.go.jp/personalinfo/legal/guidelines_offshore/"
+    },
+    {
+      "category": "provider_guidance",
+      "org": "Stripe",
+      "topic": "Checkout events and fulfillment",
+      "url": "https://docs.stripe.com/payments/existing-customers?platform=web&ui=stripe-hosted"
+    },
+    {
+      "category": "provider_guidance",
+      "org": "Stripe",
+      "topic": "Webhook signature",
+      "url": "https://docs.stripe.com/webhooks"
+    },
+    {
+      "category": "provider_guidance",
+      "org": "Stripe",
+      "topic": "Idempotency",
+      "url": "https://docs.stripe.com/api/idempotent_requests"
+    },
+    {
+      "category": "security",
+      "org": "OWASP",
+      "topic": "Insecure Direct Object Reference Prevention",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html"
+    }
+  ],
+  "screens": [
+    {
+      "id": "P00",
+      "name": "paid_landing",
+      "requirements": [
+        "actual_product_contents",
+        "non_guarantee",
+        "sample_fictional",
+        "costs_delivery_returns_seller",
+        "terms_privacy_contact"
+      ],
+      "sale_cta_enabled": false
+    },
+    {
+      "id": "P01",
+      "name": "calendar_eligibility_description",
+      "requirements": [
+        "range",
+        "time_boundary",
+        "birth_place_time_requirements",
+        "data_use_notice"
+      ],
+      "sale_cta_enabled": false
+    },
+    {
+      "id": "P02",
+      "name": "minimum_birth_input",
+      "requirements": [
+        "data_minimization",
+        "unsupported_blocks_before_payment",
+        "privacy_notice"
+      ],
+      "sale_cta_enabled": false
+    },
+    {
+      "id": "P03",
+      "name": "candidate_year_lock",
+      "requirements": [
+        "validated_calendar_method",
+        "rule_ids",
+        "source_refs",
+        "freeze_before_user_reflection"
+      ],
+      "sale_cta_enabled": false
+    },
+    {
+      "id": "P04",
+      "name": "optional_reflection",
+      "requirements": [
+        "accept_disagree",
+        "accept_dont_know",
+        "accept_no_answer",
+        "do_not_mutate_selected_years"
+      ],
+      "sale_cta_enabled": false
+    },
+    {
+      "id": "P05",
+      "name": "final_order_confirmation_checkout",
+      "requirements": [
+        "legal_seller",
+        "product_quantity",
+        "tax_inclusive_total",
+        "payment_method_timing",
+        "fulfillment_time",
+        "cancellation_refund",
+        "deadline_if_any",
+        "back_edit"
+      ],
+      "sale_cta_enabled": false
+    },
+    {
+      "id": "P06",
+      "name": "private_PDF_fulfillment",
+      "requirements": [
+        "payment_verified",
+        "QA_approved",
+        "resource_authorization",
+        "copyable_Japanese_text",
+        "private_storage"
+      ],
+      "sale_cta_enabled": false
+    },
+    {
+      "id": "P07",
+      "name": "aftercare",
+      "requirements": [
+        "support",
+        "download_reissue",
+        "refunds",
+        "corrective_reading",
+        "privacy_requests"
+      ],
+      "sale_cta_enabled": false
+    }
+  ],
+  "ctas": [
+    {
+      "id": "CTA-P00",
+      "label": "対応条件を確認して申し込む",
+      "from": "P00",
+      "to": "P01",
+      "enable_condition": "G2_C_S_L_D_ALL_APPROVED_AND_ORDER_TERMS_FINAL",
+      "enabled": false
+    },
+    {
+      "id": "CTA-P01",
+      "label": "対象条件を確認する",
+      "from": "P01",
+      "to": "P02",
+      "enable_condition": "privacy_notice_and_calendar_support_approved",
+      "enabled": false
+    },
+    {
+      "id": "CTA-P02",
+      "label": "入力を確認する",
+      "from": "P02",
+      "to": "P03",
+      "enable_condition": "eligibility_supported_and_birth_data_valid",
+      "enabled": false
+    },
+    {
+      "id": "CTA-P03",
+      "label": "内容を照合する",
+      "from": "P03",
+      "to": "P04",
+      "enable_condition": "candidate_years_locked_and_evidence_complete",
+      "enabled": false
+    },
+    {
+      "id": "CTA-P04",
+      "label": "注文内容を確認する",
+      "from": "P04",
+      "to": "P05",
+      "enable_condition": "service_deliverable_and_terms_approved",
+      "enabled": false
+    },
+    {
+      "id": "CTA-P05",
+      "label": "内容を確認して購入を確定する",
+      "from": "P05",
+      "to": "payment_provider",
+      "enable_condition": "G2_all_approved_and_final_check_visible",
+      "enabled": false
+    },
+    {
+      "id": "CTA-P06",
+      "label": "鑑定書を受け取る",
+      "from": "P06",
+      "to": "authorized_download",
+      "enable_condition": "owner_verified_and_approved_document_ready",
+      "enabled": false
+    },
+    {
+      "id": "CTA-P07",
+      "label": "再取得・お問い合わせ",
+      "from": "P07",
+      "to": "private_support",
+      "enable_condition": "real_support_ready",
+      "enabled": false
+    }
+  ],
+  "sample": {
+    "status": "NOT_CREATED",
+    "format_candidate": "searchable_Japanese_PDF",
+    "body_length_approx": "1500-2000_Editorial_target_not_guarantee",
+    "chapter_ids": [
+      "cover",
+      "how_to_read",
+      "prologue",
+      "past_candidate_1_if_evidenced",
+      "past_candidate_2_if_evidenced",
+      "present",
+      "future_if_calculated",
+      "closing",
+      "calculation_and_interpretation_notes"
+    ],
+    "fictional_example_only": true,
+    "real_dates_for_unverified_calendar": false,
+    "real_clients_or_testimonials": false,
+    "cannot_be_displayed_as_real_customer_result": true
+  },
+  "independent_state_machines": {
+    "eligibility": [
+      "draft",
+      "eligibility_checking",
+      "eligible",
+      "ineligible",
+      "manual_review",
+      "checkout_ready",
+      "payment_pending",
+      "accepted",
+      "cancelled"
+    ],
+    "payment": [
+      "not_initiated",
+      "pending",
+      "paid",
+      "failed",
+      "expired",
+      "cancelled",
+      "manual_review",
+      "refund_pending",
+      "partially_refunded",
+      "refunded",
+      "refund_failed"
+    ],
+    "fulfillment": [
+      "not_started",
+      "queued",
+      "generating",
+      "generation_failed",
+      "qa_pending",
+      "qa_rejected",
+      "approved",
+      "ready_for_delivery",
+      "delivered",
+      "delivery_failed",
+      "closed"
+    ]
+  },
+  "state_invariants": [
+    "ineligible_or_manual_review_never_checkout",
+    "unverified_payment_never_enqueue_fulfillment",
+    "browser_redirect_never_confirms_payment",
+    "payment_events_verify_signature_amount_currency_order",
+    "provider_webhook_events_idempotent_with_unique_event_or_transaction_key",
+    "do_not_issue_multiple_payment_sessions_without_order_state_check",
+    "only_paid_orders_may_create_a_reading_job",
+    "candidate_years_locked_before_reflection_and_not_modified_by_reflection",
+    "QA_fail_never_delivers_PDF",
+    "delivery_state_not_automatically_done_when_email_send_succeeds",
+    "cross_customer_object_access_denied_server_side_every_request",
+    "expired_revoked_or_consumed_token_never_delivers",
+    "refund_must_match_provider_state_and_never_run_twice",
+    "PAID_purchase_never_implies_MK07_marketing_optin",
+    "no_payment_or_customer_information_in_MK08_public_events"
+  ],
+  "private_data_contract": [
+    {
+      "table": "orders",
+      "columns": [
+        "order_id",
+        "product_id",
+        "terms_snapshot_version",
+        "amount_total_yen",
+        "currency",
+        "eligibility_status",
+        "payment_status",
+        "fulfillment_status",
+        "contact_ref",
+        "provider_payment_ref",
+        "created_at",
+        "updated_at"
+      ],
+      "scope": "restricted_commerce"
+    },
+    {
+      "table": "reading_jobs",
+      "columns": [
+        "job_id",
+        "order_id",
+        "calendar_method_version",
+        "evidence_refs",
+        "candidate_years_locked_at",
+        "reflection_status",
+        "render_version",
+        "qa_status",
+        "artifact_ref"
+      ],
+      "scope": "restricted_sensitive_reading"
+    },
+    {
+      "table": "payment_events",
+      "columns": [
+        "provider_event_id_unique",
+        "order_id",
+        "signature_verified",
+        "event_type",
+        "received_at",
+        "processed_at",
+        "outcome"
+      ],
+      "scope": "restricted_payments"
+    },
+    {
+      "table": "delivery_grants",
+      "columns": [
+        "grant_id",
+        "order_id",
+        "artifact_ref",
+        "token_digest",
+        "expires_at",
+        "max_uses",
+        "used_count",
+        "revoked_at"
+      ],
+      "scope": "restricted_download_authorization"
+    },
+    {
+      "table": "refund_requests",
+      "columns": [
+        "request_id",
+        "order_id",
+        "reason_bucket",
+        "legal_review_status",
+        "provider_refund_ref",
+        "amount_yen",
+        "state"
+      ],
+      "scope": "restricted_refund"
+    },
+    {
+      "table": "support_tickets",
+      "columns": [
+        "ticket_id",
+        "order_id",
+        "case_type",
+        "customer_verified",
+        "state",
+        "owner_role",
+        "decision_ref"
+      ],
+      "scope": "restricted_support"
+    },
+    {
+      "table": "order_audit",
+      "columns": [
+        "event_id",
+        "order_id",
+        "actor_role",
+        "action",
+        "old_status",
+        "new_status",
+        "timestamp",
+        "evidence_ref"
+      ],
+      "scope": "restricted_immutable_audit"
+    }
+  ],
+  "privacy_and_security": {
+    "safe_storage": "nonpublic_access_controlled_object_store",
+    "access_rule": "owner_and_object_authorized_per_request_not_uuid_only",
+    "download_token": "short_lived_revocable_single_or_low_use_digest_only_specific_duration_NOT_DECIDED",
+    "metadata_and_logs": "no_birthdate_consultation_data_token_plaintext_in_filenames_analytics_logs",
+    "integrations": "processor_AI_PDF_vendor_hosting_and_foreign_transfer_not_selected_or_approved",
+    "security": [
+      "admin_MFA",
+      "TLS",
+      "server_side_authorization",
+      "encrypted_sensitive_data",
+      "key_rotation",
+      "secret_manager",
+      "webhook_signature",
+      "idempotent_order_processing",
+      "no_public_PDF_bucket",
+      "backup_deletion_reconciliation"
+    ],
+    "marketing": "purchase_Does_not_authorize_marketing_email",
+    "analytics": "only_server_confirmed_aggregate_purchase_and_refund_events_after_G2"
+  },
+  "incidents": [
+    {
+      "id": "ST02",
+      "trigger": "calendar_or_years_unverified",
+      "stop": "paid_orders_fulfillment"
+    },
+    {
+      "id": "ST03",
+      "trigger": "false_claims_or_unapproved_prices",
+      "stop": "product_ads_checkout"
+    },
+    {
+      "id": "ST04",
+      "trigger": "seller_or_final_checkin_or_refund_terms_missing",
+      "stop": "checkout"
+    },
+    {
+      "id": "ST05",
+      "trigger": "data_leak_or_cross_owner_file_access",
+      "stop": "data_collection_download_orders"
+    },
+    {
+      "id": "ST06",
+      "trigger": "duplicate_payments_failed_refunds_or_delivery",
+      "stop": "new_payments_and_fulfillment"
+    },
+    {
+      "id": "ST08",
+      "trigger": "support_inaccessible_or_legal_documents_missing",
+      "stop": "sales"
+    },
+    {
+      "id": "MK09-01",
+      "trigger": "QA_before_delivery_or_double_generation",
+      "stop": "generation_and_delivery"
+    },
+    {
+      "id": "MK09-02",
+      "trigger": "expired_token_reuse_or_token_leak",
+      "stop": "download_and_reissue"
+    }
+  ],
+  "E2E_acceptance_tests": [
+    {
+      "id": "SD01",
+      "title": "P00商品表示・架空サンプル・免責",
+      "expected": "不正確な実装外機能・架空的中・未確定価格を表示せず、販売CTAは隠す",
+      "dependencies": [
+        "MK05",
+        "MK03"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD02",
+      "title": "未対応出生日・時差・暦境界",
+      "expected": "対応外・保留は課金前にブロック",
+      "dependencies": [
+        "M06",
+        "N01"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD03",
+      "title": "固定候補年と本人の非同意回答",
+      "expected": "候補年とrule_idは回答後も不変、回答しない許可",
+      "dependencies": [
+        "N05"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD04",
+      "title": "P05の最終確認・戻る操作",
+      "expected": "商品、数量、総額、支払、納品、解除、期限を読め訂正できる",
+      "dependencies": [
+        "MK05"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD05",
+      "title": "ブラウザから金額・通貨・商品を書換",
+      "expected": "サーバ指定額以外で決済セッション作成不可",
+      "dependencies": [
+        "MK04",
+        "MK05"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD06",
+      "title": "サンクスページだけ強制表示",
+      "expected": "サーバ決済確定なしで制作・納品しない",
+      "dependencies": [
+        "payment_provider"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD07",
+      "title": "有効決済Webhook",
+      "expected": "署名・金額JPY・注文・確定を検証し一度だけpaid",
+      "dependencies": [
+        "payment_provider"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD08",
+      "title": "署名偽造・順不同・Webhook再送",
+      "expected": "偽イベント拒否、重複した作成・納品・返金なし",
+      "dependencies": [
+        "payment_provider"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD09",
+      "title": "決済pending/failed/cancelled/expired",
+      "expected": "未入金の制作・納品なし、状況を誤表示しない",
+      "dependencies": [
+        "payment_provider"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD10",
+      "title": "同一注文への生成ジョブ再送",
+      "expected": "二重作成・二重メール・二重PDF納品なし",
+      "dependencies": [
+        "N05",
+        "reading_worker"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD11",
+      "title": "暦エビデンス欠損やLLMによる根拠外年",
+      "expected": "qa_rejectedで配信停止し訂正経路へ",
+      "dependencies": [
+        "M06",
+        "N01",
+        "N05"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD12",
+      "title": "架空データPDFの別端末表示",
+      "expected": "文字選択・検索・日本語・見出し・スマホ表示を検査",
+      "dependencies": [
+        "pdf_renderer"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD13",
+      "title": "顧客Aで顧客BのPDFと注文を参照",
+      "expected": "全アクセスをサーバ権限で拒否",
+      "dependencies": [
+        "authz"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD14",
+      "title": "ダウンロードリンク期限切れ/改ざん",
+      "expected": "無効トークン拒否、ログ・UTMへトークン漏れなし",
+      "dependencies": [
+        "delivery"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD15",
+      "title": "本人がPDF再取得",
+      "expected": "注文者確認、新しい短命リンク、失効制御",
+      "dependencies": [
+        "delivery"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD16",
+      "title": "通知・ダウンロード障害",
+      "expected": "納品済み偽装なし、再提供とサポートに接続",
+      "dependencies": [
+        "delivery"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD17",
+      "title": "取消・全額/一部返金・繰り返し操作",
+      "expected": "契約に従い状態・金額を照合、二重返金なし",
+      "dependencies": [
+        "legal",
+        "payment_provider"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD18",
+      "title": "取引・納品について問い合わせ",
+      "expected": "本人確認、非公開チケット、進捗と対応履歴が残る",
+      "dependencies": [
+        "support"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD19",
+      "title": "誤配送・個人情報漏えい・鍵失効訓練",
+      "expected": "停止、影響把握、通知/報告判定、再承認",
+      "dependencies": [
+        "MK05"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD20",
+      "title": "無料診断・CRMの分離",
+      "expected": "購入者を販促リードへ自動追加せず回答・出生を分析へ送らない",
+      "dependencies": [
+        "MK07",
+        "MK08"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD21",
+      "title": "権限/鍵/ログ/バックアップ復元",
+      "expected": "MFAと機密保護、復元後の削除・リンク無効を保つ",
+      "dependencies": [
+        "security"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    },
+    {
+      "id": "SD22",
+      "title": "G2-C/S/L/Dの証跡評価",
+      "expected": "未完条件1つでも販売不可、最終承認記録が必須",
+      "dependencies": [
+        "M12",
+        "MK05"
+      ],
+      "status": "BLOCKED",
+      "run_at": null,
+      "environment": null,
+      "actual": null,
+      "evidence_ref": null,
+      "reviewer": null,
+      "approval": null
+    }
+  ],
+  "test_status_summary": {
+    "all_blocked": true,
+    "tests_count": 22,
+    "passed": 0,
+    "run_count": 0
+  },
+  "next_marketing_task": "MK10",
+  "dependencies": [
+    "G2_C_calendar_M06_N01_N05",
+    "G2_S_editorial_human_review",
+    "G2_L_MK05_contract_and_payment",
+    "G2_D_security_privacy_delivery",
+    "M12_release_owner_approval"
+  ]
+}
