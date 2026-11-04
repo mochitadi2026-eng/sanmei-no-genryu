@@ -1,0 +1,1160 @@
+{
+  "schema_version": "0.1.0",
+  "resource_id": "mochimochi-symbol-trait-library",
+  "record_status": "research_candidates_unapproved",
+  "created_on": "2026-11-04",
+  "language": "ja-JP",
+  "purpose": "もちもち占術における象意の検討・キャラ設定の候補保管。自動人格判定や正式キャラ表示の根拠としては使わない。",
+  "interpretation_notice": "現代の干支占い・算命学の説明で流通する象意を編集した候補であり、個人の性格を実証・保証するものではない。一般の年支占いに基づく言葉を日支の検証済み特性とみなさない。",
+  "approved_visual_layers": {
+    "five_elements": "餅の素材・生地（具体名未確定）",
+    "twelve_branches": "もちの種類・動物本体（既存12画像正式採用・修正不要）",
+    "ten_main_stars": "メイン具材（具体割当未確定）",
+    "twelve_follower_stars": "器・食器（具体割当未確定）"
+  },
+  "classification_rule": "日支12×日干五行5＝出生固定60分類。十干は追加の視覚層ではない。",
+  "source_documents": {
+    "zodiac": "../24-b04-03-zodiac-traits-research-inventory-2026-11-04.md",
+    "elements_stems_stars": "../25-b04-03-other-elements-trait-inventory-2026-11-04.md",
+    "existing_symbol_mapping": "../m02-core-symbols-v0.1.json",
+    "existing_guides": "../m10-character-catalog-v0.1.json"
+  },
+  "sets": {
+    "zodiac": [
+      {
+        "id": "BC01",
+        "branch": "子",
+        "animal": "ねずみ",
+        "branch_element": "水",
+        "branch_polarity": "陽",
+        "season_symbol": "冬・旧暦11月",
+        "traditional_double_hour": "23–01時",
+        "strengths": [
+          "機転",
+          "観察力",
+          "情報収集",
+          "習得力",
+          "適応力",
+          "社交性",
+          "計画性",
+          "倹約",
+          "細部への注意",
+          "問題解決力"
+        ],
+        "weaknesses": [
+          "心配性",
+          "落ち着きのなさ",
+          "警戒心",
+          "計算高さ",
+          "先回りしすぎ",
+          "変化への不安",
+          "好き嫌いの強さ"
+        ],
+        "behavior_summary": "情報を集め、要点を見極めてから小回りよく動く",
+        "relationship_summary": "人とつながる一方、自分の安全や損得にも敏感と語られる",
+        "additional_symbolism": "知恵と行動の結びつき、新しい始まりの象意",
+        "creative_motif": "小さな動き・発見・備え"
+      },
+      {
+        "id": "BC02",
+        "branch": "丑",
+        "animal": "うし",
+        "branch_element": "土",
+        "branch_polarity": "陰",
+        "season_symbol": "冬・旧暦12月",
+        "traditional_double_hour": "01–03時",
+        "strengths": [
+          "忍耐力",
+          "継続力",
+          "誠実",
+          "堅実",
+          "計画性",
+          "慎重",
+          "責任感",
+          "意志の強さ",
+          "研究熱心",
+          "粘り強さ"
+        ],
+        "weaknesses": [
+          "頑固",
+          "融通の利きにくさ",
+          "切り替えの遅さ",
+          "好き嫌いの強さ",
+          "ため込み",
+          "自分のやり方への固執",
+          "動き出しの遅さ"
+        ],
+        "behavior_summary": "自分が納得するまで考え、時間をかけて確実に進める",
+        "relationship_summary": "信頼は厚いが、外からの助言をすぐには受け入れない像",
+        "additional_symbolism": "外面の柔らかさと内面の強情さ、慎重な歩みが同居",
+        "creative_motif": "持久・積み重ね・揺るがなさ"
+      },
+      {
+        "id": "BC03",
+        "branch": "寅",
+        "animal": "とら",
+        "branch_element": "木",
+        "branch_polarity": "陽",
+        "season_symbol": "春・旧暦1月",
+        "traditional_double_hour": "03–05時",
+        "strengths": [
+          "勇気",
+          "決断力",
+          "行動力",
+          "挑戦心",
+          "独立心",
+          "リーダー性",
+          "正義感",
+          "観察力",
+          "洞察力",
+          "率直さ"
+        ],
+        "weaknesses": [
+          "負けず嫌い",
+          "短気",
+          "独断",
+          "反抗心",
+          "自尊心の強さ",
+          "協調の難しさ",
+          "勢いの空回り"
+        ],
+        "behavior_summary": "迷ったら前進、必要なら自分で決めて責任を取る",
+        "relationship_summary": "先頭に立ちやすい一方、周囲と歩調を合わせるのが苦手な像",
+        "additional_symbolism": "独立進取・守りの固さ・物事の開始・観察に重点",
+        "creative_motif": "先陣・守備・突破"
+      },
+      {
+        "id": "BC04",
+        "branch": "卯",
+        "animal": "うさぎ",
+        "branch_element": "木",
+        "branch_polarity": "陰",
+        "season_symbol": "春・旧暦2月",
+        "traditional_double_hour": "05–07時",
+        "strengths": [
+          "温厚",
+          "愛嬌",
+          "協調性",
+          "気配り",
+          "社交性",
+          "平和志向",
+          "調整力",
+          "柔軟さ",
+          "対話力",
+          "内に秘めた粘り"
+        ],
+        "weaknesses": [
+          "傷つきやすさ",
+          "遠慮",
+          "優柔不断",
+          "気分の揺れ",
+          "保身",
+          "神経質",
+          "居心地への執着"
+        ],
+        "behavior_summary": "人や場の空気を見て、衝突を避けながら動く",
+        "relationship_summary": "外面はやわらかいが、内面は意外と折れないという二面性",
+        "additional_symbolism": "協調・協和・組織化と、外柔内剛の粘り強さが特徴",
+        "creative_motif": "調和・気配り・しなやかさ"
+      },
+      {
+        "id": "BC05",
+        "branch": "辰",
+        "animal": "たつ",
+        "branch_element": "土",
+        "branch_polarity": "陽",
+        "season_symbol": "春・旧暦3月",
+        "traditional_double_hour": "07–09時",
+        "strengths": [
+          "理想",
+          "大志",
+          "発想力",
+          "情熱",
+          "存在感",
+          "向上心",
+          "行動力",
+          "独創性",
+          "信念",
+          "飛躍志向"
+        ],
+        "weaknesses": [
+          "プライド",
+          "負けず嫌い",
+          "気の短さ",
+          "自己中心的に見える",
+          "熱しやすく冷めやすい",
+          "現実との落差",
+          "内面の葛藤"
+        ],
+        "behavior_summary": "目先より大きな構想や意義に心が動く",
+        "relationship_summary": "周りを引きつける一方、内外のギャップが表れやすい像",
+        "additional_symbolism": "内と外の不均衡・葛藤、時勢を得た飛躍の象意",
+        "creative_motif": "変転・理想・大きな景色"
+      },
+      {
+        "id": "BC06",
+        "branch": "巳",
+        "animal": "へび",
+        "branch_element": "火",
+        "branch_polarity": "陰",
+        "season_symbol": "夏・旧暦4月",
+        "traditional_double_hour": "09–11時",
+        "strengths": [
+          "洞察力",
+          "分析力",
+          "探究心",
+          "集中力",
+          "慎重さ",
+          "知性",
+          "美意識",
+          "感性",
+          "表現力",
+          "継続力"
+        ],
+        "weaknesses": [
+          "警戒心",
+          "疑い深さ",
+          "嫉妬",
+          "執着",
+          "秘密主義",
+          "距離を取りすぎる",
+          "考えすぎ"
+        ],
+        "behavior_summary": "表面に飛びつかず、仕組みや背景を深く考える",
+        "relationship_summary": "静かで近寄りにくく見えても、内側には熱量があるという像",
+        "additional_symbolism": "感性と理性・芸術表現・孤高、内面と外面の対照",
+        "creative_motif": "洞察・深掘り・静かな熱"
+      },
+      {
+        "id": "BC07",
+        "branch": "午",
+        "animal": "うま",
+        "branch_element": "火",
+        "branch_polarity": "陽",
+        "season_symbol": "夏・旧暦5月",
+        "traditional_double_hour": "11–13時",
+        "strengths": [
+          "陽気",
+          "行動力",
+          "情熱",
+          "自由志向",
+          "社交性",
+          "積極性",
+          "率直さ",
+          "大胆さ",
+          "スピード",
+          "先導力"
+        ],
+        "weaknesses": [
+          "せっかち",
+          "短気",
+          "飽きっぽさ",
+          "衝動性",
+          "熱しやすく冷めやすい",
+          "派手好み",
+          "持続の苦手さ"
+        ],
+        "behavior_summary": "まず動いて経験し、そこで考えを更新する",
+        "relationship_summary": "明るく開放的で人を集めるが、束縛を嫌う像",
+        "additional_symbolism": "真夏の烈火、直情径行、豪放さと開放性",
+        "creative_motif": "疾走・解放・熱気"
+      },
+      {
+        "id": "BC08",
+        "branch": "未",
+        "animal": "ひつじ",
+        "branch_element": "土",
+        "branch_polarity": "陰",
+        "season_symbol": "夏・旧暦6月",
+        "traditional_double_hour": "13–15時",
+        "strengths": [
+          "温和",
+          "思いやり",
+          "協調性",
+          "共感性",
+          "品のよさ",
+          "芸術性",
+          "美意識",
+          "家族や仲間への愛",
+          "忍耐",
+          "芯の強さ"
+        ],
+        "weaknesses": [
+          "遠慮",
+          "優柔不断",
+          "心配性",
+          "慎重すぎる",
+          "自己主張の弱さ",
+          "内に隠した頑固さ",
+          "新しい環境への警戒"
+        ],
+        "behavior_summary": "安心できる関係を優先し、納得するまで見守る",
+        "relationship_summary": "柔和に見えて内心は強く粘る、という二面性がある",
+        "additional_symbolism": "忍耐と剛情、豊穣を待つような粘り強さが重視される",
+        "creative_motif": "安心・身内・静かな頑固"
+      },
+      {
+        "id": "BC09",
+        "branch": "申",
+        "animal": "さる",
+        "branch_element": "金",
+        "branch_polarity": "陽",
+        "season_symbol": "秋・旧暦7月",
+        "traditional_double_hour": "15–17時",
+        "strengths": [
+          "器用",
+          "機転",
+          "知恵",
+          "好奇心",
+          "柔軟な発想",
+          "適応力",
+          "社交性",
+          "ユーモア",
+          "機敏さ",
+          "突破力"
+        ],
+        "weaknesses": [
+          "飽きっぽさ",
+          "落ち着きのなさ",
+          "短慮",
+          "調子に乗る",
+          "計算高さ",
+          "浅く広くなりがち",
+          "継続が苦手"
+        ],
+        "behavior_summary": "その場で発想を切り替え、使える方法を探す",
+        "relationship_summary": "場を明るくする半面、真剣さを誤解されることもある像",
+        "additional_symbolism": "動乱の中での前進・勇猛果敢さ、短慮の危うさ",
+        "creative_motif": "機転・遊び・転換"
+      },
+      {
+        "id": "BC10",
+        "branch": "酉",
+        "animal": "にわとり",
+        "branch_element": "金",
+        "branch_polarity": "陰",
+        "season_symbol": "秋・旧暦8月",
+        "traditional_double_hour": "17–19時",
+        "strengths": [
+          "几帳面",
+          "段取り",
+          "観察力",
+          "責任感",
+          "勤勉",
+          "美意識",
+          "手際のよさ",
+          "完璧を求める姿勢",
+          "表現力",
+          "気配り"
+        ],
+        "weaknesses": [
+          "完璧主義",
+          "批判的",
+          "こだわりの強さ",
+          "見栄",
+          "自己主張の強さ",
+          "せっかち",
+          "気持ちの切り替えの難しさ"
+        ],
+        "behavior_summary": "細部を整え、きちんとした形で成果を出したい",
+        "relationship_summary": "外側は礼儀正しく、内面は率直で熱いという像",
+        "additional_symbolism": "外面の品位と内面の直情、誇り・名誉を重んじる性情",
+        "creative_motif": "整える・仕上げる・告げる"
+      },
+      {
+        "id": "BC11",
+        "branch": "戌",
+        "animal": "いぬ",
+        "branch_element": "土",
+        "branch_polarity": "陽",
+        "season_symbol": "秋・旧暦9月",
+        "traditional_double_hour": "19–21時",
+        "strengths": [
+          "誠実",
+          "忠実",
+          "義理堅さ",
+          "責任感",
+          "正直",
+          "正義感",
+          "献身",
+          "信頼重視",
+          "忍耐",
+          "仲間意識"
+        ],
+        "weaknesses": [
+          "頑固",
+          "融通の利きにくさ",
+          "思い詰める",
+          "頑なな正義感",
+          "自己犠牲",
+          "疑い深さ",
+          "言い訳下手"
+        ],
+        "behavior_summary": "約束を守り、信頼できる基準に沿って判断する",
+        "relationship_summary": "親しい相手を支えるが、身内や信念に固執することもある像",
+        "additional_symbolism": "収蔵・機転・社交・商才の意味もあり、単純な忠犬像とは違う",
+        "creative_motif": "約束・見守り・信義"
+      },
+      {
+        "id": "BC12",
+        "branch": "亥",
+        "animal": "いのしし",
+        "branch_element": "水",
+        "branch_polarity": "陰",
+        "season_symbol": "冬・旧暦10月",
+        "traditional_double_hour": "21–23時",
+        "strengths": [
+          "勇気",
+          "情熱",
+          "まっすぐさ",
+          "強い意志",
+          "行動力",
+          "忍耐",
+          "正義感",
+          "誠実さ",
+          "知恵",
+          "工夫",
+          "家族思い"
+        ],
+        "weaknesses": [
+          "猪突猛進",
+          "早合点",
+          "頑固",
+          "独断",
+          "方向転換が苦手",
+          "空回り",
+          "孤独に弱い"
+        ],
+        "behavior_summary": "目標が決まると集中して進み、困難を耐え抜く",
+        "relationship_summary": "勢いが強いが、内側には寂しがりや世話好きの面もある像",
+        "additional_symbolism": "粘り・知恵・企画・工夫、外の明るさと内面の繊細さ",
+        "creative_motif": "突進・達成・純粋さ"
+      }
+    ],
+    "main_stars": [
+      {
+        "id": "MS01",
+        "name": "貫索星",
+        "instinct": "守備",
+        "polarity": "陽",
+        "strengths": [
+          "自立",
+          "信念",
+          "忍耐",
+          "一貫性",
+          "自己防衛",
+          "責任感"
+        ],
+        "weaknesses": [
+          "頑固",
+          "孤立",
+          "変化を嫌う",
+          "頼るのが苦手"
+        ],
+        "existing_educational_guide": "岩亀"
+      },
+      {
+        "id": "MS02",
+        "name": "石門星",
+        "instinct": "守備",
+        "polarity": "陰",
+        "strengths": [
+          "協調",
+          "社交",
+          "交渉",
+          "団結",
+          "調整",
+          "組織力"
+        ],
+        "weaknesses": [
+          "八方美人",
+          "同調しすぎる",
+          "人間関係のしがらみ"
+        ],
+        "existing_educational_guide": "森狐"
+      },
+      {
+        "id": "MS03",
+        "name": "鳳閣星",
+        "instinct": "伝達",
+        "polarity": "陽",
+        "strengths": [
+          "自然体",
+          "素直",
+          "明朗",
+          "観察",
+          "余裕",
+          "楽しさ"
+        ],
+        "weaknesses": [
+          "無頓着",
+          "受け身",
+          "緊張感の不足",
+          "現状維持"
+        ],
+        "existing_educational_guide": "陽猫"
+      },
+      {
+        "id": "MS04",
+        "name": "調舒星",
+        "instinct": "伝達",
+        "polarity": "陰",
+        "strengths": [
+          "繊細",
+          "感性",
+          "独創",
+          "芸術",
+          "洞察",
+          "想像"
+        ],
+        "weaknesses": [
+          "反発",
+          "孤独",
+          "神経質",
+          "完璧主義"
+        ],
+        "existing_educational_guide": "月兎"
+      },
+      {
+        "id": "MS05",
+        "name": "禄存星",
+        "instinct": "引力",
+        "polarity": "陽",
+        "strengths": [
+          "愛情",
+          "奉仕",
+          "包容",
+          "求心力",
+          "信頼",
+          "寛大"
+        ],
+        "weaknesses": [
+          "お節介",
+          "見返りへの期待",
+          "承認欲求",
+          "自己犠牲"
+        ],
+        "existing_educational_guide": "福狸"
+      },
+      {
+        "id": "MS06",
+        "name": "司禄星",
+        "instinct": "引力",
+        "polarity": "陰",
+        "strengths": [
+          "堅実",
+          "蓄積",
+          "家庭愛",
+          "継続",
+          "計画",
+          "安定"
+        ],
+        "weaknesses": [
+          "心配性",
+          "変化への抵抗",
+          "抱え込み",
+          "執着"
+        ],
+        "existing_educational_guide": "実り栗鼠"
+      },
+      {
+        "id": "MS07",
+        "name": "車騎星",
+        "instinct": "攻撃",
+        "polarity": "陽",
+        "strengths": [
+          "行動力",
+          "勇気",
+          "正義感",
+          "競争",
+          "決断",
+          "率直"
+        ],
+        "weaknesses": [
+          "短気",
+          "衝動",
+          "攻撃的",
+          "せっかち"
+        ],
+        "existing_educational_guide": "風虎"
+      },
+      {
+        "id": "MS08",
+        "name": "牽牛星",
+        "instinct": "攻撃",
+        "polarity": "陰",
+        "strengths": [
+          "責任",
+          "礼節",
+          "品格",
+          "規律",
+          "組織",
+          "使命感"
+        ],
+        "weaknesses": [
+          "プライド",
+          "体面への執着",
+          "評価への過敏",
+          "形式重視"
+        ],
+        "existing_educational_guide": "銀鶴"
+      },
+      {
+        "id": "MS09",
+        "name": "龍高星",
+        "instinct": "習得",
+        "polarity": "陽",
+        "strengths": [
+          "冒険",
+          "探究",
+          "改革",
+          "体験学習",
+          "適応",
+          "創造"
+        ],
+        "weaknesses": [
+          "反骨",
+          "飽きっぽい",
+          "放浪",
+          "落ち着かない"
+        ],
+        "existing_educational_guide": "旅龍"
+      },
+      {
+        "id": "MS10",
+        "name": "玉堂星",
+        "instinct": "習得",
+        "polarity": "陰",
+        "strengths": [
+          "知性",
+          "分析",
+          "伝統",
+          "教育",
+          "理解",
+          "思慮"
+        ],
+        "weaknesses": [
+          "理屈っぽい",
+          "保守的",
+          "前例重視",
+          "行動が遅い"
+        ],
+        "existing_educational_guide": "知恵蛇"
+      }
+    ],
+    "follower_stars": [
+      {
+        "id": "FS01",
+        "name": "天報星",
+        "stage_symbol": "胎",
+        "traditional_energy_points": 3,
+        "strengths": [
+          "多才",
+          "柔軟",
+          "変化",
+          "ひらめき",
+          "可能性"
+        ],
+        "weaknesses": [
+          "気まぐれ",
+          "多方面に散る",
+          "継続が苦手"
+        ],
+        "existing_educational_shikigami": "ぽぽ"
+      },
+      {
+        "id": "FS02",
+        "name": "天印星",
+        "stage_symbol": "養",
+        "traditional_energy_points": 6,
+        "strengths": [
+          "無邪気",
+          "愛嬌",
+          "純粋",
+          "受容",
+          "自然な社交"
+        ],
+        "weaknesses": [
+          "受け身",
+          "依存",
+          "無自覚"
+        ],
+        "existing_educational_shikigami": "ころ"
+      },
+      {
+        "id": "FS03",
+        "name": "天貴星",
+        "stage_symbol": "長生",
+        "traditional_energy_points": 9,
+        "strengths": [
+          "吸収力",
+          "好奇心",
+          "勉強",
+          "礼儀",
+          "自尊心"
+        ],
+        "weaknesses": [
+          "強がり",
+          "背伸び",
+          "プライド",
+          "傷つきやすい"
+        ],
+        "existing_educational_shikigami": "きき"
+      },
+      {
+        "id": "FS04",
+        "name": "天恍星",
+        "stage_symbol": "沐浴",
+        "traditional_energy_points": 7,
+        "strengths": [
+          "夢",
+          "憧れ",
+          "自由",
+          "華やかさ",
+          "冒険"
+        ],
+        "weaknesses": [
+          "浮つき",
+          "反抗",
+          "理想と現実のずれ"
+        ],
+        "existing_educational_shikigami": "きらり"
+      },
+      {
+        "id": "FS05",
+        "name": "天南星",
+        "stage_symbol": "冠帯",
+        "traditional_energy_points": 10,
+        "strengths": [
+          "情熱",
+          "突破",
+          "挑戦",
+          "反骨",
+          "目的意識"
+        ],
+        "weaknesses": [
+          "無鉄砲",
+          "批判的",
+          "経験不足"
+        ],
+        "existing_educational_shikigami": "いぶき"
+      },
+      {
+        "id": "FS06",
+        "name": "天禄星",
+        "stage_symbol": "臨官",
+        "traditional_energy_points": 11,
+        "strengths": [
+          "安定",
+          "観察",
+          "実務",
+          "責任",
+          "堅実"
+        ],
+        "weaknesses": [
+          "用心深すぎる",
+          "変化を嫌う",
+          "重圧"
+        ],
+        "existing_educational_shikigami": "こつぶ"
+      },
+      {
+        "id": "FS07",
+        "name": "天将星",
+        "stage_symbol": "帝旺",
+        "traditional_energy_points": 12,
+        "strengths": [
+          "統率",
+          "自信",
+          "実行",
+          "義理",
+          "主導性"
+        ],
+        "weaknesses": [
+          "支配的",
+          "強引",
+          "自己中心的"
+        ],
+        "existing_educational_shikigami": "たいが"
+      },
+      {
+        "id": "FS08",
+        "name": "天堂星",
+        "stage_symbol": "衰",
+        "traditional_energy_points": 8,
+        "strengths": [
+          "自制",
+          "落ち着き",
+          "知恵",
+          "熟慮",
+          "達観"
+        ],
+        "weaknesses": [
+          "遠慮",
+          "消極的",
+          "引っ込み思案"
+        ],
+        "existing_educational_shikigami": "しずく"
+      },
+      {
+        "id": "FS09",
+        "name": "天胡星",
+        "stage_symbol": "病",
+        "traditional_energy_points": 4,
+        "strengths": [
+          "感受性",
+          "直感",
+          "空想",
+          "美意識",
+          "芸術"
+        ],
+        "weaknesses": [
+          "現実逃避",
+          "感情の揺れ",
+          "繊細すぎる"
+        ],
+        "existing_educational_shikigami": "ゆめ"
+      },
+      {
+        "id": "FS10",
+        "name": "天極星",
+        "stage_symbol": "死",
+        "traditional_energy_points": 2,
+        "strengths": [
+          "純粋",
+          "柔軟",
+          "自由",
+          "探究",
+          "独自の発想"
+        ],
+        "weaknesses": [
+          "流されやすさ",
+          "現実感の薄さ"
+        ],
+        "existing_educational_shikigami": "ふわり"
+      },
+      {
+        "id": "FS11",
+        "name": "天庫星",
+        "stage_symbol": "墓",
+        "traditional_energy_points": 5,
+        "strengths": [
+          "探究",
+          "専門性",
+          "集中",
+          "継承",
+          "記憶"
+        ],
+        "weaknesses": [
+          "執着",
+          "頑固",
+          "視野が狭まる"
+        ],
+        "existing_educational_shikigami": "くるり"
+      },
+      {
+        "id": "FS12",
+        "name": "天馳星",
+        "stage_symbol": "絶",
+        "traditional_energy_points": 1,
+        "strengths": [
+          "瞬発力",
+          "機敏",
+          "機転",
+          "冷静",
+          "適応"
+        ],
+        "weaknesses": [
+          "多忙",
+          "落ち着かない",
+          "持続の難しさ"
+        ],
+        "existing_educational_shikigami": "ひゅう"
+      }
+    ],
+    "elements": [
+      {
+        "id": "EL_WOOD",
+        "name": "木",
+        "natural_symbolism": [
+          "成長",
+          "伸長",
+          "発展"
+        ],
+        "strengths": [
+          "向上",
+          "挑戦",
+          "創造",
+          "柔軟"
+        ],
+        "weaknesses": [
+          "焦り",
+          "強引に進める",
+          "頑固"
+        ],
+        "associated_stems": [
+          "甲",
+          "乙"
+        ]
+      },
+      {
+        "id": "EL_FIRE",
+        "name": "火",
+        "natural_symbolism": [
+          "熱",
+          "拡散",
+          "光"
+        ],
+        "strengths": [
+          "情熱",
+          "表現",
+          "活気",
+          "発信"
+        ],
+        "weaknesses": [
+          "短気",
+          "燃え尽き",
+          "衝動"
+        ],
+        "associated_stems": [
+          "丙",
+          "丁"
+        ]
+      },
+      {
+        "id": "EL_EARTH",
+        "name": "土",
+        "natural_symbolism": [
+          "安定",
+          "育成",
+          "受容"
+        ],
+        "strengths": [
+          "継続",
+          "包容",
+          "信頼",
+          "安心"
+        ],
+        "weaknesses": [
+          "抱え込み",
+          "執着",
+          "停滞"
+        ],
+        "associated_stems": [
+          "戊",
+          "己"
+        ]
+      },
+      {
+        "id": "EL_METAL",
+        "name": "金",
+        "natural_symbolism": [
+          "凝縮",
+          "選別",
+          "規律"
+        ],
+        "strengths": [
+          "決断",
+          "整理",
+          "正義感",
+          "洗練"
+        ],
+        "weaknesses": [
+          "批判",
+          "厳格",
+          "完璧主義"
+        ],
+        "associated_stems": [
+          "庚",
+          "辛"
+        ]
+      },
+      {
+        "id": "EL_WATER",
+        "name": "水",
+        "natural_symbolism": [
+          "流動",
+          "浸透",
+          "循環"
+        ],
+        "strengths": [
+          "知性",
+          "適応",
+          "洞察",
+          "探究"
+        ],
+        "weaknesses": [
+          "考えすぎ",
+          "迷い",
+          "不安"
+        ],
+        "associated_stems": [
+          "壬",
+          "癸"
+        ]
+      }
+    ],
+    "stems": [
+      {
+        "name": "甲",
+        "element": "木",
+        "polarity": "陽",
+        "nature_symbol": "大樹",
+        "strengths": [
+          "信念",
+          "成長",
+          "自立",
+          "忍耐"
+        ],
+        "weaknesses": [
+          "頑固",
+          "折れにくさ"
+        ]
+      },
+      {
+        "name": "乙",
+        "element": "木",
+        "polarity": "陰",
+        "nature_symbol": "草花",
+        "strengths": [
+          "柔軟",
+          "調和",
+          "粘り",
+          "再起"
+        ],
+        "weaknesses": [
+          "遠慮",
+          "環境への依存"
+        ]
+      },
+      {
+        "name": "丙",
+        "element": "火",
+        "polarity": "陽",
+        "nature_symbol": "太陽",
+        "strengths": [
+          "明朗",
+          "情熱",
+          "存在感",
+          "開放"
+        ],
+        "weaknesses": [
+          "一方的",
+          "勢いが強すぎる"
+        ]
+      },
+      {
+        "name": "丁",
+        "element": "火",
+        "polarity": "陰",
+        "nature_symbol": "灯火",
+        "strengths": [
+          "繊細",
+          "集中",
+          "洞察",
+          "静かな情熱"
+        ],
+        "weaknesses": [
+          "神経質",
+          "感情の揺れ"
+        ]
+      },
+      {
+        "name": "戊",
+        "element": "土",
+        "polarity": "陽",
+        "nature_symbol": "山岳",
+        "strengths": [
+          "安定",
+          "威厳",
+          "包容",
+          "信頼"
+        ],
+        "weaknesses": [
+          "頑固",
+          "変化への抵抗"
+        ]
+      },
+      {
+        "name": "己",
+        "element": "土",
+        "polarity": "陰",
+        "nature_symbol": "田畑",
+        "strengths": [
+          "育成",
+          "実務",
+          "親切",
+          "協力"
+        ],
+        "weaknesses": [
+          "抱え込み",
+          "心配性"
+        ]
+      },
+      {
+        "name": "庚",
+        "element": "金",
+        "polarity": "陽",
+        "nature_symbol": "鉄・鉱石",
+        "strengths": [
+          "決断",
+          "改革",
+          "鍛錬",
+          "正義"
+        ],
+        "weaknesses": [
+          "強硬",
+          "妥協が苦手"
+        ]
+      },
+      {
+        "name": "辛",
+        "element": "金",
+        "polarity": "陰",
+        "nature_symbol": "宝石",
+        "strengths": [
+          "美意識",
+          "品格",
+          "観察",
+          "洗練"
+        ],
+        "weaknesses": [
+          "完璧主義",
+          "傷つきやすさ"
+        ]
+      },
+      {
+        "name": "壬",
+        "element": "水",
+        "polarity": "陽",
+        "nature_symbol": "海・大河",
+        "strengths": [
+          "自由",
+          "探究",
+          "適応",
+          "知性"
+        ],
+        "weaknesses": [
+          "方向が定まりにくい",
+          "奔放"
+        ]
+      },
+      {
+        "name": "癸",
+        "element": "水",
+        "polarity": "陰",
+        "nature_symbol": "雨・露",
+        "strengths": [
+          "思慮",
+          "浸透",
+          "継続",
+          "柔軟"
+        ],
+        "weaknesses": [
+          "考えすぎ",
+          "受け身"
+        ]
+      }
+    ]
+  }
+}
