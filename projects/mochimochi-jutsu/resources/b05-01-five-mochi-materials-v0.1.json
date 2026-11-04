@@ -1,0 +1,154 @@
+{
+  "schema_version": "0.1.0",
+  "resource_id": "b05-01-five-materials",
+  "created_on": "2026-11-04",
+  "status": "proposal_unapproved",
+  "scope": "five_elements_dough_layer_only",
+  "source_library": "resources/symbol-trait-library-v0.1.json",
+  "approved_layers": {
+    "elements": "material_dough",
+    "zodiac": "original_base_mochi_animal",
+    "main_stars": "unassigned_fillings",
+    "follower_stars": "unassigned_vessels"
+  },
+  "color_notice": "HEX values are provisional illustrated palette choices, not measurements or guaranteed colors of actual food ingredients.",
+  "base_visual_status": "12 zodiac images approved, immutable originals; GitHub binary storage pending",
+  "applies_to": "day_stem_five_element_to_material, day_branch_to_zodiac_character, future 60 combinations only",
+  "not_applied_to": "five_question_type_MT",
+  "compositing_proposal": {
+    "keep_originals_unchanged": true,
+    "derivative_only_after_review": true,
+    "body_mask_only": true,
+    "exclude": [
+      "black_dot_eyes",
+      "cheeks",
+      "animal_patterns",
+      "horns",
+      "beaks",
+      "tongue",
+      "nose",
+      "tails_and_distinctive_marks",
+      "transparent_background"
+    ],
+    "matte_finish": true,
+    "no_extra_objects": true,
+    "body_tint_preview_only": true,
+    "texture_subtle": true,
+    "require_qa_per_element": true
+  },
+  "materials": [
+    {
+      "id": "EL_WOOD",
+      "element": "木",
+      "name_candidate": "よもぎ餅",
+      "ingredient_basis": "もち生地によもぎを練り込むイメージ",
+      "primary_hex": "#C8D9B8",
+      "ink_description": "淡い若草色",
+      "texture": "細かな草粒の点在。大きな葉や葉飾りは付けない",
+      "texture_scale": "微細",
+      "visual_intensity": "低",
+      "qualities": [
+        "成長",
+        "伸長",
+        "発展"
+      ],
+      "sensory": "草の気配を感じる、やわらかなもち肌",
+      "cautions": [
+        "黒点の眼や動物模様に粒感を被せない",
+        "葉を付けて装飾レイヤー化しない"
+      ],
+      "alternative_candidate": "薄緑の無添加風色もち（素材名の説明力は弱い）"
+    },
+    {
+      "id": "EL_FIRE",
+      "element": "火",
+      "name_candidate": "赤米餅",
+      "ingredient_basis": "赤米を混ぜたもち生地の創作イメージ",
+      "primary_hex": "#D5A397",
+      "ink_description": "淡い赤茶・桃褐色",
+      "texture": "ほのかな穀粒のむら。赤米そのものに鮮烈な赤色を保証しない",
+      "texture_scale": "微細",
+      "visual_intensity": "低",
+      "qualities": [
+        "熱",
+        "拡散",
+        "光"
+      ],
+      "sensory": "温かみのある赤みを帯びたもち肌",
+      "cautions": [
+        "鮮紅色や炎のアイコンを追加しない",
+        "赤米の実際の色と図案の桃褐色を同一視しない",
+        "酉の赤いとさか・既存頬と混同しない"
+      ],
+      "alternative_candidate": "赤じそ練りもち（色は出しやすいが味・日常的認知を追加検証）"
+    },
+    {
+      "id": "EL_EARTH",
+      "element": "土",
+      "name_candidate": "きび餅",
+      "ingredient_basis": "きびを生地に混ぜるイメージ",
+      "primary_hex": "#E6D2A1",
+      "ink_description": "穏やかな穀物の黄",
+      "texture": "きびの細かな粒感、ふっくらした表面",
+      "texture_scale": "微細",
+      "visual_intensity": "低",
+      "qualities": [
+        "安定",
+        "育成",
+        "受容"
+      ],
+      "sensory": "ほっこりした黄みのもち肌",
+      "cautions": [
+        "黄龍や金の装飾・金粉表現を追加しない",
+        "粒感を大きくして角や鼻に見せない"
+      ],
+      "alternative_candidate": "玄米餅（素朴さはあるが木・水の穀粒と近くなる）"
+    },
+    {
+      "id": "EL_METAL",
+      "element": "金",
+      "name_candidate": "白もち",
+      "ingredient_basis": "白米由来のプレーンな餅生地のイメージ",
+      "primary_hex": "#F3EEE5",
+      "ink_description": "柔らかな乳白色",
+      "texture": "いちばん均一でなめらかなマット肌",
+      "texture_scale": "なし",
+      "visual_intensity": "低",
+      "qualities": [
+        "凝縮",
+        "選別",
+        "規律"
+      ],
+      "sensory": "すっきり整った白いもち肌",
+      "cautions": [
+        "金属光沢・金箔・器の意匠を足さない",
+        "基本の白もち画像をこの属性に勝手に固定しない。既存の12体は五行未重ね状態",
+        "無彩色での視認性は色名ラベルと質感差で補う"
+      ],
+      "alternative_candidate": "もち米白生地（同義で名称統一の余地あり）"
+    },
+    {
+      "id": "EL_WATER",
+      "element": "水",
+      "name_candidate": "黒米餅",
+      "ingredient_basis": "黒米を混ぜたもち生地のイメージ",
+      "primary_hex": "#BDB5CF",
+      "ink_description": "薄い紫灰色",
+      "texture": "米粒の細かな斑点。濃い黒にはしない",
+      "texture_scale": "微細",
+      "visual_intensity": "低",
+      "qualities": [
+        "流動",
+        "浸透",
+        "循環"
+      ],
+      "sensory": "落ち着いた藤灰のもち肌",
+      "cautions": [
+        "実物の黒米餅の色と仮色を同一視しない",
+        "青い水滴、波、玄武の模様などを足さない",
+        "濃い色で黒点目・目鼻や動物特徴を埋めない"
+      ],
+      "alternative_candidate": "黒ごま練りもち（黒点が目や動物模様と干渉しやすい）"
+    }
+  ]
+}
