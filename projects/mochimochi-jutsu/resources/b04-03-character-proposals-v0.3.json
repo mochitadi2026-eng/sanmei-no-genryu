@@ -1,0 +1,300 @@
+{
+  "schema_version": "0.3.0",
+  "resource_id": "b04-03-zodiac-character-settings-draft",
+  "status": "proposal_unapproved",
+  "date": "2026-11-04",
+  "source_library": "resources/symbol-trait-library-v0.1.json",
+  "source_comparison": "26-b04-03-zodiac-trait-comparison-v0.2-2026-11-04.md",
+  "visuals": "12_of_12_approved_unchanged",
+  "four_layers": {
+    "elements": "mochi_materials",
+    "zodiac": "mochi_body",
+    "main_stars": "fillings",
+    "follower_stars": "serving_vessels"
+  },
+  "classification": "day_branch_12_x_day_stem_element_5",
+  "interpretation_notice": "物語の登場人物用の創作であり、実在人物の性格の科学的測定ではない。名称・設定は未承認。",
+  "validation": {
+    "checked_strength_terms": 36,
+    "checked_weakness_terms": 36,
+    "mismatches": 0
+  },
+  "characters": [
+    {
+      "id": "BC01",
+      "branch": "子",
+      "animal": "ねずみ",
+      "name_provisional": "ちょろ",
+      "flavor": "小さな変化を見つけ、先に備える",
+      "strengths": [
+        "観察力",
+        "情報収集",
+        "機転"
+      ],
+      "weaknesses": [
+        "心配性",
+        "警戒心",
+        "先回りしすぎ"
+      ],
+      "values": "仲間が困る前に小さな兆しを見つけること",
+      "inner_conflict": "安心したくて手がかりを集めるほど、まだ起きていない失敗まで心配してしまう。",
+      "story_scene": "皆の準備で小さな異変を発見するが、確かめる項目を増やしすぎて出発を遅らせる。",
+      "small_choice": "今必要な確認を一つに絞り、分かったことと不確かなことを分けて伝える。",
+      "story_role": "発見・備え",
+      "distinction": "巳は原因を深掘り、申は代案をひねり出す。子は最初の変化を見つけて備える。"
+    },
+    {
+      "id": "BC02",
+      "branch": "丑",
+      "animal": "うし",
+      "name_provisional": "のっし",
+      "flavor": "時間をかけて確かなものを積む",
+      "strengths": [
+        "継続力",
+        "堅実",
+        "粘り強さ"
+      ],
+      "weaknesses": [
+        "頑固",
+        "切り替えの遅さ",
+        "ため込み"
+      ],
+      "values": "少しずつ積み上げたものを大切にすること",
+      "inner_conflict": "責任を果たしたいからこそ、自分のやり方にこだわり、仕事を一人で抱えてしまう。",
+      "story_scene": "長く続く準備を黙々と支えるが、もっと楽な手順を提案されても切り替えられない。",
+      "small_choice": "守りたい目的を確かめ、一工程だけ仲間の方法を試す。",
+      "story_role": "積み重ね・継続",
+      "distinction": "亥の最後の突破ではなく、日々の積み上げで支える。"
+    },
+    {
+      "id": "BC03",
+      "branch": "寅",
+      "animal": "とら",
+      "name_provisional": "とらまる",
+      "flavor": "大切なもののために先頭に立つ",
+      "strengths": [
+        "勇気",
+        "決断力",
+        "正義感"
+      ],
+      "weaknesses": [
+        "独断",
+        "負けず嫌い",
+        "勢いの空回り"
+      ],
+      "values": "大切な人が理不尽な扱いを受けないこと",
+      "inner_conflict": "仲間を守るためにすぐ前に出るが、相手の望みを聞く前に自分だけで決めてしまう。",
+      "story_scene": "言い争いの場で仲間をかばうものの、事情を聞かずに対立を大きくしてしまう。",
+      "small_choice": "動く前に、守りたい相手が何を望むか一度聞く。",
+      "story_role": "守護・先陣",
+      "distinction": "午は最初の行動そのもの、亥は最後までやり抜くことが核。寅の核は守るための決断。"
+    },
+    {
+      "id": "BC04",
+      "branch": "卯",
+      "animal": "うさぎ",
+      "name_provisional": "みみん",
+      "flavor": "人と人をつなぎ、調和をつくる",
+      "strengths": [
+        "調整力",
+        "対話力",
+        "内に秘めた粘り"
+      ],
+      "weaknesses": [
+        "遠慮",
+        "傷つきやすさ",
+        "優柔不断"
+      ],
+      "values": "違う気持ちの人同士が話せる場を守ること",
+      "inner_conflict": "みんなの意見を尊重するほど、自分の考えを言えなくなる。でも譲れない一線は胸の内にある。",
+      "story_scene": "意見が割れた場で双方の話をつなぐが、自分の案だけ最後まで伝えそびれる。",
+      "small_choice": "相手の言葉を受け止めたあと、自分の希望を一文で伝える。",
+      "story_role": "橋渡し・対話",
+      "distinction": "未は安心できる居場所を育てる。卯は意見の違う相手をつなぐ。"
+    },
+    {
+      "id": "BC05",
+      "branch": "辰",
+      "animal": "たつ",
+      "name_provisional": "かなた",
+      "flavor": "大きな未来を描き、可能性を広げる",
+      "strengths": [
+        "発想力",
+        "大志",
+        "独創性"
+      ],
+      "weaknesses": [
+        "プライド",
+        "現実との落差",
+        "内面の葛藤"
+      ],
+      "values": "まだない可能性を見捨てないこと",
+      "inner_conflict": "大きな景色を思い描ける一方、理想と現実の差を見ると自分の構想に迷いが生まれる。",
+      "story_scene": "新しい計画を示して皆をわくわくさせるが、予算や時間の壁にぶつかり黙り込む。",
+      "small_choice": "理想を捨てずに、最初の小さな実験を一つ決める。",
+      "story_role": "構想・方向づけ",
+      "distinction": "丑は積む、酉は段取りを整える。辰は行く先の可能性を描く。"
+    },
+    {
+      "id": "BC06",
+      "branch": "巳",
+      "animal": "へび",
+      "name_provisional": "するん",
+      "flavor": "表面の奥まで深く読み解く",
+      "strengths": [
+        "洞察力",
+        "分析力",
+        "集中力"
+      ],
+      "weaknesses": [
+        "疑い深さ",
+        "執着",
+        "考えすぎ"
+      ],
+      "values": "見た目だけで判断せず理由を確かめること",
+      "inner_conflict": "本当の理由を知りたいあまり、確かな手がかりが出ても疑い続け、結論を共有できなくなる。",
+      "story_scene": "皆が見過ごした矛盾を見つけるが、細部を調べ続けて話し合いが進まない。",
+      "small_choice": "事実・推測・未確認を区切って、現時点の見立てを共有する。",
+      "story_role": "分析・読み解き",
+      "distinction": "子は兆しを拾う、巳は理由を掘る、申は方法を変える。"
+    },
+    {
+      "id": "BC07",
+      "branch": "午",
+      "animal": "うま",
+      "name_provisional": "ぱかり",
+      "flavor": "最初の一歩で周囲を動かす",
+      "strengths": [
+        "行動力",
+        "自由志向",
+        "スピード"
+      ],
+      "weaknesses": [
+        "せっかち",
+        "衝動性",
+        "飽きっぽさ"
+      ],
+      "values": "動いてみることで景色を変えること",
+      "inner_conflict": "自由に動けるから誰より早く始められるのに、同じ工程が続くと次の刺激を求めてしまう。",
+      "story_scene": "停滞していた計画を動かすが、連絡の途中で新しい用事を見つけ寄り道する。",
+      "small_choice": "出発前に目的を一つ決め、戻るタイミングも仲間に伝える。",
+      "story_role": "着火・初動",
+      "distinction": "寅は守るために動く。午は停滞を破り最初の一歩をつくる。"
+    },
+    {
+      "id": "BC08",
+      "branch": "未",
+      "animal": "ひつじ",
+      "name_provisional": "もふね",
+      "flavor": "安心できる居場所を守り育てる",
+      "strengths": [
+        "思いやり",
+        "共感性",
+        "芯の強さ"
+      ],
+      "weaknesses": [
+        "遠慮",
+        "心配性",
+        "内に隠した頑固さ"
+      ],
+      "values": "誰もが無理をせず戻れる場所があること",
+      "inner_conflict": "みんなに安心してほしいのに、自分の不安や疲れを隠して抱え込み、守り方だけは譲れなくなる。",
+      "story_scene": "疲れた仲間の休む場所を整えるが、自分は休まず、手伝いも遠慮する。",
+      "small_choice": "自分も休む時間を決め、助けてほしいことを一つ頼む。",
+      "story_role": "居場所・養育",
+      "distinction": "卯は対話をつなぐ。未は過ごす場所と関係の安心を育てる。"
+    },
+    {
+      "id": "BC09",
+      "branch": "申",
+      "animal": "さる",
+      "name_provisional": "ひょい",
+      "flavor": "行き詰まりを工夫でひっくり返す",
+      "strengths": [
+        "機転",
+        "柔軟な発想",
+        "突破力"
+      ],
+      "weaknesses": [
+        "短慮",
+        "飽きっぽさ",
+        "浅く広くなりがち"
+      ],
+      "values": "一つの方法に縛られず打開策を探すこと",
+      "inner_conflict": "次々に工夫を思いつくからこそ、選んだ方法を試し切る前に次へ移ってしまう。",
+      "story_scene": "道がふさがれ代案をいくつも出すが、どれも途中で変えて仲間が迷う。",
+      "small_choice": "最も試しやすい一案を決め、結果が出るまでは続ける。",
+      "story_role": "機転・転換",
+      "distinction": "子は異変を見つけ、巳は根拠を調べ、申は方法を組み替える。"
+    },
+    {
+      "id": "BC10",
+      "branch": "酉",
+      "animal": "にわとり",
+      "name_provisional": "こっこ",
+      "flavor": "段取りを整え、みんなの動きをそろえる",
+      "strengths": [
+        "几帳面",
+        "段取り",
+        "美意識"
+      ],
+      "weaknesses": [
+        "完璧主義",
+        "批判的",
+        "こだわりの強さ"
+      ],
+      "values": "気持ちよく動ける手順と仕上がりをつくること",
+      "inner_conflict": "みんなが困らないよう整えるほど、細部の不備が気になり、始める判断を延ばしてしまう。",
+      "story_scene": "行事の準備を完璧に整えるが、小さな印刷ミスが気になって開会を遅らせそうになる。",
+      "small_choice": "絶対に必要な条件と、後から整えられる点を分けて進める。",
+      "story_role": "段取り・品質",
+      "distinction": "丑は継続、亥は完遂。酉は始め方と品質基準を整える。"
+    },
+    {
+      "id": "BC11",
+      "branch": "戌",
+      "animal": "いぬ",
+      "name_provisional": "たれん",
+      "flavor": "約束を守り、仲間に寄り添う",
+      "strengths": [
+        "誠実",
+        "義理堅さ",
+        "仲間意識"
+      ],
+      "weaknesses": [
+        "自己犠牲",
+        "頑なな正義感",
+        "思い詰める"
+      ],
+      "values": "ひとりを置いていかず約束に応えること",
+      "inner_conflict": "信頼に応えたいあまり、自分がつらくても役目を交代できず、相手に心配をかける。",
+      "story_scene": "遅れた仲間を待ち続けて自分も疲れてしまうが、代わりを頼めない。",
+      "small_choice": "約束を守る別の方法として、仲間に助けや交代を頼む。",
+      "story_role": "同行・信義",
+      "distinction": "卯は意見をつなぎ、未は居場所を育てる。戌は個々の約束を守る。"
+    },
+    {
+      "id": "BC12",
+      "branch": "亥",
+      "animal": "いのしし",
+      "name_provisional": "うりぼ",
+      "flavor": "決めたことを最後までやり抜く",
+      "strengths": [
+        "強い意志",
+        "忍耐",
+        "工夫"
+      ],
+      "weaknesses": [
+        "猪突猛進",
+        "早合点",
+        "方向転換が苦手"
+      ],
+      "values": "始めたことを投げ出さず結果までつなげること",
+      "inner_conflict": "諦めない強さがあるからこそ、うまくいかない方法にも固執し、引き返す判断が遅れる。",
+      "story_scene": "壊れた道を直そうと何度も同じ場所に取り組み、遠回りの工夫に気づくのが遅れる。",
+      "small_choice": "目標は守ったまま、方法を一度選び直す。",
+      "story_role": "突破・完遂",
+      "distinction": "寅は守るための決断、午は最初の一歩、亥は最後まで届ける粘り。"
+    }
+  ]
+}
