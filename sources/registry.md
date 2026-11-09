@@ -122,7 +122,8 @@
 | S116 | 『白虎通』巻三「五行」 | 後漢の白虎観議論に由来し班固に帰される伝世本文。今回参照は維基文庫の現代翻刻 | 「木王所以七十二日何？土王四季，各十八日」および木王・火相・土死・金囚・水休の季節状態を確認 | [確認先](https://zh.wikisource.org/wiki/%E7%99%BD%E8%99%8E%E9%80%9A/%E5%8D%B703) | 2026-11-02閲覧。巻三「五行」の公開翻刻。後漢の原物・写本・刊本影印の校合は未実施。S109の別閲覧先を補強する史料であり独立した著作ではない |
 | S117 | 蕭吉に帰される『五行大義』巻二「第四論相生」二者「論生死所」・三者「論四時休王」 | 隋代著者帰属の伝世書。現代公開翻刻（維基文庫） | 四季各18日を「此蓋卜筮所用」とし、定位王相には季夏六月を用いる別方式を明記。春・夏・六月・秋・冬の五行体の王相休囚死、支干・八卦の別表を確認 | [確認先](https://zh.wikisource.org/wiki/%E4%BA%94%E8%A1%8C%E5%A4%A7%E7%BE%A9/2) | 2026-11-02閲覧。本文の版系・異文・隋代原本の校合は未実施。「死」を現代の寿命や十二大従星の点数と同一視しない |
 | S118 | 国立天文台暦計算室「令和8年（2026）暦要項：二十四節気および雑節」 | 国立天文台、2025-02-03発表。2026年の日本中央標準時 | 土用入りは1/17 12:03（黄経297°）、4/17 09:01（27°）、7/20 00:48（117°）、10/20 18:13（207°）。四立の公表時刻も確認 | [確認先](https://eco.mtk.nao.ac.jp/koyomi/yoko/2026/rekiyou262.html) | 2026-11-02閲覧。時刻は分単位。古典の360日模型や命式の月令・蔵干の採用規則とは別。秒単位の境界判定はできない |
-| S119 | United States Naval Observatory (USNO), Astronomical Applications Department, "Earth's Seasons — Equinoxes, Solstices, Perihelion, and Aphelion" | 米海軍天文台の2026年季節時刻表。表示条件はUTC−05:00固定、夏時間なし | 春分3/20 09:46、夏至6/21 03:24、秋分9/22 19:05、冬至12/21 15:50（すべてUTC−05:00表示）。JSTに+14時間換算してS85と照合 | [確認先](https://aa.usno.navy.mil/calculated/seasons?dst=false&submit=Get+Data&tz=5.00&tz_label=false&tz_sign=-1&year=2026) | 2026-11-09閲覧。公表値は分単位。夏至はNAOJと表示値が1分異なる。秒単位一致・原因・JPL/Swiss独立計算の実施を意味しない |\n## 原文を確認するときの注意
+| S119 | United States Naval Observatory (USNO), Astronomical Applications Department, "Earth's Seasons — Equinoxes, Solstices, Perihelion, and Aphelion" | 米海軍天文台の2026年季節時刻表。表示条件はUTC−05:00固定、夏時間なし | 春分3/20 09:46、夏至6/21 03:24、秋分9/22 19:05、冬至12/21 15:50（すべてUTC−05:00表示）。JSTに+14時間換算してS85と照合 | [確認先](https://aa.usno.navy.mil/calculated/seasons?dst=false&submit=Get+Data&tz=5.00&tz_label=false&tz_sign=-1&year=2026) | 2026-11-09閲覧。公表値は分単位。夏至はNAOJと表示値が1分異なる。秒単位一致・原因・JPL/Swiss独立計算の実施を意味しない |
+## 原文を確認するときの注意
 
 1. 書名・著者名・巻・篇が一致するかを確認する。
 2. 引用箇所を短く特定し、必要なら異本と比較する。
