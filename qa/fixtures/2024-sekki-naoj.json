@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "kind": "2024-section-boundary-reference-fixture",
+  "source": {
+    "publisher": "国立天文台 暦計算室",
+    "title": "令和6年（2024）暦要項 二十四節気および雑節",
+    "url": "https://eco.mtk.nao.ac.jp/koyomi/yoko/2024/rekiyou242.html",
+    "accessDate": "2026-11-01",
+    "timeZone": "Asia/Tokyo",
+    "timeResolution": "published to minute"
+  },
+  "profile": {
+    "id": "risshun-sekki-instant-jst",
+    "description": "試験用仮採用：立春の瞬間で年柱切替、12節の瞬間で月柱切替。高尾系全体の検証・流派の統一的な証明ではない。",
+    "confidence": "expected year/month derived from standard sexagenary year and 五虎遁; not independent verified natal chart",
+    "unverified": "exact event second, solar-longitude computation, day/hour pillars, hidden stems, star conversion"
+  },
+  "samplesRule": "公式公表値は分精度。公表時刻±2分を検査する。中心瞬間の秒単位合否は判定しない。",
+  "events": [
+    {
+      "name": "小寒",
+      "publishedAtJst": "2024-01-06T05:49:00+09:00",
+      "solarLongitudeDegrees": 285,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2024-01-06T05:47:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "癸卯",
+            "monthPillar": "甲子"
+          }
+        },
+        {
+          "atJst": "2024-01-06T05:51:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "癸卯",
+            "monthPillar": "乙丑"
+          }
+        }
+      ]
+    },
+    {
+      "name": "大寒",
+      "publishedAtJst": "2024-01-20T23:07:00+09:00",
+      "solarLongitudeDegrees": 300,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2024-01-20T23:05:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "癸卯",
+            "monthPillar": "乙丑"
+          }
+        },
+        {
+          "atJst": "2024-01-20T23:09:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "癸卯",
+            "monthPillar": "乙丑"
+          }
+        }
+      ]
+    },
+    {
+      "name": "立春",
+      "publishedAtJst": "2024-02-04T17:27:00+09:00",
+      "solarLongitudeDegrees": 315,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2024-02-04T17:25:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "癸卯",
+            "monthPillar": "乙丑"
+          }
+        },
+        {
+          "atJst": "2024-02-04T17:29:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "丙寅"
+          }
+        }
+      ]
+    },
+    {
+      "name": "雨水",
+      "publishedAtJst": "2024-02-19T13:13:00+09:00",
+      "solarLongitudeDegrees": 330,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2024-02-19T13:11:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "丙寅"
+          }
+        },
+        {
+          "atJst": "2024-02-19T13:15:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "丙寅"
+          }
+        }
+      ]
+    },
+    {
+      "name": "啓蟄",
+      "publishedAtJst": "2024-03-05T11:23:00+09:00",
+      "solarLongitudeDegrees": 345,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2024-03-05T11:21:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "丙寅"
+          }
+        },
+        {
+          "atJst": "2024-03-05T11:25:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "丁卯"
+          }
+        }
+      ]
+    },
+    {
+      "name": "春分",
+      "publishedAtJst": "2024-03-20T12:06:00+09:00",
+      "solarLongitudeDegrees": 0,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2024-03-20T12:04:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "丁卯"
+          }
+        },
+        {
+          "atJst": "2024-03-20T12:08:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "丁卯"
+          }
+        }
+      ]
+    },
+    {
+      "name": "清明",
+      "publishedAtJst": "2024-04-04T16:02:00+09:00",
+      "solarLongitudeDegrees": 15,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2024-04-04T16:00:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "丁卯"
+          }
+        },
+        {
+          "atJst": "2024-04-04T16:04:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "戊辰"
+          }
+        }
+      ]
+    },
+    {
+      "name": "穀雨",
+      "publishedAtJst": "2024-04-19T23:00:00+09:00",
+      "solarLongitudeDegrees": 30,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2024-04-19T22:58:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "戊辰"
+          }
+        },
+        {
+          "atJst": "2024-04-19T23:02:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "戊辰"
+          }
+        }
+      ]
+    },
+    {
+      "name": "立夏",
+      "publishedAtJst": "2024-05-05T09:10:00+09:00",
+      "solarLongitudeDegrees": 45,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2024-05-05T09:08:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "戊辰"
+          }
+        },
+        {
+          "atJst": "2024-05-05T09:12:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "己巳"
+          }
+        }
+      ]
+    },
+    {
+      "name": "小満",
+      "publishedAtJst": "2024-05-20T22:00:00+09:00",
+      "solarLongitudeDegrees": 60,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2024-05-20T21:58:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "己巳"
+          }
+        },
+        {
+          "atJst": "2024-05-20T22:02:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "己巳"
+          }
+        }
+      ]
+    },
+    {
+      "name": "芒種",
+      "publishedAtJst": "2024-06-05T13:10:00+09:00",
+      "solarLongitudeDegrees": 75,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2024-06-05T13:08:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "己巳"
+          }
+        },
+        {
+          "atJst": "2024-06-05T13:12:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "庚午"
+          }
+        }
+      ]
+    },
+    {
+      "name": "夏至",
+      "publishedAtJst": "2024-06-21T05:51:00+09:00",
+      "solarLongitudeDegrees": 90,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2024-06-21T05:49:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "庚午"
+          }
+        },
+        {
+          "atJst": "2024-06-21T05:53:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "庚午"
+          }
+        }
+      ]
+    },
+    {
+      "name": "小暑",
+      "publishedAtJst": "2024-07-06T23:20:00+09:00",
+      "solarLongitudeDegrees": 105,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2024-07-06T23:18:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "庚午"
+          }
+        },
+        {
+          "atJst": "2024-07-06T23:22:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "辛未"
+          }
+        }
+      ]
+    },
+    {
+      "name": "大暑",
+      "publishedAtJst": "2024-07-22T16:44:00+09:00",
+      "solarLongitudeDegrees": 120,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2024-07-22T16:42:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "辛未"
+          }
+        },
+        {
+          "atJst": "2024-07-22T16:46:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "辛未"
+          }
+        }
+      ]
+    },
+    {
+      "name": "立秋",
+      "publishedAtJst": "2024-08-07T09:09:00+09:00",
+      "solarLongitudeDegrees": 135,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2024-08-07T09:07:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "辛未"
+          }
+        },
+        {
+          "atJst": "2024-08-07T09:11:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "壬申"
+          }
+        }
+      ]
+    },
+    {
+      "name": "処暑",
+      "publishedAtJst": "2024-08-22T23:55:00+09:00",
+      "solarLongitudeDegrees": 150,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2024-08-22T23:53:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "壬申"
+          }
+        },
+        {
+          "atJst": "2024-08-22T23:57:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "壬申"
+          }
+        }
+      ]
+    },
+    {
+      "name": "白露",
+      "publishedAtJst": "2024-09-07T12:11:00+09:00",
+      "solarLongitudeDegrees": 165,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2024-09-07T12:09:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "壬申"
+          }
+        },
+        {
+          "atJst": "2024-09-07T12:13:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "癸酉"
+          }
+        }
+      ]
+    },
+    {
+      "name": "秋分",
+      "publishedAtJst": "2024-09-22T21:44:00+09:00",
+      "solarLongitudeDegrees": 180,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2024-09-22T21:42:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "癸酉"
+          }
+        },
+        {
+          "atJst": "2024-09-22T21:46:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "癸酉"
+          }
+        }
+      ]
+    },
+    {
+      "name": "寒露",
+      "publishedAtJst": "2024-10-08T04:00:00+09:00",
+      "solarLongitudeDegrees": 195,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2024-10-08T03:58:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "癸酉"
+          }
+        },
+        {
+          "atJst": "2024-10-08T04:02:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "甲戌"
+          }
+        }
+      ]
+    },
+    {
+      "name": "霜降",
+      "publishedAtJst": "2024-10-23T07:15:00+09:00",
+      "solarLongitudeDegrees": 210,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2024-10-23T07:13:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "甲戌"
+          }
+        },
+        {
+          "atJst": "2024-10-23T07:17:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "甲戌"
+          }
+        }
+      ]
+    },
+    {
+      "name": "立冬",
+      "publishedAtJst": "2024-11-07T07:20:00+09:00",
+      "solarLongitudeDegrees": 225,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2024-11-07T07:18:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "甲戌"
+          }
+        },
+        {
+          "atJst": "2024-11-07T07:22:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "乙亥"
+          }
+        }
+      ]
+    },
+    {
+      "name": "小雪",
+      "publishedAtJst": "2024-11-22T04:56:00+09:00",
+      "solarLongitudeDegrees": 240,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2024-11-22T04:54:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "乙亥"
+          }
+        },
+        {
+          "atJst": "2024-11-22T04:58:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "乙亥"
+          }
+        }
+      ]
+    },
+    {
+      "name": "大雪",
+      "publishedAtJst": "2024-12-07T00:17:00+09:00",
+      "solarLongitudeDegrees": 255,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2024-12-07T00:15:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "乙亥"
+          }
+        },
+        {
+          "atJst": "2024-12-07T00:19:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "丙子"
+          }
+        }
+      ]
+    },
+    {
+      "name": "冬至",
+      "publishedAtJst": "2024-12-21T18:21:00+09:00",
+      "solarLongitudeDegrees": 270,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2024-12-21T18:19:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "丙子"
+          }
+        },
+        {
+          "atJst": "2024-12-21T18:23:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "甲辰",
+            "monthPillar": "丙子"
+          }
+        }
+      ]
+    }
+  ]
+}
