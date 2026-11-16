@@ -48,6 +48,49 @@
 <p>四つのうち三つは分単位で一致した。一方、夏至には1分の差が残った。<strong>どちらかの天文台が間違っていると判断する材料ではない</strong>。表示の丸め方や時刻系などを調べない限り、差の理由は分からない。</p>
 <p>そして、この二つの表が示すのは季節の天文時刻であって、算命学の命式を正しいと認定するものではない。今回比較したのは二分二至であり、立春・啓蟄の時刻をUSNOの同じ表で独立検証したわけでもない。</p>
 <p>境界の数分が重要な人ほど、分からない秒数を分かったことにしない。ここが、暦を使う診断の出発点だと思う。</p>
+<h2>太陽の位置を、実際に計算してみた</h2>
+<p>二つの天文台の表を比べるだけでは、夏至の1分差の理由は分からない。そこで2026年11月16日、公開されている天文計算ライブラリのSwiss Ephemeris APIを使い、太陽の見かけの黄経が0度・90度・180度・270度に達する時刻を求めてみた。</p>
+<p>今回はライブラリに含まれる<strong>Moshier解析暦</strong>を使った。JPL Horizonsのデータを取り込んだ計算ではなく、Swiss Ephemerisの外部天体暦ファイルを使った計算でもない。設定と再現コードは<a href="https://github.com/mochitadi2026-eng/sanmei-no-genryu/blob/main/research/solar-longitude-crosscheck-2026-11-16.md">研究記録</a>に残している。<a class="source-link" href="../sources.html#S121">[S121]</a></p>
+<table>
+<thead>
+<tr>
+  <th>事象</th>
+  <th>Moshier計算値（日本時間）</th>
+  <th>国立天文台の公表値</th>
+  <th>USNOの公表値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>春分</td>
+  <td>3月20日 23:45:58</td>
+  <td>23:46</td>
+  <td>23:46</td>
+</tr>
+<tr>
+  <td>夏至</td>
+  <td>6月21日 17:24:31</td>
+  <td>17:25</td>
+  <td>17:24</td>
+</tr>
+<tr>
+  <td>秋分</td>
+  <td>9月23日 09:05:13</td>
+  <td>09:05</td>
+  <td>09:05</td>
+</tr>
+<tr>
+  <td>冬至</td>
+  <td>12月22日 05:50:15</td>
+  <td>05:50</td>
+  <td>05:50</td>
+</tr>
+</tbody>
+</table>
+<p>夏至の計算値は午後5時24分30秒あたりだった。これを<strong>最も近い分へ四捨五入すれば17:25</strong>、<strong>分未満を切り捨てれば17:24</strong>になる。</p>
+<p>つまり、表示方法の違いで1分の差が生じることは、今回の数値から説明できる。ただし、<strong>二つの天文台が実際にその丸め規則を採用していると確認できたわけではない</strong>。USNOのUTC表示でも夏至は08:24で、時差換算の間違いではないことは確かめた。<a class="source-link" href="../sources.html#S120">[S120]</a></p>
+<p>秒まで計算できたからといって、秒まで正しいと保証されたわけでもない。採用する暦表や時刻尺度をさらに照合する必要がある。</p>
+<p>大切なのは、数値が出たことと、差の原因が確定したことを分けることだ。これは占いの当たり外れではなく、暦の境界をどう確かめるかという話なのだ。</p>
 <h2>古典は子時をどう分けたか</h2>
 <p>昔の時刻には、子・丑・寅など十二支の名が使われた。</p>
 <p>現代の時計に二時間ずつ当てはめる方式では、子時は午後十一時から翌午前一時の前までとなる。</p>
@@ -65,7 +108,8 @@
 <hr />
 <p><strong>公式資料で確認</strong>：二十四節気、2026年立春・啓蟄時刻、NAOJとUSNOの二分二至の公表時刻比較、日本標準時と夏時刻。<br />
 <strong>伝世本文で確認</strong>：『三命通会』巻二の時刻・月時の規則。<br />
-<strong>未確認</strong>：夏至の公表分時刻が1分異なる理由、算命学各流派の境界規則、現在の診断エンジンの全面的な数値検証。<br />
-<strong>典拠</strong>：<a class="source-link" href="../sources.html#S84">[S84]</a> <a class="source-link" href="../sources.html#S85">[S85]</a> <a class="source-link" href="../sources.html#S87">[S87]</a> <a class="source-link" href="../sources.html#S89">[S89]</a> <a class="source-link" href="../sources.html#S90">[S90]</a> <a class="source-link" href="../sources.html#S91">[S91]</a> <a class="source-link" href="../sources.html#S92">[S92]</a> <a class="source-link" href="../sources.html#S93">[S93]</a> <a class="source-link" href="../sources.html#S119">[S119]</a>（<a href="../sources.html">出典一覧</a>）</p>
+<strong>数値計算で確認</strong>：Moshier解析暦による2026年二分二至の太陽視黄経の計算値。<br />
+<strong>未確認</strong>：夏至の公表分時刻が1分異なる原因、各機関の秒値と丸め規則、JPL Horizonsによる照合、算命学各流派の境界規則、現在の診断エンジンの全面的な数値検証。<br />
+<strong>典拠</strong>：<a class="source-link" href="../sources.html#S84">[S84]</a> <a class="source-link" href="../sources.html#S85">[S85]</a> <a class="source-link" href="../sources.html#S87">[S87]</a> <a class="source-link" href="../sources.html#S89">[S89]</a> <a class="source-link" href="../sources.html#S90">[S90]</a> <a class="source-link" href="../sources.html#S91">[S91]</a> <a class="source-link" href="../sources.html#S92">[S92]</a> <a class="source-link" href="../sources.html#S93">[S93]</a> <a class="source-link" href="../sources.html#S119">[S119]</a> <a class="source-link" href="../sources.html#S120">[S120]</a> <a class="source-link" href="../sources.html#S121">[S121]</a>（<a href="../sources.html">出典一覧</a>）</p>
 <p><a href="11-trigrams-and-najia.html">前へ：第11話</a> ｜ <a href="13-eastern-and-western-skies.html">次へ：第13話</a></p>
 </article></main><footer class="foot">算命の源流 — 記されたことと、考えたことを分けて読む。<br>研究原稿 v0.5.0 / 2026-10-31</footer></body></html>
