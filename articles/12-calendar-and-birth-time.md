@@ -37,7 +37,7 @@
 
 二つの天文台の表を比べるだけでは、夏至の1分差の理由は分からない。そこで2026年11月16日、公開されている天文計算ライブラリのSwiss Ephemeris APIを使い、太陽の見かけの黄経が0度・90度・180度・270度に達する時刻を求めてみた。
 
-今回はライブラリに含まれる**Moshier解析暦**を使った。JPL Horizonsのデータを取り込んだ計算ではなく、Swiss Ephemerisの外部天体暦ファイルを使った計算でもない。設定と再現コードは[研究記録](../research/solar-longitude-crosscheck-2026-11-16.md)に残している。[S121]
+今回はライブラリに含まれる**Moshier解析暦**を使った。JPL Horizonsのデータを取り込んだ計算ではなく、Swiss Ephemerisの外部天体暦ファイルを使った計算でもない。設定と再現コードは[研究記録](https://github.com/mochitadi2026-eng/sanmei-no-genryu/blob/main/research/solar-longitude-crosscheck-2026-11-16.md)に残している。[S121]
 
 | 事象 | Moshier計算値（日本時間） | 国立天文台の公表値 | USNOの公表値 |
 |---|---|---|---|
