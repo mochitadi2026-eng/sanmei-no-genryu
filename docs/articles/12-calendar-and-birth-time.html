@@ -91,6 +91,12 @@
 <p>つまり、表示方法の違いで1分の差が生じることは、今回の数値から説明できる。ただし、<strong>二つの天文台が実際にその丸め規則を採用していると確認できたわけではない</strong>。USNOのUTC表示でも夏至は08:24で、時差換算の間違いではないことは確かめた。<a class="source-link" href="../sources.html#S120">[S120]</a></p>
 <p>秒まで計算できたからといって、秒まで正しいと保証されたわけでもない。採用する暦表や時刻尺度をさらに照合する必要がある。</p>
 <p>大切なのは、数値が出たことと、差の原因が確定したことを分けることだ。これは占いの当たり外れではなく、暦の境界をどう確かめるかという話なのだ。</p>
+<h2>JPL Horizonsで同じ夏至を比べるには</h2>
+<p>ここで、もう一つ大事な区別がある。<strong>JPL Horizonsの説明書を読んだことと、Horizonsから実際に計算結果を取得したことは別</strong>だ。</p>
+<p>NASA/JPLの公式マニュアルによれば、Horizonsの観測者向けの表は、観測地点から見た天体の位置を出力できる。太陽を対象にして地球中心を観測地点に選び、黄道上の経度を取り出す設定が必要になる。<a class="source-link" href="../sources.html#S122">[S122]</a><a class="source-link" href="../sources.html#S123">[S123]</a></p>
+<p>ただし、数字が二つ並んでも、同じものを比べているとは限らない。時刻をUTCで指定したのか、TTで指定したのか。地球中心から見た位置か、地表の観測地点から見た位置か。黄道座標はその日の春分点を基準にしているか。光の到達時間などの補正をどう扱うか。これらが違えば、計算結果にも差が出る。</p>
+<p>例えば、太陽の見かけの黄経が90度になる瞬間を求めるなら、同じ座標の定義で前後の時刻を細かく計算し、90度をまたぐ場所を絞る必要がある。<strong>公表時刻の表を読むだけでは、この独立計算を行ったことにならない</strong>。</p>
+<p>2026年11月23日時点で確認したのは、HorizonsのAPIと観測者向け表の<strong>公式仕様</strong>までだ。夏至前後のHorizons数値表は取得できず、前回のMoshier計算との秒単位比較も未実施である。夏至の1分差の原因は引き続き未確定だ。</p>
 <h2>古典は子時をどう分けたか</h2>
 <p>昔の時刻には、子・丑・寅など十二支の名が使われた。</p>
 <p>現代の時計に二時間ずつ当てはめる方式では、子時は午後十一時から翌午前一時の前までとなる。</p>
@@ -109,7 +115,7 @@
 <p><strong>公式資料で確認</strong>：二十四節気、2026年立春・啓蟄時刻、NAOJとUSNOの二分二至の公表時刻比較、日本標準時と夏時刻。<br />
 <strong>伝世本文で確認</strong>：『三命通会』巻二の時刻・月時の規則。<br />
 <strong>数値計算で確認</strong>：Moshier解析暦による2026年二分二至の太陽視黄経の計算値。<br />
-<strong>未確認</strong>：夏至の公表分時刻が1分異なる原因、各機関の秒値と丸め規則、JPL Horizonsによる照合、算命学各流派の境界規則、現在の診断エンジンの全面的な数値検証。<br />
-<strong>典拠</strong>：<a class="source-link" href="../sources.html#S84">[S84]</a> <a class="source-link" href="../sources.html#S85">[S85]</a> <a class="source-link" href="../sources.html#S87">[S87]</a> <a class="source-link" href="../sources.html#S89">[S89]</a> <a class="source-link" href="../sources.html#S90">[S90]</a> <a class="source-link" href="../sources.html#S91">[S91]</a> <a class="source-link" href="../sources.html#S92">[S92]</a> <a class="source-link" href="../sources.html#S93">[S93]</a> <a class="source-link" href="../sources.html#S119">[S119]</a> <a class="source-link" href="../sources.html#S120">[S120]</a> <a class="source-link" href="../sources.html#S121">[S121]</a>（<a href="../sources.html">出典一覧</a>）</p>
+<strong>未確認</strong>：夏至の公表分時刻が1分異なる原因、各機関の秒値と丸め規則、JPL Horizonsの実数値照合、算命学各流派の境界規則、現在の診断エンジンの全面的な数値検証。<br />
+<strong>典拠</strong>：<a class="source-link" href="../sources.html#S84">[S84]</a> <a class="source-link" href="../sources.html#S85">[S85]</a> <a class="source-link" href="../sources.html#S87">[S87]</a> <a class="source-link" href="../sources.html#S89">[S89]</a> <a class="source-link" href="../sources.html#S90">[S90]</a> <a class="source-link" href="../sources.html#S91">[S91]</a> <a class="source-link" href="../sources.html#S92">[S92]</a> <a class="source-link" href="../sources.html#S93">[S93]</a> <a class="source-link" href="../sources.html#S119">[S119]</a> <a class="source-link" href="../sources.html#S120">[S120]</a> <a class="source-link" href="../sources.html#S121">[S121]</a> <a class="source-link" href="../sources.html#S122">[S122]</a> <a class="source-link" href="../sources.html#S123">[S123]</a>（<a href="../sources.html">出典一覧</a>）</p>
 <p><a href="11-trigrams-and-najia.html">前へ：第11話</a> ｜ <a href="13-eastern-and-western-skies.html">次へ：第13話</a></p>
 </article></main><footer class="foot">算命の源流 — 記されたことと、考えたことを分けて読む。<br>研究原稿 v0.5.0 / 2026-10-31</footer></body></html>
