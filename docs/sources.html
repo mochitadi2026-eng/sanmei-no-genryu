@@ -980,6 +980,22 @@
   <td><a href="https://github.com/mochitadi2026-eng/sanmei-no-genryu/blob/main/research/solar-longitude-crosscheck-2026-11-16.md">計算記録</a></td>
   <td>外部の秒精度検証ではない。JPL HorizonsやSwiss .se1天体暦ファイルは未使用。各機関の公表値の丸め方式は未確認</td>
 </tr>
+<tr id="S122">
+  <td>S122</td>
+  <td>NASA/JPL Solar System Dynamics「Horizons API」v1.3</td>
+  <td>NASA/JPL公式API仕様、2025年6月版、2026-11-23確認</td>
+  <td>観測者表（EPHEM_TYPE=OBSERVER）、対象天体COMMAND、CENTER、時刻範囲、STEP_SIZE、QUANTITIES等の指定方式を確認</td>
+  <td><a href="https://ssd-api.jpl.nasa.gov/doc/horizons.html">公式API仕様</a></td>
+  <td>APIの仕様文書を読んだ段階。今回、2026年夏至のHorizons数値出力は取得していない</td>
+</tr>
+<tr id="S123">
+  <td>S123</td>
+  <td>NASA/JPL Solar System Dynamics「Horizons System Manual」Observer Table</td>
+  <td>NASA/JPL公式マニュアル、2026-11-23確認</td>
+  <td>Observer Tableの観測位置、UT/TT時刻、見かけの座標、選択可能な黄道座標量と補正の区別を確認</td>
+  <td><a href="https://ssd.jpl.nasa.gov/horizons/manual.html">公式マニュアル</a></td>
+  <td>APIでの計算実行・NAOJ/USNOの秒値確認を意味しない。具体的な黄経の出力列・設定は数値取得時にヘッダで再確認する</td>
+</tr>
 </tbody>
 </table>
 <h2>原文を確認するときの注意</h2>
