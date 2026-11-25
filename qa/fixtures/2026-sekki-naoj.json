@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "kind": "2026-section-boundary-reference-fixture",
+  "source": {
+    "publisher": "国立天文台 暦計算室",
+    "title": "令和8年（2026）暦要項 二十四節気および雑節",
+    "url": "https://eco.mtk.nao.ac.jp/koyomi/yoko/2026/rekiyou262.html",
+    "accessDate": "2026-11-01",
+    "timeZone": "Asia/Tokyo",
+    "timeResolution": "published to minute"
+  },
+  "profile": {
+    "id": "risshun-sekki-instant-jst",
+    "description": "試験用仮採用：立春の瞬間で年柱切替、12節の瞬間で月柱切替。高尾系全体の検証・流派の統一的な証明ではない。",
+    "confidence": "expected year/month derived from standard sexagenary year and 五虎遁; not independent verified natal chart",
+    "unverified": "exact event second, solar-longitude computation, day/hour pillars, hidden stems, star conversion"
+  },
+  "samplesRule": "公式公表値は分精度。中心時刻±1分内ではなく、±2分で比較する。中心瞬間の秒単位合否は判定しない。",
+  "events": [
+    {
+      "name": "小寒",
+      "publishedAtJst": "2026-01-05T17:23:00+09:00",
+      "solarLongitudeDegrees": 285,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2026-01-05T17:21:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "乙巳",
+            "monthPillar": "戊子"
+          }
+        },
+        {
+          "atJst": "2026-01-05T17:25:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "乙巳",
+            "monthPillar": "己丑"
+          }
+        }
+      ]
+    },
+    {
+      "name": "大寒",
+      "publishedAtJst": "2026-01-20T10:45:00+09:00",
+      "solarLongitudeDegrees": 300,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2026-01-20T10:43:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "乙巳",
+            "monthPillar": "己丑"
+          }
+        },
+        {
+          "atJst": "2026-01-20T10:47:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "乙巳",
+            "monthPillar": "己丑"
+          }
+        }
+      ]
+    },
+    {
+      "name": "立春",
+      "publishedAtJst": "2026-02-04T05:02:00+09:00",
+      "solarLongitudeDegrees": 315,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2026-02-04T05:00:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "乙巳",
+            "monthPillar": "己丑"
+          }
+        },
+        {
+          "atJst": "2026-02-04T05:04:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "庚寅"
+          }
+        }
+      ]
+    },
+    {
+      "name": "雨水",
+      "publishedAtJst": "2026-02-19T00:52:00+09:00",
+      "solarLongitudeDegrees": 330,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2026-02-19T00:50:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "庚寅"
+          }
+        },
+        {
+          "atJst": "2026-02-19T00:54:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "庚寅"
+          }
+        }
+      ]
+    },
+    {
+      "name": "啓蟄",
+      "publishedAtJst": "2026-03-05T22:59:00+09:00",
+      "solarLongitudeDegrees": 345,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2026-03-05T22:57:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "庚寅"
+          }
+        },
+        {
+          "atJst": "2026-03-05T23:01:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "辛卯"
+          }
+        }
+      ]
+    },
+    {
+      "name": "春分",
+      "publishedAtJst": "2026-03-20T23:46:00+09:00",
+      "solarLongitudeDegrees": 0,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2026-03-20T23:44:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "辛卯"
+          }
+        },
+        {
+          "atJst": "2026-03-20T23:48:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "辛卯"
+          }
+        }
+      ]
+    },
+    {
+      "name": "清明",
+      "publishedAtJst": "2026-04-05T03:40:00+09:00",
+      "solarLongitudeDegrees": 15,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2026-04-05T03:38:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "辛卯"
+          }
+        },
+        {
+          "atJst": "2026-04-05T03:42:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "壬辰"
+          }
+        }
+      ]
+    },
+    {
+      "name": "穀雨",
+      "publishedAtJst": "2026-04-20T10:39:00+09:00",
+      "solarLongitudeDegrees": 30,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2026-04-20T10:37:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "壬辰"
+          }
+        },
+        {
+          "atJst": "2026-04-20T10:41:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "壬辰"
+          }
+        }
+      ]
+    },
+    {
+      "name": "立夏",
+      "publishedAtJst": "2026-05-05T20:49:00+09:00",
+      "solarLongitudeDegrees": 45,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2026-05-05T20:47:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "壬辰"
+          }
+        },
+        {
+          "atJst": "2026-05-05T20:51:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "癸巳"
+          }
+        }
+      ]
+    },
+    {
+      "name": "小満",
+      "publishedAtJst": "2026-05-21T09:37:00+09:00",
+      "solarLongitudeDegrees": 60,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2026-05-21T09:35:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "癸巳"
+          }
+        },
+        {
+          "atJst": "2026-05-21T09:39:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "癸巳"
+          }
+        }
+      ]
+    },
+    {
+      "name": "芒種",
+      "publishedAtJst": "2026-06-06T00:48:00+09:00",
+      "solarLongitudeDegrees": 75,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2026-06-06T00:46:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "癸巳"
+          }
+        },
+        {
+          "atJst": "2026-06-06T00:50:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "甲午"
+          }
+        }
+      ]
+    },
+    {
+      "name": "夏至",
+      "publishedAtJst": "2026-06-21T17:25:00+09:00",
+      "solarLongitudeDegrees": 90,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2026-06-21T17:23:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "甲午"
+          }
+        },
+        {
+          "atJst": "2026-06-21T17:27:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "甲午"
+          }
+        }
+      ]
+    },
+    {
+      "name": "小暑",
+      "publishedAtJst": "2026-07-07T10:57:00+09:00",
+      "solarLongitudeDegrees": 105,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2026-07-07T10:55:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "甲午"
+          }
+        },
+        {
+          "atJst": "2026-07-07T10:59:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "乙未"
+          }
+        }
+      ]
+    },
+    {
+      "name": "大暑",
+      "publishedAtJst": "2026-07-23T04:13:00+09:00",
+      "solarLongitudeDegrees": 120,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2026-07-23T04:11:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "乙未"
+          }
+        },
+        {
+          "atJst": "2026-07-23T04:15:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "乙未"
+          }
+        }
+      ]
+    },
+    {
+      "name": "立秋",
+      "publishedAtJst": "2026-08-07T20:43:00+09:00",
+      "solarLongitudeDegrees": 135,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2026-08-07T20:41:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "乙未"
+          }
+        },
+        {
+          "atJst": "2026-08-07T20:45:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "丙申"
+          }
+        }
+      ]
+    },
+    {
+      "name": "処暑",
+      "publishedAtJst": "2026-08-23T11:19:00+09:00",
+      "solarLongitudeDegrees": 150,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2026-08-23T11:17:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "丙申"
+          }
+        },
+        {
+          "atJst": "2026-08-23T11:21:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "丙申"
+          }
+        }
+      ]
+    },
+    {
+      "name": "白露",
+      "publishedAtJst": "2026-09-07T23:41:00+09:00",
+      "solarLongitudeDegrees": 165,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2026-09-07T23:39:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "丙申"
+          }
+        },
+        {
+          "atJst": "2026-09-07T23:43:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "丁酉"
+          }
+        }
+      ]
+    },
+    {
+      "name": "秋分",
+      "publishedAtJst": "2026-09-23T09:05:00+09:00",
+      "solarLongitudeDegrees": 180,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2026-09-23T09:03:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "丁酉"
+          }
+        },
+        {
+          "atJst": "2026-09-23T09:07:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "丁酉"
+          }
+        }
+      ]
+    },
+    {
+      "name": "寒露",
+      "publishedAtJst": "2026-10-08T15:29:00+09:00",
+      "solarLongitudeDegrees": 195,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2026-10-08T15:27:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "丁酉"
+          }
+        },
+        {
+          "atJst": "2026-10-08T15:31:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "戊戌"
+          }
+        }
+      ]
+    },
+    {
+      "name": "霜降",
+      "publishedAtJst": "2026-10-23T18:38:00+09:00",
+      "solarLongitudeDegrees": 210,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2026-10-23T18:36:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "戊戌"
+          }
+        },
+        {
+          "atJst": "2026-10-23T18:40:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "戊戌"
+          }
+        }
+      ]
+    },
+    {
+      "name": "立冬",
+      "publishedAtJst": "2026-11-07T18:52:00+09:00",
+      "solarLongitudeDegrees": 225,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2026-11-07T18:50:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "戊戌"
+          }
+        },
+        {
+          "atJst": "2026-11-07T18:54:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "己亥"
+          }
+        }
+      ]
+    },
+    {
+      "name": "小雪",
+      "publishedAtJst": "2026-11-22T16:23:00+09:00",
+      "solarLongitudeDegrees": 240,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2026-11-22T16:21:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "己亥"
+          }
+        },
+        {
+          "atJst": "2026-11-22T16:25:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "己亥"
+          }
+        }
+      ]
+    },
+    {
+      "name": "大雪",
+      "publishedAtJst": "2026-12-07T11:53:00+09:00",
+      "solarLongitudeDegrees": 255,
+      "kind": "節",
+      "samples": [
+        {
+          "atJst": "2026-12-07T11:51:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "己亥"
+          }
+        },
+        {
+          "atJst": "2026-12-07T11:55:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "庚子"
+          }
+        }
+      ]
+    },
+    {
+      "name": "冬至",
+      "publishedAtJst": "2026-12-22T05:50:00+09:00",
+      "solarLongitudeDegrees": 270,
+      "kind": "中",
+      "samples": [
+        {
+          "atJst": "2026-12-22T05:48:00+09:00",
+          "relativeMinutes": -2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "庚子"
+          }
+        },
+        {
+          "atJst": "2026-12-22T05:52:00+09:00",
+          "relativeMinutes": 2,
+          "expected": {
+            "yearPillar": "丙午",
+            "monthPillar": "庚子"
+          }
+        }
+      ]
+    }
+  ]
+}
